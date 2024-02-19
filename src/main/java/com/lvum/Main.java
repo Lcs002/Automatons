@@ -1,6 +1,7 @@
 package com.lvum;
 
 import com.lvum.algorithms.NFAToDFA;
+import com.lvum.algorithms.NFAToDFAEpsilon;
 
 import java.util.Arrays;
 import java.util.Collections;
