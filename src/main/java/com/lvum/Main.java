@@ -7,12 +7,16 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Automaton automaton = new Automaton(Arrays.asList('0', '1'));
-        automaton.addTransition("S0", "S1", '0');
-        automaton.addTransition("S0", "S0", '1');
-        automaton.addTransition("S1", "S0", '1');
-        automaton.addTransition("S1", "S1", '0');
-        automaton.addTransition("S0", "S0", '0');
-        automaton.setInitialState("S0");
+        automaton.addTransition("S1", "S2", '1');
+        automaton.addTransition("S1", "S4", '0');
+        automaton.addTransition("S2", "S3", '1');
+        automaton.addTransition("S2", "S2", '0');
+        automaton.addTransition("S3", "S3", '0');
+        automaton.addTransition("S3", "S1", '1');
+        automaton.addTransition("S3", "S4", '1');
+        automaton.addTransition("S4", "S2", '0');
+        automaton.addTransition("S4", "S4", '1');
+        automaton.setInitialState("S1");
 
         System.out.println(automaton);
 

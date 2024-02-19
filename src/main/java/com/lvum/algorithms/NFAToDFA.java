@@ -23,10 +23,13 @@ public class NFAToDFA implements Algorithm {
         // While there is still some Set of States to check...
         while (!queue.isEmpty()) {
             Set<String> superstate = queue.poll();
+            // Get all Transitions of the Superstate for each entry
             for (Character entry : automaton.getLanguage()) {
                 Set<String> nextSuperstate = new HashSet<>();
+                // Fill the next Superstate with the union of sets of next states of each current state in superstate
                 for (String state : superstate) {
                     // Get next states of the current state with a certain entry
+                    // And add it to the next Superstate
                     nextSuperstate.addAll(
                             automaton.getTransitionsFrom(state).stream()
                                     .filter(x -> x.entry().equals(entry))
@@ -34,12 +37,12 @@ public class NFAToDFA implements Algorithm {
                                     .collect(Collectors.toSet())
                     );
                 }
-                // Check if we have already evaluated the next state
+                // Check if we have already evaluated the next Superstate
                 if (!marked.contains(nextSuperstate)) {
                     queue.add(nextSuperstate);
                     marked.add(nextSuperstate);
                 }
-
+                // Add the transition connecting current Superstate and next Superstate with certain entry
                 result.addTransition(
                         String.join("-", superstate),
                         String.join("-", nextSuperstate),
