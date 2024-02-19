@@ -11,6 +11,7 @@ public class Automaton {
     private Set<Character> language;
     private Set<String> states;
     private Set<Transition> transitions;
+    private Set<String> finalStates;
     private String initialState;
     private int longestString;
 
@@ -18,12 +19,21 @@ public class Automaton {
     public Automaton(Set<Character> language) {
         this.language = language;
         this.states = new HashSet<>();
+        this.finalStates = new HashSet<>();
         this.transitions = new HashSet<>();
     }
 
 
     public Set<Character> getLanguage() {
         return language;
+    }
+
+    public void addFinalState(String state) {
+        finalStates.add(state);
+    }
+
+    public Set<String> getFinalStates() {
+        return finalStates;
     }
 
     public void setInitialState(String state) {
