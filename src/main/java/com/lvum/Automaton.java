@@ -8,21 +8,21 @@ import java.util.List;
 import java.util.Set;
 
 public class Automaton {
-    private List<Character> language;
-    private List<String> states;
+    private Set<Character> language;
+    private Set<String> states;
     private Set<Transition> transitions;
     private String initialState;
     private int longestString;
 
 
-    public Automaton(List<Character> language) {
+    public Automaton(Set<Character> language) {
         this.language = language;
-        this.states = new ArrayList<>();
+        this.states = new HashSet<>();
         this.transitions = new HashSet<>();
     }
 
 
-    public List<Character> getLanguage() {
+    public Set<Character> getLanguage() {
         return language;
     }
 
