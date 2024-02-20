@@ -19,7 +19,9 @@ public class NFAToDFAEpsilon implements Algorithm {
         String initialState = automaton.getInitialState();
 
         // Add and Mark the first State
-        queue.add(getEpsilonClosure(initialState, automaton));
+        Set<String> initialStates = getEpsilonClosure(initialState, automaton);
+        initialStates.add(initialState);
+        queue.add(initialStates);
         marked.add(new HashSet<>(Collections.singletonList(initialState)));
 
         // While there is still some Set of States to check...
@@ -36,7 +38,10 @@ public class NFAToDFAEpsilon implements Algorithm {
                     automaton.getTransitionsFrom(state).stream()
                             .filter(x -> x.entry().equals(entry))
                             .map(Automaton.Transition::to)
-                            .forEach(x -> nextSuperstate.addAll(getEpsilonClosure(x, automaton)));
+                            .forEach(x -> {
+                                nextSuperstate.add(x);
+                                nextSuperstate.addAll(getEpsilonClosure(x, automaton));
+                            });
                 }
                 // Check if we have already evaluated the next Superstate
                 if (!marked.contains(nextSuperstate)) {
@@ -55,7 +60,7 @@ public class NFAToDFAEpsilon implements Algorithm {
     }
 
     private Set<String> getEpsilonClosure(String state, Automaton automaton) {
-        Set<String> closure = new HashSet<>(Collections.singletonList(state));
+        Set<String> closure = new HashSet<>();
         Set<String> epsilonNextStates = automaton.getTransitionsFrom(state).stream()
                 .filter(x -> x.entry().equals(Automaton.EPSILON))
                 .map(Automaton.Transition::to)
