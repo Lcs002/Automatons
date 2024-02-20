@@ -59,12 +59,6 @@ public class Automaton {
         transitions.add(new Transition(from, to, entry));
     }
 
-    public void addEpsilonTransition(String from, String to) {
-        if (!states.contains(from)) addState(from);
-        if (!states.contains(to)) addState(to);
-        transitions.add(new Transition(from, to, EPSILON));
-    }
-
     public Set<Transition> getTransitions() {
         return transitions;
     }
@@ -80,7 +74,6 @@ public class Automaton {
         for (Character entry : language) {
             stringBuilder.append(String.format(" %-"+longestString+"s |", entry));
         }
-        stringBuilder.append(String.format(" %-"+longestString+"s |", Automaton.EPSILON));
         stringBuilder.append('\n');
         for (String state : states) {
             stringBuilder.append(String.format("%-"+longestString+"s |", state));
@@ -90,15 +83,11 @@ public class Automaton {
             for (Character entry : language) {
                 for (Transition transition : transitionsFrom) {
                     if (!transition.entry.equals(entry)) continue;
-                    stringBuilder.append(String.format(" %-"+longestString+"s ", transition.to));
+                    stringBuilder.append(String.format(" %-"+longestString+"s ", transition.to)
+                            .replace('\u0000', ' '));
                 }
                 stringBuilder.append("|");
             }
-            for (Transition transition : transitionsFrom) {
-                if (!transition.entry.equals(EPSILON)) continue;
-                stringBuilder.append(String.format(" %-"+longestString+"s ", transition.to));
-            }
-            stringBuilder.append("|");
             stringBuilder.append('\n');
         }
         return stringBuilder.toString();

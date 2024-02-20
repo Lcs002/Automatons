@@ -1,21 +1,15 @@
 
-o
-java:S3776M"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Á»›ê8÷Ìü¶Ü1
 c
-java:S3457O"AFormat specifiers should be used instead of string concatenation.(œ¬Î”øÿÿÿÿ8ûÌü¶Ü1
+java:S3457I"AFormat specifiers should be used instead of string concatenation.(œ¬Î”øÿÿÿÿ8åáğ·Ü1
 ^
-java:S3457Q"AFormat specifiers should be used instead of string concatenation.(æ‹øş8ıÌü¶Ü1
-^
-java:S3457S"AFormat specifiers should be used instead of string concatenation.(ĞÒú›8şÌü¶Ü1
+java:S3457K"AFormat specifiers should be used instead of string concatenation.(æ‹øş8æáğ·Ü1
 ]
-java:S3457V"AFormat specifiers should be used instead of string concatenation.(­ïÑ38Íü¶Ü1
-c
-java:S3457]"AFormat specifiers should be used instead of string concatenation.(Öº¦˜üÿÿÿÿ8Ûÿü¶Ü1
-c
-java:S3457c"AFormat specifiers should be used instead of string concatenation.(Öº¦˜üÿÿÿÿ8Şÿü¶Ü1
+java:S3457O"AFormat specifiers should be used instead of string concatenation.(­ïÑ38èáğ·Ü1
+^
+java:S3457V"AFormat specifiers should be used instead of string concatenation.(éáıÉ8ïáğ·Ü1
 9
-java:S1116s"Remove this empty statement.(Õò¢8º€ı¶Ü1
+java:S1116h"Remove this empty statement.(Õò¢8óáğ·Ü1
 M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Íáı¶Ü1
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8óáğ·Ü1
 M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Îáı¶Ü1
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ôáğ·Ü1

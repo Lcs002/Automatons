@@ -28,33 +28,35 @@ public class NFAToDFAEpsilon implements Algorithm {
         while (!queue.isEmpty()) {
             Set<String> superstate = queue.poll();
             // Get all Transitions of the Superstate for each entry
-            for (Character entry : automaton.getLanguage()) {
+            for (Character entry : automaton.getLanguage().stream().filter(s -> !s.equals(Automaton.EPSILON)).collect(Collectors.toSet())) {
                 Set<String> nextSuperstate = new HashSet<>();
                 // Fill the next Superstate with the union of sets of next states of each current state in superstate
                 for (String state : superstate) {
                     // Get next states of the current state with a certain entry
                     // And add it to the next Superstate
-                    nextSuperstate.addAll(getEpsilonClosure(state, automaton));
                     automaton.getTransitions().stream()
                             .filter(transition -> transition.from().equals(state))
                             .filter(transition -> transition.entry().equals(entry))
                             .map(Automaton.Transition::to)
-                            .forEach(x -> {
-                                nextSuperstate.add(x);
-                                nextSuperstate.addAll(getEpsilonClosure(x, automaton));
+                            .forEach(nextState -> {
+                                nextSuperstate.add(nextState);
+                                nextSuperstate.addAll(getEpsilonClosure(nextState, automaton));
                             });
                 }
-                // Check if we have already evaluated the next Superstate
-                if (!marked.contains(nextSuperstate)) {
-                    queue.add(nextSuperstate);
-                    marked.add(nextSuperstate);
+                // If its empty it means there is no transition with this entry on the current superstate
+                if (!nextSuperstate.isEmpty()) {
+                    // Check if we have already evaluated the next Superstate
+                    if (!marked.contains(nextSuperstate)) {
+                        queue.add(nextSuperstate);
+                        marked.add(nextSuperstate);
+                    }
+                    // Add the transition connecting current Superstate and next Superstate with certain entry
+                    result.addTransition(
+                            String.join(Automaton.SEPARATOR, superstate),
+                            String.join(Automaton.SEPARATOR, nextSuperstate),
+                            entry
+                    );
                 }
-                // Add the transition connecting current Superstate and next Superstate with certain entry
-                result.addTransition(
-                        String.join(Automaton.SEPARATOR, superstate),
-                        String.join(Automaton.SEPARATOR, nextSuperstate),
-                        entry
-                );
             }
         }
         return result;
@@ -68,6 +70,7 @@ public class NFAToDFAEpsilon implements Algorithm {
                 .map(Automaton.Transition::to)
                 .collect(Collectors.toSet());
         for (String nextState : epsilonNextStates) {
+            closure.add(nextState);
             closure.addAll(getEpsilonClosure(nextState, automaton));
         }
         return closure;

@@ -38,17 +38,20 @@ public class NFAToDFA implements Algorithm {
                                     .collect(Collectors.toSet())
                     );
                 }
-                // Check if we have already evaluated the next Superstate
-                if (!marked.contains(nextSuperstate)) {
-                    queue.add(nextSuperstate);
-                    marked.add(nextSuperstate);
+                // If its empty it means there is no transition with this entry on the current superstate
+                if (!nextSuperstate.isEmpty()) {
+                    // Check if we have already evaluated the next Superstate
+                    if (!marked.contains(nextSuperstate)) {
+                        queue.add(nextSuperstate);
+                        marked.add(nextSuperstate);
+                    }
+                    // Add the transition connecting current Superstate and next Superstate with certain entry
+                    result.addTransition(
+                            String.join(Automaton.SEPARATOR, superstate),
+                            String.join(Automaton.SEPARATOR, nextSuperstate),
+                            entry
+                    );
                 }
-                // Add the transition connecting current Superstate and next Superstate with certain entry
-                result.addTransition(
-                        String.join(Automaton.SEPARATOR, superstate),
-                        String.join(Automaton.SEPARATOR, nextSuperstate),
-                        entry
-                );
             }
         }
         // Finally return the new Automaton

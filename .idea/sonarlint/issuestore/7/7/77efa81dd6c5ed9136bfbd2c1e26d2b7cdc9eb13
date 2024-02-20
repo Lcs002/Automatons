@@ -1,3 +1,8 @@
 
-G	java:S106"+Replace this use of System.out by a logger.(×óö»8êô¬Ü1
-G	java:S106"+Replace this use of System.out by a logger.(ˆåıÉ8ìô¬Ü1
+G	java:S106"+Replace this use of System.out by a logger.(×óö»8øğã·Ü1
+G	java:S106"+Replace this use of System.out by a logger.(ìĞ¯Ğ8úğã·Ü1
+L	java:S106"+Replace this use of System.out by a logger.(…Ú›Ãúÿÿÿÿ8Âñã·Ü1
+T
+java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ8°™ı¸Ü1
+L
+java:S1128	"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8°™ı¸Ü1
