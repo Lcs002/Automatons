@@ -36,3 +36,5 @@ n
 >src/main/java/com/lvum/algorithms/MinimizationEquivalence.java,b\5\b53f1ff64956fa93e78a500e3913b69738019705
 i
 9src/main/java/com/lvum/algorithms/RemoveInaccessible.java,6\3\63ace2bb0184c99a4ef10dd8a09d1234d764238c
+P
+ src/test/java/NFAToDFATests.java,7\7\773fad1dd97b0f9de62b6c8bc9cce981de6e77bb

@@ -2,8 +2,7 @@ package com.lvum;
 
 import com.lvum.algorithms.Algorithm;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -116,6 +115,48 @@ public class Automaton {
             stringBuilder.append('\n');
         }
         return stringBuilder.toString();
+    }
+
+    public boolean isEquivalent(Automaton other) {
+        List<Set<String>> checked = new ArrayList<>();
+        Queue<Set<String>> queue = new LinkedList<>();
+
+        checked.add(new HashSet<>(Arrays.asList(this.getInitialState(), other.getInitialState())));
+        queue.add(new HashSet<>(Arrays.asList(this.getInitialState(), other.getInitialState())));
+
+        while (!queue.isEmpty()) {
+            List<String> superstate = queue.poll().stream().toList();
+            for (Character entry : language) {
+                String nextOriginal = this.getTransitions().stream()
+                        .filter(transition -> transition.from().equals(superstate.get(0)))
+                        .filter(transition -> transition.entry().equals(entry))
+                        .map(Automaton.Transition::to)
+                        .findFirst()
+                        .orElse(null);
+                String nextResult = other.getTransitions().stream()
+                        .filter(transition -> transition.from().equals(superstate.get(1)))
+                        .filter(transition -> transition.entry().equals(entry))
+                        .map(Automaton.Transition::to)
+                        .findFirst()
+                        .orElse(null);
+                // TODO Check on null
+                if (!checked.contains(new HashSet<>(Arrays.asList(nextOriginal, nextResult)))) {
+                    if (this.getFinalStates().contains(nextOriginal)
+                            && other.getFinalStates().contains(nextResult)
+                            || (!this.getFinalStates().contains(nextOriginal)
+                            && !other.getFinalStates().contains(nextResult)))
+                    {
+                        queue.add(new HashSet<>(Arrays.asList(nextOriginal, nextResult)));
+                        checked.add(new HashSet<>(Arrays.asList(superstate.get(0), superstate.get(1))));
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
     }
 
 
