@@ -38,17 +38,21 @@ public class RemoveInaccessible implements Algorithm {
                         .map(Automaton.Transition::to)
                         .findFirst()
                         .orElse(null);
-                // If the next State is not null, and we haven't marked it yet
-                if (nextState != null && !marked.contains(nextState)) {
-                    // Mark it and add it to the queue
-                    marked.add(state);
-                    queue.add(nextState);
-                }
-                // Add the transition to the result automaton
-                result.addTransition(state, nextState, symbol);
-                // If the next State is a Final State, add it as a Final State to the result automaton
-                if (automaton.getFinalStates().contains(nextState)) {
-                    result.addFinalState(nextState);
+                // If the next State is not null
+                if (nextState != null) {
+                    // And it hasn't been marked yet
+                    if (!marked.contains(nextState)) {
+                        // Mark it and add it to the queue
+                        marked.add(state);
+                        queue.add(nextState);
+                    }
+                    // Add the transition to the result automaton
+                    result.addTransition(state, nextState, symbol);
+                    // If the next State is a Final State
+                    if (automaton.getFinalStates().contains(nextState)) {
+                        // Add it as a Final State to the result automaton
+                        result.addFinalState(nextState);
+                    }
                 }
             }
         }
