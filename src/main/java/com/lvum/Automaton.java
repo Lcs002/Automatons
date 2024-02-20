@@ -47,6 +47,7 @@ public class Automaton {
     }
 
     public void addFinalState(String state) {
+        if (!states.contains(state)) addState(state);
         finalStates.add(state);
     }
 
@@ -65,6 +66,10 @@ public class Automaton {
     public void addState(String state) {
         states.add(state);
         updateLongestString(state);
+    }
+
+    public Set<String> getStates() {
+        return states;
     }
 
     public void addTransition(String from, String to, Character entry) {

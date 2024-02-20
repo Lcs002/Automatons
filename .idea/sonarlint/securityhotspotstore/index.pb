@@ -19,8 +19,6 @@ G.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,8\6\86
 
 Q.idea/sonarlint/securityhotspotstore/7/7/77efa81dd6c5ed9136bfbd2c1e26d2b7cdc9eb13,a\d\ad552d262bd4ca72b72f1e811c111a8d8ad281b2
 
-Q.idea/sonarlint/securityhotspotstore/1/e/1e21fc3cede78b47ad035dccd68affce23d894f9,7\e\7e0ebd749cd91233292477501a15c5eb1d49a075
-
 Q.idea/sonarlint/securityhotspotstore/e/0/e0c868faad23466ea6edd82b0494e99006df5da3,5\8\584f947d94db7979138d5039d1f047a72b8eac27
 L
 .idea/codeStyles/Project.xml,6\e\6ecd6000a7b6f4a2884412ff19f74193ed089648
@@ -28,3 +26,13 @@ T
 $.idea/codeStyles/codeStyleConfig.xml,d\d\dd7b3350c29c49497756c7f32c69a3bed18b1cba
 f
 6src/main/java/com/lvum/algorithms/NFAToDFAEpsilon.java,4\1\41d9a5a997f308e585e8d7a3f28c8ec5a96b93ed
+]
+-src/main/java/com/lvum/algorithms/Reduce.java,f\f\ff28f67a9f835430b0435576837099925921d42e
+h
+8src/main/java/com/lvum/algorithms/MinimizationTable.java,5\4\545a963e36b8a9939534b0a52e56a9d6a3bfa9b5
+f
+6src/main/java/com/lvum/algorithms/MinimizationSet.java,4\9\49525fba2db55cc90d06da91105a6ab791fa591f
+n
+>src/main/java/com/lvum/algorithms/MinimizationEquivalence.java,b\5\b53f1ff64956fa93e78a500e3913b69738019705
+i
+9src/main/java/com/lvum/algorithms/RemoveInaccessible.java,6\3\63ace2bb0184c99a4ef10dd8a09d1234d764238c
