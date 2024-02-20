@@ -5,18 +5,8 @@ P
  src/main/java/com/lvum/Main.java,7\7\77efa81dd6c5ed9136bfbd2c1e26d2b7cdc9eb13
 U
 %src/main/java/com/lvum/Automaton.java,e\0\e0c868faad23466ea6edd82b0494e99006df5da3
-Y
-)src/main/java/com/lvum/AutomatonData.java,1\e\1e21fc3cede78b47ad035dccd68affce23d894f9
-V
-&src/main/java/com/lvum/Algorithms.java,4\9\4996a4794358eb0c384f493c1778c92828319a29
-a
-1src/main/java/com/lvum/algorithms/Algorithms.java,f\8\f8bcae8570877b5743696e6ff81f4cc5d7cfb5e9
-i
-9src/main/java/com/lvum/algorithms/ConversionAFNToAFD.java,8\9\8963611e018779d57944f1d59d66223edbc311d0
 `
 0src/main/java/com/lvum/algorithms/Algorithm.java,9\d\9dc235d1eda87ee852543f61c1b1133220b0f3d8
-i
-9src/main/java/com/lvum/algorithms/ConversionNFAToDFA.java,4\1\41a9fd2d5d253427422991d575025ee89ca81903
 _
 /src/main/java/com/lvum/algorithms/NFAToDFA.java,5\e\5e03b1a28bb825b6462679ff9458388a732b11d1
 Å
@@ -36,3 +26,5 @@ L
 .idea/codeStyles/Project.xml,6\e\6ecd6000a7b6f4a2884412ff19f74193ed089648
 T
 $.idea/codeStyles/codeStyleConfig.xml,d\d\dd7b3350c29c49497756c7f32c69a3bed18b1cba
+f
+6src/main/java/com/lvum/algorithms/NFAToDFAEpsilon.java,4\1\41d9a5a997f308e585e8d7a3f28c8ec5a96b93ed

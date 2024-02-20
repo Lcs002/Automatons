@@ -31,8 +31,9 @@ public class NFAToDFA implements Algorithm {
                     // Get next states of the current state with a certain entry
                     // And add it to the next Superstate
                     nextSuperstate.addAll(
-                            automaton.getTransitionsFrom(state).stream()
-                                    .filter(x -> x.entry().equals(entry))
+                            automaton.getTransitions().stream()
+                                    .filter(transition -> transition.from().equals(state))
+                                    .filter(transition -> transition.entry().equals(entry))
                                     .map(Automaton.Transition::to)
                                     .collect(Collectors.toSet())
                     );

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Automaton {
     public static final Character EPSILON = 'ε';
@@ -64,24 +65,8 @@ public class Automaton {
         transitions.add(new Transition(from, to, EPSILON));
     }
 
-    public List<Transition> getTransitionsFrom(String from) {
-        List<Transition> result = new ArrayList<>();
-        for (Transition transition : transitions) {
-            if (transition.from.equals(from)) {
-                result.add(transition);
-            }
-        }
-        return  result;
-    }
-
-    public List<Transition> getTransitionsTo(String to) {
-        List<Transition> result = new ArrayList<>();
-        for (Transition transition : transitions) {
-            if (transition.to.equals(to)) {
-                result.add(transition);
-            }
-        }
-        return  result;
+    public Set<Transition> getTransitions() {
+        return transitions;
     }
 
     public Automaton run(Algorithm algorithm) {
@@ -99,7 +84,9 @@ public class Automaton {
         stringBuilder.append('\n');
         for (String state : states) {
             stringBuilder.append(String.format("%-"+longestString+"s |", state));
-            List<Transition> transitionsFrom = getTransitionsFrom(state);
+            Set<Transition> transitionsFrom = getTransitions().stream()
+                    .filter(transition -> transition.from.equals(state))
+                    .collect(Collectors.toSet());
             for (Character entry : language) {
                 for (Transition transition : transitionsFrom) {
                     if (!transition.entry.equals(entry)) continue;
