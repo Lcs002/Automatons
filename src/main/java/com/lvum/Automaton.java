@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Set;
 
 public class Automaton {
+    public static final Character EPSILON = 'ε';
+    public static final String SEPARATOR = "-";
     private Set<Character> language;
     private Set<String> states;
     private Set<Transition> transitions;
@@ -56,6 +58,12 @@ public class Automaton {
         transitions.add(new Transition(from, to, entry));
     }
 
+    public void addEpsilonTransition(String from, String to) {
+        if (!states.contains(from)) addState(from);
+        if (!states.contains(to)) addState(to);
+        transitions.add(new Transition(from, to, EPSILON));
+    }
+
     public List<Transition> getTransitionsFrom(String from) {
         List<Transition> result = new ArrayList<>();
         for (Transition transition : transitions) {
@@ -87,6 +95,7 @@ public class Automaton {
         for (Character entry : language) {
             stringBuilder.append(String.format(" %-"+longestString+"s |", entry));
         }
+        stringBuilder.append(String.format(" %-"+longestString+"s |", Automaton.EPSILON));
         stringBuilder.append('\n');
         for (String state : states) {
             stringBuilder.append(String.format("%-"+longestString+"s |", state));
@@ -98,6 +107,11 @@ public class Automaton {
                 }
                 stringBuilder.append("|");
             }
+            for (Transition transition : transitionsFrom) {
+                if (!transition.entry.equals(EPSILON)) continue;
+                stringBuilder.append(String.format(" %-"+longestString+"s ", transition.to));
+            }
+            stringBuilder.append("|");
             stringBuilder.append('\n');
         }
         return stringBuilder.toString();

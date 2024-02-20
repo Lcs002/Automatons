@@ -44,12 +44,13 @@ public class NFAToDFA implements Algorithm {
                 }
                 // Add the transition connecting current Superstate and next Superstate with certain entry
                 result.addTransition(
-                        String.join("-", superstate),
-                        String.join("-", nextSuperstate),
+                        String.join(Automaton.SEPARATOR, superstate),
+                        String.join(Automaton.SEPARATOR, nextSuperstate),
                         entry
                 );
             }
         }
+        // Finally return the new Automaton
         return result;
     }
 }
