@@ -5,6 +5,11 @@ import com.lvum.Automaton;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Automaton Algorithm
+ * <p>
+ * Converts an NFA to its equivalent DFA, taking into account Epsilon transitions.
+ */
 public class NFAToDFAEpsilon implements Algorithm {
 
     @Override
@@ -18,28 +23,33 @@ public class NFAToDFAEpsilon implements Algorithm {
         // Initial State of the automaton
         String initialState = automaton.getInitialState();
 
-        // Add and Mark the first State
+        // Get the Epsilon Closure of the initial State
         Set<String> initialStates = getEpsilonClosure(initialState, automaton);
         initialStates.add(initialState);
         queue.add(initialStates);
+        // Mark the initial State
         marked.add(new HashSet<>(Collections.singletonList(initialState)));
 
         // While there is still some Set of States to check...
         while (!queue.isEmpty()) {
             Set<String> superstate = queue.poll();
             // Get all Transitions of the Superstate for each entry
-            for (Character entry : automaton.getLanguage().stream().filter(s -> !s.equals(Automaton.EPSILON)).collect(Collectors.toSet())) {
+            for (Character entry : automaton.getLanguage()) {
+                // Epsilon is not an entry, so we ignore it
+                if (entry.equals(Automaton.EPSILON)) continue;
                 Set<String> nextSuperstate = new HashSet<>();
                 // Fill the next Superstate with the union of sets of next states of each current state in superstate
                 for (String state : superstate) {
                     // Get next states of the current state with a certain entry
-                    // And add it to the next Superstate
                     automaton.getTransitions().stream()
                             .filter(transition -> transition.from().equals(state))
                             .filter(transition -> transition.entry().equals(entry))
                             .map(Automaton.Transition::to)
                             .forEach(nextState -> {
+                                // Add it to the next Superstate
                                 nextSuperstate.add(nextState);
+                                // Get the Epsilon Closure of the next states
+                                // Add them to the next Superstate
                                 nextSuperstate.addAll(getEpsilonClosure(nextState, automaton));
                             });
                 }

@@ -1,15 +1,9 @@
 
 c
-java:S3457I"AFormat specifiers should be used instead of string concatenation.(œ¬Î”øÿÿÿÿ8åáğ·Ü1
+java:S3457]"AFormat specifiers should be used instead of string concatenation.(œ¬Î”øÿÿÿÿ8ŠÍŸ»Ü1
 ^
-java:S3457K"AFormat specifiers should be used instead of string concatenation.(æ‹øş8æáğ·Ü1
+java:S3457_"AFormat specifiers should be used instead of string concatenation.(æ‹øş8‘ÍŸ»Ü1
 ]
-java:S3457O"AFormat specifiers should be used instead of string concatenation.(­ïÑ38èáğ·Ü1
+java:S3457c"AFormat specifiers should be used instead of string concatenation.(­ïÑ38“ÍŸ»Ü1
 ^
-java:S3457V"AFormat specifiers should be used instead of string concatenation.(éáıÉ8ïáğ·Ü1
-9
-java:S1116h"Remove this empty statement.(Õò¢8óáğ·Ü1
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8óáğ·Ü1
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ôáğ·Ü1
+java:S3457j"AFormat specifiers should be used instead of string concatenation.(éáıÉ8˜ÍŸ»Ü1

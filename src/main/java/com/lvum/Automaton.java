@@ -2,23 +2,38 @@ package com.lvum;
 
 import com.lvum.algorithms.Algorithm;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * Representation of an automaton with methods to edit itself.
+ */
 public class Automaton {
+    /**
+     * Character that represents the Epsilon symbol.
+     * <p>
+     * Used for Epsilon transitions.
+     */
     public static final Character EPSILON = 'ε';
+    /**
+     * Separator between states.
+     * <p>
+     * Example with '-': S1-S2
+     */
     public static final String SEPARATOR = "-";
-    private Set<Character> language;
-    private Set<String> states;
-    private Set<Transition> transitions;
-    private Set<String> finalStates;
+    private final Set<Character> language;
+    private final Set<String> states;
+    private final Set<Transition> transitions;
+    private final Set<String> finalStates;
     private String initialState;
     private int longestString;
 
 
+    /**
+     * Creates a new automaton.
+     * @param language Set of symbols the automaton can read.
+     */
     public Automaton(Set<Character> language) {
         this.language = language;
         this.states = new HashSet<>();
@@ -63,6 +78,11 @@ public class Automaton {
         return transitions;
     }
 
+    /**
+     * Executes an algorithm on this automaton.
+     * @param algorithm The algorithm to be executed.
+     * @return A new automaton with the changes made (if any).
+     */
     public Automaton run(Algorithm algorithm) {
         return algorithm.run(this);
     }
@@ -101,5 +121,11 @@ public class Automaton {
     }
 
 
-    public record Transition(String from, String to, Character entry) {};
+    /**
+     * Representation of a transition between two states given an entry.
+     * @param from Origin state.
+     * @param to Destination state.
+     * @param entry Symbol that triggers the transition.
+     */
+    public record Transition(String from, String to, Character entry) {}
 }
