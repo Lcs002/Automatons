@@ -1,7 +1,6 @@
 package com.lvum;
 
-import com.lvum.algorithms.NFAToDFAEpsilon;
-import com.lvum.algorithms.RemoveInaccessible;
+import com.lvum.algorithms.RemoveUnreachable;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -21,6 +20,6 @@ public class Main {
         automaton.setInitialState("S1");
 
         System.out.println(automaton);
-        System.out.println(automaton.run(new RemoveInaccessible()));
+        System.out.println(automaton.run(new RemoveUnreachable()));
     }
 }
