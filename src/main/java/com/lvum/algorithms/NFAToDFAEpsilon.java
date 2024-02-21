@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  * <p>
  * Converts an NFA to its equivalent DFA, taking into account Epsilon transitions.
  */
-public class NFAToDFAEpsilon implements Algorithm {
+public class NFAToDFAEpsilon implements Algorithm<Automaton> {
 
     @Override
     public Automaton run(Automaton automaton) {

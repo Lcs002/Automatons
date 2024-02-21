@@ -1,11 +1,11 @@
 
 c
-java:S3457a"AFormat specifiers should be used instead of string concatenation.(œ¬Î”øÿÿÿÿ8ÏºÒÆÜ1
+java:S3457c"AFormat specifiers should be used instead of string concatenation.(œ¬Î”øÿÿÿÿ8‘ãƒêÜ1
 ^
-java:S3457c"AFormat specifiers should be used instead of string concatenation.(æ‹øş8ĞºÒÆÜ1
+java:S3457e"AFormat specifiers should be used instead of string concatenation.(æ‹øş8’ãƒêÜ1
 ]
-java:S3457g"AFormat specifiers should be used instead of string concatenation.(­ïÑ38ÑºÒÆÜ1
+java:S3457i"AFormat specifiers should be used instead of string concatenation.(­ïÑ38“ãƒêÜ1
 ^
-java:S3457n"AFormat specifiers should be used instead of string concatenation.(éáıÉ8ÕºÒÆÜ1
-P
-java:S1135"2Complete the task associated to this TODO comment.(§«•Ä8áºÒÆÜ1
+java:S3457p"AFormat specifiers should be used instead of string concatenation.(éáıÉ8—ãƒêÜ1
+R
+java:S1128"0Remove this unused import 'org.javatuples.Pair'.(ÎÈ°…ÿÿÿÿÿ8š¬ºìÜ1

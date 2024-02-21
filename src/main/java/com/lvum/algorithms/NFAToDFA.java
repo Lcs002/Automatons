@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  * <p>
  * Converts an NFA to its equivalent DFA. Doesn't take into account Epsilon transitions.
  */
-public class NFAToDFA implements Algorithm {
+public class NFAToDFA implements Algorithm<Automaton> {
 
     @Override
     public Automaton run(Automaton automaton) {
@@ -24,6 +24,9 @@ public class NFAToDFA implements Algorithm {
         // Add and Mark the first State
         queue.add(new HashSet<>(Collections.singletonList(automaton.getInitialState())));
         marked.add(new HashSet<>(Collections.singletonList(automaton.getInitialState())));
+
+        // Set the initial State of the new Automaton
+        result.setInitialState(automaton.getInitialState());
 
         // While there is still some Set of States to check...
         while (!queue.isEmpty()) {
@@ -49,6 +52,9 @@ public class NFAToDFA implements Algorithm {
                     if (!marked.contains(nextSuperstate)) {
                         queue.add(nextSuperstate);
                         marked.add(nextSuperstate);
+                        boolean isFinal = nextSuperstate.stream()
+                                .anyMatch(state -> automaton.getFinalStates().contains(state));
+                        if (isFinal) result.addFinalState(String.join(Automaton.SEPARATOR, nextSuperstate));
                     }
                     // Add the transition connecting current Superstate and next Superstate with certain entry
                     result.addTransition(

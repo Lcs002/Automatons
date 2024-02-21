@@ -9,7 +9,7 @@ import java.util.*;
  * <p>
  * Reduces a DFA so only accessible states are present.
  */
-public class RemoveInaccessible implements Algorithm {
+public class RemoveInaccessible implements Algorithm<Automaton> {
 
     @Override
     public Automaton run(Automaton automaton) {
