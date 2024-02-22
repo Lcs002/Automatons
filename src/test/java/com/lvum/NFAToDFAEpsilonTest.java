@@ -12,7 +12,7 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class NFAToDFAEpsilonTest {
+public class NFAToDFAEpsilonTest {
     @Test
     void sameLanguage() {
         // Test 1

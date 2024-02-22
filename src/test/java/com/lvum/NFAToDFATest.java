@@ -9,7 +9,7 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class NFAToDFATest {
+public class NFAToDFATest {
     @Nested
     class SameLanguage {
         @Test
