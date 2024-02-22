@@ -1,3 +1,4 @@
+[![Java CI with Maven and JUnit](https://github.com/Lcs002/Automatons/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/Lcs002/Automatons/actions/workflows/maven.yml)
 # Automatons
 Automaton's Algorithms implemented in Java.
 
