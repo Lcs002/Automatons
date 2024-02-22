@@ -24,7 +24,5 @@ jobs:
         distribution: 'corretto'
         architecture: x64
         cache: maven
-    - name: Cache
-      uses: actions/cache@v2
     - name: Test
-      run: mvn -B test --file pom.xml
+      run: mvn test
