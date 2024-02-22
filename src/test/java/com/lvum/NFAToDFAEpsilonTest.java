@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class NFAToDFAEpsilonTest {
     @Test
-    void sameLanguage() {
+    public void sameLanguage() {
         // Test 1
         // The language of the automaton must not change after the conversion
         Set<Character> language = new HashSet<>(Arrays.asList('0', '1'));
@@ -34,7 +34,7 @@ public class NFAToDFAEpsilonTest {
     }
 
     @Test
-    void deterministic() {
+    public void deterministic() {
         // Test 2
         // The resulting automaton must not have any state with the same entry more than once
         Set<Character> language = new HashSet<>(Arrays.asList('0', '1'));
@@ -59,7 +59,7 @@ public class NFAToDFAEpsilonTest {
     }
 
     @Test
-    void equivalent() {
+    public void equivalent() {
         // Test 3
         // The resulting automaton must be equivalent to the original one
         Set<Character> language = new HashSet<>(Arrays.asList('0', '1'));

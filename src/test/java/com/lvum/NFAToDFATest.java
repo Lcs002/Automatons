@@ -11,9 +11,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class NFAToDFATest {
     @Nested
-    class SameLanguage {
+    public class SameLanguage {
         @Test
-        void test1() {
+        public void test1() {
             // The language of the automaton must not change after the conversion
             Set<Character> language = new HashSet<>(Arrays.asList('0', '1'));
             Automaton automaton = new Automaton(language);
@@ -33,9 +33,9 @@ public class NFAToDFATest {
     }
 
     @Nested
-    class Deterministic {
+    public class Deterministic {
         @Test
-        void test1() {
+        public void test1() {
             // The resulting automaton must not have any state with the same entry more than once
             Set<Character> language = new HashSet<>(Arrays.asList('0', '1'));
             Automaton automaton = new Automaton(language);
@@ -60,9 +60,9 @@ public class NFAToDFATest {
     }
 
     @Nested
-    class Correct {
+    public class Correct {
         @Test
-        void test1() {
+        public void test1() {
             // Given the NFA automaton:
             // Language: {a, b}
             // | State | a      | b  |
@@ -101,9 +101,9 @@ public class NFAToDFATest {
     }
 
     @Nested
-    class Equivalent {
+    public class Equivalent {
         @Test
-        void test1() {
+        public void test1() {
             // The resulting automaton must be equivalent to the original one
             Automaton original = new Automaton(new HashSet<>(Arrays.asList('0', '1')));
 
