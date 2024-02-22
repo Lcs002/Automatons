@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class NFAToDFATests {
     @Nested
@@ -118,7 +117,7 @@ class NFAToDFATests {
             Automaton result = original.run(new NFAToDFA());
 
             // Test
-            assertTrue(false);
+            fail();
         }
     }
 }
