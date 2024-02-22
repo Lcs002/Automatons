@@ -1,6 +1,7 @@
-package com.lvum.algorithms;
+package com.lvum.algorithms.utility;
 
 import com.lvum.Automaton;
+import com.lvum.algorithms.Algorithm;
 
 import java.util.*;
 
@@ -9,7 +10,7 @@ import java.util.*;
  * <p>
  * Reduces a DFA so only accessible states are present.
  */
-public class RemoveUnreachable implements Algorithm {
+public class RemoveUnreachable implements Algorithm<Automaton> {
 
     @Override
     public Automaton run(Automaton automaton) {
