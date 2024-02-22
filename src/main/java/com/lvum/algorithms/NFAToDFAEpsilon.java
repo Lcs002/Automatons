@@ -1,6 +1,7 @@
 package com.lvum.algorithms;
 
 import com.lvum.Automaton;
+import com.lvum.algorithms.utility.GetEpsilonClosure;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -24,7 +25,7 @@ public class NFAToDFAEpsilon implements Algorithm<Automaton> {
         String initialState = automaton.getInitialState();
 
         // Get the Epsilon Closure of the initial State
-        Set<String> initialStates = getEpsilonClosure(initialState, automaton);
+        Set<String> initialStates = automaton.run(new GetEpsilonClosure(initialState));
         initialStates.add(initialState);
         queue.add(initialStates);
         // Mark the initial State
@@ -50,7 +51,8 @@ public class NFAToDFAEpsilon implements Algorithm<Automaton> {
                                 nextSuperstate.add(nextState);
                                 // Get the Epsilon Closure of the next states
                                 // Add them to the next Superstate
-                                nextSuperstate.addAll(getEpsilonClosure(nextState, automaton));
+                                Set<String> epsilonClosure = automaton.run(new GetEpsilonClosure(nextState));
+                                nextSuperstate.addAll(epsilonClosure);
                             });
                 }
                 // If its empty it means there is no transition with this entry on the current superstate
@@ -70,19 +72,5 @@ public class NFAToDFAEpsilon implements Algorithm<Automaton> {
             }
         }
         return result;
-    }
-
-    private Set<String> getEpsilonClosure(String state, Automaton automaton) {
-        Set<String> closure = new HashSet<>();
-        Set<String> epsilonNextStates = automaton.getTransitions().stream()
-                .filter(transition -> transition.from().equals(state))
-                .filter(transition -> transition.entry().equals(Automaton.EPSILON))
-                .map(Automaton.Transition::to)
-                .collect(Collectors.toSet());
-        for (String nextState : epsilonNextStates) {
-            closure.add(nextState);
-            closure.addAll(getEpsilonClosure(nextState, automaton));
-        }
-        return closure;
     }
 }
