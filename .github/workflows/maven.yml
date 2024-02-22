@@ -25,4 +25,4 @@ jobs:
         architecture: x64
         cache: maven
     - name: Test
-      run: mvn -B test --file pom.xml
+      run: mvn test
