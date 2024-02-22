@@ -74,7 +74,6 @@ public class NFAToDFAEpsilonTest {
 
         Automaton result = original.run(new NFAToDFA());
 
-        //assertTrue(original.run(new Equivalency(result)));
-        fail();
+        assertTrue(original.run(new Equivalency(result)));
     }
 }
