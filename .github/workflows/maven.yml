@@ -26,10 +26,8 @@ jobs:
         distribution: 'corretto'
         architecture: x64
         cache: maven
-    - name: Build
-      run: mvn --batch-mode -DskipTests package
     - name: Test
-      run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
+      run: mvn -B test --file pom.xml
     - name: Report
       uses: dorny/test-reporter@v1
       if: always()
