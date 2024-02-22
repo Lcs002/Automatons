@@ -18,7 +18,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-tests:
+  Test-Results:
     permissions:
       id-token: write
       contents: read
