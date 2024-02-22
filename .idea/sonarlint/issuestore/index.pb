@@ -42,3 +42,11 @@ h
 8src/main/java/com/lvum/algorithms/RemoveUnreachable.java,d\d\ddb269ee94a471660d919187c758292845af6665
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+`
+0src/test/java/com/lvum/NFAToDFAEpsilonTests.java,4\7\47af72255a94ac8340639fc6cbc6ee2733ecdf22
+Y
+)src/test/java/com/lvum/NFAToDFATests.java,8\3\8385a199e1f3bdec7a787697058909f21829f8b9
+_
+/src/test/java/com/lvum/NFAToDFAEpsilonTest.java,0\0\001d1eaae97fd132d6e8b7a3fb5e2b1520d116c3
+X
+(src/test/java/com/lvum/NFAToDFATest.java,0\c\0c11c4392b278e05963ec45fa75a574e89efa766

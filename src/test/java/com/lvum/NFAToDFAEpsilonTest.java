@@ -1,6 +1,5 @@
 package com.lvum;
 
-import com.lvum.Automaton;
 import com.lvum.algorithms.Equivalency;
 import com.lvum.algorithms.NFAToDFA;
 import com.lvum.algorithms.NFAToDFAEpsilon;
@@ -13,7 +12,7 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class NFAToDFAEpsilonTests {
+class NFAToDFAEpsilonTest {
     @Test
     void sameLanguage() {
         // Test 1

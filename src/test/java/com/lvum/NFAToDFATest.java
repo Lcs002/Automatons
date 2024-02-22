@@ -1,6 +1,5 @@
 package com.lvum;
 
-import com.lvum.Automaton;
 import com.lvum.algorithms.Equivalency;
 import com.lvum.algorithms.NFAToDFA;
 import org.junit.jupiter.api.Nested;
@@ -10,7 +9,7 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class NFAToDFATests {
+class NFAToDFATest {
     @Nested
     class SameLanguage {
         @Test
