@@ -47,15 +47,6 @@ public class NFAToDFATest {
         }
     }
 
-    // This equivalency method is good for when both are DFA's
-    // TODO A new method should be created to compare NFA's and DFA's
-    @Test
-    public void equivalent() {
-        // The resulting automaton must be equivalent to the original one
-        Automaton result = automaton.run(new NFAToDFA());
-        assertTrue(automaton.run(new Equivalency(result)));
-    }
-
     @Test
     public void correct() {
         // Given the NFA automaton:

@@ -1,7 +1,6 @@
 package com.lvum;
 
 import com.lvum.algorithms.Algorithm;
-import org.javatuples.Pair;
 
 import java.util.*;
 import java.util.stream.Collectors;
