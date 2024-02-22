@@ -117,6 +117,7 @@ class NFAToDFATests {
 
             Automaton result = original.run(new NFAToDFA());
 
+            // Test
             assertTrue(false);
         }
     }

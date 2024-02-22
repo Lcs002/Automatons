@@ -30,19 +30,15 @@ h
 8src/main/java/com/lvum/algorithms/MinimizationTable.java,5\4\545a963e36b8a9939534b0a52e56a9d6a3bfa9b5
 n
 >src/main/java/com/lvum/algorithms/MinimizationEquivalence.java,b\5\b53f1ff64956fa93e78a500e3913b69738019705
-i
-9src/main/java/com/lvum/algorithms/RemoveInaccessible.java,6\3\63ace2bb0184c99a4ef10dd8a09d1234d764238c
 P
  src/test/java/NFAToDFATests.java,7\7\773fad1dd97b0f9de62b6c8bc9cce981de6e77bb
 >
 Automatons.iml,c\d\cd810cc8569ce4679d384545433f9112450b0ae2
 W
 'src/test/java/NFAToDFAEpsilonTests.java,7\c\7c5871d1d345779a01eedc390568d06b5c4107b1
-Z
-*src/main/java/com/lvum/algorithms/Alg.java,1\9\19a6d85aab0daebae770c8ee15f89859080390bc
-_
-/src/main/java/com/lvum/algorithms/AlgFloat.java,2\7\27224bd66d46264373df3e7ffa6d28e7d714c213
 b
 2src/main/java/com/lvum/algorithms/Equivalency.java,d\7\d706f1ef6775eeb79ecd859f694974629b0872eb
 h
 8src/main/java/com/lvum/algorithms/RemoveUnreachable.java,d\d\ddb269ee94a471660d919187c758292845af6665
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
