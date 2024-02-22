@@ -1,3 +1,5 @@
+package com.lvum;
+
 import com.lvum.Automaton;
 import com.lvum.algorithms.Equivalency;
 import com.lvum.algorithms.NFAToDFA;
