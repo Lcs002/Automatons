@@ -9,12 +9,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class NFAToDFAEpsilonTest {
     @Test
-    public void sameLanguage() {
+    void sameLanguage() {
         // Test 1
         // The language of the automaton must not change after the conversion
         Set<Character> language = new HashSet<>(Arrays.asList('0', '1'));
@@ -34,7 +33,7 @@ public class NFAToDFAEpsilonTest {
     }
 
     @Test
-    public void deterministic() {
+    void deterministic() {
         // Test 2
         // The resulting automaton must not have any state with the same entry more than once
         Set<Character> language = new HashSet<>(Arrays.asList('0', '1'));
@@ -59,7 +58,7 @@ public class NFAToDFAEpsilonTest {
     }
 
     @Test
-    public void equivalent() {
+    void equivalent() {
         // Test 3
         // The resulting automaton must be equivalent to the original one
         Set<Character> language = new HashSet<>(Arrays.asList('0', '1'));
@@ -75,6 +74,7 @@ public class NFAToDFAEpsilonTest {
 
         Automaton result = original.run(new NFAToDFA());
 
-        assertTrue(original.run(new Equivalency(result)));
+        //assertTrue(original.run(new Equivalency(result)));
+        fail();
     }
 }
