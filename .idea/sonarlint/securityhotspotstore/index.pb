@@ -66,3 +66,11 @@ e
 5src/main/java/com/lvum/utility/RemoveUnreachable.java,6\4\640a11e31520093cc6340ac4f69f669e6b190245
 p
 @src/main/java/com/lvum/algorithms/utility/RemoveUnreachable.java,c\b\cbae8f7d00430fad2fc55a3f712f0d32f27c0139
+p
+@src/main/java/com/lvum/algorithms/utility/GetEpsilonClosure.java,3\6\36f4798a4a0c52a10a97b622add1fa615b072008
+U
+%src/test/java/com/lvum/UnionTest.java,b\6\b6dee2d2cd24e9405f8996722753350fb902188a
+S
+#resources/university/Class Notes.md,6\7\67885488e2a575af9e6ed6ec180c774f82ba8162
+_
+/resources/university/class-notes/Class Notes.md,9\9\991e48b798a66ee4fc2f03254aa55a1986d8e24d

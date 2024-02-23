@@ -38,7 +38,7 @@ public class Equivalency implements Algorithm<Boolean> {
          */
 
         // If the languages are different, the automata are not equivalent
-        if (!automaton.getLanguage().equals(other.getLanguage())) return false;
+        if (!automaton.getAlphabet().equals(other.getAlphabet())) return false;
 
         // Convert both to DFA
         // TODO Add a method to check if an Automaton is NFA or DFA
@@ -61,7 +61,7 @@ public class Equivalency implements Algorithm<Boolean> {
             // Get the current pair of states
             Pair<String, String> superstate = queue.poll();
             // For each symbol in the language
-            for (Character symbol : automatonDFA.getLanguage()) {
+            for (Character symbol : automatonDFA.getAlphabet()) {
                 // Get the next state of the current original automaton state given a certain symbol
                 String nextOriginal = automatonDFA.getTransitions().stream()
                         .filter(transition -> transition.from().equals(superstate.getValue0()))

@@ -23,6 +23,7 @@ public class GetEpsilonClosure implements Algorithm<Set<String>> {
 
     @Override
     public Set<String> run(Automaton automaton) {
+        // TODO Change this to a iterative approach
         Set<String> closure = new HashSet<>();
         Set<String> epsilonNextStates = automaton.getTransitions().stream()
                 .filter(transition -> transition.from().equals(state))

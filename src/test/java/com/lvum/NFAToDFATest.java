@@ -3,10 +3,8 @@ package com.lvum;
 import com.lvum.algorithms.Equivalency;
 import com.lvum.algorithms.NFAToDFA;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import java.lang.annotation.Inherited;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,7 +29,7 @@ public class NFAToDFATest {
     public void sameLanguage() {
         // The language of the automaton must not change after the conversion
         Automaton result = automaton.run(new NFAToDFA());
-        assertEquals(result.getLanguage(), language);
+        assertEquals(result.getAlphabet(), language);
     }
 
     @Test

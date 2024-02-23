@@ -3,9 +3,7 @@ package com.lvum;
 import com.lvum.algorithms.Equivalency;
 import com.lvum.algorithms.NFAToDFA;
 import com.lvum.algorithms.NFAToDFAEpsilon;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -36,7 +34,7 @@ public class NFAToDFAEpsilonTest {
         // Test 1
         // The language of the automaton must not change after the conversion
         Automaton result = automaton.run(new NFAToDFAEpsilon());
-        assertEquals(result.getLanguage(), language);
+        assertEquals(result.getAlphabet(), language);
     }
 
     @Test

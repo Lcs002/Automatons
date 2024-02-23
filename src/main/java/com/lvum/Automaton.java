@@ -21,7 +21,7 @@ public class Automaton {
      * Example with '-': S1-S2
      */
     public static final String SEPARATOR = "-";
-    private final Set<Character> language;
+    private final Set<Character> alphabet;
     private final Set<String> states;
     private final Set<Transition> transitions;
     private final Set<String> finalStates;
@@ -31,18 +31,18 @@ public class Automaton {
 
     /**
      * Creates a new automaton.
-     * @param language Set of symbols the automaton can read.
+     * @param alphabet Set of symbols the automaton can read.
      */
-    public Automaton(Set<Character> language) {
-        this.language = language;
+    public Automaton(Set<Character> alphabet) {
+        this.alphabet = alphabet;
         this.states = new HashSet<>();
         this.finalStates = new HashSet<>();
         this.transitions = new HashSet<>();
     }
 
 
-    public Set<Character> getLanguage() {
-        return language;
+    public Set<Character> getAlphabet() {
+        return alphabet;
     }
 
     public void addFinalState(String state) {
@@ -74,7 +74,7 @@ public class Automaton {
     public void addTransition(String from, String to, Character entry) {
         if (!states.contains(from)) addState(from);
         if (!states.contains(to)) addState(to);
-        if (!language.contains(entry)) return;
+        if (!alphabet.contains(entry)) return;
         transitions.add(new Transition(from, to, entry));
     }
 
@@ -96,16 +96,18 @@ public class Automaton {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(String.format("%-"+longestString+"s |", " "));
-        for (Character entry : language) {
+        for (Character entry : alphabet) {
             stringBuilder.append(String.format(" %-"+longestString+"s |", entry));
         }
         stringBuilder.append('\n');
         for (String state : states) {
+            if (getInitialState().equals(state)) stringBuilder.append("->");
+            if (getFinalStates().contains(state)) stringBuilder.append("*");
             stringBuilder.append(String.format("%-"+longestString+"s |", state));
             Set<Transition> transitionsFrom = getTransitions().stream()
                     .filter(transition -> transition.from.equals(state))
                     .collect(Collectors.toSet());
-            for (Character entry : language) {
+            for (Character entry : alphabet) {
                 for (Transition transition : transitionsFrom) {
                     if (!transition.entry.equals(entry)) continue;
                     stringBuilder.append(String.format(" %-"+longestString+"s ", transition.to)

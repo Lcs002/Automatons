@@ -13,7 +13,7 @@ public class MinimizationTable implements Algorithm<Automaton> {
     public Automaton run(Automaton automaton) {
         if (automaton.getStates().size() < 2) return automaton;
 
-        Automaton result = new Automaton(automaton.getLanguage());
+        Automaton result = new Automaton(automaton.getAlphabet());
 
         // List of Set of States we have already checked
         Map<Pair<String, String>, Boolean> table = createTable(automaton);
@@ -30,7 +30,7 @@ public class MinimizationTable implements Algorithm<Automaton> {
             // If there is any unmarked pair (Qa,Qb)
             if (Boolean.FALSE.equals(entry.getValue())) {
                 // Such a that δ(Qa,x) and δ(Qb,x) is marked
-                for (Character symbol : automaton.getLanguage()) {
+                for (Character symbol : automaton.getAlphabet()) {
                     Pair<String, String> pair = new Pair<>(
                             // δ(Qa,x)
                             automaton.getTransitions().stream()
@@ -66,7 +66,7 @@ public class MinimizationTable implements Algorithm<Automaton> {
                 result.addTransition(
                         pair.getValue0() + Automaton.SEPARATOR + pair.getValue1(),
                         pair.getValue0() + Automaton.SEPARATOR + pair.getValue1(),
-                        automaton.getLanguage().iterator().next()
+                        automaton.getAlphabet().iterator().next()
                 );
             }
         }
