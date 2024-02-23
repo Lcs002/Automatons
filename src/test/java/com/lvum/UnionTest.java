@@ -73,8 +73,8 @@ public class UnionTest {
         expected.addFinalState("C'");
         expected.addFinalState("C''");
         // The union of the two automata is an NFA
-        Automaton result = automaton1.run(new Union(automaton2));
+        Automaton result = automaton1.run(new Union(automaton2)).run(new NFAToDFAEpsilon());
         System.out.println(result);
-        assertTrue(expected.run(new Equivalency(result)));
+        assertTrue(expected.run(new NFAToDFAEpsilon()).run(new Equivalency(result)));
     }
 }

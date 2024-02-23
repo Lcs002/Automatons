@@ -18,15 +18,18 @@ public class NFAToDFAEpsilonTest {
 
     @BeforeEach
     void beforeEach() {
-        language = new HashSet<>(Arrays.asList('0', '1'));
+        language = new HashSet<>(Arrays.asList('0', '1', Automaton.EPSILON));
         automaton = new Automaton(language);
-        automaton.addTransition("S1", "S2", '0');
-        automaton.addTransition("S1", "S1", '0');
-        automaton.addTransition("S1", "S1", '1');
-        automaton.addTransition("S2", "S1", '0');
-        automaton.addTransition("S2", "S2", '1');
-        automaton.setInitialState("S1");
-        automaton.addFinalState("S1");
+        automaton.addTransition("A", "B", '0');
+        automaton.addTransition("A", "C", '0');
+        automaton.addTransition("A", "A", '1');
+        automaton.addTransition("A", "B", Automaton.EPSILON);
+        automaton.addTransition("B", "B", '1');
+        automaton.addTransition("B", "C", Automaton.EPSILON);
+        automaton.addTransition("C", "C", '0');
+        automaton.addTransition("C", "C", '1');
+        automaton.setInitialState("A");
+        automaton.addFinalState("C");
     }
 
     @Test
@@ -55,8 +58,15 @@ public class NFAToDFAEpsilonTest {
     void equivalent() {
         // Test 3
         // The resulting automaton must be equivalent to the original one
-        Automaton result = automaton.run(new NFAToDFA());
+        Automaton result = automaton.run(new NFAToDFAEpsilon());
+        System.out.println(result);
         assertTrue(automaton.run(new Equivalency(result)));
     }
 
+    @Test
+    void correct() {
+        Automaton expected = new Automaton(language);
+        expected.addTransition("A-B-C", "B-C", '0');
+        expected.addTransition("A-B-C", "A-B-C", '1');
+    }
 }
