@@ -11,7 +11,7 @@ import java.util.Set;
 //
 
 /**
- * Algorithm to check if two automatons are equivalent, in other words, if they accept the same language.
+ * Algorithm to check if two DFAs are equivalent, in other words, if they accept the same language.
  * <p>
  * The definition is in resources/university/Leccion 4.pdf, page 53.
  */
@@ -40,11 +40,6 @@ public class Equivalency implements Algorithm<Boolean> {
         // If the languages are different, the automata are not equivalent
         if (!automaton.getAlphabet().equals(other.getAlphabet())) return false;
 
-        // Convert both to DFA
-        // TODO Add a method to check if an Automaton is NFA or DFA
-        Automaton automatonDFA = automaton.run(new NFAToDFA());
-        Automaton otherDFA = this.other.run(new NFAToDFA());
-
         // Set of pairs of states that have already been checked
         Set<Pair<String, String>> checked = new HashSet<>();
         // Queue of pairs of states to be checked
@@ -53,24 +48,24 @@ public class Equivalency implements Algorithm<Boolean> {
         boolean equivalent = true;
 
         // Add the initial states to the queue and the set of checked pairs
-        checked.add(new Pair<>(automatonDFA.getInitialState(), otherDFA.getInitialState()));
-        queue.add(new Pair<>(automatonDFA.getInitialState(), otherDFA.getInitialState()));
+        checked.add(new Pair<>(automaton.getInitialState(), other.getInitialState()));
+        queue.add(new Pair<>(automaton.getInitialState(), other.getInitialState()));
 
         // While there are still pairs of states to check...
         while (!queue.isEmpty() && equivalent) {
             // Get the current pair of states
             Pair<String, String> superstate = queue.poll();
             // For each symbol in the language
-            for (Character symbol : automatonDFA.getAlphabet()) {
+            for (Character symbol : automaton.getAlphabet()) {
                 // Get the next state of the current original automaton state given a certain symbol
-                String nextOriginal = automatonDFA.getTransitions().stream()
+                String nextOriginal = automaton.getTransitions().stream()
                         .filter(transition -> transition.from().equals(superstate.getValue0()))
                         .filter(transition -> transition.entry().equals(symbol))
                         .map(Automaton.Transition::to)
                         .findFirst()
                         .orElse(null);
                 // Get the next state of the current other automaton state given a certain symbol
-                String nextOther = otherDFA.getTransitions().stream()
+                String nextOther = other.getTransitions().stream()
                         .filter(transition -> transition.from().equals(superstate.getValue1()))
                         .filter(transition -> transition.entry().equals(symbol))
                         .map(Automaton.Transition::to)
@@ -83,8 +78,8 @@ public class Equivalency implements Algorithm<Boolean> {
                 // If the pair of next states has not been checked yet
                 else if (!checked.contains(new Pair<>(nextOriginal, nextOther))) {
                     // If both states are final or both are non-final
-                    if (automatonDFA.isFinal(nextOriginal) && otherDFA.isFinal(nextOther)
-                            || (!automatonDFA.isFinal(nextOriginal) && !otherDFA.isFinal(nextOther)))
+                    if (automaton.isFinal(nextOriginal) && other.isFinal(nextOther)
+                            || (!automaton.isFinal(nextOriginal) && !other.isFinal(nextOther)))
                     {
                         // Add the pair to the queue and the set of checked pairs
                         queue.add(new Pair<>(nextOriginal, nextOther));
