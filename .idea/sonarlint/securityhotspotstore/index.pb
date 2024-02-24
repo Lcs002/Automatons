@@ -56,3 +56,5 @@ U
 %src/test/java/com/lvum/UnionTest.java,b\6\b6dee2d2cd24e9405f8996722753350fb902188a
 _
 /resources/university/class-notes/Class Notes.md,9\9\991e48b798a66ee4fc2f03254aa55a1986d8e24d
+[
++src/test/java/com/lvum/EquivalencyTest.java,9\f\9f92d1917734220939d2c9e924dfe7ae3fe3c8e2
