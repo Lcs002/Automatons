@@ -15,7 +15,7 @@ public class RemoveUnreachable implements Algorithm<Automaton> {
     @Override
     public Automaton run(Automaton automaton) {
         // The automaton resultant of the reduction
-        Automaton result = new Automaton(automaton.getLanguage());
+        Automaton result = new Automaton(automaton.getAlphabet());
         // List of Set of States we have already checked
         List<String> marked = new ArrayList<>();
         // Queue of Set of States
@@ -31,7 +31,7 @@ public class RemoveUnreachable implements Algorithm<Automaton> {
             // Get the current State
             String state = queue.poll();
             // For each symbol in the language
-            for (Character symbol : automaton.getLanguage()) {
+            for (Character symbol : automaton.getAlphabet()) {
                 // Get the next State of the current State given a certain symbol
                 String nextState = automaton.getTransitions().stream()
                         .filter(transition -> transition.from().equals(state))
@@ -50,7 +50,7 @@ public class RemoveUnreachable implements Algorithm<Automaton> {
                     // Add the transition to the result automaton
                     result.addTransition(state, nextState, symbol);
                     // If the next State is a Final State
-                    if (automaton.getFinalStates().contains(nextState)) {
+                    if (automaton.isFinal(nextState)) {
                         // Add it as a Final State to the result automaton
                         result.addFinalState(nextState);
                     }

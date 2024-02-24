@@ -4,7 +4,6 @@ import com.lvum.Automaton;
 import com.lvum.algorithms.utility.GetEpsilonClosure;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Automaton Algorithm
@@ -15,8 +14,11 @@ public class NFAToDFAEpsilon implements Algorithm<Automaton> {
 
     @Override
     public Automaton run(Automaton automaton) {
+        // As a DFA, the result automaton won't have Epsilon as a symbol of the alphabet
+        Set<Character> alphabet = new HashSet<>(automaton.getAlphabet());
+        alphabet.remove(Automaton.EPSILON);
         // The automaton resultant of the conversion
-        Automaton result = new Automaton(automaton.getLanguage());
+        Automaton result = new Automaton(alphabet);
         // List of Set of States we have already checked
         List<Set<String>> marked = new ArrayList<>();
         // Queue of Set of States
@@ -27,15 +29,17 @@ public class NFAToDFAEpsilon implements Algorithm<Automaton> {
         // Get the Epsilon Closure of the initial State
         Set<String> initialStates = automaton.run(new GetEpsilonClosure(initialState));
         initialStates.add(initialState);
+        // Add and Mark the first State
         queue.add(initialStates);
         // Mark the initial State
         marked.add(new HashSet<>(Collections.singletonList(initialState)));
 
+        result.setInitialState(String.join(Automaton.SEPARATOR, initialStates));
         // While there is still some Set of States to check...
         while (!queue.isEmpty()) {
             Set<String> superstate = queue.poll();
             // Get all Transitions of the Superstate for each entry
-            for (Character entry : automaton.getLanguage()) {
+            for (Character entry : automaton.getAlphabet()) {
                 // Epsilon is not an entry, so we ignore it
                 if (entry.equals(Automaton.EPSILON)) continue;
                 Set<String> nextSuperstate = new HashSet<>();
@@ -61,6 +65,8 @@ public class NFAToDFAEpsilon implements Algorithm<Automaton> {
                     if (!marked.contains(nextSuperstate)) {
                         queue.add(nextSuperstate);
                         marked.add(nextSuperstate);
+                        boolean isFinal = nextSuperstate.stream().anyMatch(automaton::isFinal);
+                        if (isFinal) result.addFinalState(String.join(Automaton.SEPARATOR, nextSuperstate));
                     }
                     // Add the transition connecting current Superstate and next Superstate with certain entry
                     result.addTransition(

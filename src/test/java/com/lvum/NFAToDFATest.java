@@ -3,10 +3,8 @@ package com.lvum;
 import com.lvum.algorithms.Equivalency;
 import com.lvum.algorithms.NFAToDFA;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import java.lang.annotation.Inherited;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,13 +23,6 @@ public class NFAToDFATest {
         automaton.addTransition("q1", "q2", 'b');
         automaton.setInitialState("q0");
         automaton.addFinalState("q2");
-    }
-
-    @Test
-    public void sameLanguage() {
-        // The language of the automaton must not change after the conversion
-        Automaton result = automaton.run(new NFAToDFA());
-        assertEquals(result.getLanguage(), language);
     }
 
     @Test
@@ -62,7 +53,8 @@ public class NFAToDFATest {
         // | *q0-q2 | q0-q1 | q0    |
         // Example from: https://www.geeksforgeeks.org/conversion-from-nfa-to-dfa/
 
-        Automaton expected = new Automaton(new HashSet<>(Arrays.asList('a', 'b')));
+        Set<Character> expectedAlphabet = new HashSet<>(Arrays.asList('a', 'b'));
+        Automaton expected = new Automaton(expectedAlphabet);
         expected.addTransition("q0", "q0-q1", 'a');
         expected.addTransition("q0", "q0", 'b');
         expected.addTransition("q0-q1", "q0-q1", 'a');

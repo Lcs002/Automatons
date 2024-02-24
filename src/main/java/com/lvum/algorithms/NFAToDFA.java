@@ -15,7 +15,7 @@ public class NFAToDFA implements Algorithm<Automaton> {
     @Override
     public Automaton run(Automaton automaton) {
         // The automaton resultant of the conversion
-        Automaton result = new Automaton(automaton.getLanguage());
+        Automaton result = new Automaton(automaton.getAlphabet());
         // List of Set of States we have already checked
         List<Set<String>> marked = new ArrayList<>();
         // Queue of Set of States
@@ -32,7 +32,7 @@ public class NFAToDFA implements Algorithm<Automaton> {
         while (!queue.isEmpty()) {
             Set<String> superstate = queue.poll();
             // Get all Transitions of the Superstate for each entry
-            for (Character entry : automaton.getLanguage()) {
+            for (Character entry : automaton.getAlphabet()) {
                 Set<String> nextSuperstate = new HashSet<>();
                 // Fill the next Superstate with the union of sets of next states of each current state in superstate
                 for (String state : superstate) {
@@ -52,8 +52,7 @@ public class NFAToDFA implements Algorithm<Automaton> {
                     if (!marked.contains(nextSuperstate)) {
                         queue.add(nextSuperstate);
                         marked.add(nextSuperstate);
-                        boolean isFinal = nextSuperstate.stream()
-                                .anyMatch(state -> automaton.getFinalStates().contains(state));
+                        boolean isFinal = nextSuperstate.stream().anyMatch(automaton::isFinal);
                         if (isFinal) result.addFinalState(String.join(Automaton.SEPARATOR, nextSuperstate));
                     }
                     // Add the transition connecting current Superstate and next Superstate with certain entry

@@ -11,14 +11,14 @@ public class MinimizationEquivalence implements Algorithm<Automaton> {
 
     @Override
     public Automaton run(Automaton automaton) {
-        Automaton result = new Automaton(automaton.getLanguage());
+        Automaton result = new Automaton(automaton.getAlphabet());
 
         Set<String> finalStates = automaton.getFinalStates();
         Map<String, Set<String>> states = new HashMap<>();
         int k = 1;
 
         automaton.getStates().stream()
-                .filter(state -> !automaton.getFinalStates().contains(state))
+                .filter(state -> !automaton.isFinal(state))
                 .forEach(state -> states.put(Integer.toString(k), new HashSet<>(Collections.singletonList(state))));
 
 

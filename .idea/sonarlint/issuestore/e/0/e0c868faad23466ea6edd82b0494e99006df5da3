@@ -1,9 +1,15 @@
 
+?
+java:S1643‹"Use a StringBuilder instead.(ï¥ãÜüÿÿÿÿ8—‹¢Üİ1
+?
+java:S1643Œ"Use a StringBuilder instead.(òÅšúÿÿÿÿ8ÖË£Üİ1
+o
+java:S3776b"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Á»›ê8‘â›Üİ1
 c
-java:S3457b"AFormat specifiers should be used instead of string concatenation.(œ¬Î”øÿÿÿÿ8‘ãƒêÜ1
+java:S3457s"AFormat specifiers should be used instead of string concatenation.(àÃÓ“úÿÿÿÿ8¤ı–Üİ1
 ^
-java:S3457d"AFormat specifiers should be used instead of string concatenation.(æ‹øş8’ãƒêÜ1
-]
-java:S3457h"AFormat specifiers should be used instead of string concatenation.(­ïÑ38“ãƒêÜ1
-^
-java:S3457o"AFormat specifiers should be used instead of string concatenation.(éáıÉ8—ãƒêÜ1
+java:S3457u"AFormat specifiers should be used instead of string concatenation.(Ñ®ßÑ8¦ı–Üİ1
+d
+java:S3457‚"AFormat specifiers should be used instead of string concatenation.(™Æ¤Šıÿÿÿÿ8¬ı–Üİ1
+d
+java:S3457"AFormat specifiers should be used instead of string concatenation.(Àé“½şÿÿÿÿ8´ı–Üİ1
