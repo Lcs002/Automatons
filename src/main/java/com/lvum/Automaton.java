@@ -26,7 +26,6 @@ public class Automaton {
     private final Set<Transition> transitions;
     private final Set<String> finalStates;
     private String initialState;
-    private int longestString;
 
 
     /**
@@ -50,6 +49,10 @@ public class Automaton {
         finalStates.add(state);
     }
 
+    public boolean isFinal(String state) {
+        return finalStates.contains(state);
+    }
+
     public Set<String> getFinalStates() {
         return finalStates;
     }
@@ -64,7 +67,6 @@ public class Automaton {
 
     public void addState(String state) {
         states.add(state);
-        updateLongestString(state);
     }
 
     public Set<String> getStates() {
@@ -94,39 +96,58 @@ public class Automaton {
 
     @Override
     public String toString() {
+        // Get the biggest state relation
+        long biggestRelation = states.stream()
+                .mapToLong(state -> alphabet.stream()
+                        .mapToLong(symbol -> transitions.stream()
+                                .filter(transition -> transition.from.equals(state))
+                                .filter(transition -> transition.entry.equals(symbol))
+                                .count()
+                        ).max().orElse(0)
+                ).max().orElse(0);
+
+        // Get the longest state name
+        long longestState = states.stream()
+                .mapToLong(String::length)
+                .max().orElse(0) + 2;
+
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(String.format("%-"+longestString+"s |", " "));
+        stringBuilder.append(String.format("%-"+longestState+"s |", " "));
         for (Character entry : alphabet) {
-            stringBuilder.append(String.format(" %-"+longestString+"s |", entry));
+            stringBuilder.append(String.format(" %-"+((longestState+1)*biggestRelation)+"s |", entry));
         }
         stringBuilder.append('\n');
         for (String state : states) {
-            if (getInitialState().equals(state)) stringBuilder.append("->");
-            if (getFinalStates().contains(state)) stringBuilder.append("*");
-            stringBuilder.append(String.format("%-"+longestString+"s |", state));
+            int l = 0;
+            if (getInitialState().equals(state)) {
+                stringBuilder.append("->");
+                l+=2;
+            }
+            if (getFinalStates().contains(state)) {
+                stringBuilder.append("*");
+                l+=1;
+            }
+            stringBuilder.append(String.format("%-"+(longestState-l) +"s |", state));
             Set<Transition> transitionsFrom = getTransitions().stream()
                     .filter(transition -> transition.from.equals(state))
                     .collect(Collectors.toSet());
             for (Character entry : alphabet) {
+                String to = " ";
+                boolean first = true;
                 for (Transition transition : transitionsFrom) {
                     if (!transition.entry.equals(entry)) continue;
-                    stringBuilder.append(String.format(" %-"+longestString+"s ", transition.to)
-                            .replace('\u0000', ' '));
+                    if (!first) to += ", ";
+                    to += transition.to;
+                    first = false;
                 }
+                stringBuilder.append(String.format(" %-"+((longestState+1)*biggestRelation)+"s ", to)
+                        .replace('\u0000', ' '));
                 stringBuilder.append("|");
             }
             stringBuilder.append('\n');
         }
         return stringBuilder.toString();
     }
-
-
-    private void updateLongestString(String value) {
-        if (value.length() > longestString) {
-            longestString = value.length();
-        }
-    }
-
 
     /**
      * Representation of a transition between two states given an entry.

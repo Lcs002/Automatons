@@ -76,27 +76,23 @@ public class Equivalency implements Algorithm<Boolean> {
                         .map(Automaton.Transition::to)
                         .findFirst()
                         .orElse(null);
-                // If the next state of either automaton is null,
-                // there is no transition with this entry on the current superstate
-                if (nextOriginal == null || nextOther == null) return false;
+                // If one of the next states is null and the other is not
+                // (i.e. one of the next states does not exist and the other does)
+                // The automata are not equivalent
+                if (nextOriginal == null ^ nextOther == null) equivalent = false;
                 // If the pair of next states has not been checked yet
-                if (!checked.contains(new Pair<>(nextOriginal, nextOther))) {
+                else if (!checked.contains(new Pair<>(nextOriginal, nextOther))) {
                     // If both states are final or both are non-final
-                    if (automatonDFA.getFinalStates().contains(nextOriginal)
-                            && otherDFA.getFinalStates().contains(nextOther)
-                            || (!automatonDFA.getFinalStates().contains(nextOriginal)
-                            && !otherDFA.getFinalStates().contains(nextOther)))
+                    if (automatonDFA.isFinal(nextOriginal) && otherDFA.isFinal(nextOther)
+                            || (!automatonDFA.isFinal(nextOriginal) && !otherDFA.isFinal(nextOther)))
                     {
                         // Add the pair to the queue and the set of checked pairs
                         queue.add(new Pair<>(nextOriginal, nextOther));
                         checked.add(new Pair<>(superstate.getValue0(), superstate.getValue1()));
                     }
                     // If the pair of next states is not both final or non-final
-                    else
-                    {
-                        // The automata are not equivalent
-                        equivalent = false;
-                    }
+                    // The automata are not equivalent
+                    else equivalent = false;
                 }
             }
         }

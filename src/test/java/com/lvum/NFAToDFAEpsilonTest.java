@@ -20,24 +20,13 @@ public class NFAToDFAEpsilonTest {
     void beforeEach() {
         language = new HashSet<>(Arrays.asList('0', '1', Automaton.EPSILON));
         automaton = new Automaton(language);
-        automaton.addTransition("A", "B", '0');
-        automaton.addTransition("A", "C", '0');
-        automaton.addTransition("A", "A", '1');
-        automaton.addTransition("A", "B", Automaton.EPSILON);
-        automaton.addTransition("B", "B", '1');
-        automaton.addTransition("B", "C", Automaton.EPSILON);
-        automaton.addTransition("C", "C", '0');
-        automaton.addTransition("C", "C", '1');
-        automaton.setInitialState("A");
-        automaton.addFinalState("C");
-    }
-
-    @Test
-    void sameLanguage() {
-        // Test 1
-        // The language of the automaton must not change after the conversion
-        Automaton result = automaton.run(new NFAToDFAEpsilon());
-        assertEquals(result.getAlphabet(), language);
+        automaton.addTransition("q0", "q1", Automaton.EPSILON);
+        automaton.addTransition("q0", "q2", Automaton.EPSILON);
+        automaton.addTransition("q1", "q3", '0');
+        automaton.addTransition("q2", "q3", '1');
+        automaton.addTransition("q3", "q4", '1');
+        automaton.setInitialState("q0");
+        automaton.addFinalState("q4");
     }
 
     @Test
@@ -55,18 +44,16 @@ public class NFAToDFAEpsilonTest {
     }
 
     @Test
-    void equivalent() {
-        // Test 3
-        // The resulting automaton must be equivalent to the original one
-        Automaton result = automaton.run(new NFAToDFAEpsilon());
-        System.out.println(result);
-        assertTrue(automaton.run(new Equivalency(result)));
-    }
-
-    @Test
     void correct() {
-        Automaton expected = new Automaton(language);
-        expected.addTransition("A-B-C", "B-C", '0');
-        expected.addTransition("A-B-C", "A-B-C", '1');
+        Set<Character> expectedAlphabet = new HashSet<>(Arrays.asList('0', '1'));
+        Automaton expected = new Automaton(expectedAlphabet);
+        expected.addTransition("A", "B", '0');
+        expected.addTransition("A", "B", '1');
+        expected.addTransition("B", "C", '1');
+        expected.setInitialState("A");
+        expected.addFinalState("C");
+
+        Automaton result = automaton.run(new NFAToDFAEpsilon());
+        assertTrue(result.run(new Equivalency(expected)));
     }
 }

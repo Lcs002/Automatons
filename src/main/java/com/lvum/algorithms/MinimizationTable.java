@@ -20,8 +20,7 @@ public class MinimizationTable implements Algorithm<Automaton> {
 
         // Mark all the pairs (Qa,Qb) such a that Qa is Final state and Qb is Non-Final State.
         for (Pair<String, String> pair : table.keySet()) {
-            if (automaton.getFinalStates().contains(pair.getValue0())
-                    ^ automaton.getFinalStates().contains(pair.getValue1())) {
+            if (automaton.isFinal(pair.getValue0()) ^ automaton.isFinal(pair.getValue1())) {
                 table.put(pair, true);
             }
         }

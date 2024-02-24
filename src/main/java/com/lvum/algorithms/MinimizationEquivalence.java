@@ -18,7 +18,7 @@ public class MinimizationEquivalence implements Algorithm<Automaton> {
         int k = 1;
 
         automaton.getStates().stream()
-                .filter(state -> !automaton.getFinalStates().contains(state))
+                .filter(state -> !automaton.isFinal(state))
                 .forEach(state -> states.put(Integer.toString(k), new HashSet<>(Collections.singletonList(state))));
 
 

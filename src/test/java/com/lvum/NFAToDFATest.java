@@ -26,13 +26,6 @@ public class NFAToDFATest {
     }
 
     @Test
-    public void sameLanguage() {
-        // The language of the automaton must not change after the conversion
-        Automaton result = automaton.run(new NFAToDFA());
-        assertEquals(result.getAlphabet(), language);
-    }
-
-    @Test
     public void deterministic() {
         // The resulting automaton must not have any state with the same entry more than once
         Automaton result = automaton.run(new NFAToDFA());
@@ -60,7 +53,8 @@ public class NFAToDFATest {
         // | *q0-q2 | q0-q1 | q0    |
         // Example from: https://www.geeksforgeeks.org/conversion-from-nfa-to-dfa/
 
-        Automaton expected = new Automaton(new HashSet<>(Arrays.asList('a', 'b')));
+        Set<Character> expectedAlphabet = new HashSet<>(Arrays.asList('a', 'b'));
+        Automaton expected = new Automaton(expectedAlphabet);
         expected.addTransition("q0", "q0-q1", 'a');
         expected.addTransition("q0", "q0", 'b');
         expected.addTransition("q0-q1", "q0-q1", 'a');

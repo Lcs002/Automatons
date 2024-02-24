@@ -50,7 +50,7 @@ public class RemoveUnreachable implements Algorithm<Automaton> {
                     // Add the transition to the result automaton
                     result.addTransition(state, nextState, symbol);
                     // If the next State is a Final State
-                    if (automaton.getFinalStates().contains(nextState)) {
+                    if (automaton.isFinal(nextState)) {
                         // Add it as a Final State to the result automaton
                         result.addFinalState(nextState);
                     }

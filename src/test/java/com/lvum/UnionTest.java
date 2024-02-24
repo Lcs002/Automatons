@@ -19,7 +19,7 @@ public class UnionTest {
 
     @BeforeEach
     void beforeEach() {
-        alphabet = Set.of('a', 'b');
+        alphabet = Set.of('a', 'b', Automaton.EPSILON);
 
         automaton1 = new Automaton(alphabet);
         automaton1.addTransition("A", "B", 'a');
@@ -50,31 +50,25 @@ public class UnionTest {
     void correct() {
         // Test 1
         // The union of the two automata must be correct
-        Automaton expected = new Automaton(alphabet);
-        expected.addTransition("S", "A'", Automaton.EPSILON);
-        expected.addTransition("A'", "B'", 'a');
-        expected.addTransition("A'", "D'", 'b');
-        expected.addTransition("B'", "B'", 'a');
-        expected.addTransition("B'", "C'", 'b');
-        expected.addTransition("C'", "B'", 'a');
-        expected.addTransition("C'", "C'", 'b');
-        expected.addTransition("D'", "D'", 'a');
-        expected.addTransition("D'", "D'", 'b');
-        expected.addTransition("S", "A''", Automaton.EPSILON);
-        expected.addTransition("A''", "D''", 'a');
-        expected.addTransition("A''", "B''", 'b');
-        expected.addTransition("B''", "C''", 'a');
-        expected.addTransition("B''", "B''", 'b');
-        expected.addTransition("C''", "C''", 'a');
-        expected.addTransition("C''", "B''", 'b');
-        expected.addTransition("D''", "D''", 'a');
-        expected.addTransition("D''", "D''", 'b');
-        expected.setInitialState("S");
-        expected.addFinalState("C'");
-        expected.addFinalState("C''");
-        // The union of the two automata is an NFA
+        Set<Character> expectedAlphabet = Set.of('a', 'b');
+        Automaton expected = new Automaton(expectedAlphabet);
+        expected.addTransition("A²-A¹-A¹-A²", "B¹-D²", 'a');
+        expected.addTransition("A²-A¹-A¹-A²", "B²-D¹", 'b');
+        expected.addTransition("B¹-D²", "B¹-D²", 'a');
+        expected.addTransition("B¹-D²", "C¹-D²", 'b');
+        expected.addTransition("B²-D¹", "D¹-C²", 'a');
+        expected.addTransition("B²-D¹", "B²-D¹", 'b');
+        expected.addTransition("C¹-D²", "B¹-D²", 'a');
+        expected.addTransition("C¹-D²", "C¹-D²", 'b');
+        expected.addTransition("D¹-C²", "D¹-C²", 'a');
+        expected.addTransition("D¹-C²", "B²-D¹", 'b');
+        expected.setInitialState("A²-A¹-A¹-A²");
+        expected.addFinalState("C¹-D²");
+        expected.addFinalState("D¹-C²");
+
         Automaton result = automaton1.run(new Union(automaton2)).run(new NFAToDFAEpsilon());
         System.out.println(result);
-        assertTrue(expected.run(new NFAToDFAEpsilon()).run(new Equivalency(result)));
+        System.out.println(expected);
+        assertTrue(result.run(new Equivalency(expected)));
     }
 }

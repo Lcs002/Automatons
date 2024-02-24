@@ -38,35 +38,35 @@ public class Union implements Algorithm<Automaton> {
         // The result of the union of two automata is a new automaton
         Automaton result = new Automaton(alphabet);
         // The initial state of the result automaton is the concatenation of the initial states of the two automata
-        String initialState = automaton.getInitialState() + "'" + Automaton.SEPARATOR + other.getInitialState() + "''";
+        String initialState = automaton.getInitialState() + "¹" + Automaton.SEPARATOR + other.getInitialState() + "²";
         // Add the initial state to the result automaton
         result.setInitialState(initialState);
         // Add the transitions of the initial state to the initial states of the two automata
-        result.addTransition(initialState, automaton.getInitialState() + "'", Automaton.EPSILON);
-        result.addTransition(initialState, other.getInitialState() + "''", Automaton.EPSILON);
+        result.addTransition(initialState, automaton.getInitialState() + "¹", Automaton.EPSILON);
+        result.addTransition(initialState, other.getInitialState() + "²", Automaton.EPSILON);
         // Add the transitions of the first automaton
         automaton.getTransitions().forEach(
                 transition -> result.addTransition(
-                        transition.from() + "'",
-                        transition.to() + "'",
+                        transition.from() + "¹",
+                        transition.to() + "¹",
                         transition.entry()
                 )
         );
         // Add the transitions of the second automaton
         other.getTransitions().forEach(
                 transition -> result.addTransition(
-                        transition.from() + "''",
-                        transition.to() + "''",
+                        transition.from() + "²",
+                        transition.to() + "²",
                         transition.entry()
                 )
         );
         // Add the final states of the first automaton
         automaton.getFinalStates().forEach(
-                state -> result.addFinalState(state + "'")
+                state -> result.addFinalState(state + "¹")
         );
         // Add the final states of the second automaton
         other.getFinalStates().forEach(
-                state -> result.addFinalState(state + "'")
+                state -> result.addFinalState(state + "²")
         );
         // Return the union of the two automata
         return result;

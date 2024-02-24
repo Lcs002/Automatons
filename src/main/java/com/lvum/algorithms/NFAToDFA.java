@@ -52,8 +52,7 @@ public class NFAToDFA implements Algorithm<Automaton> {
                     if (!marked.contains(nextSuperstate)) {
                         queue.add(nextSuperstate);
                         marked.add(nextSuperstate);
-                        boolean isFinal = nextSuperstate.stream()
-                                .anyMatch(state -> automaton.getFinalStates().contains(state));
+                        boolean isFinal = nextSuperstate.stream().anyMatch(automaton::isFinal);
                         if (isFinal) result.addFinalState(String.join(Automaton.SEPARATOR, nextSuperstate));
                     }
                     // Add the transition connecting current Superstate and next Superstate with certain entry
