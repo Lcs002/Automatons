@@ -12,6 +12,8 @@ Automaton's Algorithms implemented in Java.
 |     _Automaton Equivalency_     | **X**    |
 |          _Complement_           |          |
 |         _Intersection_          |          |
+|         _Inversion_             |          |
+|             _Union_             |   **X**  |
 |    _?Language to Automaton?_    |          |
 |     _?Graphical Interface?_     |          |
 
