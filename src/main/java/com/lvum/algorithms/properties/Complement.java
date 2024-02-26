@@ -6,7 +6,7 @@ import com.lvum.algorithms.utility.IsComplete;
 import com.lvum.algorithms.utility.IsDFA;
 
 /**
- * <h1>Complement</h1>
+ * <h1>Algorithm for Automaton Complement</h1>
  * <p> FORMULA </p>
  * <p><b>Input:</b> One <b>{@link Automaton}</b>.</p>
  * <p><b>Result:</b> <b>NFA</b> that accepts the contrary language of the original automaton.</p>

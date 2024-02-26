@@ -4,7 +4,7 @@ import com.lvum.Automaton;
 import com.lvum.algorithms.Algorithm;
 
 /**
- * <h1>Intersection</h1>
+ * <h1>Algorithm for Automaton Intersection</h1>
  */
 public class Intersection implements Algorithm<Automaton> {
 

@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * <h1>Concatenation</h1>
+ * <h1>Algorithm for Automaton Concatenation</h1>
  * <p>Concatenation of two DFA Automatons: L1*L2</p>
  * <p><b>Input:</b> Two <b>{@link Automaton Automatons}</b>.</p>
  * <p><b>Result:</b> <b>NFA</b> that accepts words 'w' such that 'w' = 'xy' where x belongs to L1 and y to L2.</p>
