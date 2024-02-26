@@ -2,30 +2,33 @@ package com.lvum.algorithms.properties;
 
 import com.lvum.Automaton;
 import com.lvum.algorithms.Algorithm;
+import com.lvum.algorithms.Complete;
 import com.lvum.algorithms.utility.IsDFA;
 
 import java.util.HashSet;
 import java.util.Set;
 
-// Explanation in Class Notes, #5 Operations With Languages
-// Explanation in document Automaton_Properties.pdf, page 12
 /**
- * <h1>Union</h1>
- * <p>Union of two Automatons: L1+L2 or L1UL2</p>
+ * <h1>Concatenation</h1>
+ * <p>Concatenation of two DFA Automatons: L1*L2</p>
  * <p><b>Input:</b> Two <b>{@link Automaton Automatons}</b>.</p>
- * <p><b>Result:</b> <b>NFA</b> that recognizes the union of the languages recognized by the two.</p>
+ * <p><b>Result:</b> <b>NFA</b> that accepts words 'w' such that 'w' = 'xy' where x belongs to L1 and y to L2.</p>
  * <p><b>Requisites:</b></p>
  * <ol>
  *  <li> The automatons <b>{@link IsDFA are both DFA}</b>.</li>
  *  <li> The automatons have the same <b>alphabet</b>.</li>
  * </ol>
- *  @see <a href="https://www.geeksforgeeks.org/union-process-in-dfa/">Union Algorithm</a>
+ * <p><b><i>References:</i></b></p>
+ * <ol>
+ *     <li> <a href="resources/university/class-notes/Class Notes.md">Class Notes.md</a>, #5 Operations With Languages.</li>
+ *     <li> <a href="resources/documents/Automaton_Properties.pdf">Automaton_Properties.pdf</a>, page 15.</li>
+ * </ol>
  */
-public class Union implements Algorithm<Automaton> {
+public class Concatenation implements Algorithm<Automaton> {
     private final Automaton other;
 
 
-    public Union(Automaton other) {
+    public Concatenation(Automaton other) {
         this.other = other;
     }
 
@@ -41,38 +44,36 @@ public class Union implements Algorithm<Automaton> {
         if (!alphabet.contains(Automaton.EPSILON)) alphabet.add(Automaton.EPSILON);
         // The result of the union of two automata is a new automaton
         Automaton result = new Automaton(alphabet);
-        // The initial state of the result automaton is the concatenation of the initial states of the two automata
-        String initialState = automaton.getInitialState() + "¹" + Automaton.SEPARATOR + other.getInitialState() + "²";
-        // Add the initial state to the result automaton
-        result.setInitialState(initialState);
-        // Add the transitions of the initial state to the initial states of the two automata
-        result.addTransition(initialState, automaton.getInitialState() + "¹", Automaton.EPSILON);
-        result.addTransition(initialState, other.getInitialState() + "²", Automaton.EPSILON);
+        result.setInitialState(automaton.getInitialState() + '¹');
         // Add the transitions of the first automaton
         automaton.getTransitions().forEach(
                 transition -> result.addTransition(
-                        transition.from() + "¹",
-                        transition.to() + "¹",
+                        transition.from() + '¹',
+                        transition.to() + '¹',
                         transition.entry()
                 )
         );
         // Add the transitions of the second automaton
         other.getTransitions().forEach(
                 transition -> result.addTransition(
-                        transition.from() + "²",
-                        transition.to() + "²",
+                        transition.from() + '²',
+                        transition.to() + '²',
                         transition.entry()
                 )
         );
-        // Add the final states of the first automaton
+        // Add the transitions from the final states of the first automaton to the initial states of the second automaton
         automaton.getFinalStates().forEach(
-                state -> result.addFinalState(state + "¹")
+                state -> result.addTransition(
+                        state + '¹',
+                        other.getInitialState() + '²',
+                        Automaton.EPSILON
+                )
         );
-        // Add the final states of the second automaton
+        // Add the final states of the second automaton to the final states of the result automaton
         other.getFinalStates().forEach(
-                state -> result.addFinalState(state + "²")
+                state -> result.addFinalState(state + '²')
         );
-        // Return the union of the two automata
+        // Return the result automaton
         return result;
     }
 }

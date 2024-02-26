@@ -8,9 +8,12 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Automaton Algorithm
- * <p>
- * Returns the epsilon closure of a state.
+ * <h1>GetEpsilonClosure</h1>
+ * <p><b>Result:</b> <b>Set&lt;String&gt;</b> that contains the epsilon closure of a state.</p>
+ * <p><b>Requisites:</b></p>
+ * <ol>
+ *     <li>The automaton <b>{@link IsDFA must be a NFA}</b>.</li>
+ * </ol>
  */
 public class GetEpsilonClosure implements Algorithm<Set<String>> {
     private String state;

@@ -6,9 +6,8 @@ import com.lvum.algorithms.Algorithm;
 import java.util.*;
 
 /**
- * Automaton Algorithm
- * <p>
- * Reduces a DFA so only accessible states are present.
+ * <h1>RemoveUnreachable</h1>
+ * <p><b>Result:</b> <b>{@link Automaton}</b> without unreachable states.</p>
  */
 public class RemoveUnreachable implements Algorithm<Automaton> {
 

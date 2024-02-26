@@ -58,3 +58,19 @@ _
 /resources/university/class-notes/Class Notes.md,9\9\991e48b798a66ee4fc2f03254aa55a1986d8e24d
 [
 +src/test/java/com/lvum/EquivalencyTest.java,9\f\9f92d1917734220939d2c9e924dfe7ae3fe3c8e2
+o
+?src/main/java/com/lvum/algorithms/properties/Concatenation.java,9\a\9adbc959275dd26ed63b000ed3687a85b4327d60
+]
+-src/test/java/com/lvum/ConcatenationTest.java,6\b\6b2290cefd0bc0825aceacc13ad617eb049deda2
+_
+/src/main/java/com/lvum/algorithms/Complete.java,3\b\3bad60d4881fa8250544b412bbc2f2a133614442
+d
+4src/main/java/com/lvum/algorithms/utility/IsDFA.java,1\b\1b16c2b66e9a10323ecc674e9e4b016a88bb2403
+X
+(src/test/java/com/lvum/CompleteTest.java,e\d\ede14ce703b5eafeb18da32056a09d96379d4649
+U
+%src/test/java/com/lvum/IsDFATest.java,f\6\f69de58f546dd00c450108da6bc7351fe352a2b0
+Z
+*src/test/java/com/lvum/ComplementTest.java,1\b\1bfc4e63a9a2db697e909e84b8930599fc4c1ed0
+i
+9src/main/java/com/lvum/algorithms/utility/IsComplete.java,3\2\322e132e4ed5299f2bc8d3fe0f1d8c945c52a40f

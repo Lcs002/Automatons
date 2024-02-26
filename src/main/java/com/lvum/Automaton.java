@@ -6,7 +6,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Representation of an automaton with methods to edit itself.
+ * <h1>Automaton</h1>
+ * <p>Representation of a finite automaton.</p>
  */
 public class Automaton {
     /**
@@ -15,6 +16,12 @@ public class Automaton {
      * Used for Epsilon transitions.
      */
     public static final Character EPSILON = 'ε';
+    /**
+     * Character that represents the empty state.
+     * <p>
+     * Used for empty transitions.
+     */
+    public static final String EMPTY_STATE = "∅";
     /**
      * Separator between states.
      * <p>

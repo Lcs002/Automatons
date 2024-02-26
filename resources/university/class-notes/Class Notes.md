@@ -10,6 +10,9 @@
 ![minimization-examples.png](minimization-examples.png)
 ## #5 Operations With Languages
 ![operations-with-languages.jpeg](operations-with-languages.png)
+![WhatsApp Image 2024-02-21 at 10.42.06.jpeg](WhatsApp%20Image%202024-02-21%20at%2010.42.06.jpeg)
+![WhatsApp Image 2024-02-21 at 10.42.10.jpeg](WhatsApp%20Image%202024-02-21%20at%2010.42.10.jpeg)
+![WhatsApp Image 2024-02-21 at 10.42.11.jpeg](WhatsApp%20Image%202024-02-21%20at%2010.42.11.jpeg)
 ## #6 Pumping
 Se da L. Es L regular?
 
