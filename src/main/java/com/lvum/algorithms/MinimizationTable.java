@@ -4,9 +4,11 @@ import com.lvum.Automaton;
 import org.javatuples.Pair;
 import java.util.*;
 
+
 /**
  * Minimization of a DFA using the <a href="https://www.geeksforgeeks.org/minimization-of-dfa/">Myhill-Nerode Theorem.</a>
  */
+// TODO: Implement the Minimization of a DFA using the Myhill-Nerode Theorem
 public class MinimizationTable implements Algorithm<Automaton> {
 
     @Override

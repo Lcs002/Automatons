@@ -19,7 +19,7 @@ public class UnionTest {
 
     @BeforeEach
     void beforeEach() {
-        alphabet = Set.of('a', 'b', Automaton.EPSILON);
+        alphabet = Set.of('a', 'b');
 
         automaton1 = new Automaton(alphabet);
         automaton1.addTransition("A", "B", 'a');
@@ -68,7 +68,6 @@ public class UnionTest {
 
         Automaton result = automaton1.run(new Union(automaton2)).run(new NFAToDFAEpsilon());
         System.out.println(result);
-        System.out.println(expected);
         assertTrue(result.run(new Equivalency(expected)));
     }
 }

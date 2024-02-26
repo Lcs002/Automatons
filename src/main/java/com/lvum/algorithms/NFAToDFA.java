@@ -5,10 +5,11 @@ import com.lvum.Automaton;
 import java.util.*;
 import java.util.stream.Collectors;
 
+
 /**
- * Automaton Algorithm
- * <p>
- * Converts an NFA to its equivalent DFA. Doesn't take into account Epsilon transitions.
+ * <h1>NFAToDFA</h1>
+ * <p>Converts an NFA to its equivalent DFA. Doesn't take into account Epsilon transitions.</p>
+ * <p><b>Result:</b> <b>{@link Automaton}</b> that is the equivalent DFA of the original NFA.</p>
  */
 public class NFAToDFA implements Algorithm<Automaton> {
 

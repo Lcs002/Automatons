@@ -6,9 +6,9 @@ import com.lvum.algorithms.utility.GetEpsilonClosure;
 import java.util.*;
 
 /**
- * Automaton Algorithm
- * <p>
- * Converts an NFA to its equivalent DFA, taking into account Epsilon transitions.
+ * <h1>NFAToDFAEpsilon</h1>
+ * <p>Converts an NFA to its equivalent DFA, taking into account Epsilon transitions.</p>
+ * <p><b>Result:</b> <b>{@link Automaton}</b> that is the equivalent DFA of the original NFA.</p>
  */
 public class NFAToDFAEpsilon implements Algorithm<Automaton> {
 
@@ -25,7 +25,6 @@ public class NFAToDFAEpsilon implements Algorithm<Automaton> {
         Queue<Set<String>> queue = new LinkedList<>();
         // Initial State of the automaton
         String initialState = automaton.getInitialState();
-
         // Get the Epsilon Closure of the initial State
         Set<String> initialStates = automaton.run(new GetEpsilonClosure(initialState));
         initialStates.add(initialState);
@@ -33,8 +32,11 @@ public class NFAToDFAEpsilon implements Algorithm<Automaton> {
         queue.add(initialStates);
         // Mark the initial State
         marked.add(new HashSet<>(Collections.singletonList(initialState)));
-
+        // Set the initial State of the result automaton
         result.setInitialState(String.join(Automaton.SEPARATOR, initialStates));
+        // Check if the initial State is a final State
+        if (initialStates.stream().anyMatch(automaton::isFinal))
+            result.addFinalState(String.join(Automaton.SEPARATOR, initialStates));
         // While there is still some Set of States to check...
         while (!queue.isEmpty()) {
             Set<String> superstate = queue.poll();
@@ -65,8 +67,8 @@ public class NFAToDFAEpsilon implements Algorithm<Automaton> {
                     if (!marked.contains(nextSuperstate)) {
                         queue.add(nextSuperstate);
                         marked.add(nextSuperstate);
-                        boolean isFinal = nextSuperstate.stream().anyMatch(automaton::isFinal);
-                        if (isFinal) result.addFinalState(String.join(Automaton.SEPARATOR, nextSuperstate));
+                        if (nextSuperstate.stream().anyMatch(automaton::isFinal))
+                            result.addFinalState(String.join(Automaton.SEPARATOR, nextSuperstate));
                     }
                     // Add the transition connecting current Superstate and next Superstate with certain entry
                     result.addTransition(

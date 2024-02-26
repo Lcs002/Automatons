@@ -11,9 +11,17 @@ import java.util.Set;
 //
 
 /**
- * Algorithm to check if two DFAs are equivalent, in other words, if they accept the same language.
- * <p>
- * The definition is in resources/university/Leccion 4.pdf, page 53.
+ * <h1>Equivalency</h1>
+ * <p><b>Result:</b> <b>Boolean</b> that indicates if the automaton is equivalent to another automaton.</p>
+ * <p><b>Requisites:</b></p>
+ * <ol>
+ *     <li>Both automatons <b>{@link com.lvum.algorithms.utility.IsDFA must be a DFA} </b>.</li>
+ *     <li>Both automatons have the same <b>alphabet</b>.</li>
+ * </ol>
+ * <p><b><i>References:</i></b></p>
+ * <ol>
+ *     <li> <a href="resources/university/Leccion 4.pdf">Leccion 4.pdf</a>, page 53.</li>
+ * </ol>
  */
 public class Equivalency implements Algorithm<Boolean> {
     private Automaton other;
@@ -37,7 +45,7 @@ public class Equivalency implements Algorithm<Boolean> {
              the final state and the other lies in the intermediate state ).
          */
 
-        // If the languages are different, the automata are not equivalent
+        // If the alphabet are different, the automata are not equivalent
         if (!automaton.getAlphabet().equals(other.getAlphabet())) return false;
 
         // Set of pairs of states that have already been checked
