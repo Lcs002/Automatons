@@ -2,6 +2,9 @@
 # Automatons
 Automaton's Algorithms implemented in Java.
 
+**[Project Documentation](https://lcs002.github.io/Automatons/)**
+## Wishlist
+
 |       **Functionalities**       | **Done** |
 |:-------------------------------:|:--------:|
 |     _NFA to DFA conversion_     |   **X**  |
@@ -16,6 +19,7 @@ Automaton's Algorithms implemented in Java.
 |             _Union_             |   **X**  |
 |    _?Language to Automaton?_    |          |
 |     _?Graphical Interface?_     |          |
+
 
 > [!TIP]
 > **[Recommended Documentation for Minimization](DFA-Minimization.pdf)**
