@@ -11,7 +11,7 @@ import java.util.Set;
 //
 
 /**
- * <h1>Equivalency</h1>
+ * <h1>Checks Equivalency between two Automatons</h1>
  * <p><b>Result:</b> <b>Boolean</b> that indicates if the automaton is equivalent to another automaton.</p>
  * <p><b>Requisites:</b></p>
  * <ol>

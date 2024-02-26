@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 
 /**
- * <h1>NFAToDFA</h1>
+ * <h1>Converts NFA to DFA</h1>
  * <p>Converts an NFA to its equivalent DFA. Doesn't take into account Epsilon transitions.</p>
  * <p><b>Result:</b> <b>{@link Automaton}</b> that is the equivalent DFA of the original NFA.</p>
  */

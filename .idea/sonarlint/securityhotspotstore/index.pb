@@ -74,3 +74,5 @@ Z
 *src/test/java/com/lvum/ComplementTest.java,1\b\1bfc4e63a9a2db697e909e84b8930599fc4c1ed0
 i
 9src/main/java/com/lvum/algorithms/utility/IsComplete.java,3\2\322e132e4ed5299f2bc8d3fe0f1d8c945c52a40f
+>
+doc/index.html,5\4\54b5e214b447551b0e0c8c11a04a296ef88222e4

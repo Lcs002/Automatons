@@ -4,7 +4,7 @@ import com.lvum.Automaton;
 import com.lvum.algorithms.Algorithm;
 
 /**
- * <h1>Inversion</h1>
+ * <h1>Algorithm for Automaton Inversion</h1>
  */
 public class Inversion implements Algorithm<Automaton> {
     @Override

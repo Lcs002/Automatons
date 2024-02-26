@@ -6,7 +6,7 @@ import com.lvum.algorithms.Algorithm;
 import java.util.*;
 
 /**
- * <h1>RemoveUnreachable</h1>
+ * <h1>Removes Unreachable States from an Automaton</h1>
  * <p><b>Result:</b> <b>{@link Automaton}</b> without unreachable states.</p>
  */
 public class RemoveUnreachable implements Algorithm<Automaton> {

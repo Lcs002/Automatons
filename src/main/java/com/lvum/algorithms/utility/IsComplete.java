@@ -4,7 +4,7 @@ import com.lvum.Automaton;
 import com.lvum.algorithms.Algorithm;
 
 /**
- * <h1>IsComplete</h1>
+ * <h1>Checks Completeness of an Automaton</h1>
  * <p><b>Result:</b> <b>Boolean</b> that indicates if the automaton is complete.</p>
  */
 public class IsComplete implements Algorithm<Boolean> {

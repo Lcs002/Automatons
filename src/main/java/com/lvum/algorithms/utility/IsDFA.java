@@ -4,7 +4,7 @@ import com.lvum.Automaton;
 import com.lvum.algorithms.Algorithm;
 
 /**
- * <h1>IsDFA</h1>
+ * <h1>Checks if an Automaton is a DFA</h1>
  * <p><b>Result:</b> <b>Boolean</b> that indicates if the automaton is a DFA.</p>
  */
 public class IsDFA implements Algorithm<Boolean> {

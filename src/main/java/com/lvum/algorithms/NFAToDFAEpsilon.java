@@ -6,7 +6,7 @@ import com.lvum.algorithms.utility.GetEpsilonClosure;
 import java.util.*;
 
 /**
- * <h1>NFAToDFAEpsilon</h1>
+ * <h1>Converts ε-NFA to DFA</h1>
  * <p>Converts an NFA to its equivalent DFA, taking into account Epsilon transitions.</p>
  * <p><b>Result:</b> <b>{@link Automaton}</b> that is the equivalent DFA of the original NFA.</p>
  */

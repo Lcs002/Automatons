@@ -4,7 +4,7 @@ import com.lvum.Automaton;
 import com.lvum.algorithms.utility.IsDFA;
 
 /**
- * <h1>Completing a DFA</h1>
+ * <h1>Completes a DFA</h1>
  * <p><b>Result:</b> <b>DFA</b> that recognizes the same language as the original automaton, but is complete.</p>
  * <b>Note:</b> A complete DFA is a DFA in which every state has a transition for every symbol in the alphabet.
  * <p><b>Requisites:</b></p>
