@@ -1,7 +1,7 @@
-package com.lvum.algorithms.utility;
+package com.lvum.automaton.algorithms.utility;
 
-import com.lvum.Automaton;
-import com.lvum.algorithms.Algorithm;
+import com.lvum.automaton.Automaton;
+import com.lvum.automaton.algorithms.Algorithm;
 
 /**
  * <h1>Checks Completeness of an Automaton</h1>

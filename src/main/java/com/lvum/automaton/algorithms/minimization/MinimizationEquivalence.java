@@ -1,6 +1,7 @@
-package com.lvum.algorithms;
+package com.lvum.automaton.algorithms.minimization;
 
-import com.lvum.Automaton;
+import com.lvum.automaton.Automaton;
+import com.lvum.automaton.algorithms.Algorithm;
 
 import java.util.*;
 

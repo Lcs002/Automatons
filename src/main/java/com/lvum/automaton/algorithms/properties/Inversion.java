@@ -1,7 +1,7 @@
-package com.lvum.algorithms.properties;
+package com.lvum.automaton.algorithms.properties;
 
-import com.lvum.Automaton;
-import com.lvum.algorithms.Algorithm;
+import com.lvum.automaton.Automaton;
+import com.lvum.automaton.algorithms.Algorithm;
 
 /**
  * <h1>Algorithm for Automaton Inversion</h1>

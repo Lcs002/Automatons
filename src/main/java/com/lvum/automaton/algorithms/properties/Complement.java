@@ -1,9 +1,9 @@
-package com.lvum.algorithms.properties;
+package com.lvum.automaton.algorithms.properties;
 
-import com.lvum.Automaton;
-import com.lvum.algorithms.Algorithm;
-import com.lvum.algorithms.utility.IsComplete;
-import com.lvum.algorithms.utility.IsDFA;
+import com.lvum.automaton.Automaton;
+import com.lvum.automaton.algorithms.Algorithm;
+import com.lvum.automaton.algorithms.utility.IsComplete;
+import com.lvum.automaton.algorithms.utility.IsDFA;
 
 /**
  * <h1>Algorithm for Automaton Complement</h1>

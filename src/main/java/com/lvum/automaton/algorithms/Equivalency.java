@@ -1,6 +1,7 @@
-package com.lvum.algorithms;
+package com.lvum.automaton.algorithms;
 
-import com.lvum.Automaton;
+import com.lvum.automaton.Automaton;
+import com.lvum.automaton.algorithms.utility.IsDFA;
 import org.javatuples.Pair;
 
 import java.util.HashSet;
@@ -15,7 +16,7 @@ import java.util.Set;
  * <p><b>Result:</b> <b>Boolean</b> that indicates if the automaton is equivalent to another automaton.</p>
  * <p><b>Requisites:</b></p>
  * <ol>
- *     <li>Both automatons <b>{@link com.lvum.algorithms.utility.IsDFA must be a DFA} </b>.</li>
+ *     <li>Both automatons <b>{@link IsDFA must be a DFA} </b>.</li>
  *     <li>Both automatons have the same <b>alphabet</b>.</li>
  * </ol>
  * <p><b><i>References:</i></b></p>

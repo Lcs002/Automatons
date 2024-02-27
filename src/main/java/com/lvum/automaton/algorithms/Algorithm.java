@@ -1,6 +1,6 @@
-package com.lvum.algorithms;
+package com.lvum.automaton.algorithms;
 
-import com.lvum.Automaton;
+import com.lvum.automaton.Automaton;
 
 /**
  * <h1>Algorithm</h1>

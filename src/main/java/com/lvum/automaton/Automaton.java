@@ -1,6 +1,11 @@
-package com.lvum;
+package com.lvum.automaton;
 
-import com.lvum.algorithms.Algorithm;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+import com.lvum.automaton.algorithms.Algorithm;
+import com.lvum.automaton.serialize.AutomatonSerializer;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -9,24 +14,28 @@ import java.util.stream.Collectors;
  * <h1>Automaton</h1>
  * <p>Representation of a finite automaton.</p>
  */
+@JsonDeserialize(builder = Automaton.Builder.class)
 public class Automaton {
     /**
      * Character that represents the Epsilon symbol.
      * <p>
      * Used for Epsilon transitions.
      */
+    @JsonIgnore
     public static final Character EPSILON = 'ε';
     /**
      * Character that represents the empty state.
      * <p>
      * Used for empty transitions.
      */
+    @JsonIgnore
     public static final String EMPTY_STATE = "∅";
     /**
      * Separator between states.
      * <p>
      * Example with '-': S1-S2
      */
+    @JsonIgnore
     public static final String SEPARATOR = "-";
     private final Set<Character> alphabet;
     private final Set<String> states;
@@ -44,6 +53,16 @@ public class Automaton {
         this.states = new HashSet<>();
         this.finalStates = new HashSet<>();
         this.transitions = new HashSet<>();
+    }
+
+    private Automaton(Set<Character> alphabet, Set<String> states, Set<Transition> transitions,
+                      Set<String> finalStates, String initialState)
+    {
+        this.alphabet = alphabet;
+        this.states = states;
+        this.transitions = transitions;
+        this.finalStates = finalStates;
+        this.initialState = initialState;
     }
 
 
@@ -163,4 +182,42 @@ public class Automaton {
      * @param entry Symbol that triggers the transition.
      */
     public record Transition(String from, String to, Character entry) {}
+
+    @JsonPOJOBuilder
+    static class Builder {
+        Set<Character> alphabet;
+        Set<String> states;
+        Set<Transition> transitions;
+        Set<String> finalStates;
+        String initialState;
+
+        public Builder withAlphabet(Set<Character> alphabet) {
+            this.alphabet = alphabet;
+            return this;
+        }
+
+        public Builder withStates(Set<String> states) {
+            this.states = states;
+            return this;
+        }
+
+        public Builder withTransitions(Set<Transition> transitions) {
+            this.transitions = transitions;
+            return this;
+        }
+
+        public Builder withFinalStates(Set<String> finalStates) {
+            this.finalStates = finalStates;
+            return this;
+        }
+
+        public Builder withInitialState(String initialState) {
+            this.initialState = initialState;
+            return this;
+        }
+
+        public Automaton build() {
+            return new Automaton(alphabet, states, transitions, finalStates, initialState);
+        }
+    }
 }

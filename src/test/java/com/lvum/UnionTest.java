@@ -1,9 +1,9 @@
 package com.lvum;
 
-import com.lvum.algorithms.Equivalency;
-import com.lvum.algorithms.NFAToDFA;
-import com.lvum.algorithms.NFAToDFAEpsilon;
-import com.lvum.algorithms.properties.Union;
+import com.lvum.automaton.algorithms.Equivalency;
+import com.lvum.automaton.algorithms.NFAToDFAEpsilon;
+import com.lvum.automaton.algorithms.properties.Union;
+import com.lvum.automaton.Automaton;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

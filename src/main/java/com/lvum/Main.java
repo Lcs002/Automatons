@@ -1,6 +1,10 @@
 package com.lvum;
 
-import com.lvum.algorithms.utility.RemoveUnreachable;
+import com.lvum.automaton.Automaton;
+import com.lvum.automaton.serialize.AutomatonDeserializer;
+import com.lvum.automaton.serialize.AutomatonSerializer;
+import com.lvum.automaton.serialize.json.AutomatonJsonDeserializer;
+import com.lvum.automaton.serialize.json.AutomatonJsonSerializer;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -25,7 +29,24 @@ public class Main {
         automaton.addTransition("S3", "S1", '0');
         automaton.setInitialState("S1");
 
-        System.out.println(automaton);
-        System.out.println(automaton.run(new RemoveUnreachable()));
+        AutomatonSerializer serializer = new AutomatonJsonSerializer();
+        AutomatonDeserializer deserializer = new AutomatonJsonDeserializer();
+        String json = null;
+
+        try {
+            json = serializer.serialize(automaton);
+            System.out.println(json);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (json != null) {
+            try {
+                Automaton deserializedAutomaton = deserializer.deserialize(json);
+                System.out.println(deserializedAutomaton);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
-package com.lvum.algorithms;
+package com.lvum.automaton.algorithms;
 
-import com.lvum.Automaton;
-import com.lvum.algorithms.utility.GetEpsilonClosure;
+import com.lvum.automaton.Automaton;
+import com.lvum.automaton.algorithms.utility.GetEpsilonClosure;
 
 import java.util.*;
 

@@ -1,9 +1,8 @@
-package com.lvum.algorithms.properties;
+package com.lvum.automaton.algorithms.properties;
 
-import com.lvum.Automaton;
-import com.lvum.algorithms.Algorithm;
-import com.lvum.algorithms.utility.IsComplete;
-import com.lvum.algorithms.utility.IsDFA;
+import com.lvum.automaton.Automaton;
+import com.lvum.automaton.algorithms.Algorithm;
+import com.lvum.automaton.algorithms.utility.IsDFA;
 
 import java.util.*;
 
@@ -18,7 +17,7 @@ import java.util.*;
  * </ol>
  */
 public class Intersection implements Algorithm<Automaton> {
-    private Automaton other;
+    private final Automaton other;
 
 
     public Intersection(Automaton other) {
