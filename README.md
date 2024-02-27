@@ -7,16 +7,19 @@ Automaton's Algorithms implemented in Java.
 
 |       **Functionalities**       | **Done** |
 |:-------------------------------:|:--------:|
-|     _NFA to DFA conversion_     |   **X**  |
-|    _NFA-ε to DFA conversion_    |   **X**  |
-|   _Remove Unreachable States_   |   **X**  |
+|     _NFA to DFA conversion_     |  **X**   |
+|    _NFA-ε to DFA conversion_    |  **X**   |
+|   _Remove Unreachable States_   |  **X**   |
+|      _ε-Closure of State_       |  **X**   |
 | _Minimize - Equivalency Method_ |          |
 |    _Minimize - Table Method_    |          |
-|     _Automaton Equivalency_     | **X**    |
-|          _Complement_           |          |
+|     _Automaton Equivalency_     |  **X**   |
+|      _Complete Automaton_       |  **X**   |
+|          _Complement_           |  **X**   |
+|         _Concatenation_         |  **X**   |
 |         _Intersection_          |          |
-|         _Inversion_             |          |
-|             _Union_             |   **X**  |
+|           _Inversion_           |          |
+|             _Union_             |  **X**   |
 |    _?Language to Automaton?_    |          |
 |     _?Graphical Interface?_     |          |
 
