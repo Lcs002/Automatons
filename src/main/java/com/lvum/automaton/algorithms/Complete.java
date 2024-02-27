@@ -18,6 +18,7 @@ public class Complete implements Algorithm<Automaton> {
     public Automaton run(Automaton automaton) {
         // The automaton must be a DFA
         if (Boolean.FALSE.equals(automaton.run(new IsDFA()))) return null;
+
         // The result of the complete DFA is a new automaton
         Automaton result = new Automaton(automaton.getAlphabet());
         // Add the transitions of the original automaton
