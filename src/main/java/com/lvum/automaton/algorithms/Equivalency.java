@@ -92,7 +92,7 @@ public class Equivalency implements Algorithm<Boolean> {
                     {
                         // Add the pair to the queue and the set of checked pairs
                         queue.add(new Pair<>(nextOriginal, nextOther));
-                        checked.add(new Pair<>(superstate.getValue0(), superstate.getValue1()));
+                        checked.add(superstate);
                     }
                     // If the pair of next states is not both final or non-final
                     // The automata are not equivalent

@@ -23,6 +23,7 @@ public class Complement implements Algorithm<Automaton> {
         if (Boolean.FALSE.equals(automaton.run(new IsDFA()))) return null;
         // The automaton must be complete
         if (Boolean.FALSE.equals(automaton.run(new IsComplete()))) return null;
+
         // The result of the complement of an automaton is a new automaton
         Automaton result = new Automaton(automaton.getAlphabet());
         // Add the transitions of the original automaton

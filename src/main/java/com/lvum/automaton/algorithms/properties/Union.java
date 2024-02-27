@@ -36,6 +36,7 @@ public class Union implements Algorithm<Automaton> {
         if (Boolean.FALSE.equals(automaton.run(new IsDFA())) || Boolean.FALSE.equals(other.run(new IsDFA()))) return null;
         // The alphabet must be the same for both automata
         if (!automaton.getAlphabet().equals(other.getAlphabet())) return null;
+
         Set<Character> alphabet = new HashSet<>(automaton.getAlphabet());
         // Add the epsilon symbol to the alphabet if it is not present
         if (!alphabet.contains(Automaton.EPSILON)) alphabet.add(Automaton.EPSILON);
