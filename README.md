@@ -17,11 +17,11 @@ Automaton's Algorithms implemented in Java.
 |      _Complete Automaton_       |  **X**   |
 |          _Complement_           |  **X**   |
 |         _Concatenation_         |  **X**   |
-|         _Intersection_          |          |
+|         _Intersection_          |  **X**   |
 |           _Inversion_           |          |
 |             _Union_             |  **X**   |
-|        _Load Automaton_         |          |
-|        _Save Automaton_         |          |
+|      _Load/Save Automaton_      |          |
+|  _Serialize Automaton to Json_  |  **X**   |
 |    _?Language to Automaton?_    |          |
 |     _?Graphical Interface?_     |          |
 
