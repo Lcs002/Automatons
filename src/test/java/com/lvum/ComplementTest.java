@@ -1,10 +1,8 @@
 package com.lvum;
 
-import com.lvum.algorithms.Complete;
-import com.lvum.algorithms.Equivalency;
-import com.lvum.algorithms.properties.Complement;
-import com.lvum.algorithms.utility.IsComplete;
-import com.lvum.algorithms.utility.IsDFA;
+import com.lvum.automaton.algorithms.Equivalency;
+import com.lvum.automaton.algorithms.properties.Complement;
+import com.lvum.automaton.Automaton;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

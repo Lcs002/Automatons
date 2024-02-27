@@ -20,6 +20,8 @@ Automaton's Algorithms implemented in Java.
 |         _Intersection_          |          |
 |           _Inversion_           |          |
 |             _Union_             |  **X**   |
+|        _Load Automaton_         |          |
+|        _Save Automaton_         |          |
 |    _?Language to Automaton?_    |          |
 |     _?Graphical Interface?_     |          |
 
