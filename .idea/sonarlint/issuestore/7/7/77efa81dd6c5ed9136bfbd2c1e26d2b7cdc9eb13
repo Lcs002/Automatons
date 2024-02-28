@@ -1,3 +1,5 @@
 
-G	java:S106&"+Replace this use of System.out by a logger.(øŒ¼Æ8İ›ÔØŞ1
-L	java:S106."+Replace this use of System.out by a logger.(ÓêÏ—ûÿÿÿÿ8üİÖØŞ1
+f
+java:S1854"DRemove this useless assignment to local variable "automatonMachine".(ÛâÖ´ûÿÿÿÿ8®Âƒ‹ß1
+W
+java:S1481"5Remove this unused "automatonMachine" local variable.(ÛâÖ´ûÿÿÿÿ8´Âƒ‹ß1

@@ -45,74 +45,74 @@ Set<Character> alphabet = new HashSet<>(Set.of('a', 'b'));
 
 Then, an instance of Automata must be created using the alphabet defined:
 ```java
-Automata automata = new Automata(alphabet);
+Automata automaton = new Automata(alphabet);
 ```
 
 **States** are added using `addState` with the name of the state as parameter:
 ```java
-automata.addState("q0");
+automaton.addState("q0");
 ```
 
 **Transitions** are added by using `addTransition` with the source state, destination state and symbol as parameters:
 ```java
 // For normal transitions
-automata.addTransition("q0", "q1", "a");
+automaton.addTransition("q0", "q1", "a");
 
 // For epsilon transitions
-automata.addTransition("q0", "q1", Automata.EPSILON);
+automaton.addTransition("q0", "q1", Automata.EPSILON);
 ```
 
 > [!NOTE]
-> _If any of the states does not exist, they will be created and added to the automata._
+> _If any of the states does not exist, they will be created and added to the automaton._
 
 > [!WARNING] 
-> _All entries must be symbols from the automata's alphabet._
+> _All entries must be symbols from the automaton's alphabet._
 
 **Initial State** is set by using `setInitialState` with the name of the state as parameter:
 ```java
-automata.setInitialState("q0");
+automaton.setInitialState("q0");
 ```
 
 > [!WARNING]
 > _Be sure an Initial State is set before running any algorithm._
 
 > [!NOTE] 
-> _Only one initial state is allowed per automata._
+> _Only one initial state is allowed per automaton._
 
 **Final States** are added by using `addFinalState` with the name of the state as parameter
 ```java
-automata.addFinalState("q1");
+automaton.addFinalState("q1");
 ```
 
 > [!WARNING]
 > _Be sure at least one Final State is set before running any algorithm._
 
 > [!TIP]
-> _You can visualize the automata by simply printing it or using the method `toString()`._
+> _You can visualize the automaton by simply printing it or using the method `toString()`._
 > ```java
-> System.out.println(automata);
+> System.out.println(automaton);
 > ```
 
 ### Running Algorithms
-To run an algorithm on a automata, call the method `run(T algorithm)` passing the algorithm as parameter:
+To run an algorithm on a automaton, call the method `run(T algorithm)` passing the algorithm as parameter:
 ```java
 // Define the alphabet
 Set<Character> alphabet = new HashSet<>(Set.of('a', 'b'));
-// Create a new instance of Automata
-Automata automata = new Automata(alphabet);
+// Create a new instance of Automaton
+Automata automaton = new Automata(alphabet);
 // Call the method 'run' passing the algorithm as parameter
-Automata result = automata.run(new NFAToDFAEpsilon());
+Automata result = automaton.run(new NFAToDFAEpsilon());
 
-System.out.println(automata);
+System.out.println(automaton);
 System.out.println(result);
 ```
 
 ### De/Serializing Automatons
 To convert an **Automaton** to a **JSON** string, call the method `serialize` from the class `AutomatonJsonSerializer`:
 ```java
-String json = new AutomatonJsonSerializer().serialize(automata);
+String json = new AutomatonJsonSerializer().serialize(automaton);
 ```
 To convert a **JSON** string to an **Automaton**, call the method `deserialize` from the class `AutomatonJsonDeserializer`:
 ```java
-Automata automata = new AutomatonJsonDeserializer().deserialize(json);
+Automata automaton = new AutomatonJsonDeserializer().deserialize(json);
 ```

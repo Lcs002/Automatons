@@ -86,14 +86,14 @@ loadScripts(document, 'script');</script>
 <h1 title="Class Automaton" class="title">Class Automaton</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">com.lvum.automata.Automata</div>
+<div class="inheritance">com.lvum.automaton.Automata</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Automaton</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block"><h1 id="automata-heading">Automaton</h1>
- <p>Representation of a finite automata.</p></div>
+<div class="block"><h1 id="automaton-heading">Automaton</h1>
+ <p>Representation of a finite automaton.</p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -166,7 +166,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.Set)" class="member-name-link">Automaton</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.html" title="class or interface in java.lang" class="external-link">Character</a>&gt;&nbsp;alphabet)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a new automata.</div>
+<div class="block">Creates a new automaton.</div>
 </div>
 </div>
 </section>
@@ -214,7 +214,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;T</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(com.lvum.algorithms.Algorithm)" class="member-name-link">run</a><wbr>(<a href="algorithms/Algorithm.html" title="interface in com.lvum.algorithms">Algorithm</a>&lt;T&gt;&nbsp;algorithm)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Runs an algorithm on the automata.</div>
+<div class="block">Runs an algorithm on the automaton.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setInitialState(java.lang.String)" class="member-name-link">setInitialState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;state)</code></div>
@@ -324,10 +324,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(java.util.Set)">
 <h3>Automaton</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Automaton</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.html" title="class or interface in java.lang" class="external-link">Character</a>&gt;&nbsp;alphabet)</span></div>
-<div class="block">Creates a new automata.</div>
+<div class="block">Creates a new automaton.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>alphabet</code> - Set of symbols the automata can read.</dd>
+<dd><code>alphabet</code> - Set of symbols the automaton can read.</dd>
 </dl>
 </section>
 </li>
@@ -405,7 +405,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="run(com.lvum.algorithms.Algorithm)">
 <h3>run</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">run</span><wbr><span class="parameters">(<a href="algorithms/Algorithm.html" title="interface in com.lvum.algorithms">Algorithm</a>&lt;T&gt;&nbsp;algorithm)</span></div>
-<div class="block">Runs an algorithm on the automata.</div>
+<div class="block">Runs an algorithm on the automaton.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
 <dd><code>T</code> - Type of the result.</dd>

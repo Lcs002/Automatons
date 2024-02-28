@@ -1,6 +1,6 @@
 package com.lvum.automaton.algorithms;
 
-import com.lvum.automaton.Automata;
+import com.lvum.automaton.Automaton;
 
 /**
  * <h1>Algorithm</h1>
@@ -9,5 +9,5 @@ import com.lvum.automaton.Automata;
  * @param <T> The result of the algorithm.
  */
 public interface Algorithm<T> {
-    T run(Automata automata);
+    T run(Automaton automaton);
 }

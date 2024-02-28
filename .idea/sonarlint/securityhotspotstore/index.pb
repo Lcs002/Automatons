@@ -326,3 +326,13 @@ u
 Esrc/main/java/com/lvum/automaton/algorithms/properties/Reversion.java,5\c\5c19e53a911cb0246b6cfd2fc522cb64583b8043
 Y
 )src/test/java/com/lvum/ReversionTest.java,c\7\c7c9dd7971c503dd6ce482aade95ec662c0e0cc6
+h
+8src/main/java/com/lvum/automaton/FunctionalAutomata.java,a\1\a148d4b5a73c29ef53de7ebd40a2a591d5fd54eb
+]
+-src/main/java/com/lvum/automaton/Machine.java,6\4\64659bcdb6ebeec698de80fc92b7a939eb79cfbc
+[
++src/main/java/com/lvum/machine/Machine.java,2\9\29e0de6e15675af098c624e583add3813f06ba38
+c
+3src/main/java/com/lvum/machine/AutomataMachine.java,4\3\43d3466c4cf76fb7be68fc08e09e022e93dde9f1
+d
+4src/main/java/com/lvum/machine/AutomatonMachine.java,2\7\27cf6dc288e81a9a1c5718d970f610608beb9e33

@@ -1,6 +1,6 @@
 package com.lvum;
 
-import com.lvum.automaton.Automata;
+import com.lvum.automaton.Automaton;
 import com.lvum.automaton.algorithms.Equivalency;
 import com.lvum.automaton.algorithms.properties.Complement;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,9 +16,9 @@ public class ComplementTest {
 
     @ParameterizedTest
     @MethodSource("correctArgs")
-    void correct(Automata automata, Automata expected) {
-        // The two automata must be equivalent
-        Automata result = automata.run(new Complement());
+    void correct(Automaton automaton, Automaton expected) {
+        // The two automaton must be equivalent
+        Automaton result = automaton.run(new Complement());
         assertTrue(result.run(new Equivalency(expected)));
     }
 
@@ -33,19 +33,19 @@ public class ComplementTest {
     }
 
 
-    static Automata automaton1() {
-        Automata automata = new Automata(Set.of('a', 'b'));
-        automata.addTransition("A", "B", 'a');
-        automata.addTransition("A", "B", 'b');
-        automata.addTransition("B", "B", 'a');
-        automata.addTransition("B", "A", 'b');
-        automata.setInitialState("A");
-        automata.addFinalState("A");
-        return automata;
+    static Automaton automaton1() {
+        Automaton automaton = new Automaton(Set.of('a', 'b'));
+        automaton.addTransition("A", "B", 'a');
+        automaton.addTransition("A", "B", 'b');
+        automaton.addTransition("B", "B", 'a');
+        automaton.addTransition("B", "A", 'b');
+        automaton.setInitialState("A");
+        automaton.addFinalState("A");
+        return automaton;
     }
 
-    static Automata expected1() {
-        Automata expected = new Automata(Set.of('a', 'b'));
+    static Automaton expected1() {
+        Automaton expected = new Automaton(Set.of('a', 'b'));
         expected.addTransition("A", "B", 'a');
         expected.addTransition("A", "B", 'b');
         expected.addTransition("B", "B", 'a');

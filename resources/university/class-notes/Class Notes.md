@@ -17,15 +17,15 @@
 Se da L. Es L regular?
 
 Probar que L es regular
-- Si : Escribir un automata finito que acepta L (No hay otra opciÃ³n)
+- Si : Escribir un automaton finito que acepta L (No hay otra opciÃ³n)
 - No : Â¿? (Lema de Bombeo)
 
 Cumple Lema de Bombeo -> No regular
 
 Regular <-> Automata finito acepta L
 
-> No podemos escribir el automata porque seria muy grande.
-> Con el Lema de Bombeo podemos probar si el automata no es regular.
+> No podemos escribir el automaton porque seria muy grande.
+> Con el Lema de Bombeo podemos probar si el automaton no es regular.
 
 ```
 Pasos:
@@ -79,7 +79,7 @@ Ejemplo: L ={a^n, b^n | n >= 1}
 
 # Clas dia 23/4
 Si queremos probar que w es capicua, con un algoritmo la idea es qquepuedo tener un variable i de izquierda y d de derecha y siempre recorremos simultaneamente con esas dos variables la entrada y comprobamos si las letras son iguales.
-Que pasasi queremos implementar este automata con una AF, no podemos recorrer desde la derecha hacia la derecha solamente desde izq a derecha y despues de recorrer uuna parte no puedo recuperarla una vez consumida.
+Que pasasi queremos implementar este automaton con una AF, no podemos recorrer desde la derecha hacia la derecha solamente desde izq a derecha y despues de recorrer uuna parte no puedo recuperarla una vez consumida.
 Resulta que lo mas probable es que este lenguaje no sea regular, y si el regular no es regular, la unica opcion es aplicar el lema de bombeo.
 En nuestro caso que, Palabra podemos elegir? w = 1^p01^p
 
@@ -155,6 +155,6 @@ PASAR A AUTOMATA
 Cuando haya una transicion A -> lambda, A es final
 
 Tenemos dos algoritmos para pasar de una Gramatica a un Automata
-Si volvemos a la pregunta, L es regular. En este momento, para la respuesta si, hasta ahora solo tendriamos una opcion: escribir un automata,
+Si volvemos a la pregunta, L es regular. En este momento, para la respuesta si, hasta ahora solo tendriamos una opcion: escribir un automaton,
 ahora podremos también escribir una gramatica.
 para la respuesta no, seguimos solo teniendo Lema de Bombeo

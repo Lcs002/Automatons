@@ -9,11 +9,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * <h1>Automata</h1>
+ * <h1>Automaton</h1>
  * <p>Representation of a finite automaton.</p>
  */
-@JsonDeserialize(builder = Automata.Builder.class)
-public class Automata {
+@JsonDeserialize(builder = Automaton.Builder.class)
+public class Automaton {
     /**
      * Character that represents the Epsilon symbol.
      * <p>
@@ -46,15 +46,15 @@ public class Automata {
      * Creates a new automaton.
      * @param alphabet Set of symbols the automaton can read.
      */
-    public Automata(Set<Character> alphabet) {
+    public Automaton(Set<Character> alphabet) {
         this.alphabet = alphabet;
         this.states = new HashSet<>();
         this.finalStates = new HashSet<>();
         this.transitions = new HashSet<>();
     }
 
-    private Automata(Set<Character> alphabet, Set<String> states, Set<Transition> transitions,
-                     Set<String> finalStates, String initialState)
+    private Automaton(Set<Character> alphabet, Set<String> states, Set<Transition> transitions,
+                      Set<String> finalStates, String initialState)
     {
         this.alphabet = alphabet;
         this.states = states;
@@ -214,8 +214,8 @@ public class Automata {
             return this;
         }
 
-        public Automata build() {
-            return new Automata(alphabet, states, transitions, finalStates, initialState);
+        public Automaton build() {
+            return new Automaton(alphabet, states, transitions, finalStates, initialState);
         }
     }
 }

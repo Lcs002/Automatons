@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2024-02-27">
-<meta name="description" content="declaration: package: com.lvum.automata.algorithms.utility, class: GetEpsilonClosure">
+<meta name="description" content="declaration: package: com.lvum.automaton.algorithms.utility, class: GetEpsilonClosure">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
@@ -82,26 +82,26 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.lvum.automata.algorithms.utility</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.lvum.automaton.algorithms.utility</a></div>
 <h1 title="Class GetEpsilonClosure" class="title">Class GetEpsilonClosure</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">com.lvum.automata.algorithms.utility.GetEpsilonClosure</div>
+<div class="inheritance">com.lvum.automaton.algorithms.utility.GetEpsilonClosure</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../Algorithm.html" title="interface in com.lvum.automata.algorithms">Algorithm</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&gt;</code></dd>
+<dd><code><a href="../Algorithm.html" title="interface in com.lvum.automaton.algorithms">Algorithm</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&gt;</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GetEpsilonClosure</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="../Algorithm.html" title="interface in com.lvum.automata.algorithms">Algorithm</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&gt;</span></div>
+implements <a href="../Algorithm.html" title="interface in com.lvum.automaton.algorithms">Algorithm</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&gt;</span></div>
 <div class="block"><h1 id="algorithm-for-state--closure-heading">Algorithm for State ε-Closure</h1>
  <p><b>Result:</b> <b>Set&lt;String&gt;</b> that contains the epsilon closure of a state.</p>
  <p><b>Requisites:</b></p>
  <ol>
-     <li>The automata <b><a href="IsDFA.html" title="class in com.lvum.automata.algorithms.utility"><code>must be a NFA</code></a></b>.</li>
+     <li>The automaton <b><a href="IsDFA.html" title="class in com.lvum.automaton.algorithms.utility"><code>must be a NFA</code></a></b>.</li>
  </ol></div>
 </section>
 <section class="summary">
@@ -146,7 +146,7 @@ implements <a href="../Algorithm.html" title="interface in com.lvum.automata.alg
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(com.lvum.automata.Automaton)" class="member-name-link">run</a><wbr>(<a href="../../Automaton.html" title="class in com.lvum.automata">Automaton</a>&nbsp;automata)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(com.lvum.automaton.Automaton)" class="member-name-link">run</a><wbr>(<a href="../../Automaton.html" title="class in com.lvum.automaton">Automaton</a>&nbsp;automaton)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -194,12 +194,12 @@ implements <a href="../Algorithm.html" title="interface in com.lvum.automata.alg
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="run(com.lvum.automata.Automaton)">
+<section class="detail" id="run(com.lvum.automaton.Automaton)">
 <h3>run</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">run</span><wbr><span class="parameters">(<a href="../../Automaton.html" title="class in com.lvum.automata">Automaton</a>&nbsp;automata)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">run</span><wbr><span class="parameters">(<a href="../../Automaton.html" title="class in com.lvum.automaton">Automaton</a>&nbsp;automaton)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../Algorithm.html#run(com.lvum.automata.Automaton)">run</a></code>&nbsp;in interface&nbsp;<code><a href="../Algorithm.html" title="interface in com.lvum.automata.algorithms">Algorithm</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&gt;</code></dd>
+<dd><code><a href="../Algorithm.html#run(com.lvum.automaton.Automaton)">run</a></code>&nbsp;in interface&nbsp;<code><a href="../Algorithm.html" title="interface in com.lvum.automaton.algorithms">Algorithm</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&gt;</code></dd>
 </dl>
 </section>
 </li>

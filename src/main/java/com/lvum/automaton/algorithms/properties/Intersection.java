@@ -1,6 +1,6 @@
 package com.lvum.automaton.algorithms.properties;
 
-import com.lvum.automaton.Automata;
+import com.lvum.automaton.Automaton;
 import com.lvum.automaton.algorithms.Algorithm;
 import com.lvum.automaton.algorithms.utility.IsComplete;
 import com.lvum.automaton.algorithms.utility.IsDFA;
@@ -9,7 +9,7 @@ import org.javatuples.Pair;
 import java.util.*;
 
 /**
- * <h1>Algorithm for Automata Intersection</h1>
+ * <h1>Algorithm for Automaton Intersection</h1>
  *
  * <p><b>Result:</b> <b>NFA</b> that accepts the intersection of the language between both automata.</p>
  * <p><b>Requisites:</b></p>
@@ -19,50 +19,50 @@ import java.util.*;
  *  <li> The automatons have the same <b>alphabet</b>.</li>
  * </ol>
  */
-public class Intersection implements Algorithm<Automata> {
-    private final Automata other;
+public class Intersection implements Algorithm<Automaton> {
+    private final Automaton other;
 
 
-    public Intersection(Automata other) {
+    public Intersection(Automaton other) {
         this.other = other;
     }
 
 
     @Override
-    public Automata run(Automata automata) {
-        // The automata must be a dfa
-        if (Boolean.FALSE.equals(automata.run(new IsDFA()))) return null;
-        // The automata must be complete
-        if (Boolean.FALSE.equals(automata.run(new IsComplete()))) return null;
-        // The automata must have the same alphabet
-        if (!automata.getAlphabet().equals(other.getAlphabet())) return null;
+    public Automaton run(Automaton automaton) {
+        // The automaton must be a dfa
+        if (Boolean.FALSE.equals(automaton.run(new IsDFA()))) return null;
+        // The automaton must be complete
+        if (Boolean.FALSE.equals(automaton.run(new IsComplete()))) return null;
+        // The automaton must have the same alphabet
+        if (!automaton.getAlphabet().equals(other.getAlphabet())) return null;
 
         Queue<Pair<String, String>> queue = new LinkedList<>();
         Set<Pair<String, String>> checked = new HashSet<>();
-        // The result Automata
-        Automata result = new Automata(automata.getAlphabet());
-        // The initial state of the result automata is the intersection of the initial states of the two automata
-        Pair<String, String> initialStates = new Pair<>(automata.getInitialState(), other.getInitialState());
-        result.setInitialState(initialStates.getValue0() + Automata.SEPARATOR + initialStates.getValue1());
+        // The result Automaton
+        Automaton result = new Automaton(automaton.getAlphabet());
+        // The initial state of the result automaton is the intersection of the initial states of the two automaton
+        Pair<String, String> initialStates = new Pair<>(automaton.getInitialState(), other.getInitialState());
+        result.setInitialState(initialStates.getValue0() + Automaton.SEPARATOR + initialStates.getValue1());
         queue.add(initialStates);
         checked.add(initialStates);
         // While there are states to check
         while (!queue.isEmpty()) {
             Pair<String, String> current = queue.poll();
             // For each symbol in the alphabet
-            for (char symbol : automata.getAlphabet()) {
+            for (char symbol : automaton.getAlphabet()) {
                 // Get the next original state given the current state and the symbol
-                String nextOriginal = automata.getTransitions().stream()
+                String nextOriginal = automaton.getTransitions().stream()
                         .filter(transition -> transition.from().equals(current.getValue0()))
                         .filter(transition -> transition.entry().equals(symbol))
-                        .map(Automata.Transition::to)
+                        .map(Automaton.Transition::to)
                         .findFirst()
                         .orElse(null);
                 // Get the next other state given the current state and the symbol
                 String nextOther = other.getTransitions().stream()
                         .filter(transition -> transition.from().equals(current.getValue1()))
                         .filter(transition -> transition.entry().equals(symbol))
-                        .map(Automata.Transition::to)
+                        .map(Automaton.Transition::to)
                         .findFirst()
                         .orElse(null);
                 Pair<String, String> nextPair = new Pair<>(nextOriginal, nextOther);
@@ -73,19 +73,19 @@ public class Intersection implements Algorithm<Automata> {
                     // And mark the current as checked
                     checked.add(current);
                     // If both states are final, add the new state as final
-                    if (automata.isFinal(nextOriginal) && other.isFinal(nextOther)) {
-                        result.addFinalState(nextPair.getValue0() + Automata.SEPARATOR + nextPair.getValue1());
+                    if (automaton.isFinal(nextOriginal) && other.isFinal(nextOther)) {
+                        result.addFinalState(nextPair.getValue0() + Automaton.SEPARATOR + nextPair.getValue1());
                     }
                 }
-                // Add the transition to the result automata
+                // Add the transition to the result automaton
                 result.addTransition(
-                        current.getValue0() + Automata.SEPARATOR + current.getValue1(),
-                        nextPair.getValue0() + Automata.SEPARATOR + nextPair.getValue1(),
+                        current.getValue0() + Automaton.SEPARATOR + current.getValue1(),
+                        nextPair.getValue0() + Automaton.SEPARATOR + nextPair.getValue1(),
                         symbol
                 );
             }
         }
-        // Return the result automata
+        // Return the result automaton
         return result;
     }
 }

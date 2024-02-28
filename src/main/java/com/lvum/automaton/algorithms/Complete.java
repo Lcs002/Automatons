@@ -1,6 +1,6 @@
 package com.lvum.automaton.algorithms;
 
-import com.lvum.automaton.Automata;
+import com.lvum.automaton.Automaton;
 import com.lvum.automaton.algorithms.utility.IsDFA;
 
 /**
@@ -12,17 +12,17 @@ import com.lvum.automaton.algorithms.utility.IsDFA;
  *  <li>The automaton <b>{@link IsDFA is a DFA}</b>.</li>
  * </ol>
  */
-public class Complete implements Algorithm<Automata> {
+public class Complete implements Algorithm<Automaton> {
 
     @Override
-    public Automata run(Automata automata) {
-        // The automata must be a DFA
-        if (Boolean.FALSE.equals(automata.run(new IsDFA()))) return null;
+    public Automaton run(Automaton automaton) {
+        // The automaton must be a DFA
+        if (Boolean.FALSE.equals(automaton.run(new IsDFA()))) return null;
 
-        // The result of the complete DFA is a new automata
-        Automata result = new Automata(automata.getAlphabet());
-        // Add the transitions of the original automata
-        automata.getTransitions()
+        // The result of the complete DFA is a new automaton
+        Automaton result = new Automaton(automaton.getAlphabet());
+        // Add the transitions of the original automaton
+        automaton.getTransitions()
                 .forEach(transition ->
                         result.addTransition(
                                 transition.from(),
@@ -31,27 +31,27 @@ public class Complete implements Algorithm<Automata> {
                         )
                 );
         // Add the transitions for the missing symbols
-        automata.getStates()
-                .forEach(state -> automata.getAlphabet()
+        automaton.getStates()
+                .forEach(state -> automaton.getAlphabet()
                         .forEach(symbol -> {
-                            if (automata.getTransitions().stream()
+                            if (automaton.getTransitions().stream()
                                     .noneMatch(transition ->
                                             transition.from().equals(state) && transition.entry().equals(symbol)
                                     )
                             )
                             {
-                                result.addTransition(state, Automata.EMPTY_STATE, symbol);
+                                result.addTransition(state, Automaton.EMPTY_STATE, symbol);
                             }
                         }
                 )
         );
         // Add the transitions to the empty state
-        automata.getAlphabet()
-                .forEach(symbol -> result.addTransition(Automata.EMPTY_STATE, Automata.EMPTY_STATE, symbol));
-        // Add the initial state of the original automata to the initial state of the result automata
-        result.setInitialState(automata.getInitialState());
-        // Add the final states of the original automata to the final states of the result automata
-        automata.getFinalStates()
+        automaton.getAlphabet()
+                .forEach(symbol -> result.addTransition(Automaton.EMPTY_STATE, Automaton.EMPTY_STATE, symbol));
+        // Add the initial state of the original automaton to the initial state of the result automaton
+        result.setInitialState(automaton.getInitialState());
+        // Add the final states of the original automaton to the final states of the result automaton
+        automaton.getFinalStates()
                 .forEach(result::addFinalState);
         // Return the complete DFA
         return result;
