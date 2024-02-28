@@ -4,6 +4,6 @@ com.lvum.automaton.algorithms
 com.lvum.automaton.algorithms.minimization
 com.lvum.automaton.algorithms.properties
 com.lvum.automaton.algorithms.utility
+com.lvum.automaton.machine
 com.lvum.automaton.serialize
 com.lvum.automaton.serialize.json
-com.lvum.machine

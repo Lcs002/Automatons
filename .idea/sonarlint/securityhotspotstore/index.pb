@@ -336,3 +336,23 @@ c
 3src/main/java/com/lvum/machine/AutomataMachine.java,4\3\43d3466c4cf76fb7be68fc08e09e022e93dde9f1
 d
 4src/main/java/com/lvum/machine/AutomatonMachine.java,2\7\27cf6dc288e81a9a1c5718d970f610608beb9e33
+P
+ docs/com/lvum/ReversionTest.html,9\d\9d802debb0488b3bffac03ad980d46349df3de49
+S
+#docs/com/lvum/IntersectionTest.html,e\c\ec226aa0815f4e2d19592fb1ab38fc1893652fbf
+Z
+*docs/com/lvum/machine/package-summary.html,2\c\2cbcc0aef207d1942346b0e7a1f246a501631587
+[
++docs/com/lvum/machine/AutomatonMachine.html,e\4\e491b4cce20b947b647c2887601f76e0b8211431
+l
+<docs/com/lvum/automaton/algorithms/properties/Reversion.html,b\f\bfad380d7da585abf7962fc46f24e5b976234c65
+W
+'docs/com/lvum/machine/package-tree.html,f\3\f32405af9b21321e39b9c748f864dfab55b1da18
+n
+>src/main/java/com/lvum/automaton/machine/AutomatonMachine.java,2\4\24b9c1a6d2f7adb65fe6a49cdccf938a1357e05d
+d
+4docs/com/lvum/automaton/machine/package-summary.html,7\c\7cad0fba452e1ca5d0f1f9e0e53335514cb70769
+e
+5docs/com/lvum/automaton/machine/AutomatonMachine.html,4\6\461a4db7ee367b7ea5b38864dcc93f86c6119be4
+a
+1docs/com/lvum/automaton/machine/package-tree.html,0\c\0cf6b9a342b4cf9992aaede4fe74d959998efec7

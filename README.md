@@ -34,7 +34,7 @@ _Automaton's Algorithms implemented in Java._
 |                                                   _Reg. Expr. to NFA_                                                    |          |            |
 |                                                  _Reg. Expr. to NFA-ε_                                                   |          |            |
 |                          _[Automaton to Json](src/main/java/com/lvum/automaton/serialize/json)_                          |  **X**   |            |
-|                       _[Automaton Machine](src/main/java/com/lvum/machine/AutomatonMachine.java)_                        |          |            |
+|                       _[Automaton Machine](src/main/java/com/lvum/automaton/machine/AutomatonMachine.java)_                        |          |            |
 |                                                 _Step by Step Algorithm_                                                 |          |            |
 ## Usage
 ### Creating Automatons

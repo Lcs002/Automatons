@@ -1,7 +1,7 @@
 package com.lvum;
 
 import com.lvum.automaton.Automaton;
-import com.lvum.machine.AutomatonMachine;
+import com.lvum.automaton.machine.AutomatonMachine;
 
 import java.util.Arrays;
 import java.util.HashSet;

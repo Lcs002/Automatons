@@ -1,4 +1,4 @@
-package com.lvum.machine;
+package com.lvum.automaton.machine;
 
 import com.lvum.automaton.Automaton;
 import com.lvum.automaton.algorithms.utility.IsDFA;
