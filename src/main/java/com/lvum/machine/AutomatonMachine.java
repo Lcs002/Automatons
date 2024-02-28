@@ -2,11 +2,13 @@ package com.lvum.machine;
 
 import com.lvum.automaton.Automaton;
 import com.lvum.automaton.algorithms.utility.IsDFA;
+import com.lvum.automaton.algorithms.utility.IsComplete;
 import jakarta.annotation.Nonnull;
 
 /**
  * <h1>Finite Automaton Machine</h1>
  * <p>Simulates the behavior of an automaton, enabling the user to consume entries and get its current state.</p>
+ * <p>The automaton used must <b>{@link IsDFA be a DFA}</b> and <b>{@link IsComplete be complete}</b>.</p>
  */
 public class AutomatonMachine {
     /**
@@ -28,6 +30,9 @@ public class AutomatonMachine {
         // Check if the automaton is a DFA
         if (Boolean.FALSE.equals(automaton.run(new IsDFA())))
             throw new IllegalArgumentException("The automaton must be a DFA");
+        // Check if the automaton is complete
+        if (Boolean.FALSE.equals(automaton.run(new IsComplete())))
+            throw new IllegalArgumentException("The automaton must be complete");
 
         this.automaton = automaton;
         this.currentState = automaton.getInitialState();
