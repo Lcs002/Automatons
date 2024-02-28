@@ -1,14 +1,14 @@
 package com.lvum.automaton.algorithms.properties;
 
-import com.lvum.automaton.Automaton;
+import com.lvum.automaton.Automata;
 import com.lvum.automaton.algorithms.Algorithm;
 
 /**
- * <h1>Algorithm for Automaton Inversion</h1>
+ * <h1>Algorithm for Automata Inversion</h1>
  */
-public class Inversion implements Algorithm<Automaton> {
+public class Inversion implements Algorithm<Automata> {
     @Override
-    public Automaton run(Automaton automaton) {
+    public Automata run(Automata automata) {
         return null;
     }
 }

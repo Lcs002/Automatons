@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2024-02-27">
-<meta name="description" content="declaration: package: com.lvum.automaton.algorithms.minimization, class: MinimizationTable">
+<meta name="description" content="declaration: package: com.lvum.automata.algorithms.minimization, class: MinimizationTable">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
@@ -82,21 +82,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.lvum.automaton.algorithms.minimization</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.lvum.automata.algorithms.minimization</a></div>
 <h1 title="Class MinimizationTable" class="title">Class MinimizationTable</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">com.lvum.automaton.algorithms.minimization.MinimizationTable</div>
+<div class="inheritance">com.lvum.automata.algorithms.minimization.MinimizationTable</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../Algorithm.html" title="interface in com.lvum.automaton.algorithms">Algorithm</a>&lt;<a href="../../Automaton.html" title="class in com.lvum.automaton">Automaton</a>&gt;</code></dd>
+<dd><code><a href="../Algorithm.html" title="interface in com.lvum.automata.algorithms">Algorithm</a>&lt;<a href="../../Automaton.html" title="class in com.lvum.automata">Automaton</a>&gt;</code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">MinimizationTable</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="../Algorithm.html" title="interface in com.lvum.automaton.algorithms">Algorithm</a>&lt;<a href="../../Automaton.html" title="class in com.lvum.automaton">Automaton</a>&gt;</span></div>
+implements <a href="../Algorithm.html" title="interface in com.lvum.automata.algorithms">Algorithm</a>&lt;<a href="../../Automaton.html" title="class in com.lvum.automata">Automaton</a>&gt;</span></div>
 <div class="block">Minimization of a DFA using the <a href="https://www.geeksforgeeks.org/minimization-of-dfa/">Myhill-Nerode Theorem.</a></div>
 </section>
 <section class="summary">
@@ -126,10 +126,10 @@ implements <a href="../Algorithm.html" title="interface in com.lvum.automaton.al
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>private <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a><wbr>&lt;org.javatuples.Pair&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createTable(com.lvum.automaton.Automaton)" class="member-name-link">createTable</a><wbr>(<a href="../../Automaton.html" title="class in com.lvum.automaton">Automaton</a>&nbsp;automaton)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createTable(com.lvum.automata.Automaton)" class="member-name-link">createTable</a><wbr>(<a href="../../Automaton.html" title="class in com.lvum.automata">Automaton</a>&nbsp;automata)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../Automaton.html" title="class in com.lvum.automaton">Automaton</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(com.lvum.automaton.Automaton)" class="member-name-link">run</a><wbr>(<a href="../../Automaton.html" title="class in com.lvum.automaton">Automaton</a>&nbsp;automaton)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../Automaton.html" title="class in com.lvum.automata">Automaton</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run(com.lvum.automata.Automaton)" class="member-name-link">run</a><wbr>(<a href="../../Automaton.html" title="class in com.lvum.automata">Automaton</a>&nbsp;automata)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -163,19 +163,19 @@ implements <a href="../Algorithm.html" title="interface in com.lvum.automaton.al
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="run(com.lvum.automaton.Automaton)">
+<section class="detail" id="run(com.lvum.automata.Automaton)">
 <h3>run</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../Automaton.html" title="class in com.lvum.automaton">Automaton</a></span>&nbsp;<span class="element-name">run</span><wbr><span class="parameters">(<a href="../../Automaton.html" title="class in com.lvum.automaton">Automaton</a>&nbsp;automaton)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../Automaton.html" title="class in com.lvum.automata">Automaton</a></span>&nbsp;<span class="element-name">run</span><wbr><span class="parameters">(<a href="../../Automaton.html" title="class in com.lvum.automata">Automaton</a>&nbsp;automata)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../Algorithm.html#run(com.lvum.automaton.Automaton)">run</a></code>&nbsp;in interface&nbsp;<code><a href="../Algorithm.html" title="interface in com.lvum.automaton.algorithms">Algorithm</a>&lt;<a href="../../Automaton.html" title="class in com.lvum.automaton">Automaton</a>&gt;</code></dd>
+<dd><code><a href="../Algorithm.html#run(com.lvum.automata.Automaton)">run</a></code>&nbsp;in interface&nbsp;<code><a href="../Algorithm.html" title="interface in com.lvum.automata.algorithms">Algorithm</a>&lt;<a href="../../Automaton.html" title="class in com.lvum.automata">Automaton</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="createTable(com.lvum.automaton.Automaton)">
+<section class="detail" id="createTable(com.lvum.automata.Automaton)">
 <h3>createTable</h3>
-<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;org.javatuples.Pair&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">createTable</span><wbr><span class="parameters">(<a href="../../Automaton.html" title="class in com.lvum.automaton">Automaton</a>&nbsp;automaton)</span></div>
+<div class="member-signature"><span class="modifiers">private</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;org.javatuples.Pair&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;,<wbr><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&gt;</span>&nbsp;<span class="element-name">createTable</span><wbr><span class="parameters">(<a href="../../Automaton.html" title="class in com.lvum.automata">Automaton</a>&nbsp;automata)</span></div>
 </section>
 </li>
 </ul>

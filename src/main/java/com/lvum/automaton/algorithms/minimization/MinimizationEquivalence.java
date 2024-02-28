@@ -1,6 +1,6 @@
 package com.lvum.automaton.algorithms.minimization;
 
-import com.lvum.automaton.Automaton;
+import com.lvum.automaton.Automata;
 import com.lvum.automaton.algorithms.Algorithm;
 
 import java.util.*;
@@ -9,18 +9,18 @@ import java.util.*;
  * Minimization of a DFA using the <a href="https://www.geeksforgeeks.org/minimization-of-dfa/">Equivalence Method.</a>
  */
 // TODO: Implement the Minimization of a DFA using the Equivalence Method
-public class MinimizationEquivalence implements Algorithm<Automaton> {
+public class MinimizationEquivalence implements Algorithm<Automata> {
 
     @Override
-    public Automaton run(Automaton automaton) {
-        Automaton result = new Automaton(automaton.getAlphabet());
+    public Automata run(Automata automata) {
+        Automata result = new Automata(automata.getAlphabet());
 
-        Set<String> finalStates = automaton.getFinalStates();
+        Set<String> finalStates = automata.getFinalStates();
         Map<String, Set<String>> states = new HashMap<>();
         int k = 1;
 
-        automaton.getStates().stream()
-                .filter(state -> !automaton.isFinal(state))
+        automata.getStates().stream()
+                .filter(state -> !automata.isFinal(state))
                 .forEach(state -> states.put(Integer.toString(k), new HashSet<>(Collections.singletonList(state))));
 
 

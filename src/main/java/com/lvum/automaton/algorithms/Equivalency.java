@@ -1,6 +1,6 @@
 package com.lvum.automaton.algorithms;
 
-import com.lvum.automaton.Automaton;
+import com.lvum.automaton.Automata;
 import com.lvum.automaton.algorithms.utility.IsDFA;
 import org.javatuples.Pair;
 
@@ -25,21 +25,21 @@ import java.util.Set;
  * </ol>
  */
 public class Equivalency implements Algorithm<Boolean> {
-    private Automaton other;
+    private Automata other;
 
 
-    public  Equivalency(Automaton other) {
+    public  Equivalency(Automata other) {
         this.other = other;
     }
 
 
     @Override
-    public Boolean run(Automaton automaton) {
+    public Boolean run(Automata automata) {
 
         /*
-        Two Automaton are equivalent if they satisfy the following conditions :
+        Two Automata are equivalent if they satisfy the following conditions :
             1. The initial and final states of both the automatons must be same.
-            2. Every pair of states chosen is from a different automaton only.
+            2. Every pair of states chosen is from a different automata only.
             3. While combining the states with the input alphabets, the pair results must be either both final states
              or intermediate states.(i.e. both should lie either in the final state or in the non-final state).
             4. If the resultant pair has different types of states, then it will be non-equivalent. (i.e. One lies in
@@ -47,7 +47,7 @@ public class Equivalency implements Algorithm<Boolean> {
          */
 
         // If the alphabet are different, the automata are not equivalent
-        if (!automaton.getAlphabet().equals(other.getAlphabet())) return false;
+        if (!automata.getAlphabet().equals(other.getAlphabet())) return false;
 
         // Set of pairs of states that have already been checked
         Set<Pair<String, String>> checked = new HashSet<>();
@@ -57,27 +57,27 @@ public class Equivalency implements Algorithm<Boolean> {
         boolean equivalent = true;
 
         // Add the initial states to the queue and the set of checked pairs
-        checked.add(new Pair<>(automaton.getInitialState(), other.getInitialState()));
-        queue.add(new Pair<>(automaton.getInitialState(), other.getInitialState()));
+        checked.add(new Pair<>(automata.getInitialState(), other.getInitialState()));
+        queue.add(new Pair<>(automata.getInitialState(), other.getInitialState()));
 
         // While there are still pairs of states to check...
         while (!queue.isEmpty() && equivalent) {
             // Get the current pair of states
             Pair<String, String> superstate = queue.poll();
             // For each symbol in the language
-            for (Character symbol : automaton.getAlphabet()) {
-                // Get the next state of the current original automaton state given a certain symbol
-                String nextOriginal = automaton.getTransitions().stream()
+            for (Character symbol : automata.getAlphabet()) {
+                // Get the next state of the current original automata state given a certain symbol
+                String nextOriginal = automata.getTransitions().stream()
                         .filter(transition -> transition.from().equals(superstate.getValue0()))
                         .filter(transition -> transition.entry().equals(symbol))
-                        .map(Automaton.Transition::to)
+                        .map(Automata.Transition::to)
                         .findFirst()
                         .orElse(null);
-                // Get the next state of the current other automaton state given a certain symbol
+                // Get the next state of the current other automata state given a certain symbol
                 String nextOther = other.getTransitions().stream()
                         .filter(transition -> transition.from().equals(superstate.getValue1()))
                         .filter(transition -> transition.entry().equals(symbol))
-                        .map(Automaton.Transition::to)
+                        .map(Automata.Transition::to)
                         .findFirst()
                         .orElse(null);
                 // If one of the next states is null and the other is not
@@ -87,8 +87,8 @@ public class Equivalency implements Algorithm<Boolean> {
                 // If the pair of next states has not been checked yet
                 else if (!checked.contains(new Pair<>(nextOriginal, nextOther))) {
                     // If both states are final or both are non-final
-                    if (automaton.isFinal(nextOriginal) && other.isFinal(nextOther)
-                            || (!automaton.isFinal(nextOriginal) && !other.isFinal(nextOther)))
+                    if (automata.isFinal(nextOriginal) && other.isFinal(nextOther)
+                            || (!automata.isFinal(nextOriginal) && !other.isFinal(nextOther)))
                     {
                         // Add the pair to the queue and the set of checked pairs
                         queue.add(new Pair<>(nextOriginal, nextOther));

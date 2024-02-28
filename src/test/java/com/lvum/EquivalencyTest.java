@@ -1,7 +1,7 @@
 package com.lvum;
 
+import com.lvum.automaton.Automata;
 import com.lvum.automaton.algorithms.Equivalency;
-import com.lvum.automaton.Automaton;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -21,9 +21,9 @@ public class EquivalencyTest {
 
     @ParameterizedTest
     @MethodSource("correctArgs")
-    void correct(Automaton automaton1, Automaton automaton2) {
+    void correct(Automata automata1, Automata automata2) {
         // The two automata must be equivalent
-        assertTrue(automaton1.run(new Equivalency(automaton2)));
+        assertTrue(automata1.run(new Equivalency(automata2)));
     }
 
     static Stream<Arguments> correctArgs() {
@@ -47,140 +47,140 @@ public class EquivalencyTest {
         );
     }
 
-    static Automaton automaton1a() {
+    static Automata automaton1a() {
         Set<Character> alphabet = new HashSet<>(Arrays.asList('a', 'b', 'c', 'd'));
-        Automaton automaton = new Automaton(alphabet);
-        automaton.addTransition("q0", "q1", 'a');
-        automaton.addTransition("q1", "q2", 'b');
-        automaton.addTransition("q2", "q3", 'c');
-        automaton.addTransition("q3", "q3", 'd');
-        automaton.setInitialState("q0");
-        automaton.addFinalState("q3");
-        return automaton;
+        Automata automata = new Automata(alphabet);
+        automata.addTransition("q0", "q1", 'a');
+        automata.addTransition("q1", "q2", 'b');
+        automata.addTransition("q2", "q3", 'c');
+        automata.addTransition("q3", "q3", 'd');
+        automata.setInitialState("q0");
+        automata.addFinalState("q3");
+        return automata;
     }
 
-    static Automaton automaton1b() {
+    static Automata automaton1b() {
         Set<Character> alphabet = new HashSet<>(Arrays.asList('a', 'b', 'c', 'd'));
-        Automaton automaton = new Automaton(alphabet);
-        automaton.addTransition("p0", "p1", 'a');
-        automaton.addTransition("p1", "p2", 'b');
-        automaton.addTransition("p2", "p3", 'c');
-        automaton.addTransition("p3", "p3", 'd');
-        automaton.setInitialState("p0");
-        automaton.addFinalState("p3");
-        return automaton;
+        Automata automata = new Automata(alphabet);
+        automata.addTransition("p0", "p1", 'a');
+        automata.addTransition("p1", "p2", 'b');
+        automata.addTransition("p2", "p3", 'c');
+        automata.addTransition("p3", "p3", 'd');
+        automata.setInitialState("p0");
+        automata.addFinalState("p3");
+        return automata;
     }
 
-    static Automaton automaton2a() {
+    static Automata automaton2a() {
         Set<Character> alphabet = new HashSet<>(Arrays.asList('a', 'b'));
-        Automaton automaton = new Automaton(alphabet);
-        automaton.addTransition("q0", "q1", 'a');
-        automaton.addTransition("q0", "q2", 'b');
-        automaton.addTransition("q1", "q2", 'a');
-        automaton.addTransition("q1", "q0", 'b');
-        automaton.addTransition("q2", "q0", 'a');
-        automaton.addTransition("q2", "q1", 'b');
-        automaton.addTransition("q2", "q3", 'a');
-        automaton.addTransition("q2", "q3", 'b');
-        automaton.addTransition("q3", "q3", 'a');
-        automaton.addTransition("q3", "q3", 'b');
-        automaton.setInitialState("q0");
-        automaton.addFinalState("q2");
-        automaton.addFinalState("q3");
-        return automaton;
+        Automata automata = new Automata(alphabet);
+        automata.addTransition("q0", "q1", 'a');
+        automata.addTransition("q0", "q2", 'b');
+        automata.addTransition("q1", "q2", 'a');
+        automata.addTransition("q1", "q0", 'b');
+        automata.addTransition("q2", "q0", 'a');
+        automata.addTransition("q2", "q1", 'b');
+        automata.addTransition("q2", "q3", 'a');
+        automata.addTransition("q2", "q3", 'b');
+        automata.addTransition("q3", "q3", 'a');
+        automata.addTransition("q3", "q3", 'b');
+        automata.setInitialState("q0");
+        automata.addFinalState("q2");
+        automata.addFinalState("q3");
+        return automata;
     }
 
-    static Automaton automaton2b() {
+    static Automata automaton2b() {
         Set<Character> alphabet = new HashSet<>(Arrays.asList('a', 'b'));
-        Automaton automaton = new Automaton(alphabet);
-        automaton.addTransition("p0", "p1", 'a');
-        automaton.addTransition("p0", "p2", 'b');
-        automaton.addTransition("p1", "p2", 'a');
-        automaton.addTransition("p1", "p0", 'b');
-        automaton.addTransition("p2", "p0", 'a');
-        automaton.addTransition("p2", "p1", 'b');
-        automaton.addTransition("p2", "p3", 'a');
-        automaton.addTransition("p2", "p3", 'b');
-        automaton.addTransition("p3", "p3", 'a');
-        automaton.addTransition("p3", "p3", 'b');
-        automaton.setInitialState("p0");
-        automaton.addFinalState("p2");
-        automaton.addFinalState("p3");
-        return automaton;
+        Automata automata = new Automata(alphabet);
+        automata.addTransition("p0", "p1", 'a');
+        automata.addTransition("p0", "p2", 'b');
+        automata.addTransition("p1", "p2", 'a');
+        automata.addTransition("p1", "p0", 'b');
+        automata.addTransition("p2", "p0", 'a');
+        automata.addTransition("p2", "p1", 'b');
+        automata.addTransition("p2", "p3", 'a');
+        automata.addTransition("p2", "p3", 'b');
+        automata.addTransition("p3", "p3", 'a');
+        automata.addTransition("p3", "p3", 'b');
+        automata.setInitialState("p0");
+        automata.addFinalState("p2");
+        automata.addFinalState("p3");
+        return automata;
     }
 
-    static Automaton automaton3a() {
+    static Automata automaton3a() {
         Set<Character> alphabet = new HashSet<>(Arrays.asList('c', 'd'));
-        Automaton automaton = new Automaton(alphabet);
-        automaton.addTransition("q1", "q1", 'c');
-        automaton.addTransition("q1", "q2", 'd');
-        automaton.addTransition("q2", "q3", 'c');
-        automaton.addTransition("q2", "q1", 'd');
-        automaton.addTransition("q3", "q3", 'd');
-        automaton.addTransition("q3", "q2", 'c');
-        automaton.setInitialState("q1");
-        automaton.addFinalState("q1");
-        return automaton;
+        Automata automata = new Automata(alphabet);
+        automata.addTransition("q1", "q1", 'c');
+        automata.addTransition("q1", "q2", 'd');
+        automata.addTransition("q2", "q3", 'c');
+        automata.addTransition("q2", "q1", 'd');
+        automata.addTransition("q3", "q3", 'd');
+        automata.addTransition("q3", "q2", 'c');
+        automata.setInitialState("q1");
+        automata.addFinalState("q1");
+        return automata;
     }
 
-    static Automaton automaton3b() {
+    static Automata automaton3b() {
         Set<Character> alphabet = new HashSet<>(Arrays.asList('c', 'd'));
-        Automaton automaton = new Automaton(alphabet);
-        automaton.addTransition("q4", "q4", 'c');
-        automaton.addTransition("q4", "q5", 'd');
-        automaton.addTransition("q5", "q6", 'c');
-        automaton.addTransition("q5", "q4", 'd');
-        automaton.addTransition("q6", "q6", 'd');
-        automaton.addTransition("q6", "q7", 'c');
-        automaton.addTransition("q7", "q6", 'c');
-        automaton.addTransition("q7", "q4", 'd');
-        automaton.setInitialState("q4");
-        automaton.addFinalState("q4");
-        return automaton;
+        Automata automata = new Automata(alphabet);
+        automata.addTransition("q4", "q4", 'c');
+        automata.addTransition("q4", "q5", 'd');
+        automata.addTransition("q5", "q6", 'c');
+        automata.addTransition("q5", "q4", 'd');
+        automata.addTransition("q6", "q6", 'd');
+        automata.addTransition("q6", "q7", 'c');
+        automata.addTransition("q7", "q6", 'c');
+        automata.addTransition("q7", "q4", 'd');
+        automata.setInitialState("q4");
+        automata.addFinalState("q4");
+        return automata;
 
     }
 
-    static Automaton automaton4a() {
+    static Automata automaton4a() {
         Set<Character> alphabet = new HashSet<>(Arrays.asList('a', 'b'));
-        Automaton automaton = new Automaton(alphabet);
-        automaton.addTransition("A", "B", 'a');
-        automaton.addTransition("B", "C", 'a');
-        automaton.addTransition("B", "C", 'b');
-        automaton.addTransition("C", "D", 'a');
-        automaton.addTransition("C", "D", 'b');
-        automaton.addTransition("D", "F", 'a');
-        automaton.addTransition("D", "E", 'b');
-        automaton.addTransition("A", "G", 'b');
-        automaton.addTransition("G", "H", 'a');
-        automaton.addTransition("G", "H", 'b');
-        automaton.addTransition("H", "D", 'a');
-        automaton.addTransition("H", "D", 'b');
-        automaton.addTransition("F", "F", 'a');
-        automaton.addTransition("F", "F", 'b');
-        automaton.addTransition("E", "E", 'a');
-        automaton.addTransition("E", "E", 'b');
-        automaton.setInitialState("A");
-        automaton.addFinalState("F");
-        return automaton;
+        Automata automata = new Automata(alphabet);
+        automata.addTransition("A", "B", 'a');
+        automata.addTransition("B", "C", 'a');
+        automata.addTransition("B", "C", 'b');
+        automata.addTransition("C", "D", 'a');
+        automata.addTransition("C", "D", 'b');
+        automata.addTransition("D", "F", 'a');
+        automata.addTransition("D", "E", 'b');
+        automata.addTransition("A", "G", 'b');
+        automata.addTransition("G", "H", 'a');
+        automata.addTransition("G", "H", 'b');
+        automata.addTransition("H", "D", 'a');
+        automata.addTransition("H", "D", 'b');
+        automata.addTransition("F", "F", 'a');
+        automata.addTransition("F", "F", 'b');
+        automata.addTransition("E", "E", 'a');
+        automata.addTransition("E", "E", 'b');
+        automata.setInitialState("A");
+        automata.addFinalState("F");
+        return automata;
     }
 
-    static Automaton automaton4b() {
+    static Automata automaton4b() {
         Set<Character> alphabet = new HashSet<>(Arrays.asList('a', 'b'));
-        Automaton automaton = new Automaton(alphabet);
-        automaton.addTransition("A", "B", 'a');
-        automaton.addTransition("A", "B", 'b');
-        automaton.addTransition("B", "C", 'a');
-        automaton.addTransition("B", "C", 'b');
-        automaton.addTransition("C", "D", 'a');
-        automaton.addTransition("C", "D", 'b');
-        automaton.addTransition("D", "F", 'a');
-        automaton.addTransition("D", "E", 'b');
-        automaton.addTransition("F", "F", 'a');
-        automaton.addTransition("F", "F", 'b');
-        automaton.addTransition("E", "E", 'a');
-        automaton.addTransition("E", "E", 'b');
-        automaton.setInitialState("A");
-        automaton.addFinalState("F");
-        return automaton;
+        Automata automata = new Automata(alphabet);
+        automata.addTransition("A", "B", 'a');
+        automata.addTransition("A", "B", 'b');
+        automata.addTransition("B", "C", 'a');
+        automata.addTransition("B", "C", 'b');
+        automata.addTransition("C", "D", 'a');
+        automata.addTransition("C", "D", 'b');
+        automata.addTransition("D", "F", 'a');
+        automata.addTransition("D", "E", 'b');
+        automata.addTransition("F", "F", 'a');
+        automata.addTransition("F", "F", 'b');
+        automata.addTransition("E", "E", 'a');
+        automata.addTransition("E", "E", 'b');
+        automata.setInitialState("A");
+        automata.addFinalState("F");
+        return automata;
     }
 }

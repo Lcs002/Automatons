@@ -1,21 +1,19 @@
 package com.lvum.automaton;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.lvum.automaton.algorithms.Algorithm;
-import com.lvum.automaton.serialize.AutomatonSerializer;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * <h1>Automaton</h1>
+ * <h1>Automata</h1>
  * <p>Representation of a finite automaton.</p>
  */
-@JsonDeserialize(builder = Automaton.Builder.class)
-public class Automaton {
+@JsonDeserialize(builder = Automata.Builder.class)
+public class Automata {
     /**
      * Character that represents the Epsilon symbol.
      * <p>
@@ -48,15 +46,15 @@ public class Automaton {
      * Creates a new automaton.
      * @param alphabet Set of symbols the automaton can read.
      */
-    public Automaton(Set<Character> alphabet) {
+    public Automata(Set<Character> alphabet) {
         this.alphabet = alphabet;
         this.states = new HashSet<>();
         this.finalStates = new HashSet<>();
         this.transitions = new HashSet<>();
     }
 
-    private Automaton(Set<Character> alphabet, Set<String> states, Set<Transition> transitions,
-                      Set<String> finalStates, String initialState)
+    private Automata(Set<Character> alphabet, Set<String> states, Set<Transition> transitions,
+                     Set<String> finalStates, String initialState)
     {
         this.alphabet = alphabet;
         this.states = states;
@@ -216,8 +214,8 @@ public class Automaton {
             return this;
         }
 
-        public Automaton build() {
-            return new Automaton(alphabet, states, transitions, finalStates, initialState);
+        public Automata build() {
+            return new Automata(alphabet, states, transitions, finalStates, initialState);
         }
     }
 }

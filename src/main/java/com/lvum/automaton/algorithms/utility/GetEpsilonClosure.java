@@ -1,6 +1,6 @@
 package com.lvum.automaton.algorithms.utility;
 
-import com.lvum.automaton.Automaton;
+import com.lvum.automaton.Automata;
 import com.lvum.automaton.algorithms.Algorithm;
 
 import java.util.HashSet;
@@ -25,17 +25,17 @@ public class GetEpsilonClosure implements Algorithm<Set<String>> {
 
 
     @Override
-    public Set<String> run(Automaton automaton) {
+    public Set<String> run(Automata automata) {
         // TODO Change this to a iterative approach
         Set<String> closure = new HashSet<>();
-        Set<String> epsilonNextStates = automaton.getTransitions().stream()
+        Set<String> epsilonNextStates = automata.getTransitions().stream()
                 .filter(transition -> transition.from().equals(state))
-                .filter(transition -> transition.entry().equals(Automaton.EPSILON))
-                .map(Automaton.Transition::to)
+                .filter(transition -> transition.entry().equals(Automata.EPSILON))
+                .map(Automata.Transition::to)
                 .collect(Collectors.toSet());
         for (String nextState : epsilonNextStates) {
             closure.add(nextState);
-            Set<String> nextClosure = automaton.run(new GetEpsilonClosure(nextState));
+            Set<String> nextClosure = automata.run(new GetEpsilonClosure(nextState));
             closure.addAll(nextClosure);
         }
         return closure;

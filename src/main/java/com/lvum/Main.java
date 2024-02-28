@@ -1,6 +1,6 @@
 package com.lvum;
 
-import com.lvum.automaton.Automaton;
+import com.lvum.automaton.Automata;
 import com.lvum.automaton.serialize.AutomatonDeserializer;
 import com.lvum.automaton.serialize.AutomatonSerializer;
 import com.lvum.automaton.serialize.json.AutomatonJsonDeserializer;
@@ -19,22 +19,22 @@ public class Main {
 
     private void example() {
         Set<Character> language = new HashSet<>(Arrays.asList('0', '1'));
-        Automaton automaton = new Automaton(language);
+        Automata automata = new Automata(language);
 
-        automaton.addTransition("S1", "S2", '0');
-        automaton.addTransition("S1", "S1", '1');
-        automaton.addTransition("S2", "S1", '0');
-        automaton.addTransition("S2", "S2", '1');
-        automaton.addTransition("S3", "S2", '1');
-        automaton.addTransition("S3", "S1", '0');
-        automaton.setInitialState("S1");
+        automata.addTransition("S1", "S2", '0');
+        automata.addTransition("S1", "S1", '1');
+        automata.addTransition("S2", "S1", '0');
+        automata.addTransition("S2", "S2", '1');
+        automata.addTransition("S3", "S2", '1');
+        automata.addTransition("S3", "S1", '0');
+        automata.setInitialState("S1");
 
         AutomatonSerializer serializer = new AutomatonJsonSerializer();
         AutomatonDeserializer deserializer = new AutomatonJsonDeserializer();
         String json = null;
 
         try {
-            json = serializer.serialize(automaton);
+            json = serializer.serialize(automata);
             System.out.println(json);
         } catch (Exception e) {
             e.printStackTrace();
@@ -42,8 +42,8 @@ public class Main {
 
         if (json != null) {
             try {
-                Automaton deserializedAutomaton = deserializer.deserialize(json);
-                System.out.println(deserializedAutomaton);
+                Automata deserializedAutomata = deserializer.deserialize(json);
+                System.out.println(deserializedAutomata);
             } catch (Exception e) {
                 e.printStackTrace();
             }

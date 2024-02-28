@@ -1,8 +1,8 @@
 package com.lvum;
 
+import com.lvum.automaton.Automata;
 import com.lvum.automaton.algorithms.Equivalency;
 import com.lvum.automaton.algorithms.NFAToDFA;
-import com.lvum.automaton.Automaton;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,26 +12,26 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class NFAToDFATest {
     protected Set<Character> language;
-    protected Automaton automaton;
+    protected Automata automata;
 
     @BeforeEach
     void beforeEach() {
         language = new HashSet<>(Arrays.asList('a', 'b'));
-        automaton = new Automaton(language);
-        automaton.addTransition("q0", "q0", 'a');
-        automaton.addTransition("q0", "q1", 'a');
-        automaton.addTransition("q0", "q0", 'b');
-        automaton.addTransition("q1", "q2", 'b');
-        automaton.setInitialState("q0");
-        automaton.addFinalState("q2");
+        automata = new Automata(language);
+        automata.addTransition("q0", "q0", 'a');
+        automata.addTransition("q0", "q1", 'a');
+        automata.addTransition("q0", "q0", 'b');
+        automata.addTransition("q1", "q2", 'b');
+        automata.setInitialState("q0");
+        automata.addFinalState("q2");
     }
 
     @Test
     public void deterministic() {
-        // The resulting automaton must not have any state with the same entry more than once
-        Automaton result = automaton.run(new NFAToDFA());
+        // The resulting automata must not have any state with the same entry more than once
+        Automata result = automata.run(new NFAToDFA());
 
-        for (Automaton.Transition transition : result.getTransitions()) {
+        for (Automata.Transition transition : result.getTransitions()) {
             assertEquals(1, result.getTransitions().stream()
                     .filter(t -> t.from().equals(transition.from()))
                     .filter(t -> t.entry().equals(transition.entry()))
@@ -41,13 +41,13 @@ public class NFAToDFATest {
 
     @Test
     public void correct() {
-        // Given the NFA automaton:
+        // Given the NFA automata:
         // Language: {a, b}
         // | State | a      | b  |
         // | ->q0  | q0, q1 | q0 |
         // | q1    |        | q2 |
         // | *q2   |        |    |
-        // The resulting DFA automaton must be:
+        // The resulting DFA automata must be:
         // | State  | a     | b     |
         // | ->q0   | q0-q1 | q0    |
         // | q0-q1  | q0-q1 | q0-q2 |
@@ -55,7 +55,7 @@ public class NFAToDFATest {
         // Example from: https://www.geeksforgeeks.org/conversion-from-nfa-to-dfa/
 
         Set<Character> expectedAlphabet = new HashSet<>(Arrays.asList('a', 'b'));
-        Automaton expected = new Automaton(expectedAlphabet);
+        Automata expected = new Automata(expectedAlphabet);
         expected.addTransition("q0", "q0-q1", 'a');
         expected.addTransition("q0", "q0", 'b');
         expected.addTransition("q0-q1", "q0-q1", 'a');
@@ -65,7 +65,7 @@ public class NFAToDFATest {
         expected.setInitialState("q0");
         expected.addFinalState("q0-q2");
 
-        Automaton result = automaton.run(new NFAToDFA());
+        Automata result = automata.run(new NFAToDFA());
 
         assertTrue(expected.run(new Equivalency(result)));
     }

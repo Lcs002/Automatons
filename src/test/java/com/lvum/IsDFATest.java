@@ -1,7 +1,7 @@
 package com.lvum;
 
+import com.lvum.automaton.Automata;
 import com.lvum.automaton.algorithms.utility.IsDFA;
-import com.lvum.automaton.Automaton;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -15,25 +15,25 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class IsDFATest {
     @ParameterizedTest
     @MethodSource("trueWhenNoTransitionsWithSameEntryFromSameStateArgs")
-    void trueWhenNoTransitionsWithSameEntryFromSameState(Automaton automaton) {
+    void trueWhenNoTransitionsWithSameEntryFromSameState(Automata automata) {
         // The two automata must be equivalent
-        Boolean result = automaton.run(new IsDFA());
+        Boolean result = automata.run(new IsDFA());
         assertTrue(result);
     }
 
     @ParameterizedTest
     @MethodSource("falseWhenTransitionsWithSameEntryFromSameStateArgs")
-    void falseWhenTransitionsWithSameEntryFromSameState(Automaton automaton) {
+    void falseWhenTransitionsWithSameEntryFromSameState(Automata automata) {
         // The two automata must be equivalent
-        Boolean result = automaton.run(new IsDFA());
+        Boolean result = automata.run(new IsDFA());
         assertFalse(result);
     }
 
     @ParameterizedTest
     @MethodSource("falseWhenEpsilonOnAlphabetArgs")
-    void falseWhenEpsilonOnAlphabet(Automaton automaton) {
+    void falseWhenEpsilonOnAlphabet(Automata automata) {
         // The two automata must be equivalent
-        Boolean result = automaton.run(new IsDFA());
+        Boolean result = automata.run(new IsDFA());
         assertFalse(result);
     }
 
@@ -63,31 +63,31 @@ public class IsDFATest {
     }
 
 
-    static Automaton trueWhenNoTransitionsWithSameEntryFromSameStateArgs1() {
-        Automaton automaton = new Automaton(Set.of('a', 'b'));
-        automaton.addTransition("A", "B", 'a');
-        automaton.addTransition("B", "A", 'b');
-        automaton.setInitialState("A");
-        automaton.addFinalState("B");
-        return automaton;
+    static Automata trueWhenNoTransitionsWithSameEntryFromSameStateArgs1() {
+        Automata automata = new Automata(Set.of('a', 'b'));
+        automata.addTransition("A", "B", 'a');
+        automata.addTransition("B", "A", 'b');
+        automata.setInitialState("A");
+        automata.addFinalState("B");
+        return automata;
     }
 
-    static Automaton falseWhenTransitionsWithSameEntryFromSameStateArgs1() {
-        Automaton automaton = new Automaton(Set.of('a', 'b'));
-        automaton.addTransition("A", "B", 'a');
-        automaton.addTransition("A", "A", 'a');
-        automaton.addTransition("B", "A", 'b');
-        automaton.setInitialState("A");
-        automaton.addFinalState("B");
-        return automaton;
+    static Automata falseWhenTransitionsWithSameEntryFromSameStateArgs1() {
+        Automata automata = new Automata(Set.of('a', 'b'));
+        automata.addTransition("A", "B", 'a');
+        automata.addTransition("A", "A", 'a');
+        automata.addTransition("B", "A", 'b');
+        automata.setInitialState("A");
+        automata.addFinalState("B");
+        return automata;
     }
 
-    static Automaton falseWhenEpsilonOnAlphabetArgs1() {
-        Automaton automaton = new Automaton(Set.of('a', 'b', Automaton.EPSILON));
-        automaton.addTransition("A", "B", 'a');
-        automaton.addTransition("B", "A", 'b');
-        automaton.setInitialState("A");
-        automaton.addFinalState("B");
-        return automaton;
+    static Automata falseWhenEpsilonOnAlphabetArgs1() {
+        Automata automata = new Automata(Set.of('a', 'b', Automata.EPSILON));
+        automata.addTransition("A", "B", 'a');
+        automata.addTransition("B", "A", 'b');
+        automata.setInitialState("A");
+        automata.addFinalState("B");
+        return automata;
     }
 }

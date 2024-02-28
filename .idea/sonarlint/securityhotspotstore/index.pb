@@ -320,3 +320,5 @@ k
 ;docs/com/lvum/automaton/serialize/json/package-summary.html,d\b\db69236465ff8db37bf224db3b6c619e1d007a48
 \
 ,src/test/java/com/lvum/IntersectionTest.java,7\d\7d22eb787ab62fd1ab5b34014df67f7770d41608
+^
+.src/main/java/com/lvum/automaton/Automata.java,8\3\836ad65205df7fe0b28edd94e8d603d672420086
