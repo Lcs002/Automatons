@@ -28,7 +28,7 @@ _Automaton's Algorithms implemented in Java._
 |       _[Concatenation](src/main/java/com/lvum/automata/algorithms/properties/Concatenation.java)_        |  **X**   |   **X**    |
 |        _[Intersection](src/main/java/com/lvum/automata/algorithms/properties/Intersection.java)_         |  **X**   |   **X**    |
 |               _[Union](src/main/java/com/lvum/automata/algorithms/properties/Union.java)_                |  **X**   |   **X**    |
-|                                               _Reversion_                                                |          |            |
+|           _[Reversion](src/main/java/com/lvum/automaton/algorithms/properties/Reversion.java)_           |  **X**   |   **X**    |
 |                                           _Reg. Expr. to DFA_                                            |          |            |
 |                                           _Reg. Expr. to NFA_                                            |          |            |
 |                                          _Reg. Expr. to NFA-ε_                                           |          |            |
