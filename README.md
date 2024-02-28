@@ -28,4 +28,5 @@ Automaton's Algorithms implemented in Java.
 |       _Automaton to Json_       |  **X**   |            |
 |      _Load/Save Automaton_      |          |            |
 |     _Functional Automaton_      |          |            |
+|    _Step by Step Algorithm_     |          |            |
 
