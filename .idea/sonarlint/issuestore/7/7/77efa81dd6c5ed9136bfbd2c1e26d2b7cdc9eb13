@@ -1,5 +1,3 @@
 
-f
-java:S1854"DRemove this useless assignment to local variable "automatonMachine".(ÛâÖ´ûÿÿÿÿ8®Âƒ‹ß1
-W
-java:S1481"5Remove this unused "automatonMachine" local variable.(ÛâÖ´ûÿÿÿÿ8´Âƒ‹ß1
+F	java:S106"+Replace this use of System.out by a logger.(ØöÛ|8€í¬‹ß1
+F	java:S106 "+Replace this use of System.out by a logger.(ØöÛ|8Ñâ­‹ß1

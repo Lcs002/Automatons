@@ -27,5 +27,8 @@ public class Main {
         automaton.setInitialState("S1");
 
         AutomatonMachine automatonMachine = new AutomatonMachine(automaton);
+        System.out.println(automatonMachine.getCurrentState());
+        automatonMachine.consume('0');
+        System.out.println(automatonMachine.getCurrentState());
     }
 }
