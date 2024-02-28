@@ -1,10 +1,17 @@
 # Automatons
 [![Java CI with Maven and JUnit](https://github.com/Lcs002/Automatons/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/Lcs002/Automatons/actions/workflows/maven.yml)
 
-Automaton's Algorithms implemented in Java.
+_Automaton's Algorithms implemented in Java._
 
 > [!TIP]
 > **[Project Documentation](https://lcs002.github.io/Automatons/)**
+
+- **[Feature Wishlist](#feature-wishlist)**
+- **[Usage](#usage)**
+  - **[Creating Automatons](#creating-automatons)**
+  - **[Running Algorithms](#running-algorithms)**
+  - **[De/Serializing Automatons](#deserializing-automatons)**
+
 ## Feature Wishlist
 
 |                                            **Functionalities**                                            | **Done** | **Tested** |
@@ -41,12 +48,12 @@ Then, an instance of Automata must be created using the alphabet defined:
 Automata automata = new Automata(alphabet);
 ```
 
-**States** are added using:
+**States** are added using `addState` with the name of the state as parameter:
 ```java
 automata.addState("q0");
 ```
 
-**Transitions** are added by using:
+**Transitions** are added by using `addTransition` with the source state, destination state and symbol as parameters:
 ```java
 // For normal transitions
 automata.addTransition("q0", "q1", "a");
@@ -56,38 +63,38 @@ automata.addTransition("q0", "q1", Automata.EPSILON);
 ```
 
 > [!NOTE]
-> If any of the states does not exist, they will be created and added to the automata.
+> _If any of the states does not exist, they will be created and added to the automata._
 
 > [!WARNING] 
-> All entries must be symbols from the automata's alphabet.
+> _All entries must be symbols from the automata's alphabet._
 
-**Initial State** is set by using:
+**Initial State** is set by using `setInitialState` with the name of the state as parameter:
 ```java
 automata.setInitialState("q0");
 ```
 
 > [!WARNING]
-> Be sure an Initial State is set before running any algorithm.
+> _Be sure an Initial State is set before running any algorithm._
 
 > [!NOTE] 
-> Only one initial state is allowed per automata.
+> _Only one initial state is allowed per automata._
 
-**Final States** are added by using:
+**Final States** are added by using `addFinalState` with the name of the state as parameter
 ```java
 automata.addFinalState("q1");
 ```
 
 > [!WARNING]
-> Be sure at least one Final State is set before running any algorithm.
+> _Be sure at least one Final State is set before running any algorithm._
 
 > [!TIP]
-> You can visualize the automata by simply printing it or using the method `toString()`.
+> _You can visualize the automata by simply printing it or using the method `toString()`._
 > ```java
 > System.out.println(automata);
 > ```
 
 ### Running Algorithms
-Call the method `run(T algorithm)` passing the algorithm as parameter:
+To run an algorithm on a automata, call the method `run(T algorithm)` passing the algorithm as parameter:
 ```java
 // Define the alphabet
 Set<Character> alphabet = new HashSet<>(Set.of('a', 'b'));
@@ -99,10 +106,13 @@ Automata result = automata.run(new NFAToDFAEpsilon());
 System.out.println(automata);
 System.out.println(result);
 ```
+
 ### De/Serializing Automatons
-Simply call the method `serialize` from the class `AutomatonJsonSerializer`:
-Or call the method `deserialize` from the class `AutomatonJsonDeserializer`:
+To convert an **Automaton** to a **JSON** string, call the method `serialize` from the class `AutomatonJsonSerializer`:
 ```java
 String json = new AutomatonJsonSerializer().serialize(automata);
+```
+To convert a **JSON** string to an **Automaton**, call the method `deserialize` from the class `AutomatonJsonDeserializer`:
+```java
 Automata automata = new AutomatonJsonDeserializer().deserialize(json);
 ```
