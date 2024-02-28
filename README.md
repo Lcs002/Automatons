@@ -14,28 +14,28 @@ _Automaton's Algorithms implemented in Java._
 
 ## Feature Wishlist
 
-|                                            **Functionalities**                                            | **Done** | **Tested** |
-|:---------------------------------------------------------------------------------------------------------:|:--------:|:----------:|
+|                                           **Functionalities**                                            | **Done** | **Tested** |
+|:--------------------------------------------------------------------------------------------------------:|:--------:|:----------:|
 |                 _[NFA to DFA](src/main/java/com/lvum/automata/algorithms/NFAToDFA.java)_                 |  **X**   |   **X**    |
 |            _[NFA-ε to DFA](src/main/java/com/lvum/automata/algorithms/NFAToDFAEpsilon.java)_             |  **X**   |   **X**    |
 | _[Remove Unreachable States](src/main/java/com/lvum/automata/algorithms/utility/RemoveUnreachable.java)_ |  **X**   |            |
 |         _[ε-Closure](src/main/java/com/lvum/automata/algorithms/utility/GetEpsilonClosure.java)_         |  **X**   |            |
-|                                      _Minimize - Equivalency Method_                                      |          |            |
-|                                         _Minimize - Table Method_                                         |          |            |
+|                                     _Minimize - Equivalency Method_                                      |          |            |
+|                                        _Minimize - Table Method_                                         |          |            |
 |               _[Equivalency](src/main/java/com/lvum/automata/algorithms/Equivalency.java)_               |  **X**   |   **X**    |
 |                 _[Completion](src/main/java/com/lvum/automata/algorithms/Complete.java)_                 |  **X**   |   **X**    |
 |          _[Complement](src/main/java/com/lvum/automata/algorithms/properties/Complement.java)_           |  **X**   |   **X**    |
 |       _[Concatenation](src/main/java/com/lvum/automata/algorithms/properties/Concatenation.java)_        |  **X**   |   **X**    |
 |        _[Intersection](src/main/java/com/lvum/automata/algorithms/properties/Intersection.java)_         |  **X**   |   **X**    |
 |               _[Union](src/main/java/com/lvum/automata/algorithms/properties/Union.java)_                |  **X**   |   **X**    |
-|                                                _Inversion_                                                |          |            |
-|                                             _Language to DFA_                                             |          |            |
-|                                             _Language to NFA_                                             |          |            |
-|                                            _Language to NFA-ε_                                            |          |            |
+|                                               _Inversion_                                                |          |            |
+|                                           _Reg. Expr. to DFA_                                            |          |            |
+|                                           _Reg. Expr. to NFA_                                            |          |            |
+|                                          _Reg. Expr. to NFA-ε_                                           |          |            |
 |                  _[Automaton to Json](src/main/java/com/lvum/automata/serialize/json)_                   |  **X**   |            |
-|                                           _Load/Save Automaton_                                           |          |            |
-|                                          _Functional Automaton_                                           |          |            |
-|                                         _Step by Step Algorithm_                                          |          |            |
+|                                          _Load/Save Automaton_                                           |          |            |
+|                                          _Functional Automaton_                                          |          |            |
+|                                         _Step by Step Algorithm_                                         |          |            |
 ## Usage
 ### Creating Automatons
 First an **alphabet** must be defined:
