@@ -322,3 +322,7 @@ k
 ,src/test/java/com/lvum/IntersectionTest.java,7\d\7d22eb787ab62fd1ab5b34014df67f7770d41608
 ^
 .src/main/java/com/lvum/automaton/Automata.java,8\3\836ad65205df7fe0b28edd94e8d603d672420086
+u
+Esrc/main/java/com/lvum/automaton/algorithms/properties/Reversion.java,5\c\5c19e53a911cb0246b6cfd2fc522cb64583b8043
+Y
+)src/test/java/com/lvum/ReversionTest.java,c\7\c7c9dd7971c503dd6ce482aade95ec662c0e0cc6
