@@ -28,7 +28,7 @@ public class Main {
 
         AutomatonMachine automatonMachine = new AutomatonMachine(automaton);
         System.out.println(automatonMachine.getCurrentState());
-        automatonMachine.consume('0');
+        automatonMachine.consume("00");
         System.out.println(automatonMachine.getCurrentState());
     }
 }

@@ -58,6 +58,16 @@ public class AutomatonMachine {
 
 
     /**
+     * Consumes a series of entries and returns the resultant state of the automaton.
+     * @param entries The entries to be consumed. Must be in the automaton's alphabet.
+     * @return The resultant state of the automaton.
+     */
+    public String consume(String entries) {
+        for (Character entry : entries.toCharArray()) consume(entry);
+        return currentState;
+    }
+
+    /**
      * Consumes an entry and returns the next state of the automaton.
      * @param entry The entry to be consumed. Must be in the automaton's alphabet.
      * @return The next state of the automaton

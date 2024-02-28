@@ -11,31 +11,31 @@ _Automaton's Algorithms implemented in Java._
   - **[Creating Automatons](#creating-automatons)**
   - **[Running Algorithms](#running-algorithms)**
   - **[De/Serializing Automatons](#deserializing-automatons)**
+  - **[Automaton Machines](#automaton-machines)**
 
 ## Feature Wishlist
 
-|                                            **Functionalities**                                            | **Done** | **Tested** |
-|:---------------------------------------------------------------------------------------------------------:|:--------:|:----------:|
-|                 _[NFA to DFA](src/main/java/com/lvum/automaton/algorithms/NFAToDFA.java)_                 |  **X**   |   **X**    |
-|            _[NFA-ε to DFA](src/main/java/com/lvum/automaton/algorithms/NFAToDFAEpsilon.java)_             |  **X**   |   **X**    |
-| _[Remove Unreachable States](src/main/java/com/lvum/automaton/algorithms/utility/RemoveUnreachable.java)_ |  **X**   |            |
-|         _[ε-Closure](src/main/java/com/lvum/automaton/algorithms/utility/GetEpsilonClosure.java)_         |  **X**   |            |
-|                                      _Minimize - Equivalency Method_                                      |          |            |
-|                                         _Minimize - Table Method_                                         |          |            |
-|               _[Equivalency](src/main/java/com/lvum/automaton/algorithms/Equivalency.java)_               |  **X**   |   **X**    |
-|                 _[Completion](src/main/java/com/lvum/automaton/algorithms/Complete.java)_                 |  **X**   |   **X**    |
-|          _[Complement](src/main/java/com/lvum/automaton/algorithms/properties/Complement.java)_           |  **X**   |   **X**    |
-|       _[Concatenation](src/main/java/com/lvum/automaton/algorithms/properties/Concatenation.java)_        |  **X**   |   **X**    |
-|        _[Intersection](src/main/java/com/lvum/automaton/algorithms/properties/Intersection.java)_         |  **X**   |   **X**    |
-|               _[Union](src/main/java/com/lvum/automaton/algorithms/properties/Union.java)_                |  **X**   |   **X**    |
-|           _[Reversion](src/main/java/com/lvum/automaton/algorithms/properties/Reversion.java)_            |  **X**   |   **X**    |
-|                                            _Reg. Expr. to DFA_                                            |          |            |
-|                                            _Reg. Expr. to NFA_                                            |          |            |
-|                                           _Reg. Expr. to NFA-ε_                                           |          |            |
-|                  _[Automaton to Json](src/main/java/com/lvum/automaton/serialize/json)_                   |  **X**   |            |
-|                                           _Load/Save Automaton_                                           |          |            |
-|                                          _Functional Automaton_                                           |          |            |
-|                                         _Step by Step Algorithm_                                          |          |            |
+|                                                   **Functionalities**                                                    | **Done** | **Tested** |
+|:------------------------------------------------------------------------------------------------------------------------:|:--------:|:----------:|
+|                        _[NFA to DFA](src/main/java/com/lvum/automaton/algorithms/NFAToDFA.java)_                         |  **X**   |   **X**    |
+|                    _[NFA-ε to DFA](src/main/java/com/lvum/automaton/algorithms/NFAToDFAEpsilon.java)_                    |  **X**   |   **X**    |
+|        _[Remove Unreachable States](src/main/java/com/lvum/automaton/algorithms/utility/RemoveUnreachable.java)_         |  **X**   |            |
+|                _[ε-Closure](src/main/java/com/lvum/automaton/algorithms/utility/GetEpsilonClosure.java)_                 |  **X**   |            |
+| _[Minimize - Equivalency Method](src/main/java/com/lvum/automaton/algorithms/minimization/MinimizationEquivalence.java)_ |          |            |
+|       _[Minimize - Table Method](src/main/java/com/lvum/automaton/algorithms/minimization/MinimizationTable.java)_       |          |            |
+|                      _[Equivalency](src/main/java/com/lvum/automaton/algorithms/Equivalency.java)_                       |  **X**   |   **X**    |
+|                        _[Completion](src/main/java/com/lvum/automaton/algorithms/Complete.java)_                         |  **X**   |   **X**    |
+|                  _[Complement](src/main/java/com/lvum/automaton/algorithms/properties/Complement.java)_                  |  **X**   |   **X**    |
+|               _[Concatenation](src/main/java/com/lvum/automaton/algorithms/properties/Concatenation.java)_               |  **X**   |   **X**    |
+|                _[Intersection](src/main/java/com/lvum/automaton/algorithms/properties/Intersection.java)_                |  **X**   |   **X**    |
+|                       _[Union](src/main/java/com/lvum/automaton/algorithms/properties/Union.java)_                       |  **X**   |   **X**    |
+|                   _[Reversion](src/main/java/com/lvum/automaton/algorithms/properties/Reversion.java)_                   |  **X**   |   **X**    |
+|                                                   _Reg. Expr. to DFA_                                                    |          |            |
+|                                                   _Reg. Expr. to NFA_                                                    |          |            |
+|                                                  _Reg. Expr. to NFA-ε_                                                   |          |            |
+|                          _[Automaton to Json](src/main/java/com/lvum/automaton/serialize/json)_                          |  **X**   |            |
+|                       _[Automaton Machine](src/main/java/com/lvum/machine/AutomatonMachine.java)_                        |          |            |
+|                                                 _Step by Step Algorithm_                                                 |          |            |
 ## Usage
 ### Creating Automatons
 First an **alphabet** must be defined:
@@ -115,4 +115,26 @@ String json = new AutomatonJsonSerializer().serialize(automaton);
 To convert a **JSON** string to an **Automaton**, call the method `deserialize` from the class `AutomatonJsonDeserializer`:
 ```java
 Automata automaton = new AutomatonJsonDeserializer().deserialize(json);
+```
+
+### Automaton Machines
+Automaton Machines make automatons functional, allowing to consume input and update its state according to the transitions.
+
+To create an Automaton Machine, call the constructor of the class `AutomatonMachine` passing the automaton as parameter:
+```java
+AutomatonMachine machine = new AutomatonMachine(automaton);
+```
+
+> [!WARNING]
+> _Be sure the automaton is **valid**, meaning it has at least one initial state and one final state._
+> The provided automaton must be a **DFA** and also be **complete**.
+> 
+
+To consume input, call the method `consume` passing the input as parameter:
+```java
+// The input can be a single entry
+String nextState = machine.consume('a');
+
+// Or a sequence of entries
+String nextState = machine.consume("abba");
 ```
