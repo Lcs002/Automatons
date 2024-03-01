@@ -34,24 +34,26 @@ public class ComplementTest {
 
 
     static Automaton automaton1() {
-        Automaton automaton = new Automaton(Set.of('a', 'b'));
-        automaton.addTransition("A", "B", 'a');
-        automaton.addTransition("A", "B", 'b');
-        automaton.addTransition("B", "B", 'a');
-        automaton.addTransition("B", "A", 'b');
-        automaton.setInitialState("A");
-        automaton.addFinalState("A");
-        return automaton;
+        Automaton.Builder builder = new Automaton.Builder();
+        builder.setAlphabet(Set.of('a', 'b'));
+        builder.addTransition("A", "B", 'a');
+        builder.addTransition("A", "B", 'b');
+        builder.addTransition("B", "B", 'a');
+        builder.addTransition("B", "A", 'b');
+        builder.setInitialState("A");
+        builder.addFinalState("A");
+        return builder.build();
     }
 
     static Automaton expected1() {
-        Automaton expected = new Automaton(Set.of('a', 'b'));
+        Automaton.Builder expected = new Automaton.Builder();
+        expected.setAlphabet(Set.of('a', 'b'));
         expected.addTransition("A", "B", 'a');
         expected.addTransition("A", "B", 'b');
         expected.addTransition("B", "B", 'a');
         expected.addTransition("B", "A", 'b');
         expected.setInitialState("A");
         expected.addFinalState("B");
-        return expected;
+        return expected.build();
     }
 }

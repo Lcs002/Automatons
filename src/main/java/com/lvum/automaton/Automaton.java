@@ -42,66 +42,42 @@ public class Automaton {
     private String initialState;
 
 
-    /**
-     * Creates a new automaton.
-     * @param alphabet Set of symbols the automaton can read.
-     */
-    public Automaton(Set<Character> alphabet) {
-        this.alphabet = alphabet;
-        this.states = new HashSet<>();
-        this.finalStates = new HashSet<>();
-        this.transitions = new HashSet<>();
-    }
-
-    private Automaton(Set<Character> alphabet, Set<String> states, Set<Transition> transitions,
+    private Automaton(Set<Character> alphabet, Set<Transition> transitions,
                       Set<String> finalStates, String initialState)
     {
         this.alphabet = alphabet;
-        this.states = states;
         this.transitions = transitions;
         this.finalStates = finalStates;
         this.initialState = initialState;
+        this.states = new HashSet<>();
+
+        transitions.forEach(transition -> {
+                    if (!alphabet.contains(transition.entry)) throw new IllegalArgumentException("Entry not in alphabet");
+                    if (!states.contains(transition.from)) states.add(transition.from);
+                    if (!states.contains(transition.to)) states.add(transition.to);
+                }
+        );
     }
 
-
-    public Set<Character> getAlphabet() {
-        return alphabet;
-    }
-
-    public void addFinalState(String state) {
-        if (!states.contains(state)) addState(state);
-        finalStates.add(state);
-    }
 
     public boolean isFinal(String state) {
         return finalStates.contains(state);
+    }
+
+    public Set<Character> getAlphabet() {
+        return alphabet;
     }
 
     public Set<String> getFinalStates() {
         return finalStates;
     }
 
-    public void setInitialState(String state) {
-        initialState = state;
-    }
-
     public String getInitialState() {
         return initialState;
     }
 
-    public void addState(String state) {
-        states.add(state);
-    }
-
     public Set<String> getStates() {
         return states;
-    }
-
-    public void addTransition(String from, String to, Character entry) {
-        if (!states.contains(from)) addState(from);
-        if (!states.contains(to)) addState(to);
-        if (!alphabet.contains(entry)) return;
-        transitions.add(new Transition(from, to, entry));
     }
 
     public Set<Transition> getTransitions() {
@@ -182,40 +158,50 @@ public class Automaton {
     public record Transition(String from, String to, Character entry) {}
 
     @JsonPOJOBuilder
-    static class Builder {
+    public static class Builder {
         Set<Character> alphabet;
-        Set<String> states;
         Set<Transition> transitions;
         Set<String> finalStates;
         String initialState;
 
-        public Builder withAlphabet(Set<Character> alphabet) {
+        public Builder setAlphabet(Set<Character> alphabet) {
             this.alphabet = alphabet;
             return this;
         }
 
-        public Builder withStates(Set<String> states) {
-            this.states = states;
-            return this;
-        }
-
-        public Builder withTransitions(Set<Transition> transitions) {
+        public Builder setTransitions(Set<Transition> transitions) {
             this.transitions = transitions;
             return this;
         }
 
-        public Builder withFinalStates(Set<String> finalStates) {
+        public Builder setFinalStates(Set<String> finalStates) {
             this.finalStates = finalStates;
             return this;
         }
 
-        public Builder withInitialState(String initialState) {
+        public Builder setInitialStates(String initialState) {
             this.initialState = initialState;
             return this;
         }
 
+        public Builder addTransition(String from, String to, Character entry) {
+            Transition transition = new Transition(from, to, entry);
+            this.transitions.add(transition);
+            return this;
+        }
+
+        public Builder addFinalState(String state) {
+            this.finalStates.add(state);
+            return this;
+        }
+
+        public Builder setInitialState(String state) {
+            this.initialState = state;
+            return this;
+        }
+
         public Automaton build() {
-            return new Automaton(alphabet, states, transitions, finalStates, initialState);
+            return new Automaton(alphabet, transitions, finalStates, initialState);
         }
     }
 }
