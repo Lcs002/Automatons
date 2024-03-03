@@ -426,3 +426,7 @@ Msrc/main/java/com/github/Lcs002/Automatons/automaton/algorithms/Complete.java,
 isrc/main/java/com/github/Lcs002/Automatons/automaton/algorithms/minimization/MinimizationEquivalence.java,f\f\fff9c2964c066cc277fc50139bc5b5bc9a67c1bc
 [
 +.github/workflows/publish-maven-central.yml,1\8\1876864642c973c163700af518e22fbdcf531c73
+F
+.github/dependabot.yml,0\9\091aff741808a09242f252264b14f4a9adaa5305
+K
+.github/workflows/maven.yml,c\7\c709f6995f23dae0da365bff70068f8288fa89e0
