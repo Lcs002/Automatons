@@ -18,7 +18,9 @@ jobs:
           gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
       - name: Publish package
-        run: mvn --no-transfer-progress \
+        run: |
+          mvn \
+          --no-transfer-progress \
           --batch-mode \
           -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }} \
           clean deploy -Pci-cd -DskipTests=true
