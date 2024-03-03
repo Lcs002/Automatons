@@ -20,6 +20,7 @@ jobs:
       - name: Publish package
         run: |
           mvn \
+          -X \
           -e \
           -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }} \
           clean deploy -DskipTests=true
