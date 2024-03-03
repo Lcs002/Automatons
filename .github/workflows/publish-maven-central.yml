@@ -20,8 +20,6 @@ jobs:
       - name: Publish package
         run: |
           mvn \
-          --no-transfer-progress \
-          --batch-mode \
           -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }} \
           clean deploy -DskipTests=true
         env:
