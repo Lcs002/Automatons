@@ -23,7 +23,7 @@ jobs:
           --no-transfer-progress \
           --batch-mode \
           -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }} \
-          clean deploy -Pci-cd -DskipTests=true
+          clean deploy -DskipTests=true
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
