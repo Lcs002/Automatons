@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2024-02-28">
-<meta name="description" content="declaration: package: com.lvum.machine, class: AutomatonMachine">
+<meta name="description" content="declaration: package: com.github.machine, class: AutomatonMachine">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../script-dir/jquery-ui.min.css" title="Style">
@@ -82,11 +82,11 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.lvum.machine</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.github.machine</a></div>
 <h1 title="Class AutomatonMachine" class="title">Class AutomatonMachine</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">com.lvum.automaton.machine.AutomatonMachine</div>
+<div class="inheritance">com.github.Lcs002.Automatons.automaton.machine.AutomatonMachine</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
@@ -94,7 +94,7 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block"><h1 id="finite-automaton-machine-heading">Finite Automaton Machine</h1>
  <p>Simulates the behavior of an automaton, enabling the user to consume entries and get its current state.</p>
- <p>The automaton used must <b><a href="../automaton/algorithms/utility/IsDFA.html" title="class in com.lvum.automaton.algorithms.utility"><code>be a DFA</code></a></b> and <b><a href="../automaton/algorithms/utility/IsComplete.html" title="class in com.lvum.automaton.algorithms.utility"><code>be complete</code></a></b>.</p></div>
+ <p>The automaton used must <b><a href="../automaton/algorithms/utility/IsDFA.html" title="class in com.github.automaton.algorithms.utility"><code>be a DFA</code></a></b> and <b><a href="../automaton/algorithms/utility/IsComplete.html" title="class in com.github.automaton.algorithms.utility"><code>be complete</code></a></b>.</p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -107,7 +107,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>private final <a href="../automaton/Automaton.html" title="class in com.lvum.automaton">Automaton</a></code></div>
+<div class="col-first even-row-color"><code>private final <a href="../automaton/Automaton.html" title="class in com.github.automaton">Automaton</a></code></div>
 <div class="col-second even-row-color"><code><a href="#automaton" class="member-name-link">automaton</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The automaton used by the machine.</div>
@@ -128,7 +128,7 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.lvum.automaton.Automaton)" class="member-name-link">AutomatonMachine</a><wbr>(<a href="../automaton/Automaton.html" title="class in com.lvum.automaton">Automaton</a>&nbsp;automaton)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.lvum.automaton.Automaton)" class="member-name-link">AutomatonMachine</a><wbr>(<a href="../automaton/Automaton.html" title="class in com.github.automaton">Automaton</a>&nbsp;automaton)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Constructor for the AutomatonMachine class</div>
 </div>
@@ -156,7 +156,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Consumes a series of entries and returns the resultant state of the automaton.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../automaton/Automaton.html" title="class in com.lvum.automaton">Automaton</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../automaton/Automaton.html" title="class in com.github.automaton">Automaton</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAutomata()" class="member-name-link">getAutomata</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the automaton used by the machine.</div>
@@ -186,7 +186,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="automaton">
 <h3>automaton</h3>
-<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../automaton/Automaton.html" title="class in com.lvum.automaton">Automaton</a></span>&nbsp;<span class="element-name">automaton</span></div>
+<div class="member-signature"><span class="modifiers">private final</span>&nbsp;<span class="return-type"><a href="../automaton/Automaton.html" title="class in com.github.automaton">Automaton</a></span>&nbsp;<span class="element-name">automaton</span></div>
 <div class="block">The automaton used by the machine.</div>
 </section>
 </li>
@@ -209,7 +209,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(com.lvum.automaton.Automaton)">
 <h3>AutomatonMachine</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">AutomatonMachine</span><wbr><span class="parameters">(@Nonnull
- <a href="../automaton/Automaton.html" title="class in com.lvum.automaton">Automaton</a>&nbsp;automaton)</span></div>
+ <a href="../automaton/Automaton.html" title="class in com.github.automaton">Automaton</a>&nbsp;automaton)</span></div>
 <div class="block">Constructor for the AutomatonMachine class</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -228,7 +228,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getAutomata()">
 <h3>getAutomata</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../automaton/Automaton.html" title="class in com.lvum.automaton">Automaton</a></span>&nbsp;<span class="element-name">getAutomata</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../automaton/Automaton.html" title="class in com.github.automaton">Automaton</a></span>&nbsp;<span class="element-name">getAutomata</span>()</div>
 <div class="block">Returns the automaton used by the machine.</div>
 <dl class="notes">
 <dt>Returns:</dt>
