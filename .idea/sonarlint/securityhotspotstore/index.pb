@@ -424,3 +424,5 @@ Rsrc/main/java/com/github/Lcs002/Automatons/automaton/algorithms/utility/IsDFA.j
 Msrc/main/java/com/github/Lcs002/Automatons/automaton/algorithms/Complete.java,f\2\f2308a62732dd36416f247b483cdf281baf6d8de
 ™
 isrc/main/java/com/github/Lcs002/Automatons/automaton/algorithms/minimization/MinimizationEquivalence.java,f\f\fff9c2964c066cc277fc50139bc5b5bc9a67c1bc
+[
++.github/workflows/publish-maven-central.yml,1\8\1876864642c973c163700af518e22fbdcf531c73
