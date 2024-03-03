@@ -35,51 +35,48 @@ public class IntersectionTest {
 
 
     static Automaton automaton1a() {
-        Automaton automaton = new Automaton(Set.of('0', '1'));
-        automaton.addTransition("q0", "q1", '0');
-        automaton.addTransition("q0", "q0", '1');
-        automaton.addTransition("q1", "q1", '0');
-        automaton.addTransition("q1", "q2", '1');
-        automaton.addTransition("q2", "q1", '0');
-        automaton.addTransition("q2", "q0", '1');
-        automaton.setInitialState("q0");
-        automaton.addFinalState("q2");
-        return automaton;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('0', '1'))
+                .addTransition("q0", "q1", '0')
+                .addTransition("q0", "q0", '1')
+                .addTransition("q1", "q1", '0')
+                .addTransition("q1", "q2", '1')
+                .addTransition("q2", "q1", '0')
+                .addTransition("q2", "q0", '1')
+                .setInitialState("q0")
+                .addFinalState("q2")
+                .build();
     }
 
     static Automaton automaton1b() {
-        Automaton automaton = new Automaton(Set.of('0', '1'));
-        automaton.addTransition("s0", "s0", '0');
-        automaton.addTransition("s0", "s1", '1');
-        automaton.addTransition("s1", "s1", '0');
-        automaton.addTransition("s1", "s0", '1');
-        automaton.setInitialState("s0");
-        automaton.addFinalState("s0");
-        return automaton;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('0', '1'))
+                .addTransition("s0", "s0", '0')
+                .addTransition("s0", "s1", '1')
+                .addTransition("s1", "s1", '0')
+                .addTransition("s1", "s0", '1')
+                .setInitialState("s0")
+                .addFinalState("s0")
+                .build();
     }
 
     static Automaton expected1() {
-        Automaton expected = new Automaton(Set.of('0', '1'));
-        expected.addTransition("q0-s0", "q1-s0", '0');
-        expected.addTransition("q0-s0", "q0-s1", '1');
-
-        expected.addTransition("q0-s1", "q1-s1", '0');
-        expected.addTransition("q0-s1", "q0-s0", '1');
-
-        expected.addTransition("q1-s0", "q1-s0", '0');
-        expected.addTransition("q1-s0", "q2-s1", '1');
-
-        expected.addTransition("q1-s1", "q1-s1", '0');
-        expected.addTransition("q1-s1", "q2-s0", '1');
-
-        expected.addTransition("q2-s1", "q1-s1", '0');
-        expected.addTransition("q2-s1", "q0-s0", '1');
-
-        expected.addTransition("q2-s0", "q1-s0", '0');
-        expected.addTransition("q2-s0", "q0-s1", '1');
-
-        expected.setInitialState("q0-s0");
-        expected.addFinalState("q2-s0");
-        return expected;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('0', '1'))
+                .addTransition("q0-s0", "q1-s0", '0')
+                .addTransition("q0-s0", "q0-s1", '1')
+                .addTransition("q0-s1", "q1-s1", '0')
+                .addTransition("q0-s1", "q0-s0", '1')
+                .addTransition("q1-s0", "q1-s0", '0')
+                .addTransition("q1-s0", "q2-s1", '1')
+                .addTransition("q1-s1", "q1-s1", '0')
+                .addTransition("q1-s1", "q2-s0", '1')
+                .addTransition("q2-s1", "q1-s1", '0')
+                .addTransition("q2-s1", "q0-s0", '1')
+                .addTransition("q2-s0", "q1-s0", '0')
+                .addTransition("q2-s0", "q0-s1", '1')
+                .setInitialState("q0-s0")
+                .addFinalState("q2-s0")
+                .build();
     }
 }

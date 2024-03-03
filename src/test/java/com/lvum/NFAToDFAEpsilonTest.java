@@ -17,20 +17,20 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class NFAToDFAEpsilonTest {
-    private Set<Character> language;
     private Automaton automaton;
 
     @BeforeEach
     void beforeEach() {
-        language = new HashSet<>(Arrays.asList('0', '1', Automaton.EPSILON));
-        automaton = new Automaton(language);
-        automaton.addTransition("q0", "q1", Automaton.EPSILON);
-        automaton.addTransition("q0", "q2", Automaton.EPSILON);
-        automaton.addTransition("q1", "q3", '0');
-        automaton.addTransition("q2", "q3", '1');
-        automaton.addTransition("q3", "q4", '1');
-        automaton.setInitialState("q0");
-        automaton.addFinalState("q4");
+        automaton = new Automaton.Builder()
+                .setAlphabet(Set.of('0', '1', Automaton.EPSILON))
+                .addTransition("q0", "q1", Automaton.EPSILON)
+                .addTransition("q0", "q2", Automaton.EPSILON)
+                .addTransition("q1", "q3", '0')
+                .addTransition("q2", "q3", '1')
+                .addTransition("q3", "q4", '1')
+                .setInitialState("q0")
+                .addFinalState("q4")
+                .build();
     }
 
     @Test
@@ -68,56 +68,56 @@ public class NFAToDFAEpsilonTest {
     }
 
     static Automaton automaton1() {
-        Set<Character> language = new HashSet<>(Arrays.asList('0', '1', Automaton.EPSILON));
-        Automaton automaton = new Automaton(language);
-        automaton.addTransition("q0", "q1", Automaton.EPSILON);
-        automaton.addTransition("q0", "q2", Automaton.EPSILON);
-        automaton.addTransition("q1", "q3", '0');
-        automaton.addTransition("q2", "q3", '1');
-        automaton.addTransition("q3", "q4", '1');
-        automaton.setInitialState("q0");
-        automaton.addFinalState("q4");
-        return automaton;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('0', '1', Automaton.EPSILON))
+                .addTransition("q0", "q1", Automaton.EPSILON)
+                .addTransition("q0", "q2", Automaton.EPSILON)
+                .addTransition("q1", "q3", '0')
+                .addTransition("q2", "q3", '1')
+                .addTransition("q3", "q4", '1')
+                .setInitialState("q0")
+                .addFinalState("q4")
+                .build();
     }
 
     static Automaton expected1() {
-        Set<Character> language = new HashSet<>(Arrays.asList('0', '1'));
-        Automaton automaton = new Automaton(language);
-        automaton.addTransition("A", "B", '0');
-        automaton.addTransition("A", "B", '1');
-        automaton.addTransition("B", "C", '1');
-        automaton.setInitialState("A");
-        automaton.addFinalState("C");
-        return automaton;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('0', '1'))
+                .addTransition("A", "B", '0')
+                .addTransition("A", "B", '1')
+                .addTransition("B", "C", '1')
+                .setInitialState("A")
+                .addFinalState("C")
+                .build();
     }
 
 
     static Automaton automaton2() {
-        Set<Character> language = new HashSet<>(Arrays.asList('a', 'b', Automaton.EPSILON));
-        Automaton automaton = new Automaton(language);
-        automaton.addTransition("q0", "q1", Automaton.EPSILON);
-        automaton.addTransition("q0", "q2", Automaton.EPSILON);
-        automaton.addTransition("q1", "q3", 'a');
-        automaton.addTransition("q1", "q1", 'b');
-        automaton.addTransition("q3", "q3", 'a');
-        automaton.addTransition("q3", "q0", 'b');
-        automaton.addTransition("q2", "q3", Automaton.EPSILON);
-        automaton.addTransition("q2", "q2", 'b');
-        automaton.setInitialState("q0");
-        automaton.addFinalState("q3");
-        return automaton;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('a', 'b', Automaton.EPSILON))
+                .addTransition("q0", "q1", Automaton.EPSILON)
+                .addTransition("q0", "q2", Automaton.EPSILON)
+                .addTransition("q1", "q3", 'a')
+                .addTransition("q1", "q1", 'b')
+                .addTransition("q3", "q3", 'a')
+                .addTransition("q3", "q0", 'b')
+                .addTransition("q2", "q3", Automaton.EPSILON)
+                .addTransition("q2", "q2", 'b')
+                .setInitialState("q0")
+                .addFinalState("q3")
+                .build();
     }
 
     static Automaton expected2() {
-        Set<Character> language = new HashSet<>(Arrays.asList('a', 'b'));
-        Automaton automaton = new Automaton(language);
-        automaton.addTransition("A", "A", 'a');
-        automaton.addTransition("A", "B", 'b');
-        automaton.addTransition("B", "B", 'a');
-        automaton.addTransition("B", "A", 'b');
-        automaton.setInitialState("A");
-        automaton.addFinalState("B");
-        automaton.addFinalState("A");
-        return automaton;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('a', 'b'))
+                .addTransition("A", "A", 'a')
+                .addTransition("A", "B", 'b')
+                .addTransition("B", "B", 'a')
+                .addTransition("B", "A", 'b')
+                .setInitialState("A")
+                .addFinalState("B")
+                .addFinalState("A")
+                .build();
     }
 }

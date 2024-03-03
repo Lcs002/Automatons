@@ -17,7 +17,7 @@ public class NFAToDFA implements Algorithm<Automaton> {
     @Override
     public Automaton run(Automaton automaton) {
         // The automaton resultant of the conversion
-        Automaton result = new Automaton(automaton.getAlphabet());
+        Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());
         // List of Set of States we have already checked
         List<Set<String>> marked = new ArrayList<>();
         // Queue of Set of States
@@ -67,6 +67,6 @@ public class NFAToDFA implements Algorithm<Automaton> {
             }
         }
         // Finally return the new Automaton
-        return result;
+        return result.build();
     }
 }

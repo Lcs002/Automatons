@@ -41,7 +41,7 @@ public class Union implements Algorithm<Automaton> {
         // Add the epsilon symbol to the alphabet if it is not present
         if (!alphabet.contains(Automaton.EPSILON)) alphabet.add(Automaton.EPSILON);
         // The result of the union of two automaton is a new automaton
-        Automaton result = new Automaton(alphabet);
+        Automaton.Builder result = new Automaton.Builder().setAlphabet(alphabet);
         // The initial state of the result automaton is the concatenation of the initial states of the two automaton
         String initialState = automaton.getInitialState() + "¹" + Automaton.SEPARATOR + other.getInitialState() + "²";
         // Add the initial state to the result automaton
@@ -74,6 +74,6 @@ public class Union implements Algorithm<Automaton> {
                 state -> result.addFinalState(state + "²")
         );
         // Return the union of the two automaton
-        return result;
+        return result.build();
     }
 }

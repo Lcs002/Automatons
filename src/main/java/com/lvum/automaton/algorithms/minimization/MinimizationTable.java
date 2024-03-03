@@ -14,9 +14,10 @@ public class MinimizationTable implements Algorithm<Automaton> {
 
     @Override
     public Automaton run(Automaton automaton) {
+        /*
         if (automaton.getStates().size() < 2) return automaton;
 
-        Automaton result = new Automaton(automaton.getAlphabet());
+        Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());
 
         // List of Set of States we have already checked
         Map<Pair<String, String>, Boolean> table = createTable(automaton);
@@ -72,7 +73,7 @@ public class MinimizationTable implements Algorithm<Automaton> {
                 );
             }
         }
-
+        */
         return null;
     }
 

@@ -20,7 +20,7 @@ public class Reversion implements Algorithm<Automaton> {
         // The automaton must be a DFA
         if (Boolean.FALSE.equals(automaton.run(new com.lvum.automaton.algorithms.utility.IsDFA()))) return null;
         // The result of the reversion of an automaton is a new automaton
-        Automaton result = new Automaton(automaton.getAlphabet());
+        Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());
         // Reverse all transitions: from -> to becomes to -> from
         automaton.getTransitions().forEach(
                 transition -> result.addTransition(
@@ -49,6 +49,6 @@ public class Reversion implements Algorithm<Automaton> {
         }
 
         // Return the result
-        return result;
+        return result.build();
     }
 }

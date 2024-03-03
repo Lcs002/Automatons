@@ -19,7 +19,7 @@ public class NFAToDFAEpsilon implements Algorithm<Automaton> {
         Set<Character> alphabet = new HashSet<>(automaton.getAlphabet());
         alphabet.remove(Automaton.EPSILON);
         // The automaton resultant of the conversion
-        Automaton result = new Automaton(alphabet);
+        Automaton.Builder result = new Automaton.Builder().setAlphabet(alphabet);
         // List of Set of States we have already checked
         List<Set<String>> marked = new ArrayList<>();
         // Queue of Set of States
@@ -80,6 +80,6 @@ public class NFAToDFAEpsilon implements Algorithm<Automaton> {
                 }
             }
         }
-        return result;
+        return result.build();
     }
 }

@@ -64,30 +64,33 @@ public class IsDFATest {
 
 
     static Automaton trueWhenNoTransitionsWithSameEntryFromSameStateArgs1() {
-        Automaton automaton = new Automaton(Set.of('a', 'b'));
-        automaton.addTransition("A", "B", 'a');
-        automaton.addTransition("B", "A", 'b');
-        automaton.setInitialState("A");
-        automaton.addFinalState("B");
-        return automaton;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('a', 'b'))
+                .addTransition("A", "B", 'a')
+                .addTransition("B", "A", 'b')
+                .setInitialState("A")
+                .addFinalState("B")
+                .build();
     }
 
     static Automaton falseWhenTransitionsWithSameEntryFromSameStateArgs1() {
-        Automaton automaton = new Automaton(Set.of('a', 'b'));
-        automaton.addTransition("A", "B", 'a');
-        automaton.addTransition("A", "A", 'a');
-        automaton.addTransition("B", "A", 'b');
-        automaton.setInitialState("A");
-        automaton.addFinalState("B");
-        return automaton;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('a', 'b'))
+                .addTransition("A", "B", 'a')
+                .addTransition("A", "A", 'a')
+                .addTransition("B", "A", 'b')
+                .setInitialState("A")
+                .addFinalState("B")
+                .build();
     }
 
     static Automaton falseWhenEpsilonOnAlphabetArgs1() {
-        Automaton automaton = new Automaton(Set.of('a', 'b', Automaton.EPSILON));
-        automaton.addTransition("A", "B", 'a');
-        automaton.addTransition("B", "A", 'b');
-        automaton.setInitialState("A");
-        automaton.addFinalState("B");
-        return automaton;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('a', 'b', Automaton.EPSILON))
+                .addTransition("A", "B", 'a')
+                .addTransition("B", "A", 'b')
+                .setInitialState("A")
+                .addFinalState("B")
+                .build();
     }
 }

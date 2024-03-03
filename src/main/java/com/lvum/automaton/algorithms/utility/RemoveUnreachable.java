@@ -14,7 +14,7 @@ public class RemoveUnreachable implements Algorithm<Automaton> {
     @Override
     public Automaton run(Automaton automaton) {
         // The automaton resultant of the reduction
-        Automaton result = new Automaton(automaton.getAlphabet());
+        Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());
         // List of Set of States we have already checked
         List<String> marked = new ArrayList<>();
         // Queue of Set of States
@@ -57,6 +57,6 @@ public class RemoveUnreachable implements Algorithm<Automaton> {
             }
         }
         // Return the reduced automaton
-        return result;
+        return result.build();
     }
 }

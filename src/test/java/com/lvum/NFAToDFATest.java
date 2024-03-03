@@ -11,19 +11,19 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class NFAToDFATest {
-    protected Set<Character> language;
     protected Automaton automaton;
 
     @BeforeEach
     void beforeEach() {
-        language = new HashSet<>(Arrays.asList('a', 'b'));
-        automaton = new Automaton(language);
-        automaton.addTransition("q0", "q0", 'a');
-        automaton.addTransition("q0", "q1", 'a');
-        automaton.addTransition("q0", "q0", 'b');
-        automaton.addTransition("q1", "q2", 'b');
-        automaton.setInitialState("q0");
-        automaton.addFinalState("q2");
+        automaton = new Automaton.Builder()
+                .setAlphabet(Set.of('a', 'b'))
+                .addTransition("q0", "q0", 'a')
+                .addTransition("q0", "q1", 'a')
+                .addTransition("q0", "q0", 'b')
+                .addTransition("q1", "q2", 'b')
+                .setInitialState("q0")
+                .addFinalState("q2")
+                .build();
     }
 
     @Test
@@ -54,16 +54,17 @@ public class NFAToDFATest {
         // | *q0-q2 | q0-q1 | q0    |
         // Example from: https://www.geeksforgeeks.org/conversion-from-nfa-to-dfa/
 
-        Set<Character> expectedAlphabet = new HashSet<>(Arrays.asList('a', 'b'));
-        Automaton expected = new Automaton(expectedAlphabet);
-        expected.addTransition("q0", "q0-q1", 'a');
-        expected.addTransition("q0", "q0", 'b');
-        expected.addTransition("q0-q1", "q0-q1", 'a');
-        expected.addTransition("q0-q1", "q0-q2", 'b');
-        expected.addTransition("q0-q2", "q0-q1", 'a');
-        expected.addTransition("q0-q2", "q0", 'b');
-        expected.setInitialState("q0");
-        expected.addFinalState("q0-q2");
+        Automaton expected = new Automaton.Builder()
+                .setAlphabet(Set.of('a', 'b'))
+                .addTransition("q0", "q0-q1", 'a')
+                .addTransition("q0", "q0", 'b')
+                .addTransition("q0-q1", "q0-q1", 'a')
+                .addTransition("q0-q1", "q0-q2", 'b')
+                .addTransition("q0-q2", "q0-q1", 'a')
+                .addTransition("q0-q2", "q0", 'b')
+                .setInitialState("q0")
+                .addFinalState("q0-q2")
+                .build();
 
         Automaton result = automaton.run(new NFAToDFA());
 

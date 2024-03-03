@@ -34,27 +34,29 @@ public class CompleteTest {
 
 
     static Automaton automaton1() {
-        Automaton automaton = new Automaton(Set.of('a', 'b'));
-        automaton.addTransition("A", "B", 'a');
-        automaton.addTransition("B", "C", 'b');
-        automaton.addTransition("C", "A", 'a');
-        automaton.setInitialState("A");
-        automaton.addFinalState("C");
-        return automaton;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('a', 'b'))
+                .addTransition("A", "B", 'a')
+                .addTransition("B", "C", 'b')
+                .addTransition("C", "A", 'a')
+                .setInitialState("A")
+                .addFinalState("C")
+                .build();
     }
 
     static Automaton expected1() {
-        Automaton expected = new Automaton(Set.of('a', 'b'));
-        expected.addTransition("A", "B", 'a');
-        expected.addTransition("B", "C", 'b');
-        expected.addTransition("C", "A", 'a');
-        expected.addTransition("A", Automaton.EMPTY_STATE, 'b');
-        expected.addTransition("B", Automaton.EMPTY_STATE, 'a');
-        expected.addTransition("C", Automaton.EMPTY_STATE, 'b');
-        expected.addTransition(Automaton.EMPTY_STATE, Automaton.EMPTY_STATE, 'a');
-        expected.addTransition(Automaton.EMPTY_STATE, Automaton.EMPTY_STATE, 'b');
-        expected.setInitialState("A");
-        expected.addFinalState("C");
-        return expected;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('a', 'b'))
+                .addTransition("A", "B", 'a')
+                .addTransition("B", "C", 'b')
+                .addTransition("C", "A", 'a')
+                .addTransition("A", Automaton.EMPTY_STATE, 'b')
+                .addTransition("B", Automaton.EMPTY_STATE, 'a')
+                .addTransition("C", Automaton.EMPTY_STATE, 'b')
+                .addTransition(Automaton.EMPTY_STATE, Automaton.EMPTY_STATE, 'a')
+                .addTransition(Automaton.EMPTY_STATE, Automaton.EMPTY_STATE, 'b')
+                .setInitialState("A")
+                .addFinalState("C")
+                .build();
     }
 }
