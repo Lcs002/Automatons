@@ -1,5 +1,11 @@
 
-G	java:S106$"+Replace this use of System.out by a logger.(×óö»8ÕÖ‰¬ß1
-L	java:S106%"+Replace this use of System.out by a logger.(…Ú›Ãúÿÿÿÿ8Ž¶Š¬ß1
+Z
+java:S1854"=Remove this useless assignment to local variable "automaton".(¾ãÿÉ8Îº„¦à1
+^
+java:S1854"<Remove this useless assignment to local variable "alphabet".(Ó¶‹åøÿÿÿÿ8Ðº„¦à1
+O
+java:S1481"-Remove this unused "alphabet" local variable.(Ó¶‹åøÿÿÿÿ8Ôº„¦à1
+K
+java:S1481".Remove this unused "automaton" local variable.(¾ãÿÉ8Ûº„¦à1
 d
-java:S1128"HRemove this unused import 'com.lvum.automaton.machine.AutomatonMachine'.(µ¼¥v8«ÀÂ£à1
+java:S1128"HRemove this unused import 'com.lvum.automaton.machine.AutomatonMachine'.(µ¼¥v8Ûº„¦à1
