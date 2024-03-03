@@ -34,24 +34,26 @@ public class ReversionTest {
 
 
     static Automaton automaton1() {
-        Automaton automaton = new Automaton(Set.of('a', 'b'));
-        automaton.addTransition("A", "B", 'a');
-        automaton.addTransition("A", "A", 'b');
-        automaton.addTransition("B", "B", 'a');
-        automaton.addTransition("B", "A", 'b');
-        automaton.setInitialState("A");
-        automaton.addFinalState("B");
-        return automaton;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('a', 'b'))
+                .addTransition("A", "B", 'a')
+                .addTransition("A", "A", 'b')
+                .addTransition("B", "B", 'a')
+                .addTransition("B", "A", 'b')
+                .setInitialState("A")
+                .addFinalState("B")
+                .build();
     }
 
     static Automaton expected1() {
-        Automaton expected = new Automaton(Set.of('a', 'b'));
-        expected.addTransition("B", "A", 'a');
-        expected.addTransition("B", "B", 'a');
-        expected.addTransition("A", "A", 'b');
-        expected.addTransition("A", "B", 'b');
-        expected.setInitialState("B");
-        expected.addFinalState("A");
-        return expected;
+        return new Automaton.Builder()
+                .setAlphabet(Set.of('a', 'b'))
+                .addTransition("B", "A", 'a')
+                .addTransition("B", "B", 'a')
+                .addTransition("A", "A", 'b')
+                .addTransition("A", "B", 'b')
+                .setInitialState("B")
+                .addFinalState("A")
+                .build();
     }
 }

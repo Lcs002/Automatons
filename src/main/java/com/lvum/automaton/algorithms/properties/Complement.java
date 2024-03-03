@@ -25,7 +25,7 @@ public class Complement implements Algorithm<Automaton> {
         if (Boolean.FALSE.equals(automaton.run(new IsComplete()))) return null;
 
         // The result of the complement of an automaton is a new automaton
-        Automaton result = new Automaton(automaton.getAlphabet());
+        Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());
         // Add the transitions of the original automaton
         automaton.getTransitions()
                 .forEach(transition ->
@@ -41,6 +41,7 @@ public class Complement implements Algorithm<Automaton> {
         automaton.getStates().stream()
                 .filter(state -> !automaton.getFinalStates().contains(state))
                 .forEach(result::addFinalState);
-        return result;
+        // Return the result automaton
+        return result.build();
     }
 }

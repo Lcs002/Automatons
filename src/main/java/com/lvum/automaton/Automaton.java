@@ -164,6 +164,14 @@ public class Automaton {
         Set<String> finalStates;
         String initialState;
 
+
+        public Builder() {
+            this.alphabet = new HashSet<>();
+            this.transitions = new HashSet<>();
+            this.finalStates = new HashSet<>();
+        }
+
+
         public Builder setAlphabet(Set<Character> alphabet) {
             this.alphabet = alphabet;
             return this;

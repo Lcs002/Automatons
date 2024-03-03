@@ -40,7 +40,7 @@ public class Intersection implements Algorithm<Automaton> {
         Queue<Pair<String, String>> queue = new LinkedList<>();
         Set<Pair<String, String>> checked = new HashSet<>();
         // The result Automaton
-        Automaton result = new Automaton(automaton.getAlphabet());
+        Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());
         // The initial state of the result automaton is the intersection of the initial states of the two automaton
         Pair<String, String> initialStates = new Pair<>(automaton.getInitialState(), other.getInitialState());
         result.setInitialState(initialStates.getValue0() + Automaton.SEPARATOR + initialStates.getValue1());
@@ -86,6 +86,6 @@ public class Intersection implements Algorithm<Automaton> {
             }
         }
         // Return the result automaton
-        return result;
+        return result.build();
     }
 }

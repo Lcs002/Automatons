@@ -20,7 +20,7 @@ public class Complete implements Algorithm<Automaton> {
         if (Boolean.FALSE.equals(automaton.run(new IsDFA()))) return null;
 
         // The result of the complete DFA is a new automaton
-        Automaton result = new Automaton(automaton.getAlphabet());
+        Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());
         // Add the transitions of the original automaton
         automaton.getTransitions()
                 .forEach(transition ->
@@ -54,6 +54,6 @@ public class Complete implements Algorithm<Automaton> {
         automaton.getFinalStates()
                 .forEach(result::addFinalState);
         // Return the complete DFA
-        return result;
+        return result.build();
     }
 }

@@ -43,7 +43,7 @@ public class Concatenation implements Algorithm<Automaton> {
         // Add the epsilon symbol to the alphabet if it is not present
         if (!alphabet.contains(Automaton.EPSILON)) alphabet.add(Automaton.EPSILON);
         // The result of the union of two automaton is a new automaton
-        Automaton result = new Automaton(alphabet);
+        Automaton.Builder result = new Automaton.Builder().setAlphabet(alphabet);
         result.setInitialState(automaton.getInitialState() + '¹');
         // Add the transitions of the first automaton
         automaton.getTransitions().forEach(
@@ -74,6 +74,6 @@ public class Concatenation implements Algorithm<Automaton> {
                 state -> result.addFinalState(state + '²')
         );
         // Return the result automaton
-        return result;
+        return result.build();
     }
 }
