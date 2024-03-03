@@ -12,8 +12,6 @@ G.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,8\6\86
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 Å
 Q.idea/sonarlint/securityhotspotstore/7/7/77efa81dd6c5ed9136bfbd2c1e26d2b7cdc9eb13,a\d\ad552d262bd4ca72b72f1e811c111a8d8ad281b2
-Å
-Q.idea/sonarlint/securityhotspotstore/e/0/e0c868faad23466ea6edd82b0494e99006df5da3,5\8\584f947d94db7979138d5039d1f047a72b8eac27
 L
 .idea/codeStyles/Project.xml,6\e\6ecd6000a7b6f4a2884412ff19f74193ed089648
 T
@@ -204,10 +202,6 @@ _
 /src/main/java/com/lvum/automaton/Automaton.java,c\5\c5257a817ab2bc608cab6cdeeda14a7064d303e6
 s
 Csrc/main/java/com/lvum/automaton/algorithms/utility/IsComplete.java,e\9\e92afba71b4a58a1136bd89b8fd072420325a8af
-i
-9src/main/java/com/lvum/automaton/algorithms/NFAToDFA.java,6\e\6ea83a4ebcf3b83a6c7ba453b379cdaad1cf46f8
-p
-@src/main/java/com/lvum/automaton/algorithms/NFAToDFAEpsilon.java,0\5\055f660589839c7678a4155900f33d05fce8f161
 j
 :src/main/java/com/lvum/automaton/algorithms/Algorithm.java,3\1\31cf3c53337403450ddd9f8e000325c049068b04
 y
@@ -228,8 +222,6 @@ Fsrc/main/java/com/lvum/automaton/algorithms/properties/Complement.java,c\4\c44
 Usrc/main/java/com/lvum/automaton/algorithms/minimization/MinimizationEquivalence.java,2\6\268b1cdfecf24d0c8f95cf082025a432b983d361
 q
 Asrc/main/java/com/lvum/automaton/algorithms/properties/Union.java,2\3\23c4ad4a43149b5f75ee1607aef45a5e985de7a4
-u
-Esrc/main/java/com/lvum/automaton/algorithms/properties/Inversion.java,d\4\d446f174031ce7305a7d154cdc782e951b365abe
 z
 Jsrc/main/java/com/lvum/automaton/algorithms/utility/GetEpsilonClosure.java,1\6\16bb09c146e440222b48415caebd6aac3756f1dc
 l
@@ -320,22 +312,10 @@ k
 ;docs/com/lvum/automaton/serialize/json/package-summary.html,d\b\db69236465ff8db37bf224db3b6c619e1d007a48
 \
 ,src/test/java/com/lvum/IntersectionTest.java,7\d\7d22eb787ab62fd1ab5b34014df67f7770d41608
-^
-.src/main/java/com/lvum/automaton/Automata.java,8\3\836ad65205df7fe0b28edd94e8d603d672420086
 u
 Esrc/main/java/com/lvum/automaton/algorithms/properties/Reversion.java,5\c\5c19e53a911cb0246b6cfd2fc522cb64583b8043
 Y
 )src/test/java/com/lvum/ReversionTest.java,c\7\c7c9dd7971c503dd6ce482aade95ec662c0e0cc6
-h
-8src/main/java/com/lvum/automaton/FunctionalAutomata.java,a\1\a148d4b5a73c29ef53de7ebd40a2a591d5fd54eb
-]
--src/main/java/com/lvum/automaton/Machine.java,6\4\64659bcdb6ebeec698de80fc92b7a939eb79cfbc
-[
-+src/main/java/com/lvum/machine/Machine.java,2\9\29e0de6e15675af098c624e583add3813f06ba38
-c
-3src/main/java/com/lvum/machine/AutomataMachine.java,4\3\43d3466c4cf76fb7be68fc08e09e022e93dde9f1
-d
-4src/main/java/com/lvum/machine/AutomatonMachine.java,2\7\27cf6dc288e81a9a1c5718d970f610608beb9e33
 P
  docs/com/lvum/ReversionTest.html,9\d\9d802debb0488b3bffac03ad980d46349df3de49
 S
@@ -356,3 +336,13 @@ e
 5docs/com/lvum/automaton/machine/AutomatonMachine.html,4\6\461a4db7ee367b7ea5b38864dcc93f86c6119be4
 a
 1docs/com/lvum/automaton/machine/package-tree.html,0\c\0cf6b9a342b4cf9992aaede4fe74d959998efec7
+t
+Dsrc/main/java/com/lvum/automaton/algorithms/conversion/NFAToDFA.java,f\e\fedb3d573c7b5ca064a949d6dbfd4c37bc165264
+
+Osrc/main/java/com/lvum/automaton/algorithms/conversion/LanguageToAutomaton.java,0\e\0e4d6cb8324a8259ad0c782fe582f6b0d3e7a4c9
+
+Osrc/main/java/com/lvum/automaton/algorithms/conversion/AutomatonToLanguage.java,c\5\c5c35c834099c5ab82cf4da4ac27bb45492dc243
+]
+-src/main/java/com/lvum/language/Language.java,4\a\4ae254a39fb59840207175442bd388819f79224c
+{
+Ksrc/main/java/com/lvum/automaton/algorithms/conversion/NFAToDFAEpsilon.java,e\6\e66b362ff65bcae9741870f190a54384dedf406d

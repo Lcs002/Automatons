@@ -1,6 +1,7 @@
-package com.lvum.automaton.algorithms;
+package com.lvum.automaton.algorithms.conversion;
 
 import com.lvum.automaton.Automaton;
+import com.lvum.automaton.algorithms.Algorithm;
 import com.lvum.automaton.algorithms.utility.GetEpsilonClosure;
 
 import java.util.*;

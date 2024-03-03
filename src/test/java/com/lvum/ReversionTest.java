@@ -2,7 +2,7 @@ package com.lvum;
 
 import com.lvum.automaton.Automaton;
 import com.lvum.automaton.algorithms.Equivalency;
-import com.lvum.automaton.algorithms.NFAToDFAEpsilon;
+import com.lvum.automaton.algorithms.conversion.NFAToDFAEpsilon;
 import com.lvum.automaton.algorithms.properties.Reversion;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

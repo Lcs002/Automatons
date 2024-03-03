@@ -30,11 +30,12 @@ _Automaton's Algorithms implemented in Java._
 |                _[Intersection](src/main/java/com/lvum/automaton/algorithms/properties/Intersection.java)_                |  **X**   |   **X**    |
 |                       _[Union](src/main/java/com/lvum/automaton/algorithms/properties/Union.java)_                       |  **X**   |   **X**    |
 |                   _[Reversion](src/main/java/com/lvum/automaton/algorithms/properties/Reversion.java)_                   |  **X**   |   **X**    |
+|                                                    _Language to NFA_                                                     |          |            |
 |                                                   _Reg. Expr. to DFA_                                                    |          |            |
 |                                                   _Reg. Expr. to NFA_                                                    |          |            |
 |                                                  _Reg. Expr. to NFA-ε_                                                   |          |            |
 |                          _[Automaton to Json](src/main/java/com/lvum/automaton/serialize/json)_                          |  **X**   |            |
-|                       _[Automaton Machine](src/main/java/com/lvum/automaton/machine/AutomatonMachine.java)_                        |          |            |
+|                  _[Automaton Machine](src/main/java/com/lvum/automaton/machine/AutomatonMachine.java)_                   |          |            |
 |                                                 _Step by Step Algorithm_                                                 |          |            |
 ## Usage
 ### Creating Automatons

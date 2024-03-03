@@ -1,6 +1,7 @@
-package com.lvum.automaton.algorithms;
+package com.lvum.automaton.algorithms.conversion;
 
 import com.lvum.automaton.Automaton;
+import com.lvum.automaton.algorithms.Algorithm;
 
 import java.util.*;
 import java.util.stream.Collectors;
