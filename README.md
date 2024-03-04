@@ -7,6 +7,7 @@ _Automaton's Algorithms implemented in Java._
 > **[Project Documentation](https://lcs002.github.io/Automatons/)**
 
 - **[Feature Wishlist](#feature-wishlist)**
+- **[Installation](#installation)**
 - **[Usage](#usage)**
   - **[Creating Automatons](#creating-automatons)**
   - **[Running Algorithms](#running-algorithms)**
@@ -37,6 +38,25 @@ _Automaton's Algorithms implemented in Java._
 |                          _[Automaton to Json](src/main/java/com/github/lcs002/automatons/automaton/serialize/json)_                          |  **X**   |            |
 |                  _[Automaton Machine](src/main/java/com/github/lcs002/automatons/automaton/machine/AutomatonMachine.java)_                   |          |            |
 |                                                           _Step by Step Algorithm_                                                           |          |            |
+
+## Installation
+### Maven
+Place the dependency into the pom.xml file of your project
+```xml
+<dependencies>
+  <!-- Other dependencies -->
+  <dependency>
+    <groupId>com.github.lcs002</groupId>
+    <artifactId>automatons</artifactId>
+    <version>0.0.2</version>
+  </dependency>
+  <!-- Other dependencies -->
+<dependencies>
+```
+> [!NOTE]
+> For other versions visit the **[Project's Packages](https://github.com/Lcs002/Automatons/packages/2086857)**.
+
+
 ## Usage
 ### Creating Automatons
 First an **alphabet** must be defined:
