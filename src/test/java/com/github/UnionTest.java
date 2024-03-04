@@ -1,9 +1,9 @@
 package com.github;
 
-import com.github.Lcs002.Automatons.automaton.Automaton;
-import com.github.Lcs002.Automatons.automaton.algorithms.Equivalency;
-import com.github.Lcs002.Automatons.automaton.algorithms.conversion.NFAToDFAEpsilon;
-import com.github.Lcs002.Automatons.automaton.algorithms.properties.Union;
+import com.github.lcs002.automatons.automaton.Automaton;
+import com.github.lcs002.automatons.automaton.algorithms.Equivalency;
+import com.github.lcs002.automatons.automaton.algorithms.conversion.NFAToDFAEpsilon;
+import com.github.lcs002.automatons.automaton.algorithms.properties.Union;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

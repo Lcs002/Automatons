@@ -1,8 +1,8 @@
 package com.github;
 
-import com.github.Lcs002.Automatons.automaton.Automaton;
-import com.github.Lcs002.Automatons.automaton.algorithms.Equivalency;
-import com.github.Lcs002.Automatons.automaton.algorithms.properties.Complement;
+import com.github.lcs002.automatons.automaton.Automaton;
+import com.github.lcs002.automatons.automaton.algorithms.Equivalency;
+import com.github.lcs002.automatons.automaton.algorithms.properties.Complement;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

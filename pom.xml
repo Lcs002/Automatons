@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.Lcs002</groupId>
-    <artifactId>Automatons</artifactId>
+    <groupId>com.github.lcs002</groupId>
+    <artifactId>automatons</artifactId>
     <version>0.0.1</version>
 
     <name>Automatons - An Automata Library</name>
@@ -27,8 +27,8 @@
             <id>Lcs002</id>
             <name>Lucas Vianna</name>
             <email>lucasvum@gmail.com</email>
-            <organization>com.github.Lcs002</organization>
-            <organizationUrl>https://github.com/Lcs002</organizationUrl>
+            <organization>com.github.lcs002</organization>
+            <organizationUrl>https://github.com/lcs002</organizationUrl>
         </developer>
     </developers>
 
@@ -81,8 +81,8 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>Lcs002 Automatons Packages</name>
-            <url>https://maven.pkg.github.com/Lcs002/Automatons</url>
+            <name>GitHub Lcs002 Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/lcs002/automatons</url>
         </repository>
     </distributionManagement>
 

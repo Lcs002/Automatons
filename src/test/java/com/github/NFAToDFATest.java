@@ -1,8 +1,8 @@
 package com.github;
 
-import com.github.Lcs002.Automatons.automaton.Automaton;
-import com.github.Lcs002.Automatons.automaton.algorithms.Equivalency;
-import com.github.Lcs002.Automatons.automaton.algorithms.conversion.NFAToDFA;
+import com.github.lcs002.automatons.automaton.Automaton;
+import com.github.lcs002.automatons.automaton.algorithms.Equivalency;
+import com.github.lcs002.automatons.automaton.algorithms.conversion.NFAToDFA;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

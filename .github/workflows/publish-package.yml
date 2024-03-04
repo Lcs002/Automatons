@@ -16,7 +16,7 @@ jobs:
           java-version: '21'
           distribution: 'corretto'
           server-id: github
-          server-username: Lcs002
+          server-username: lcs002
           server-password: GITHUB_TOKEN
       - name: Publish package
         run: mvn -B -X -e deploy -DskipTests=true

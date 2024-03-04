@@ -23,7 +23,7 @@ jobs:
         java-version: '21'
         distribution: 'corretto'
         server-id: github
-        server-username: Lcs002
+        server-username: lcs002
         server-password: GITHUB_TOKEN
     - name: Build with Maven
       run: mvn -B package --file pom.xml
