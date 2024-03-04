@@ -15,8 +15,8 @@ _Automaton's Algorithms implemented in Java._
 
 ## Feature Wishlist
 
-|                                                   **Functionalities**                                                    | **Done** | **Tested** |
-|:------------------------------------------------------------------------------------------------------------------------:|:--------:|:----------:|
+|                                                             **Functionalities**                                                              | **Done** | **Tested** |
+|:--------------------------------------------------------------------------------------------------------------------------------------------:|:--------:|:----------:|
 |                        _[NFA to DFA](src/main/java/com/github/Lcs002/Automatons/automaton/algorithms/NFAToDFA.java)_                         |  **X**   |   **X**    |
 |                    _[NFA-ε to DFA](src/main/java/com/github/Lcs002/Automatons/automaton/algorithms/NFAToDFAEpsilon.java)_                    |  **X**   |   **X**    |
 |        _[Remove Unreachable States](src/main/java/com/github/Lcs002/Automatons/automaton/algorithms/utility/RemoveUnreachable.java)_         |  **X**   |            |
@@ -30,37 +30,32 @@ _Automaton's Algorithms implemented in Java._
 |                _[Intersection](src/main/java/com/github/Lcs002/Automatons/automaton/algorithms/properties/Intersection.java)_                |  **X**   |   **X**    |
 |                       _[Union](src/main/java/com/github/Lcs002/Automatons/automaton/algorithms/properties/Union.java)_                       |  **X**   |   **X**    |
 |                   _[Reversion](src/main/java/com/github/Lcs002/Automatons/automaton/algorithms/properties/Reversion.java)_                   |  **X**   |   **X**    |
-|                                                    _Language to NFA_                                                     |          |            |
-|                                                   _Reg. Expr. to DFA_                                                    |          |            |
-|                                                   _Reg. Expr. to NFA_                                                    |          |            |
-|                                                  _Reg. Expr. to NFA-ε_                                                   |          |            |
+|                                                              _Language to NFA_                                                               |          |            |
+|                                                             _Reg. Expr. to DFA_                                                              |          |            |
+|                                                             _Reg. Expr. to NFA_                                                              |          |            |
+|                                                            _Reg. Expr. to NFA-ε_                                                             |          |            |
 |                          _[Automaton to Json](src/main/java/com/github/Lcs002/Automatons/automaton/serialize/json)_                          |  **X**   |            |
 |                  _[Automaton Machine](src/main/java/com/github/Lcs002/Automatons/automaton/machine/AutomatonMachine.java)_                   |          |            |
-|                                                 _Step by Step Algorithm_                                                 |          |            |
+|                                                           _Step by Step Algorithm_                                                           |          |            |
 ## Usage
 ### Creating Automatons
 First an **alphabet** must be defined:
 ```java
-Set<Character> alphabet = new HashSet<>(Set.of('a', 'b'));
+Set<Character> alphabet = Set.of('a', 'b');
 ```
 
-Then, an instance of Automata must be created using the alphabet defined:
+Then, to create an Automaton, we must use an `Automaton.Builder`:
 ```java
-Automata automaton = new Automata(alphabet);
+Automaton.Builder builder = new Automaton.Builder();
 ```
 
-**States** are added using `addState` with the name of the state as parameter:
-```java
-automaton.addState("q0");
-```
-
-**Transitions** are added by using `addTransition` with the source state, destination state and symbol as parameters:
+**Transitions** are added by using `addTransition` with the *source state*, *destination state* and *symbol* as parameters:
 ```java
 // For normal transitions
-automaton.addTransition("q0", "q1", "a");
+builder.addTransition("q0", "q1", 'a');
 
 // For epsilon transitions
-automaton.addTransition("q0", "q1", Automata.EPSILON);
+builder.addTransition("q0", "q1", Automata.EPSILON);
 ```
 
 > [!NOTE]
@@ -71,7 +66,7 @@ automaton.addTransition("q0", "q1", Automata.EPSILON);
 
 **Initial State** is set by using `setInitialState` with the name of the state as parameter:
 ```java
-automaton.setInitialState("q0");
+builder.setInitialState("q0");
 ```
 
 > [!WARNING]
@@ -82,11 +77,16 @@ automaton.setInitialState("q0");
 
 **Final States** are added by using `addFinalState` with the name of the state as parameter
 ```java
-automaton.addFinalState("q1");
+builder.addFinalState("q1");
 ```
 
 > [!WARNING]
 > _Be sure at least one Final State is set before running any algorithm._
+
+Finally, you can create the configured automaton by calling 'build()':
+```java
+Automaton automaton = builder.build();
+```
 
 > [!TIP]
 > _You can visualize the automaton by simply printing it or using the method `toString()`._
@@ -95,18 +95,18 @@ automaton.addFinalState("q1");
 > ```
 
 ### Running Algorithms
-To run an algorithm on a automaton, call the method `run(T algorithm)` passing the algorithm as parameter:
+To run an algorithm on an automaton, call the method `run(T algorithm)` passing the algorithm as parameter:
 ```java
-// Define the alphabet
-Set<Character> alphabet = new HashSet<>(Set.of('a', 'b'));
-// Create a new instance of Automaton
-Automata automaton = new Automata(alphabet);
+Automaton.Builder builder = new Automaton.Builder();
+// Configure Automaton using Automaton.Builder
+// ...
+Automaton automaton = builder.build();
 // Call the method 'run' passing the algorithm as parameter
-Automata result = automaton.run(new NFAToDFAEpsilon());
-
-System.out.println(automaton);
-System.out.println(result);
+Automaton result = automaton.run(new NFAToDFAEpsilon());
 ```
+
+> [!NOTE]
+> Algorithms are classes that implement **[Algorithm\<T\>](src/main/java/com/github/Lcs002/Automatons/automaton/algorithms/Algorithm.java)**.
 
 ### De/Serializing Automatons
 To convert an **Automaton** to a **JSON** string, call the method `serialize` from the class `AutomatonJsonSerializer`:
@@ -115,7 +115,7 @@ String json = new AutomatonJsonSerializer().serialize(automaton);
 ```
 To convert a **JSON** string to an **Automaton**, call the method `deserialize` from the class `AutomatonJsonDeserializer`:
 ```java
-Automata automaton = new AutomatonJsonDeserializer().deserialize(json);
+Automaton automaton = new AutomatonJsonDeserializer().deserialize(json);
 ```
 
 ### Automaton Machines
