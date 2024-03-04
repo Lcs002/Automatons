@@ -51,7 +51,7 @@ Place the dependency into the pom.xml file of your project
     <version>0.0.2</version>
   </dependency>
   <!-- Other dependencies -->
-<dependencies>
+</dependencies>
 ```
 > [!NOTE]
 > For other versions visit the **[Project's Packages](https://github.com/Lcs002/Automatons/packages/2086857)**.
