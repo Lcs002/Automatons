@@ -6,7 +6,7 @@
 
     <groupId>com.github.lcs002</groupId>
     <artifactId>automatons</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 
     <name>Automatons - An Automata Library</name>
     <description>
