@@ -45,6 +45,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>Releases</name>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.javatuples</groupId>
