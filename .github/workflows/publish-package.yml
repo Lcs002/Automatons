@@ -30,7 +30,7 @@ jobs:
           server-password: MAVEN_PASSWORD
 
       - name: Publish to Maven Central
-        run: mvn -X -e -B clean deploy -DskipTests=true
+        run: mvn -B clean deploy -DskipTests=true
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
