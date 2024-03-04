@@ -15,11 +15,9 @@ jobs:
         with:
           java-version: '21'
           distribution: 'corretto'
-          server-id: github
-          server-username: lcs002
-          server-password: GITHUB_TOKEN
       - name: Publish package
-        run: mvn -B -X -e deploy -DskipTests=true
+        run: mvn -X -e -s $GITHUB_WORKSPACE/.github/workflows/maven-settings.xml -B package -DskipTests=true --file pom.xml
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USER_NAME: ${{ secrets.USER_NAME }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
