@@ -1,4 +1,4 @@
-name: Publish package to the Maven Central Repository
+name: Publish Package
 on:
   release:
     types: [created]
@@ -23,7 +23,7 @@ jobs:
           -X \
           -e \
           -Dgpg.passphrase=${{ secrets.MAVEN_GPG_PASSPHRASE }} \
-          clean deploy -DskipTests=true
+          package -DskipTests=true
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
