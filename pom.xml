@@ -82,7 +82,7 @@
         <repository>
             <id>github</id>
             <name>Automatons Packages</name>
-            <url>https://maven.pkg.github.com/lcs002/automatons</url>
+            <url>https://maven.pkg.github.com/Lcs002/Automatons</url>
         </repository>
     </distributionManagement>
 
