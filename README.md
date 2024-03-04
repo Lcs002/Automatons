@@ -90,7 +90,7 @@ builder.setInitialState("q0");
 ```
 
 > [!WARNING]
-> _Be sure an Initial State is set before running any algorithm._
+> _Be sure an Initial State is set before building the automaton._
 
 > [!NOTE] 
 > _Only one initial state is allowed per automaton._
@@ -101,7 +101,7 @@ builder.addFinalState("q1");
 ```
 
 > [!WARNING]
-> _Be sure at least one Final State is set before running any algorithm._
+> _Be sure at least one Final State is set before building the automaton._
 
 Finally, you can create the configured automaton by calling 'build()':
 ```java

@@ -8,8 +8,6 @@ G.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,8\6\86
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-Å
-Q.idea/sonarlint/securityhotspotstore/7/7/77efa81dd6c5ed9136bfbd2c1e26d2b7cdc9eb13,a\d\ad552d262bd4ca72b72f1e811c111a8d8ad281b2
 L
 .idea/codeStyles/Project.xml,6\e\6ecd6000a7b6f4a2884412ff19f74193ed089648
 T
@@ -352,10 +350,6 @@ K
 .github/workflows/maven.yml,c\7\c709f6995f23dae0da365bff70068f8288fa89e0
 U
 %.github/workflows/publish-package.yml,e\c\ec2d7dd3e62f2274bcb14c553e19cc660b6500de
-S
-#.github/workflows/maven-publish.yml,8\5\85f48f2e34e9dcd0e1756f077d1409251f006845
-N
-.github/workflows/publish2.yml,4\d\4d5058902d9dbd47edb2127fa24fb4ab62a7897b
 s
 Csrc/main/java/com/github/lcs002/automatons/automaton/Automaton.java,1\3\13cb8cce93d9d7e3e8bb828d21d2539d18b3b5c0
 á

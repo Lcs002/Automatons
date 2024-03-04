@@ -39,12 +39,17 @@ public class Automaton {
     private final Set<String> states;
     private final Set<Transition> transitions;
     private final Set<String> finalStates;
-    private String initialState;
+    private final String initialState;
 
 
     private Automaton(Set<Character> alphabet, Set<Transition> transitions,
                       Set<String> finalStates, String initialState)
     {
+        checkIfSetAlphabet(alphabet);
+        checkIfSetTransition(transitions);
+        checkIfSetInitialState(initialState);
+        checkIfSetFinalState(finalStates);
+
         this.alphabet = alphabet;
         this.transitions = transitions;
         this.finalStates = finalStates;
@@ -53,8 +58,8 @@ public class Automaton {
 
         transitions.forEach(transition -> {
                     if (!alphabet.contains(transition.entry)) throw new IllegalArgumentException("Entry not in alphabet");
-                    if (!states.contains(transition.from)) states.add(transition.from);
-                    if (!states.contains(transition.to)) states.add(transition.to);
+                    states.add(transition.from);
+                    states.add(transition.to);
                 }
         );
     }
@@ -93,6 +98,36 @@ public class Automaton {
     public <T> T run(Algorithm<T> algorithm) {
         return algorithm.run(this);
     }
+
+
+    private void checkIfSetAlphabet(Set<Character> alphabet) {
+        // Check if the alphabet is not null
+        if (alphabet == null) throw new IllegalArgumentException("Alphabet cannot be null");
+        // Check if the alphabet is not empty
+        if (alphabet.isEmpty()) throw new IllegalArgumentException("Alphabet cannot be empty");
+    }
+
+    private void checkIfSetTransition(Set<Transition> transitions) {
+        // Check if the transitions are not null
+        if (transitions == null) throw new IllegalArgumentException("Transitions cannot be null");
+        // Check if the transitions are not empty
+        if (transitions.isEmpty()) throw new IllegalArgumentException("Transitions cannot be empty");
+    }
+
+    private void checkIfSetInitialState(String initialState) {
+        // Check if the initial state is not null
+        if (initialState == null) throw new IllegalArgumentException("Initial state cannot be null");
+        // Check if the initial state is not empty
+        if (initialState.isEmpty()) throw new IllegalArgumentException("Initial state cannot be empty");
+    }
+
+    private void checkIfSetFinalState(Set<String> finalStates) {
+        // Check if the final states are not null
+        if (finalStates == null) throw new IllegalArgumentException("Final states cannot be null");
+        // Check if the final states are not empty
+        if (finalStates.isEmpty()) throw new IllegalArgumentException("Final states cannot be empty");
+    }
+
 
     @Override
     public String toString() {
