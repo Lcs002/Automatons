@@ -41,21 +41,7 @@ _Automaton's Algorithms implemented in Java._
 
 ## Installation
 ### Maven
-Place the dependency into the pom.xml file of your project
-```xml
-<dependencies>
-  <!-- Other dependencies -->
-  <dependency>
-    <groupId>com.github.lcs002</groupId>
-    <artifactId>automatons</artifactId>
-    <version>0.0.2</version>
-  </dependency>
-  <!-- Other dependencies -->
-</dependencies>
-```
-> [!NOTE]
-> For other versions visit the **[Project's Packages](https://github.com/Lcs002/Automatons/packages/2086857)**.
-
+In progress.
 
 ## Usage
 ### Creating Automatons
