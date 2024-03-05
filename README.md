@@ -18,25 +18,25 @@ _Automaton's Algorithms implemented in Java._
 
 |                                                             **Functionalities**                                                              | **Done** | **Tested** |
 |:--------------------------------------------------------------------------------------------------------------------------------------------:|:--------:|:----------:|
-|                        _[NFA to DFA](src/main/java/com/github/lcs002/automatons/automaton/algorithms/NFAToDFA.java)_                         |  **X**   |   **X**    |
-|                    _[NFA-ε to DFA](src/main/java/com/github/lcs002/automatons/automaton/algorithms/NFAToDFAEpsilon.java)_                    |  **X**   |   **X**    |
-|        _[Remove Unreachable States](src/main/java/com/github/lcs002/automatons/automaton/algorithms/utility/RemoveUnreachable.java)_         |  **X**   |            |
-|                _[ε-Closure](src/main/java/com/github/lcs002/automatons/automaton/algorithms/utility/GetEpsilonClosure.java)_                 |  **X**   |            |
-| _[Minimize - Equivalency Method](src/main/java/com/github/lcs002/automatons/automaton/algorithms/minimization/MinimizationEquivalence.java)_ |          |            |
-|       _[Minimize - Table Method](src/main/java/com/github/lcs002/automatons/automaton/algorithms/minimization/MinimizationTable.java)_       |          |            |
-|                      _[Equivalency](src/main/java/com/github/lcs002/automatons/automaton/algorithms/Equivalency.java)_                       |  **X**   |   **X**    |
-|                        _[Completion](src/main/java/com/github/lcs002/automatons/automaton/algorithms/Complete.java)_                         |  **X**   |   **X**    |
-|                  _[Complement](src/main/java/com/github/lcs002/automatons/automaton/algorithms/properties/Complement.java)_                  |  **X**   |   **X**    |
-|               _[Concatenation](src/main/java/com/github/lcs002/automatons/automaton/algorithms/properties/Concatenation.java)_               |  **X**   |   **X**    |
-|                _[Intersection](src/main/java/com/github/lcs002/automatons/automaton/algorithms/properties/Intersection.java)_                |  **X**   |   **X**    |
-|                       _[Union](src/main/java/com/github/lcs002/automatons/automaton/algorithms/properties/Union.java)_                       |  **X**   |   **X**    |
-|                   _[Reversion](src/main/java/com/github/lcs002/automatons/automaton/algorithms/properties/Reversion.java)_                   |  **X**   |   **X**    |
+|                        _[NFA to DFA](src/main/java/io/github/lcs002/automatons/automaton/algorithms/NFAToDFA.java)_                         |  **X**   |   **X**    |
+|                    _[NFA-ε to DFA](src/main/java/io/github/lcs002/automatons/automaton/algorithms/NFAToDFAEpsilon.java)_                    |  **X**   |   **X**    |
+|        _[Remove Unreachable States](src/main/java/io/github/lcs002/automatons/automaton/algorithms/utility/RemoveUnreachable.java)_         |  **X**   |            |
+|                _[ε-Closure](src/main/java/io/github/lcs002/automatons/automaton/algorithms/utility/GetEpsilonClosure.java)_                 |  **X**   |            |
+| _[Minimize - Equivalency Method](src/main/java/io/github/lcs002/automatons/automaton/algorithms/minimization/MinimizationEquivalence.java)_ |          |            |
+|       _[Minimize - Table Method](src/main/java/io/github/lcs002/automatons/automaton/algorithms/minimization/MinimizationTable.java)_       |          |            |
+|                      _[Equivalency](src/main/java/io/github/lcs002/automatons/automaton/algorithms/Equivalency.java)_                       |  **X**   |   **X**    |
+|                        _[Completion](src/main/java/io/github/lcs002/automatons/automaton/algorithms/Complete.java)_                         |  **X**   |   **X**    |
+|                  _[Complement](src/main/java/io/github/lcs002/automatons/automaton/algorithms/properties/Complement.java)_                  |  **X**   |   **X**    |
+|               _[Concatenation](src/main/java/io/github/lcs002/automatons/automaton/algorithms/properties/Concatenation.java)_               |  **X**   |   **X**    |
+|                _[Intersection](src/main/java/io/github/lcs002/automatons/automaton/algorithms/properties/Intersection.java)_                |  **X**   |   **X**    |
+|                       _[Union](src/main/java/io/github/lcs002/automatons/automaton/algorithms/properties/Union.java)_                       |  **X**   |   **X**    |
+|                   _[Reversion](src/main/java/io/github/lcs002/automatons/automaton/algorithms/properties/Reversion.java)_                   |  **X**   |   **X**    |
 |                                                              _Language to NFA_                                                               |          |            |
 |                                                             _Reg. Expr. to DFA_                                                              |          |            |
 |                                                             _Reg. Expr. to NFA_                                                              |          |            |
 |                                                            _Reg. Expr. to NFA-ε_                                                             |          |            |
-|                          _[Automaton to Json](src/main/java/com/github/lcs002/automatons/automaton/serialize/json)_                          |  **X**   |            |
-|                  _[Automaton Machine](src/main/java/com/github/lcs002/automatons/automaton/machine/AutomatonMachine.java)_                   |          |            |
+|                          _[Automaton to Json](src/main/java/io/github/lcs002/automatons/automaton/serialize/json)_                          |  **X**   |            |
+|                  _[Automaton Machine](src/main/java/io/github/lcs002/automatons/automaton/machine/AutomatonMachine.java)_                   |          |            |
 |                                                           _Step by Step Algorithm_                                                           |          |            |
 
 ## Installation
@@ -112,7 +112,7 @@ Automaton result = automaton.run(new NFAToDFAEpsilon());
 ```
 
 > [!NOTE]
-> Algorithms are classes that implement **[Algorithm\<T\>](src/main/java/com/github/lcs002/automatons/automaton/algorithms/Algorithm.java)**.
+> Algorithms are classes that implement **[Algorithm\<T\>](src/main/java/io/github/lcs002/automatons/automaton/algorithms/Algorithm.java)**.
 
 ### De/Serializing Automatons
 To convert an **Automaton** to a **JSON** string, call the method `serialize` from the class `AutomatonJsonSerializer`:

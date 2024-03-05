@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.lcs002</groupId>
+    <groupId>io.github.lcs002</groupId>
     <artifactId>automatons</artifactId>
     <version>0.0.2</version>
 
@@ -34,7 +34,7 @@
             <id>Lcs002</id>
             <name>Lucas Vianna</name>
             <email>lucasvum@gmail.com</email>
-            <organization>com.github.lcs002</organization>
+            <organization>io.github.lcs002</organization>
             <organizationUrl>https://github.com/lcs002</organizationUrl>
         </developer>
     </developers>
