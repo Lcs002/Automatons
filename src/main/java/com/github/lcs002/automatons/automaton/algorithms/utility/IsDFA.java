@@ -4,7 +4,7 @@ import com.github.lcs002.automatons.automaton.Automaton;
 import com.github.lcs002.automatons.automaton.algorithms.Algorithm;
 
 /**
- * <h1>Checks if an Automaton is a DFA</h1>
+ * <h2>Checks if an Automaton is a DFA</h2>
  * <p><b>Result:</b> <b>Boolean</b> that indicates if the automaton is a DFA.</p>
  */
 public class IsDFA implements Algorithm<Boolean> {
