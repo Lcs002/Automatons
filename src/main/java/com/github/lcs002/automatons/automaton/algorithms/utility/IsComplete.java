@@ -4,7 +4,7 @@ import com.github.lcs002.automatons.automaton.Automaton;
 import com.github.lcs002.automatons.automaton.algorithms.Algorithm;
 
 /**
- * <h1>Checks Completeness of an Automaton</h1>
+ * <h2>Checks Completeness of an Automaton</h2>
  * <p><b>Result:</b> <b>Boolean</b> that indicates if the automaton is complete.</p>
  */
 public class IsComplete implements Algorithm<Boolean> {
