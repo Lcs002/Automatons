@@ -12,7 +12,7 @@ import java.util.Set;
 //
 
 /**
- * <h1>Checks Equivalency between two automatons</h1>
+ * <h2>Checks Equivalency between two automatons</h2>
  * <p><b>Result:</b> <b>Boolean</b> that indicates if the automaton is equivalent to another automaton.</p>
  * <p><b>Requisites:</b></p>
  * <ol>
