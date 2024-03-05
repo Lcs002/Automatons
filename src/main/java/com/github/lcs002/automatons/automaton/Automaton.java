@@ -9,7 +9,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * <h1>Automaton</h1>
+ * <h2>Automaton</h2>
  * <p>Representation of a finite automaton.</p>
  */
 @JsonDeserialize(builder = Automaton.Builder.class)
