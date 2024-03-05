@@ -6,7 +6,7 @@ import com.github.lcs002.automatons.automaton.algorithms.utility.IsComplete;
 import jakarta.annotation.Nonnull;
 
 /**
- * <h1>Finite Automaton Machine</h1>
+ * <h2>Finite Automaton Machine</h2>
  * <p>Simulates the behavior of an automaton, enabling the user to consume entries and get its current state.</p>
  * <p>The automaton used must <b>{@link IsDFA be a DFA}</b> and <b>{@link IsComplete be complete}</b>.</p>
  */
