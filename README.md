@@ -49,6 +49,8 @@ Paste the following dependency on your project's pom.xml file:
     <version>0.0.2</version>
 </dependency>
 ```
+> [!NOTE]
+> For other version visit the **[Maven Central Repository](https://central.sonatype.com/artifact/io.github.lcs002/automatons)**.
 
 ## Usage
 ### Creating Automatons
