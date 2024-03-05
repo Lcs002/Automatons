@@ -9,7 +9,7 @@ import org.javatuples.Pair;
 import java.util.*;
 
 /**
- * <h1>Algorithm for Automaton Intersection</h1>
+ * <h2>Algorithm for Automaton Intersection</h2>
  *
  * <p><b>Result:</b> <b>NFA</b> that accepts the intersection of the language between both automata.</p>
  * <p><b>Requisites:</b></p>
