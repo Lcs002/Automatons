@@ -19,7 +19,6 @@ import java.util.Set;
  * </ol>
  * <p><b><i>References:</i></b></p>
  * <ol>
- *     <li> <a href="resources/university/class-notes/Class Notes.md">Class Notes.md</a>, #5 Operations With Languages.</li>
  *     <li> <a href="resources/documents/Automaton_Properties.pdf">Automaton_Properties.pdf</a>, page 15.</li>
  * </ol>
  */
