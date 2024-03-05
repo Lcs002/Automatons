@@ -10,7 +10,7 @@ import java.util.Set;
 // Explanation in Class Notes, #5 Operations With Languages
 // Explanation in document Automaton_Properties.pdf, page 12
 /**
- * <h1>Algorithm for Automaton Union</h1>
+ * <h2>Algorithm for Automaton Union</h2>
  * <p>Union of two automatons: L1+L2 or L1UL2</p>
  * <p><b>Input:</b> Two <b>{@link Automaton automatons}</b>.</p>
  * <p><b>Result:</b> <b>NFA</b> that recognizes the union of the languages recognized by the two.</p>
