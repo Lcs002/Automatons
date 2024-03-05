@@ -20,9 +20,6 @@ import java.util.Set;
  *     <li>Both automatons have the same <b>alphabet</b>.</li>
  * </ol>
  * <p><b><i>References:</i></b></p>
- * <ol>
- *     <li> <a href="resources/university/Leccion 4.pdf">Leccion 4.pdf</a>, page 53.</li>
- * </ol>
  */
 public class Equivalency implements Algorithm<Boolean> {
     private Automaton other;
