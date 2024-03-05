@@ -6,7 +6,7 @@ import com.github.lcs002.automatons.automaton.Automaton;
 import com.github.lcs002.automatons.automaton.serialize.AutomatonDeserializer;
 
 /**
- * <h1>Automaton Deserializer</h1>
+ * <h2>Automaton Deserializer</h2>
  * <p>Class that deserializes a JSON string into an Automaton object.</p>
  */
 public class AutomatonJsonDeserializer implements AutomatonDeserializer {
