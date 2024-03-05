@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * <h1>Algorithm for State ε-Closure</h1>
+ * <h2>Algorithm for State ε-Closure</h2>
  * <p><b>Result:</b> <b>Set&lt;String&gt;</b> that contains the epsilon closure of a state.</p>
  * <p><b>Requisites:</b></p>
  * <ol>
