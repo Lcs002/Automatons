@@ -16,10 +16,10 @@ _Automaton's Algorithms implemented in Java._
 
 ## Feature Wishlist
 
-|                                                             **Functionalities**                                                              | **Done** | **Tested** |
-|:--------------------------------------------------------------------------------------------------------------------------------------------:|:--------:|:----------:|
-|                        _[NFA to DFA](src/main/java/io/github/lcs002/automatons/automaton/algorithms/NFAToDFA.java)_                         |  **X**   |   **X**    |
-|                    _[NFA-ε to DFA](src/main/java/io/github/lcs002/automatons/automaton/algorithms/NFAToDFAEpsilon.java)_                    |  **X**   |   **X**    |
+|                                                             **Functionalities**                                                             | **Done** | **Tested** |
+|:-------------------------------------------------------------------------------------------------------------------------------------------:|:--------:|:----------:|
+|                   _[NFA to DFA](src/main/java/io/github/lcs002/automatons/automaton/algorithms/conversion/NFAToDFA.java)_                   |  **X**   |   **X**    |
+|              _[NFA-ε to DFA](src/main/java/io/github/lcs002/automatons/automaton/algorithms/conversion/NFAToDFAEpsilon.java)_               |  **X**   |   **X**    |
 |        _[Remove Unreachable States](src/main/java/io/github/lcs002/automatons/automaton/algorithms/utility/RemoveUnreachable.java)_         |  **X**   |            |
 |                _[ε-Closure](src/main/java/io/github/lcs002/automatons/automaton/algorithms/utility/GetEpsilonClosure.java)_                 |  **X**   |            |
 | _[Minimize - Equivalency Method](src/main/java/io/github/lcs002/automatons/automaton/algorithms/minimization/MinimizationEquivalence.java)_ |          |            |
@@ -31,13 +31,13 @@ _Automaton's Algorithms implemented in Java._
 |                _[Intersection](src/main/java/io/github/lcs002/automatons/automaton/algorithms/properties/Intersection.java)_                |  **X**   |   **X**    |
 |                       _[Union](src/main/java/io/github/lcs002/automatons/automaton/algorithms/properties/Union.java)_                       |  **X**   |   **X**    |
 |                   _[Reversion](src/main/java/io/github/lcs002/automatons/automaton/algorithms/properties/Reversion.java)_                   |  **X**   |   **X**    |
-|                                                              _Language to NFA_                                                               |          |            |
-|                                                             _Reg. Expr. to DFA_                                                              |          |            |
-|                                                             _Reg. Expr. to NFA_                                                              |          |            |
-|                                                            _Reg. Expr. to NFA-ε_                                                             |          |            |
+|                                                              _Language to NFA_                                                              |          |            |
+|                                                             _Reg. Expr. to DFA_                                                             |          |            |
+|                                                             _Reg. Expr. to NFA_                                                             |          |            |
+|                                                            _Reg. Expr. to NFA-ε_                                                            |          |            |
 |                          _[Automaton to Json](src/main/java/io/github/lcs002/automatons/automaton/serialize/json)_                          |  **X**   |            |
 |                  _[Automaton Machine](src/main/java/io/github/lcs002/automatons/automaton/machine/AutomatonMachine.java)_                   |          |            |
-|                                                           _Step by Step Algorithm_                                                           |          |            |
+|                                                          _Step by Step Algorithm_                                                           |          |            |
 
 ## Installation
 ### Maven
