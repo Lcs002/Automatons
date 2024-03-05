@@ -7,7 +7,7 @@ import com.github.lcs002.automatons.automaton.algorithms.Algorithm;
 import java.util.*;
 
 /**
- * <h1>Converts ε-NFA to DFA</h1>
+ * <h2>Converts ε-NFA to DFA</h2>
  * <p>Converts an NFA to its equivalent DFA, taking into account Epsilon transitions.</p>
  * <p><b>Result:</b> <b>{@link Automaton}</b> that is the equivalent DFA of the original NFA.</p>
  */
