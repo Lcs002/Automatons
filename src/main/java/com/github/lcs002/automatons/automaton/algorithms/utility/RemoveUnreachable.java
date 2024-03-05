@@ -6,7 +6,7 @@ import com.github.lcs002.automatons.automaton.algorithms.Algorithm;
 import java.util.*;
 
 /**
- * <h1>Removes Unreachable States from an Automaton</h1>
+ * <h2>Removes Unreachable States from an Automaton</h2>
  * <p><b>Result:</b> <b>{@link Automaton}</b> without unreachable states.</p>
  */
 public class RemoveUnreachable implements Algorithm<Automaton> {
