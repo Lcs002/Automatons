@@ -5,7 +5,7 @@ import com.github.lcs002.automatons.automaton.Automaton;
 import com.github.lcs002.automatons.automaton.algorithms.Algorithm;
 
 /**
- * <h1>Algorithm for Automaton Reversion</h1>
+ * <h2>Algorithm for Automaton Reversion</h2>
  * <p>Reverts the automata.</p>
  * <p><b>Input:</b> An <b>{@link Automaton Automaton}</b>.</p>
  * <p><b>Result:</b> <b>ε-NFA</b> that recognizes the reverse language of the original automaton.</p>
