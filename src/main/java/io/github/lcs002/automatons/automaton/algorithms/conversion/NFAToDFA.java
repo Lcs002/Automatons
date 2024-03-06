@@ -12,10 +12,14 @@ import java.util.stream.Collectors;
  * <p>Converts an NFA to its equivalent DFA. Doesn't take into account Epsilon transitions.</p>
  * <p><b>Result:</b> <b>{@link Automaton}</b> that is the equivalent DFA of the original NFA.</p>
  */
-public class NFAToDFA implements Algorithm<Automaton> {
+public class NFAToDFA extends Algorithm<Automaton> {
+
+    public NFAToDFA(Automaton automaton) {
+        super(automaton);
+    }
 
     @Override
-    public Automaton run(Automaton automaton) {
+    public Automaton call() {
         // The automaton resultant of the conversion
         Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());
         // List of Set of States we have already checked

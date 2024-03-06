@@ -19,30 +19,31 @@ import java.util.*;
  *  <li> The automatons have the same <b>alphabet</b>.</li>
  * </ol>
  */
-public class Intersection implements Algorithm<Automaton> {
-    private final Automaton other;
+public class Intersection extends Algorithm<Automaton> {
+    private final Automaton automaton2;
 
 
-    public Intersection(Automaton other) {
-        this.other = other;
+    public Intersection(Automaton automaton1, Automaton automaton2) {
+        super(automaton1);
+        this.automaton2 = automaton2;
     }
 
 
     @Override
-    public Automaton run(Automaton automaton) {
+    public Automaton call() {
         // The automaton must be a dfa
         if (Boolean.FALSE.equals(automaton.run(new IsDFA()))) return null;
         // The automaton must be complete
         if (Boolean.FALSE.equals(automaton.run(new IsComplete()))) return null;
         // The automaton must have the same alphabet
-        if (!automaton.getAlphabet().equals(other.getAlphabet())) return null;
+        if (!automaton.getAlphabet().equals(automaton2.getAlphabet())) return null;
 
         Queue<Pair<String, String>> queue = new LinkedList<>();
         Set<Pair<String, String>> checked = new HashSet<>();
         // The result Automaton
         Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());
         // The initial state of the result automaton is the intersection of the initial states of the two automaton
-        Pair<String, String> initialStates = new Pair<>(automaton.getInitialState(), other.getInitialState());
+        Pair<String, String> initialStates = new Pair<>(automaton.getInitialState(), automaton2.getInitialState());
         result.setInitialState(initialStates.getValue0() + Automaton.SEPARATOR + initialStates.getValue1());
         queue.add(initialStates);
         checked.add(initialStates);
@@ -59,7 +60,7 @@ public class Intersection implements Algorithm<Automaton> {
                         .findFirst()
                         .orElse(null);
                 // Get the next other state given the current state and the symbol
-                String nextOther = other.getTransitions().stream()
+                String nextOther = automaton2.getTransitions().stream()
                         .filter(transition -> transition.from().equals(current.getValue1()))
                         .filter(transition -> transition.entry().equals(symbol))
                         .map(Automaton.Transition::to)
@@ -73,7 +74,7 @@ public class Intersection implements Algorithm<Automaton> {
                     // And mark the current as checked
                     checked.add(current);
                     // If both states are final, add the new state as final
-                    if (automaton.isFinal(nextOriginal) && other.isFinal(nextOther)) {
+                    if (automaton.isFinal(nextOriginal) && automaton2.isFinal(nextOther)) {
                         result.addFinalState(nextPair.getValue0() + Automaton.SEPARATOR + nextPair.getValue1());
                     }
                 }

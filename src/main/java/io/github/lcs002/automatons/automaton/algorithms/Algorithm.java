@@ -1,5 +1,6 @@
 package io.github.lcs002.automatons.automaton.algorithms;
 
+import io.github.lcs002.automatons.Method;
 import io.github.lcs002.automatons.automaton.Automaton;
 
 /**
@@ -8,6 +9,11 @@ import io.github.lcs002.automatons.automaton.Automaton;
  * <p>Every algorithm must implement this interface, implementing the method <b>run</b>.</p>
  * @param <T> The result of the algorithm.
  */
-public interface Algorithm<T> {
-    T run(Automaton automaton);
+public abstract class Algorithm<T> implements Method<T> {
+    protected final Automaton automaton;
+
+
+    public Algorithm(Automaton automaton) {
+        this.automaton = automaton;
+    }
 }

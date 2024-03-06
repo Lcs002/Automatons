@@ -4,6 +4,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
+import io.github.lcs002.automatons.automaton.algorithms.conversion.NFAToDFA;
+import io.github.lcs002.automatons.automaton.algorithms.conversion.NFAToDFAEpsilon;
+import io.github.lcs002.automatons.automaton.algorithms.minimization.MinimizationEquivalence;
+import io.github.lcs002.automatons.automaton.algorithms.minimization.MinimizationTable;
+import io.github.lcs002.automatons.automaton.algorithms.properties.Complement;
+import io.github.lcs002.automatons.automaton.algorithms.properties.Concatenation;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -87,16 +93,6 @@ public class Automaton {
 
     public Set<Transition> getTransitions() {
         return transitions;
-    }
-
-    /**
-     * Runs an algorithm on the automaton.
-     * @param algorithm Algorithm to run.
-     * @return Result of the algorithm.
-     * @param <T> Type of the result.
-     */
-    public <T> T run(Algorithm<T> algorithm) {
-        return algorithm.run(this);
     }
 
 

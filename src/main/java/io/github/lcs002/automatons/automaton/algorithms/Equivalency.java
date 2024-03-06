@@ -21,17 +21,18 @@ import java.util.Set;
  * </ol>
  * <p><b><i>References:</i></b></p>
  */
-public class Equivalency implements Algorithm<Boolean> {
-    private Automaton other;
+public class Equivalency extends Algorithm<Boolean> {
+    private final Automaton automaton2;
 
 
-    public  Equivalency(Automaton other) {
-        this.other = other;
+    public  Equivalency(Automaton automaton1, Automaton automaton2) {
+        super(automaton1);
+        this.automaton2 = automaton2;
     }
 
 
     @Override
-    public Boolean run(Automaton automaton) {
+    public Boolean call() {
 
         /*
         Two Automaton are equivalent if they satisfy the following conditions :
@@ -44,7 +45,7 @@ public class Equivalency implements Algorithm<Boolean> {
          */
 
         // If the alphabet are different, the automaton are not equivalent
-        if (!automaton.getAlphabet().equals(other.getAlphabet())) return false;
+        if (!automaton.getAlphabet().equals(automaton2.getAlphabet())) return false;
 
         // Set of pairs of states that have already been checked
         Set<Pair<String, String>> checked = new HashSet<>();
@@ -54,8 +55,8 @@ public class Equivalency implements Algorithm<Boolean> {
         boolean equivalent = true;
 
         // Add the initial states to the queue and the set of checked pairs
-        checked.add(new Pair<>(automaton.getInitialState(), other.getInitialState()));
-        queue.add(new Pair<>(automaton.getInitialState(), other.getInitialState()));
+        checked.add(new Pair<>(automaton.getInitialState(), automaton2.getInitialState()));
+        queue.add(new Pair<>(automaton.getInitialState(), automaton2.getInitialState()));
 
         // While there are still pairs of states to check...
         while (!queue.isEmpty() && equivalent) {
@@ -71,7 +72,7 @@ public class Equivalency implements Algorithm<Boolean> {
                         .findFirst()
                         .orElse(null);
                 // Get the next state of the current other automaton state given a certain symbol
-                String nextOther = other.getTransitions().stream()
+                String nextOther = automaton2.getTransitions().stream()
                         .filter(transition -> transition.from().equals(superstate.getValue1()))
                         .filter(transition -> transition.entry().equals(symbol))
                         .map(Automaton.Transition::to)
@@ -84,8 +85,8 @@ public class Equivalency implements Algorithm<Boolean> {
                 // If the pair of next states has not been checked yet
                 else if (!checked.contains(new Pair<>(nextOriginal, nextOther))) {
                     // If both states are final or both are non-final
-                    if (automaton.isFinal(nextOriginal) && other.isFinal(nextOther)
-                            || (!automaton.isFinal(nextOriginal) && !other.isFinal(nextOther)))
+                    if (automaton.isFinal(nextOriginal) && automaton2.isFinal(nextOther)
+                            || (!automaton.isFinal(nextOriginal) && !automaton2.isFinal(nextOther)))
                     {
                         // Add the pair to the queue and the set of checked pairs
                         queue.add(new Pair<>(nextOriginal, nextOther));

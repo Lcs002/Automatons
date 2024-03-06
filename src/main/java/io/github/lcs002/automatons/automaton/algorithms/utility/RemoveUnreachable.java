@@ -9,10 +9,14 @@ import java.util.*;
  * <h2>Removes Unreachable States from an Automaton</h2>
  * <p><b>Result:</b> <b>{@link Automaton}</b> without unreachable states.</p>
  */
-public class RemoveUnreachable implements Algorithm<Automaton> {
+public class RemoveUnreachable extends Algorithm<Automaton> {
+
+    public RemoveUnreachable(Automaton automaton) {
+        super(automaton);
+    }
 
     @Override
-    public Automaton run(Automaton automaton) {
+    public Automaton call() {
         // The automaton resultant of the reduction
         Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());
         // List of Set of States we have already checked

@@ -7,9 +7,13 @@ import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
  * <h2>Checks Completeness of an Automaton</h2>
  * <p><b>Result:</b> <b>Boolean</b> that indicates if the automaton is complete.</p>
  */
-public class IsComplete implements Algorithm<Boolean> {
+public class IsComplete extends Algorithm<Boolean> {
+    public IsComplete(Automaton automaton) {
+        super(automaton);
+    }
+
     @Override
-    public Boolean run(Automaton automaton) {
+    public Boolean call() {
         // Return true if the automaton is complete
         // An automaton is complete if every state has a transition for every symbol in the alphabet
         return automaton.getStates().stream()

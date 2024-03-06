@@ -11,10 +11,14 @@ import java.util.*;
  * <p>Converts an NFA to its equivalent DFA, taking into account Epsilon transitions.</p>
  * <p><b>Result:</b> <b>{@link Automaton}</b> that is the equivalent DFA of the original NFA.</p>
  */
-public class NFAToDFAEpsilon implements Algorithm<Automaton> {
+public class NFAToDFAEpsilon extends Algorithm<Automaton> {
+
+    public NFAToDFAEpsilon(Automaton automaton) {
+        super(automaton);
+    }
 
     @Override
-    public Automaton run(Automaton automaton) {
+    public Automaton call() {
         // As a DFA, the result automaton won't have Epsilon as a symbol of the alphabet
         Set<Character> alphabet = new HashSet<>(automaton.getAlphabet());
         alphabet.remove(Automaton.EPSILON);

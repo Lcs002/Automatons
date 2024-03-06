@@ -1,5 +1,6 @@
 package io.github.lcs002.automatons.automaton.algorithms.properties;
 
+import io.github.lcs002.automatons.automaton.algorithms.AutomatonAlgorithms;
 import io.github.lcs002.automatons.automaton.algorithms.utility.IsDFA;
 import io.github.lcs002.automatons.automaton.Automaton;
 import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
@@ -22,21 +23,23 @@ import java.util.Set;
  *     <li> <a href="resources/documents/Automaton_Properties.pdf">Automaton_Properties.pdf</a>, page 15.</li>
  * </ol>
  */
-public class Concatenation implements Algorithm<Automaton> {
-    private final Automaton other;
+public class Concatenation extends Algorithm<Automaton> {
+    private final Automaton automaton2;
 
 
-    public Concatenation(Automaton other) {
-        this.other = other;
+    public Concatenation(Automaton automaton1, Automaton automaton2) {
+        super(automaton1);
+        this.automaton2 = automaton2;
     }
 
 
     @Override
-    public Automaton run(Automaton automaton) {
+    public Automaton call() {
         // If any of the automaton is not a DFA, return null
-        if (Boolean.FALSE.equals(automaton.run(new IsDFA())) || Boolean.FALSE.equals(other.run(new IsDFA()))) return null;
+        if (Boolean.FALSE.equals(AutomatonAlgorithms.isDFA(automaton))
+                || Boolean.FALSE.equals(AutomatonAlgorithms.isDFA(automaton2))) return null;
         // The alphabet must be the same for both automaton
-        if (!automaton.getAlphabet().equals(other.getAlphabet())) return null;
+        if (!automaton.getAlphabet().equals(automaton2.getAlphabet())) return null;
 
         Set<Character> alphabet = new HashSet<>(automaton.getAlphabet());
         // Add the epsilon symbol to the alphabet if it is not present
@@ -53,7 +56,7 @@ public class Concatenation implements Algorithm<Automaton> {
                 )
         );
         // Add the transitions of the second automaton
-        other.getTransitions().forEach(
+        automaton2.getTransitions().forEach(
                 transition -> result.addTransition(
                         transition.from() + '²',
                         transition.to() + '²',
@@ -64,12 +67,12 @@ public class Concatenation implements Algorithm<Automaton> {
         automaton.getFinalStates().forEach(
                 state -> result.addTransition(
                         state + '¹',
-                        other.getInitialState() + '²',
+                        automaton2.getInitialState() + '²',
                         Automaton.EPSILON
                 )
         );
         // Add the final states of the second automaton to the final states of the result automaton
-        other.getFinalStates().forEach(
+        automaton2.getFinalStates().forEach(
                 state -> result.addFinalState(state + '²')
         );
         // Return the result automaton

@@ -15,17 +15,18 @@ import java.util.stream.Collectors;
  *     <li>The automaton <b>{@link IsDFA must be a NFA}</b>.</li>
  * </ol>
  */
-public class GetEpsilonClosure implements Algorithm<Set<String>> {
+public class GetEpsilonClosure extends Algorithm<Set<String>> {
     private String state;
 
 
-    public GetEpsilonClosure(String state) {
+    public GetEpsilonClosure(Automaton automaton, String state) {
+        super(automaton);
         this.state = state;
     }
 
 
     @Override
-    public Set<String> run(Automaton automaton) {
+    public Set<String> call() {
         // TODO Change this to a iterative approach
         Set<String> closure = new HashSet<>();
         Set<String> epsilonNextStates = automaton.getTransitions().stream()

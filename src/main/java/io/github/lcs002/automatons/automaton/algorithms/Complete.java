@@ -12,10 +12,14 @@ import io.github.lcs002.automatons.automaton.algorithms.utility.IsDFA;
  *  <li>The automaton <b>{@link IsDFA is a DFA}</b>.</li>
  * </ol>
  */
-public class Complete implements Algorithm<Automaton> {
+public class Complete extends Algorithm<Automaton> {
+
+    public Complete(Automaton automaton) {
+        super(automaton);
+    }
 
     @Override
-    public Automaton run(Automaton automaton) {
+    public Automaton call() {
         // The automaton must be a DFA
         if (Boolean.FALSE.equals(automaton.run(new IsDFA()))) return null;
 

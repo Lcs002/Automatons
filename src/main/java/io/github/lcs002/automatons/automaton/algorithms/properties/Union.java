@@ -21,21 +21,22 @@ import java.util.Set;
  * </ol>
  *  @see <a href="https://www.geeksforgeeks.org/union-process-in-dfa/">Union Algorithm</a>
  */
-public class Union implements Algorithm<Automaton> {
-    private final Automaton other;
+public class Union extends Algorithm<Automaton> {
+    private final Automaton automaton2;
 
 
-    public Union(Automaton other) {
-        this.other = other;
+    public Union(Automaton automaton1, Automaton automaton2) {
+        super(automaton1);
+        this.automaton2 = automaton2;
     }
 
 
     @Override
-    public Automaton run(Automaton automaton) {
+    public Automaton call() {
         // If any of the automaton is not a DFA, return null
-        if (Boolean.FALSE.equals(automaton.run(new IsDFA())) || Boolean.FALSE.equals(other.run(new IsDFA()))) return null;
+        if (Boolean.FALSE.equals(automaton.run(new IsDFA())) || Boolean.FALSE.equals(automaton2.run(new IsDFA()))) return null;
         // The alphabet must be the same for both automaton
-        if (!automaton.getAlphabet().equals(other.getAlphabet())) return null;
+        if (!automaton.getAlphabet().equals(automaton2.getAlphabet())) return null;
 
         Set<Character> alphabet = new HashSet<>(automaton.getAlphabet());
         // Add the epsilon symbol to the alphabet if it is not present
@@ -43,12 +44,12 @@ public class Union implements Algorithm<Automaton> {
         // The result of the union of two automaton is a new automaton
         Automaton.Builder result = new Automaton.Builder().setAlphabet(alphabet);
         // The initial state of the result automaton is the concatenation of the initial states of the two automaton
-        String initialState = automaton.getInitialState() + "¹" + Automaton.SEPARATOR + other.getInitialState() + "²";
+        String initialState = automaton.getInitialState() + "¹" + Automaton.SEPARATOR + automaton2.getInitialState() + "²";
         // Add the initial state to the result automaton
         result.setInitialState(initialState);
         // Add the transitions of the initial state to the initial states of the two automaton
         result.addTransition(initialState, automaton.getInitialState() + "¹", Automaton.EPSILON);
-        result.addTransition(initialState, other.getInitialState() + "²", Automaton.EPSILON);
+        result.addTransition(initialState, automaton2.getInitialState() + "²", Automaton.EPSILON);
         // Add the transitions of the first automaton
         automaton.getTransitions().forEach(
                 transition -> result.addTransition(
@@ -58,7 +59,7 @@ public class Union implements Algorithm<Automaton> {
                 )
         );
         // Add the transitions of the second automaton
-        other.getTransitions().forEach(
+        automaton2.getTransitions().forEach(
                 transition -> result.addTransition(
                         transition.from() + "²",
                         transition.to() + "²",
@@ -70,7 +71,7 @@ public class Union implements Algorithm<Automaton> {
                 state -> result.addFinalState(state + "¹")
         );
         // Add the final states of the second automaton
-        other.getFinalStates().forEach(
+        automaton2.getFinalStates().forEach(
                 state -> result.addFinalState(state + "²")
         );
         // Return the union of the two automaton
