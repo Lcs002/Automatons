@@ -402,5 +402,3 @@ Ysrc/main/java/com/github/lcs002/automatons/automaton/serialize/AutomatonDeseria
 Wsrc/main/java/com/github/lcs002/automatons/automaton/serialize/AutomatonSerializer.java,a\b\aba01754c90734327f787b1a151b37e45e17087b
 ™
 isrc/main/java/com/github/lcs002/automatons/automaton/algorithms/minimization/MinimizationEquivalence.java,9\1\9171ffba3d4b279d951ea9abefdb9194d88e3e5b
-T
-$.github/workflows/maven-settings.xml,2\3\236b430ef2b1a8fc258b9df78c36e1be00add034
