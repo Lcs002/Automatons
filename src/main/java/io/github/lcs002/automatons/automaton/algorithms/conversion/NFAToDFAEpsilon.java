@@ -1,5 +1,6 @@
 package io.github.lcs002.automatons.automaton.algorithms.conversion;
 
+import io.github.lcs002.automatons.automaton.algorithms.AutomatonAlgorithms;
 import io.github.lcs002.automatons.automaton.algorithms.utility.GetEpsilonClosure;
 import io.github.lcs002.automatons.automaton.Automaton;
 import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
@@ -31,7 +32,7 @@ public class NFAToDFAEpsilon extends Algorithm<Automaton> {
         // Initial State of the automaton
         String initialState = automaton.getInitialState();
         // Get the Epsilon Closure of the initial State
-        Set<String> initialStates = automaton.run(new GetEpsilonClosure(initialState));
+        Set<String> initialStates = AutomatonAlgorithms.eClosure(automaton, initialState);
         initialStates.add(initialState);
         // Add and Mark the first State
         queue.add(initialStates);

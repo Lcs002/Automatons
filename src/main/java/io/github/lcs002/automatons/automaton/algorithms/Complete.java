@@ -21,7 +21,7 @@ public class Complete extends Algorithm<Automaton> {
     @Override
     public Automaton call() {
         // The automaton must be a DFA
-        if (Boolean.FALSE.equals(automaton.run(new IsDFA()))) return null;
+        if (Boolean.FALSE.equals(AutomatonAlgorithms.isDFA(automaton))) return null;
 
         // The result of the complete DFA is a new automaton
         Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());

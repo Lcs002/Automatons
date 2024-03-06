@@ -67,4 +67,8 @@ public final class AutomatonAlgorithms {
     public static Automaton removeUnreachable(Automaton automaton) {
         return new RemoveUnreachable(automaton).call();
     }
+
+    public static Automaton complete(Automaton automaton) {
+        return new Complete(automaton).call();
+    }
 }

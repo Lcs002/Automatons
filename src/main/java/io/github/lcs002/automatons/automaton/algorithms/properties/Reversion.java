@@ -1,5 +1,6 @@
 package io.github.lcs002.automatons.automaton.algorithms.properties;
 
+import io.github.lcs002.automatons.automaton.algorithms.AutomatonAlgorithms;
 import io.github.lcs002.automatons.automaton.algorithms.utility.IsDFA;
 import io.github.lcs002.automatons.automaton.Automaton;
 import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
@@ -23,7 +24,8 @@ public class Reversion extends Algorithm<Automaton> {
     @Override
     public Automaton call() {
         // The automaton must be a DFA
-        if (Boolean.FALSE.equals(automaton.run(new IsDFA()))) return null;
+        if (Boolean.FALSE.equals(AutomatonAlgorithms.isDFA(automaton))) return null;
+
         // The result of the reversion of an automaton is a new automaton
         Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());
         // Reverse all transitions: from -> to becomes to -> from

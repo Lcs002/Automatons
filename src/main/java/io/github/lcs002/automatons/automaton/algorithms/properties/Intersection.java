@@ -2,6 +2,7 @@ package io.github.lcs002.automatons.automaton.algorithms.properties;
 
 import io.github.lcs002.automatons.automaton.Automaton;
 import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
+import io.github.lcs002.automatons.automaton.algorithms.AutomatonAlgorithms;
 import io.github.lcs002.automatons.automaton.algorithms.utility.IsComplete;
 import io.github.lcs002.automatons.automaton.algorithms.utility.IsDFA;
 import org.javatuples.Pair;
@@ -31,10 +32,10 @@ public class Intersection extends Algorithm<Automaton> {
 
     @Override
     public Automaton call() {
-        // The automaton must be a dfa
-        if (Boolean.FALSE.equals(automaton.run(new IsDFA()))) return null;
+        // The automaton must be a DFA
+        if (Boolean.FALSE.equals(AutomatonAlgorithms.isDFA(automaton))) return null;
         // The automaton must be complete
-        if (Boolean.FALSE.equals(automaton.run(new IsComplete()))) return null;
+        if (Boolean.FALSE.equals(AutomatonAlgorithms.isComplete(automaton))) return null;
         // The automaton must have the same alphabet
         if (!automaton.getAlphabet().equals(automaton2.getAlphabet())) return null;
 

@@ -2,6 +2,7 @@ package io.github.lcs002.automatons.automaton.algorithms.utility;
 
 import io.github.lcs002.automatons.automaton.Automaton;
 import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
+import io.github.lcs002.automatons.automaton.algorithms.AutomatonAlgorithms;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -36,7 +37,7 @@ public class GetEpsilonClosure extends Algorithm<Set<String>> {
                 .collect(Collectors.toSet());
         for (String nextState : epsilonNextStates) {
             closure.add(nextState);
-            Set<String> nextClosure = automaton.run(new GetEpsilonClosure(nextState));
+            Set<String> nextClosure = AutomatonAlgorithms.eClosure(automaton, nextState);
             closure.addAll(nextClosure);
         }
         return closure;

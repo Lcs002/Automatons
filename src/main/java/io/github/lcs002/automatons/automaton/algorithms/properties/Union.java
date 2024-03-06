@@ -2,6 +2,7 @@ package io.github.lcs002.automatons.automaton.algorithms.properties;
 
 import io.github.lcs002.automatons.automaton.Automaton;
 import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
+import io.github.lcs002.automatons.automaton.algorithms.AutomatonAlgorithms;
 import io.github.lcs002.automatons.automaton.algorithms.utility.IsDFA;
 
 import java.util.HashSet;
@@ -33,8 +34,8 @@ public class Union extends Algorithm<Automaton> {
 
     @Override
     public Automaton call() {
-        // If any of the automaton is not a DFA, return null
-        if (Boolean.FALSE.equals(automaton.run(new IsDFA())) || Boolean.FALSE.equals(automaton2.run(new IsDFA()))) return null;
+        // The automaton must be a DFA
+        if (Boolean.FALSE.equals(AutomatonAlgorithms.isDFA(automaton))) return null;
         // The alphabet must be the same for both automaton
         if (!automaton.getAlphabet().equals(automaton2.getAlphabet())) return null;
 
