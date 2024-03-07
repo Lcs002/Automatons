@@ -364,3 +364,5 @@ v
 Fresources/university/class-notes/.obsidian/core-plugins-migration.json,6\d\6d1ccfc5e2efa949396f06445d04cc61f464e1a0
 i
 9resources/university/class-notes/.obsidian/workspace.json,1\e\1eae4f7a062948fed74ea76973ddfb35ae6691de
+u
+Esrc/main/java/io/github/lcs002/automatons/binaryTree/IBinaryTree.java,6\e\6ee65f8af6b1b455e53c6a08ee9757142edf3d4c

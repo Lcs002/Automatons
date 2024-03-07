@@ -1,19 +1,70 @@
 # Class Notes
-## #1 Basic Concepts
+## 1. Basic Concepts
 ![basic-concepts.png](basic-concepts.png)
-## #2 NFA to DFA
+## 2. NFA to DFA
 ![nfa-to-dfa.png](nfa-to-dfa.png)
-## #3 Epsilon Closures, Accessibility and Co-Accessibility
+## 3. Epsilon Closures, Accessibility and Co-Accessibility
 ![epsilon-closures-accessibility-and-co-accessibility.png](epsilon-closures-accessibility-and-co-accessibility.png)
-## #4 Minimization - Equivalency and Table Methods
+## 4. Minimization
 ![minimization.png](minimization.png)
 ![minimization-examples.png](minimization-examples.png)
-## #5 Properties and Operations
+
+<details>
+<summary><b>Notes</b></summary>
+
+### 4.1. Equivalency Method
+First the Automaton must be:
+- **Complete**.
+- **Deterministic**.
+- **Without Unreachable States**.
+
+Then, the algorithm is as follows:
+1. **Create two Partitions**:
+    - **C1** : Final States.
+    - **C2** : Non-Final States.
+2. **For each Partition**:
+    - **For each State**: 
+      1. Calculate the **Transition** with each **Symbol**.
+      2. Its **Destination Partition** will be the **Partition** that contains the **Destination State** of the 
+      **Transition**.
+    - **Create a new Partition** grouping the **States** by its **Set of Destination Partitions**.
+3. **Go to 2** if there are new **Partitions**.
+4. The **States** of the minimized automaton are the **Partitions**.
+
+> [!NOTE] A state is **final if X and Y are final** states. We made the task easier as we already separate the final states from 
+> non-final states.
+
+> [!NOTE] **Non-Co-Accessible** states and **Error** states are **automatically grouped** together by the algorithm.
+
+### 4.2. Table Method
+> _Also called **Myhill-Nerode Theorem**_
+
+The algorithm is as follows:
+1. **Create a Table** with the **States** as **Rows** and **Columns**.
+   - If the automaton has **n** states, the table will be **n-1 x n-1**. So that no reflexive transitions are present.
+2. **Mark** the pairs of states `<p,q>` that satisfies:
+   - One is **final** and the other is **non-final**.
+
+   > [!NOTE] **_Pseudocode_**: `q IS FINAL XOR p IS FINAL`
+
+3. **Mark** the pairs of states `<p,q>` not marked that satisfies:
+   - The pair `<δ(p,a), δ(q,a)>` is marked. Where `a` is a **symbol** from the **Alphabet**.
+
+   > [!TIP] _If the pair of states cannot be marked, draw an arrow from the pair to the pair that should be marked. Then,_
+   > _if target pair is eventually marked, also mark the origin pair. This way we have to make only one iteration._
+
+4. **Repeat 3** if a pair was marked.
+
+> [!WARNING] _Always mark every column then go down one row. Start from the top and go down._
+
+</details>
+
+## 5. Properties and Operations
 ![operations-with-languages.jpeg](operations-with-languages.png)
 ![WhatsApp Image 2024-02-21 at 10.42.06.jpeg](WhatsApp%20Image%202024-02-21%20at%2010.42.06.jpeg)
 ![WhatsApp Image 2024-02-21 at 10.42.10.jpeg](WhatsApp%20Image%202024-02-21%20at%2010.42.10.jpeg)
 ![WhatsApp Image 2024-02-21 at 10.42.11.jpeg](WhatsApp%20Image%202024-02-21%20at%2010.42.11.jpeg)
-## #6 Pumping
+## 6. Pumping
 ![WhatsApp Image 2024-02-21 at 10.42.11.jpeg](WhatsApp%20Image%202024-02-21%20at%2010.42.11.jpeg)
 ![pumping-examples-and-grammar.png](pumping-examples-and-grammar.png)
 
@@ -91,7 +142,7 @@ Ejemplo: L ={a^n, b^n | n >= 1}
 
 </details>
 
-## #7 Grammar
+## 7. Grammar
 ![pumping-examples-and-grammar.png](pumping-examples-and-grammar.png)
 
 <details>
@@ -107,7 +158,7 @@ Se categorizan en 4 niveles:
   - **_Formato_**: `A -> *`
 
 
-### #7.1 Definicion Formal de Gramatica
+### 7.1. Definicion Formal de Gramatica
 **_G = (Sig, N, S, P)_**
 - **Sig** : Alfabeto terminal o de constantes.
 - **N** : Alfabeto de no terminales (variables)
@@ -117,7 +168,7 @@ Se categorizan en 4 niveles:
 > [!NOTE]
 >  Sig y N son siempre disjuntos.
 
-### #7.2 Paso de Derivación
+### 7.2. Paso de Derivación
 Si tenemos una **cadena** y cada cadena que **interviene en las derivaciones** se llama **forma sentencial** y tengo una produccion `a -> b`
 como se aplica esta produccion a esta forma sentencial?
 - Busco si la **forma sentencial** contiene la subcadena `a`.
@@ -147,7 +198,7 @@ Si quiero mostrar que esta forma setencial se peude llegar a otra con derivacion
 > Cada palabra se puede obtener del simbolo inicial con una derivacion con cierto numero de pasos
 > `L(G) = {w IN Z*|S->* w}`.
 
-### #7.3 Ejemplos Gramatica `->` Lenguage
+### 7.3. Ejemplos Gramatica `->` Lenguage
 
 - `A->aBa`
   - **NO REGULAR**
@@ -158,7 +209,7 @@ Si quiero mostrar que esta forma setencial se peude llegar a otra con derivacion
 - `a->bB`
   - **NO REGULAR**, **NO ES NADA**
 
-### #7.4 Ejemplos Lenguaje `->` Gramatica
+### 7.4. Ejemplos Lenguaje `->` Gramatica
 
 - L = {xbby|x,y IN {a,b}}
 
@@ -180,23 +231,23 @@ Con B puedo generar cualquier letra aB o bB o termino a o b
 - A -> bB|aS|b
 - B -> aB|bB|a|b
 
-### #7.5 Gramatica a Automata
+### 7.5. Gramatica a Automata
 Cuando haya una transicion A -> lambda, A es final
 
 Tenemos dos algoritmos para pasar de una Gramatica a un Automata.
 
-### #7.6 Nueva forma de verificar si un lenguaje es regular
+### 7.6. Nueva forma de verificar si un lenguaje es regular
 Si volvemos a la pregunta, **_¿L es regular?_**. 
 1. Para la respuesta **Es Regular**, podremos además de escribir un **_Automata_**, también escribir una **_Gramatica_**.
 2. Para la respuesta **No es Regular**, seguimos solo teniendo **_Lema de Bombeo_**.
 </details>
 
-## #8 ER a Automata
-### #8.1 Thomson (NFA-ε)
+## 8. ER a Automata
+### 8.1. Thomson (NFA-ε)
 ![er-automata.jpeg](er-automata.jpeg)
-### #8.2 M'Naghten Yamada (NFA)
+### 8.2. M'Naghten Yamada (NFA)
 ![er-automata-2.jpeg](er-automata-2.jpeg)
-### Brzozowski (DFA)
+### 8.3 Brzozowski (DFA)
 ![er-automata-1.jpeg](er-automata-1.jpeg)
 
 <details>
@@ -208,8 +259,8 @@ Si volvemos a la pregunta, **_¿L es regular?_**.
 
 </details>
 
-## #9 Automata a ER
-### #9.1 Mediante Sistema de Ecuaciones
+## 9. Automata a ER
+### 9.1. Mediante Sistema de Ecuaciones
 ![automata-er1.jpeg](automata-er1.jpeg)
 
 <details>
@@ -230,7 +281,7 @@ La **solucion de cada una** de la incognitas va a ser una **expresion regular**.
 > ![NOTE]
 > La expresion regular del estado inicial va a ser la expresion regular del automata.
 
-#### #9.1.1 Propiedades
+#### 9.1.1. Propiedades
 ##### Solución para Recursiva
 Formato de una recursiva: `X = rX + s`
 
@@ -259,7 +310,7 @@ No hay ninguna expresion para una exp reg mas simple.
 
 </details>
 
-### #9.2 Mediante Eliminación de Estados
+### 9.2. Mediante Eliminación de Estados
 ![automata-er2.jpeg](automata-er2.jpeg)
 
 <details>
@@ -291,4 +342,4 @@ Antes, necesitamos cumplir con _ciertas condiciones_, si no cumple, veremos que 
 
 </details>
 
-## #9 ER a Gramatica
+## 10. ER a Gramatica
