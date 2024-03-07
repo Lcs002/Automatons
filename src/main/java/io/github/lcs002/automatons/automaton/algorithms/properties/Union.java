@@ -2,7 +2,6 @@ package io.github.lcs002.automatons.automaton.algorithms.properties;
 
 import io.github.lcs002.automatons.automaton.Automaton;
 import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
-import io.github.lcs002.automatons.automaton.algorithms.AutomatonAlgorithms;
 import io.github.lcs002.automatons.automaton.algorithms.utility.IsDFA;
 
 import java.util.HashSet;
@@ -22,7 +21,7 @@ import java.util.Set;
  * </ol>
  *  @see <a href="https://www.geeksforgeeks.org/union-process-in-dfa/">Union Algorithm</a>
  */
-public class Union extends Algorithm<Automaton> {
+public final class Union extends Algorithm<Automaton> {
     private final Automaton automaton2;
 
 
@@ -35,7 +34,7 @@ public class Union extends Algorithm<Automaton> {
     @Override
     public Automaton call() {
         // The automaton must be a DFA
-        if (Boolean.FALSE.equals(AutomatonAlgorithms.isDFA(automaton))) return null;
+        if (Boolean.FALSE.equals(automaton.isDfa())) return null;
         // The alphabet must be the same for both automaton
         if (!automaton.getAlphabet().equals(automaton2.getAlphabet())) return null;
 

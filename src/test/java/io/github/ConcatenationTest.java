@@ -1,9 +1,6 @@
 package io.github;
 
 import io.github.lcs002.automatons.automaton.Automaton;
-import io.github.lcs002.automatons.automaton.algorithms.Equivalency;
-import io.github.lcs002.automatons.automaton.algorithms.conversion.NFAToDFAEpsilon;
-import io.github.lcs002.automatons.automaton.algorithms.properties.Concatenation;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -19,8 +16,8 @@ public class ConcatenationTest {
     @MethodSource("correctArgs")
     void correct(Automaton automaton1, Automaton automaton2, Automaton expected) {
         // The two automaton must be equivalent
-        Automaton resultDFA = automaton1.run(new Concatenation(automaton2)).run(new NFAToDFAEpsilon());
-        assertTrue(resultDFA.run(new Equivalency(expected)));
+        Automaton resultDFA = automaton1.concatenate(automaton2).nfaEpsilonToDfa();
+        assertTrue(resultDFA.isEquivalent(expected));
     }
 
     static Stream<Arguments> correctArgs() {

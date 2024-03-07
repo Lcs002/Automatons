@@ -1,8 +1,6 @@
 package io.github;
 
 import io.github.lcs002.automatons.automaton.Automaton;
-import io.github.lcs002.automatons.automaton.algorithms.Equivalency;
-import io.github.lcs002.automatons.automaton.algorithms.conversion.NFAToDFAEpsilon;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -15,7 +13,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class NFAToDFAEpsilonTest {
+public class NFAEpsilonToDFATest {
     private Automaton automaton;
 
     @BeforeEach
@@ -36,7 +34,7 @@ public class NFAToDFAEpsilonTest {
     void deterministic() {
         // Test 2
         // The resulting automaton must not have any state with the same entry more than once
-        Automaton result = automaton.run(new NFAToDFAEpsilon());
+        Automaton result = automaton.nfaEpsilonToDfa();
 
         for (Automaton.Transition transition : result.getTransitions()) {
             assertEquals(1, result.getTransitions().stream()
@@ -49,8 +47,8 @@ public class NFAToDFAEpsilonTest {
     @ParameterizedTest
     @MethodSource("correctArgs")
     void correct(Automaton automaton, Automaton expected) {
-        Automaton result = automaton.run(new NFAToDFAEpsilon());
-        assertTrue(result.run(new Equivalency(expected)));
+        Automaton result = automaton.nfaEpsilonToDfa();
+        assertTrue(result.isEquivalent(expected));
     }
 
     static Stream<Arguments> correctArgs() {

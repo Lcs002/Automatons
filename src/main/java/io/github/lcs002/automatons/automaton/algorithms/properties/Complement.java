@@ -2,7 +2,6 @@ package io.github.lcs002.automatons.automaton.algorithms.properties;
 
 import io.github.lcs002.automatons.automaton.Automaton;
 import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
-import io.github.lcs002.automatons.automaton.algorithms.AutomatonAlgorithms;
 import io.github.lcs002.automatons.automaton.algorithms.utility.IsComplete;
 import io.github.lcs002.automatons.automaton.algorithms.utility.IsDFA;
 
@@ -17,7 +16,7 @@ import io.github.lcs002.automatons.automaton.algorithms.utility.IsDFA;
  *  <li> The automaton <b>{@link IsComplete is complete}</b>.</li>
  * </ol>
  */
-public class Complement extends Algorithm<Automaton> {
+public final class Complement extends Algorithm<Automaton> {
 
 
     public Complement(Automaton automaton) {
@@ -27,9 +26,9 @@ public class Complement extends Algorithm<Automaton> {
     @Override
     public Automaton call() {
         // The automaton must be a DFA
-        if (Boolean.FALSE.equals(AutomatonAlgorithms.isDFA(automaton))) return null;
+        if (Boolean.FALSE.equals(automaton.isDfa())) return null;
         // The automaton must be complete
-        if (Boolean.FALSE.equals(AutomatonAlgorithms.isComplete(automaton))) return null;
+        if (Boolean.FALSE.equals(automaton.isComplete())) return null;
 
         // The result of the complement of an automaton is a new automaton
         Automaton.Builder result = new Automaton.Builder().setAlphabet(automaton.getAlphabet());

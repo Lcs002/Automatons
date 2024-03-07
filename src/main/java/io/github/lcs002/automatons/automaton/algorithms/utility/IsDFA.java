@@ -7,7 +7,7 @@ import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
  * <h2>Checks if an Automaton is a DFA</h2>
  * <p><b>Result:</b> <b>Boolean</b> that indicates if the automaton is a DFA.</p>
  */
-public class IsDFA extends Algorithm<Boolean> {
+public final class IsDFA extends Algorithm<Boolean> {
     public IsDFA(Automaton automaton) {
         super(automaton);
     }

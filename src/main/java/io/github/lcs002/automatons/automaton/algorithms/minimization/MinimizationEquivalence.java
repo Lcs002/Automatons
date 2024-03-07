@@ -7,7 +7,7 @@ import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
  * Minimization of a DFA using the <a href="https://www.geeksforgeeks.org/minimization-of-dfa/">Equivalence Method.</a>
  */
 // TODO: Implement the Minimization of a DFA using the Equivalence Method
-public class MinimizationEquivalence extends Algorithm<Automaton> {
+public final class MinimizationEquivalence extends Algorithm<Automaton> {
 
     public MinimizationEquivalence(Automaton automaton) {
         super(automaton);

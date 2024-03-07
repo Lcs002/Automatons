@@ -1,9 +1,6 @@
 package io.github;
 
 import io.github.lcs002.automatons.automaton.Automaton;
-import io.github.lcs002.automatons.automaton.algorithms.Equivalency;
-import io.github.lcs002.automatons.automaton.algorithms.conversion.NFAToDFAEpsilon;
-import io.github.lcs002.automatons.automaton.algorithms.properties.Union;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -66,7 +63,7 @@ public class UnionTest {
                 .addFinalState("D¹-C²")
                 .build();
 
-        Automaton result = automaton1.run(new Union(automaton2)).run(new NFAToDFAEpsilon());
-        assertTrue(result.run(new Equivalency(expected)));
+        Automaton result = automaton1.unite(automaton2).nfaEpsilonToDfa();
+        assertTrue(result.isEquivalent(expected));
     }
 }

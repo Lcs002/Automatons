@@ -9,7 +9,7 @@ import java.util.*;
  * <h2>Removes Unreachable States from an Automaton</h2>
  * <p><b>Result:</b> <b>{@link Automaton}</b> without unreachable states.</p>
  */
-public class RemoveUnreachable extends Algorithm<Automaton> {
+public final class RemoveUnreachable extends Algorithm<Automaton> {
 
     public RemoveUnreachable(Automaton automaton) {
         super(automaton);

@@ -1,9 +1,6 @@
 package io.github;
 
 import io.github.lcs002.automatons.automaton.Automaton;
-import io.github.lcs002.automatons.automaton.algorithms.AutomatonAlgorithms;
-import io.github.lcs002.automatons.automaton.algorithms.Equivalency;
-import io.github.lcs002.automatons.automaton.algorithms.properties.Complement;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -19,9 +16,8 @@ public class ComplementTest {
     @MethodSource("correctArgs")
     void correct(Automaton automaton, Automaton expected) {
         // The two automaton must be equivalent
-        Automaton result = AutomatonAlgorithms.complement(automaton);
-        assertTrue(AutomatonAlgorithms.);
-        assertTrue(result.run(new Equivalency(expected)));
+        Automaton result = automaton.complement();
+        assertTrue(result.isEquivalent(expected));
     }
 
 

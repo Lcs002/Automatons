@@ -1,8 +1,6 @@
 package io.github;
 
 import io.github.lcs002.automatons.automaton.Automaton;
-import io.github.lcs002.automatons.automaton.algorithms.Equivalency;
-import io.github.lcs002.automatons.automaton.algorithms.conversion.NFAToDFA;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -30,7 +28,7 @@ public class NFAToDFATest {
     @Test
     public void deterministic() {
         // The resulting automaton must not have any state with the same entry more than once
-        Automaton result = automaton.run(new NFAToDFA());
+        Automaton result = automaton.nfaToDfa();
 
         for (Automaton.Transition transition : result.getTransitions()) {
             assertEquals(1, result.getTransitions().stream()
@@ -67,8 +65,7 @@ public class NFAToDFATest {
                 .addFinalState("q0-q2")
                 .build();
 
-        Automaton result = automaton.run(new NFAToDFA());
-
-        assertTrue(expected.run(new Equivalency(result)));
+        Automaton result = automaton.nfaToDfa();
+        assertTrue(expected.isEquivalent(result));
     }
 }

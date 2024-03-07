@@ -17,7 +17,7 @@ public class IsDFATest {
     @MethodSource("trueWhenNoTransitionsWithSameEntryFromSameStateArgs")
     void trueWhenNoTransitionsWithSameEntryFromSameState(Automaton automaton) {
         // The two automaton must be equivalent
-        Boolean result = automaton.run(new IsDFA());
+        Boolean result = automaton.isDfa();
         assertTrue(result);
     }
 
@@ -25,7 +25,7 @@ public class IsDFATest {
     @MethodSource("falseWhenTransitionsWithSameEntryFromSameStateArgs")
     void falseWhenTransitionsWithSameEntryFromSameState(Automaton automaton) {
         // The two automaton must be equivalent
-        Boolean result = automaton.run(new IsDFA());
+        Boolean result = automaton.isDfa();
         assertFalse(result);
     }
 
@@ -33,7 +33,7 @@ public class IsDFATest {
     @MethodSource("falseWhenEpsilonOnAlphabetArgs")
     void falseWhenEpsilonOnAlphabet(Automaton automaton) {
         // The two automaton must be equivalent
-        Boolean result = automaton.run(new IsDFA());
+        Boolean result = automaton.isDfa();
         assertFalse(result);
     }
 

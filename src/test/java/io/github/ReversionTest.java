@@ -1,9 +1,6 @@
 package io.github;
 
 import io.github.lcs002.automatons.automaton.Automaton;
-import io.github.lcs002.automatons.automaton.algorithms.Equivalency;
-import io.github.lcs002.automatons.automaton.algorithms.conversion.NFAToDFAEpsilon;
-import io.github.lcs002.automatons.automaton.algorithms.properties.Reversion;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -18,8 +15,8 @@ public class ReversionTest {
     @MethodSource("correctArgs")
     void correct(Automaton automaton, Automaton expected) {
         // The two automaton must be equivalent
-        Automaton result = automaton.run(new Reversion()).run(new NFAToDFAEpsilon());
-        assertTrue(result.run(new Equivalency(expected.run(new NFAToDFAEpsilon()))));
+        Automaton result = automaton.reverse().nfaEpsilonToDfa();
+        assertTrue(result.isEquivalent(expected.nfaEpsilonToDfa()));
     }
 
 

@@ -1,8 +1,6 @@
 package io.github;
 
 import io.github.lcs002.automatons.automaton.Automaton;
-import io.github.lcs002.automatons.automaton.algorithms.Equivalency;
-import io.github.lcs002.automatons.automaton.algorithms.properties.Intersection;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -18,8 +16,8 @@ public class IntersectionTest {
     @MethodSource("correctArgs")
     void correct(Automaton automaton1, Automaton automaton2, Automaton expected) {
         // The two automaton must be equivalent
-        Automaton result = automaton1.run(new Intersection(automaton2));
-        assertTrue(result.run(new Equivalency(expected)));
+        Automaton result = automaton1.intersect(automaton2);
+        assertTrue(result.isEquivalent(expected));
     }
 
 

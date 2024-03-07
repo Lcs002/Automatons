@@ -2,7 +2,6 @@ package io.github.lcs002.automatons.automaton.algorithms.utility;
 
 import io.github.lcs002.automatons.automaton.Automaton;
 import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
-import io.github.lcs002.automatons.automaton.algorithms.AutomatonAlgorithms;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,7 +15,7 @@ import java.util.stream.Collectors;
  *     <li>The automaton <b>{@link IsDFA must be a NFA}</b>.</li>
  * </ol>
  */
-public class GetEpsilonClosure extends Algorithm<Set<String>> {
+public final class GetEpsilonClosure extends Algorithm<Set<String>> {
     private String state;
 
 
@@ -37,7 +36,7 @@ public class GetEpsilonClosure extends Algorithm<Set<String>> {
                 .collect(Collectors.toSet());
         for (String nextState : epsilonNextStates) {
             closure.add(nextState);
-            Set<String> nextClosure = AutomatonAlgorithms.eClosure(automaton, nextState);
+            Set<String> nextClosure = automaton.eClosure(nextState);
             closure.addAll(nextClosure);
         }
         return closure;

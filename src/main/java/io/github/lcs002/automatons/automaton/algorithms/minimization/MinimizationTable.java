@@ -10,7 +10,7 @@ import java.util.*;
  * Minimization of a DFA using the <a href="https://www.geeksforgeeks.org/minimization-of-dfa/">Myhill-Nerode Theorem.</a>
  */
 // TODO: Implement the Minimization of a DFA using the Myhill-Nerode Theorem
-public class MinimizationTable extends Algorithm<Automaton> {
+public final class MinimizationTable extends Algorithm<Automaton> {
 
     public MinimizationTable(Automaton automaton) {
         super(automaton);

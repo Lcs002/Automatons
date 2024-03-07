@@ -1,7 +1,6 @@
 package io.github;
 
 import io.github.lcs002.automatons.automaton.Automaton;
-import io.github.lcs002.automatons.automaton.algorithms.Equivalency;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -21,7 +20,7 @@ public class EquivalencyTest {
     @MethodSource("correctArgs")
     void correct(Automaton automaton1, Automaton automaton2) {
         // The two automaton must be equivalent
-        assertTrue(automaton1.run(new Equivalency(automaton2)));
+        assertTrue(automaton1.isEquivalent(automaton2));
     }
 
     static Stream<Arguments> correctArgs() {

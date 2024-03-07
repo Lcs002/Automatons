@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * <p>Converts an NFA to its equivalent DFA. Doesn't take into account Epsilon transitions.</p>
  * <p><b>Result:</b> <b>{@link Automaton}</b> that is the equivalent DFA of the original NFA.</p>
  */
-public class NFAToDFA extends Algorithm<Automaton> {
+public final class NFAToDFA extends Algorithm<Automaton> {
 
     public NFAToDFA(Automaton automaton) {
         super(automaton);

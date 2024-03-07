@@ -17,5 +17,6 @@ public class Main {
         Set<Character> alphabet = new HashSet<>(Arrays.asList('0', '1'));
         Automaton.Builder builder = new Automaton.Builder();
         Automaton automaton = builder.build();
+        automaton.complement();
     }
 }

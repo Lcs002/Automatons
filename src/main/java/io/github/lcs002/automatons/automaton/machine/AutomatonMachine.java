@@ -28,10 +28,10 @@ public class AutomatonMachine {
      */
     public AutomatonMachine(@Nonnull Automaton automaton) {
         // Check if the automaton is a DFA
-        if (Boolean.FALSE.equals(automaton.run(new IsDFA())))
+        if (Boolean.FALSE.equals(automaton.isDfa()))
             throw new IllegalArgumentException("The automaton must be a DFA");
         // Check if the automaton is complete
-        if (Boolean.FALSE.equals(automaton.run(new IsComplete())))
+        if (Boolean.FALSE.equals(automaton.isComplete()))
             throw new IllegalArgumentException("The automaton must be complete");
 
         this.automaton = automaton;

@@ -1,6 +1,5 @@
 package io.github.lcs002.automatons.automaton.algorithms.properties;
 
-import io.github.lcs002.automatons.automaton.algorithms.AutomatonAlgorithms;
 import io.github.lcs002.automatons.automaton.algorithms.utility.IsDFA;
 import io.github.lcs002.automatons.automaton.Automaton;
 import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
@@ -23,7 +22,7 @@ import java.util.Set;
  *     <li> <a href="resources/documents/Automaton_Properties.pdf">Automaton_Properties.pdf</a>, page 15.</li>
  * </ol>
  */
-public class Concatenation extends Algorithm<Automaton> {
+public final class Concatenation extends Algorithm<Automaton> {
     private final Automaton automaton2;
 
 
@@ -36,8 +35,8 @@ public class Concatenation extends Algorithm<Automaton> {
     @Override
     public Automaton call() {
         // If any of the automaton is not a DFA, return null
-        if (Boolean.FALSE.equals(AutomatonAlgorithms.isDFA(automaton))
-                || Boolean.FALSE.equals(AutomatonAlgorithms.isDFA(automaton2))) return null;
+        if (Boolean.FALSE.equals(automaton.isDfa())
+                || Boolean.FALSE.equals(automaton.isDfa())) return null;
         // The alphabet must be the same for both automaton
         if (!automaton.getAlphabet().equals(automaton2.getAlphabet())) return null;
 

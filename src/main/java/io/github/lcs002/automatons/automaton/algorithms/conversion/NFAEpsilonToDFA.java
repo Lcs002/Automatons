@@ -1,7 +1,5 @@
 package io.github.lcs002.automatons.automaton.algorithms.conversion;
 
-import io.github.lcs002.automatons.automaton.algorithms.AutomatonAlgorithms;
-import io.github.lcs002.automatons.automaton.algorithms.utility.GetEpsilonClosure;
 import io.github.lcs002.automatons.automaton.Automaton;
 import io.github.lcs002.automatons.automaton.algorithms.Algorithm;
 
@@ -12,9 +10,9 @@ import java.util.*;
  * <p>Converts an NFA to its equivalent DFA, taking into account Epsilon transitions.</p>
  * <p><b>Result:</b> <b>{@link Automaton}</b> that is the equivalent DFA of the original NFA.</p>
  */
-public class NFAToDFAEpsilon extends Algorithm<Automaton> {
+public final class NFAEpsilonToDFA extends Algorithm<Automaton> {
 
-    public NFAToDFAEpsilon(Automaton automaton) {
+    public NFAEpsilonToDFA(Automaton automaton) {
         super(automaton);
     }
 
@@ -32,7 +30,7 @@ public class NFAToDFAEpsilon extends Algorithm<Automaton> {
         // Initial State of the automaton
         String initialState = automaton.getInitialState();
         // Get the Epsilon Closure of the initial State
-        Set<String> initialStates = AutomatonAlgorithms.eClosure(automaton, initialState);
+        Set<String> initialStates = automaton.eClosure(initialState);
         initialStates.add(initialState);
         // Add and Mark the first State
         queue.add(initialStates);
@@ -63,7 +61,7 @@ public class NFAToDFAEpsilon extends Algorithm<Automaton> {
                                 nextSuperstate.add(nextState);
                                 // Get the Epsilon Closure of the next states
                                 // Add them to the next Superstate
-                                Set<String> epsilonClosure = automaton.run(new GetEpsilonClosure(nextState));
+                                Set<String> epsilonClosure = automaton.eClosure(nextState);
                                 nextSuperstate.addAll(epsilonClosure);
                             });
                 }

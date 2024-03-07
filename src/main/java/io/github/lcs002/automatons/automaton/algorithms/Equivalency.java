@@ -21,7 +21,7 @@ import java.util.Set;
  * </ol>
  * <p><b><i>References:</i></b></p>
  */
-public class Equivalency extends Algorithm<Boolean> {
+public final class Equivalency extends Algorithm<Boolean> {
     private final Automaton automaton2;
 
 
