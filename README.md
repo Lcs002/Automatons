@@ -4,7 +4,10 @@
 _Automaton's Algorithms implemented in Java._
 
 > [!TIP]
+> 
 > **[Project Documentation](https://lcs002.github.io/Automatons/)**
+> 
+> **[Class Notes](resources/university/class-notes/Class Notes.md)**
 
 - **[Feature Wishlist](#feature-wishlist)**
 - **[Installation](#installation)**
