@@ -10,7 +10,7 @@ _Automaton's Algorithms implemented in Java._
 - **[Installation](#installation)**
 - **[Usage](#usage)**
   - **[Creating Automatons](#creating-automatons)**
-  - **[Running Algorithms](#running-algorithms)**
+  - **[Automaton Operations](#automaton-operations)**
   - **[De/Serializing Automatons](#deserializing-automatons)**
   - **[Automaton Machines](#automaton-machines)**
 
@@ -109,15 +109,12 @@ Automaton automaton = builder.build();
 > System.out.println(automaton);
 > ```
 
-### Running Algorithms
-To run an algorithm on an automaton, call the method `run(T algorithm)` passing the algorithm as parameter:
+### Automaton Operations
+Once the automaton is created, you can perform operations on it, such as:
 ```java
-Automaton.Builder builder = new Automaton.Builder();
-// Configure Automaton using Automaton.Builder
-// ...
-Automaton automaton = builder.build();
-// Call the method 'run' passing the algorithm as parameter
-Automaton result = automaton.run(new NFAToDFAEpsilon());
+automaton = automaton.nfaToDfa();
+automaton = automaton.complete();
+automaton = automaton.reverse();
 ```
 
 > [!NOTE]
