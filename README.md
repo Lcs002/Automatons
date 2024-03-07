@@ -54,15 +54,18 @@ Paste the following dependency on your project's pom.xml file:
 
 ## Usage
 ### Creating Automatons
-First an **alphabet** must be defined:
-```java
-Set<Character> alphabet = Set.of('a', 'b');
-```
-
-Then, to create an Automaton, we must use an `Automaton.Builder`:
+First we must use an `Automaton.Builder`:
 ```java
 Automaton.Builder builder = new Automaton.Builder();
 ```
+    
+Then, we can set its **Alphabet** by using `setAlphabet`:
+```java
+builder.setAlphabet(Set.of('a', 'b'));
+```
+
+> [!WARNING]
+> _Be sure the Alphabet is set before building the automaton._
 
 **Transitions** are added by using `addTransition` with the *source state*, *destination state* and *symbol* as parameters:
 ```java
@@ -73,9 +76,6 @@ builder.addTransition("q0", "q1", 'a');
 builder.addTransition("q0", "q1", Automata.EPSILON);
 ```
 
-> [!NOTE]
-> _If any of the states does not exist, they will be created and added to the automaton._
-
 > [!WARNING] 
 > _All entries must be symbols from the automaton's alphabet._
 
@@ -85,12 +85,9 @@ builder.setInitialState("q0");
 ```
 
 > [!WARNING]
-> _Be sure an Initial State is set before building the automaton._
+> _Be sure the Initial State is set before building the automaton._
 
-> [!NOTE] 
-> _Only one initial state is allowed per automaton._
-
-**Final States** are added by using `addFinalState` with the name of the state as parameter
+**Final States** are added by using `addFinalState` with the name of the state as parameter:
 ```java
 builder.addFinalState("q1");
 ```
@@ -98,7 +95,7 @@ builder.addFinalState("q1");
 > [!WARNING]
 > _Be sure at least one Final State is set before building the automaton._
 
-Finally, you can create the configured automaton by calling 'build()':
+Finally, you can create the configured **Automaton** by calling `build()`:
 ```java
 Automaton automaton = builder.build();
 ```
@@ -110,15 +107,12 @@ Automaton automaton = builder.build();
 > ```
 
 ### Automaton Operations
-Once the automaton is created, you can perform operations on it, such as:
+Once the **Automaton** is created, you can perform operations on it, such as:
 ```java
 automaton = automaton.nfaToDfa();
 automaton = automaton.complete();
 automaton = automaton.reverse();
 ```
-
-> [!NOTE]
-> Algorithms are classes that implement **[Algorithm\<T\>](src/main/java/io/github/lcs002/automatons/automaton/algorithms/Algorithm.java)**.
 
 ### De/Serializing Automatons
 To convert an **Automaton** to a **JSON** string, call the method `serialize` from the class `AutomatonJsonSerializer`:
