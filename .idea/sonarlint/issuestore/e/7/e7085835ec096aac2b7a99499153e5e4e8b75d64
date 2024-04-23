@@ -1,0 +1,65 @@
+
+Jjavascript:S35046")Unexpected var, use let or const instead.(èÌø‘øÿÿÿÿ
+Jjavascript:S35047")Unexpected var, use let or const instead.(¥˜ù÷üÿÿÿÿ
+Ejavascript:S35048")Unexpected var, use let or const instead.(Œí»
+Ejavascript:S35049")Unexpected var, use let or const instead.(áËå€
+Jjavascript:S3504:")Unexpected var, use let or const instead.(¬ ÛËşÿÿÿÿ
+Ejavascript:S3504H")Unexpected var, use let or const instead.(¶ü¿ò
+Jjavascript:S3504I")Unexpected var, use let or const instead.(˜Şóûÿÿÿÿ
+Jjavascript:S3504_")Unexpected var, use let or const instead.(­áÖìüÿÿÿÿ
+pjavascript:S3776{"TRefactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.(âş£
+Jjavascript:S3504")Unexpected var, use let or const instead.(ó˜‘çşÿÿÿÿ
+Fjavascript:S3504€")Unexpected var, use let or const instead.(ÓÙ­ù
+Kjavascript:S3504‚")Unexpected var, use let or const instead.(”Ÿº›úÿÿÿÿ
+Cjavascript:S6535‚"!Unnecessary escape character: \/.(”Ÿº›úÿÿÿÿ
+Kjavascript:S3504ƒ")Unexpected var, use let or const instead.(áÍã×ùÿÿÿÿ
+Kjavascript:S3504„")Unexpected var, use let or const instead.(ô³¼²şÿÿÿÿ
+Kjavascript:S3504ˆ")Unexpected var, use let or const instead.(œ›¹ºıÿÿÿÿ
+Kjavascript:S3504œ")Unexpected var, use let or const instead.(©šäÔüÿÿÿÿ
+vjavascript:S3776 "TRefactor this function to reduce its Cognitive Complexity from 28 to the 15 allowed.(îÉ”íúÿÿÿÿ
+Kjavascript:S3504¡")Unexpected var, use let or const instead.(Íƒ÷–ÿÿÿÿÿ
+Fjavascript:S3504£")Unexpected var, use let or const instead.(­¢À‚
+Kjavascript:S3504­")Unexpected var, use let or const instead.(Âı¾ÿÿÿÿÿ
+Fjavascript:S3504®")Unexpected var, use let or const instead.(Öåò
+Fjavascript:S3504¯")Unexpected var, use let or const instead.(€¤¥¿
+Kjavascript:S3504°")Unexpected var, use let or const instead.(“ñûáşÿÿÿÿ
+Fjavascript:S3504±")Unexpected var, use let or const instead.(°¡Ûê
+Fjavascript:S3504²")Unexpected var, use let or const instead.(±ê¼æ
+Fjavascript:S3504³")Unexpected var, use let or const instead.(ıÌ‡°
+Fjavascript:S3504´")Unexpected var, use let or const instead.(‹åˆè
+Fjavascript:S3504¸")Unexpected var, use let or const instead.(ìÉ‹Ô
+Kjavascript:S3504¹")Unexpected var, use let or const instead.(îö‚ˆıÿÿÿÿ
+qjavascript:S3776ä"TRefactor this function to reduce its Cognitive Complexity from 34 to the 15 allowed.(©à¿Ú
+Fjavascript:S3504å")Unexpected var, use let or const instead.(ğ¶æÎ
+Fjavascript:S3504æ")Unexpected var, use let or const instead.(ªæú­
+Fjavascript:S3504ê")Unexpected var, use let or const instead.(Óÿ‡
+Fjavascript:S3504î")Unexpected var, use let or const instead.(ĞÏë¡
+Kjavascript:S3504ˆ")Unexpected var, use let or const instead.(Öçé‡ûÿÿÿÿ
+Kjavascript:S3504")Unexpected var, use let or const instead.(¦Äšâúÿÿÿÿ
+Kjavascript:S3504‘")Unexpected var, use let or const instead.(ó±¸Ğùÿÿÿÿ
+Kjavascript:S3504’")Unexpected var, use let or const instead.(ÁÜû€ûÿÿÿÿ
+Kjavascript:S3504“")Unexpected var, use let or const instead.(ûìôÛıÿÿÿÿ
+Kjavascript:S3504”")Unexpected var, use let or const instead.(–Çôœøÿÿÿÿ
+Fjavascript:S3504•")Unexpected var, use let or const instead.(ãÓ“
+Ejavascript:S3504–")Unexpected var, use let or const instead.(–ùûK
+Fjavascript:S3504˜")Unexpected var, use let or const instead.(¿«½í
+tjavascript:S4043ª"WMove this array "sort" operation to a separate statement or replace it with "toSorted".(Ñ‹£š
+Fjavascript:S3504¯")Unexpected var, use let or const instead.(±•å„
+‹javascript:S2703¶"iAdd the "let", "const" or "var" keyword to this declaration of "updateSearchResults" to make it explicit.(Ğ¼üúÿÿÿÿ
+Kjavascript:S3504Å")Unexpected var, use let or const instead.(ŒÍƒÔûÿÿÿÿ
+Kjavascript:S3504×")Unexpected var, use let or const instead.(Îš ™üÿÿÿÿ
+Kjavascript:S3504Ø")Unexpected var, use let or const instead.(Ã„ÉÎûÿÿÿÿ
+Fjavascript:S3504ß")Unexpected var, use let or const instead.(ÀÈËï
+Fjavascript:S3504ë")Unexpected var, use let or const instead.(¼ê¶
+Kjavascript:S3504ì")Unexpected var, use let or const instead.(æğ›Ãúÿÿÿÿ
+Fjavascript:S3504í")Unexpected var, use let or const instead.(°²í®
+Kjavascript:S3504ğ")Unexpected var, use let or const instead.(ÏÉûùÿÿÿÿ
+}javascript:S6582ñ"[Prefer using an optional chain expression instead, as it's more concise and easier to read.(«èìûùÿÿÿÿ
+Fjavascript:S3504ÿ")Unexpected var, use let or const instead.(¬Úâ
+Fjavascript:S3504€")Unexpected var, use let or const instead.(Ú™ÓÖ
+Kjavascript:S3504")Unexpected var, use let or const instead.(Ã±·Şüÿÿÿÿ
+Fjavascript:S3504œ")Unexpected var, use let or const instead.(Æí³ë
+Kjavascript:S3504")Unexpected var, use let or const instead.(ÆÅûˆşÿÿÿÿ
+Kjavascript:S3504§")Unexpected var, use let or const instead.(ÓÒ×Ùùÿÿÿÿ
+Kjavascript:S3504¨")Unexpected var, use let or const instead.(‹ÊŸËüÿÿÿÿ
+Fjavascript:S3504½")Unexpected var, use let or const instead.(æ¹›

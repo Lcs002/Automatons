@@ -278,8 +278,6 @@ K
 .github/workflows/maven.yml,c\7\c709f6995f23dae0da365bff70068f8288fa89e0
 U
 %.github/workflows/publish-package.yml,e\c\ec2d7dd3e62f2274bcb14c553e19cc660b6500de
-á
-Wsrc/main/java/io/github/lcs002/automatons/automaton/algorithms/AutomatonAlgorithms.java,1\d\1df5c4f103cc3d18fd83889c60d9b20ce5057933
 }
 Msrc/main/java/io/github/lcs002/automatons/automaton/algorithms/Algorithm.java,9\6\961015b692d2f3c3a8f9ac481dd1609c718e70aa
 ç
@@ -306,8 +304,6 @@ hsrc/main/java/io/github/lcs002/automatons/automaton/algorithms/minimization/Min
 bsrc/main/java/io/github/lcs002/automatons/automaton/algorithms/minimization/MinimizationTable.java,6\3\63baf302786285e2cb82ef130fcd8269d9324781
 á
 Wsrc/main/java/io/github/lcs002/automatons/automaton/algorithms/conversion/NFAToDFA.java,9\3\93382d90ba8795458e06469d6efec6eb46d6aeb4
-é
-^src/main/java/io/github/lcs002/automatons/automaton/algorithms/conversion/NFAToDFAEpsilon.java,5\7\57b8eb09e3dc04d3e733890c37391293c96535f9
 |
 Lsrc/main/java/io/github/lcs002/automatons/automaton/algorithms/Complete.java,0\7\07077f3b9b96857ce47d70ca39cfd55b2ae394d8
 
@@ -340,8 +336,6 @@ Y
 -src/test/java/io/github/IntersectionTest.java,a\f\af01b41d0afaf70093eac7f050959127fc3777d3
 V
 &src/test/java/io/github/IsDFATest.java,e\8\e80a9a5bfce4a3df4331fbbc1dc7992579bb626a
-`
-0src/test/java/io/github/NFAToDFAEpsilonTest.java,8\3\8341119a846a8f8f0db60cb65e63e6203601d661
 Y
 )src/test/java/io/github/NFAToDFATest.java,b\9\b90fb87d04606e28d7e1dc6a347658c7ea3a9558
 Z
@@ -364,5 +358,3 @@ v
 Fresources/university/class-notes/.obsidian/core-plugins-migration.json,6\d\6d1ccfc5e2efa949396f06445d04cc61f464e1a0
 i
 9resources/university/class-notes/.obsidian/workspace.json,1\e\1eae4f7a062948fed74ea76973ddfb35ae6691de
-u
-Esrc/main/java/io/github/lcs002/automatons/binaryTree/IBinaryTree.java,6\e\6ee65f8af6b1b455e53c6a08ee9757142edf3d4c

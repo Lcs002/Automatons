@@ -6,9 +6,27 @@
       {
         "id": "f363a0219d195e22",
         "type": "tabs",
+        "dimension": 35.27918781725889,
         "children": [
           {
             "id": "214335016f33365c",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "automata-er1.jpeg"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "5773a8e5221407b0",
+        "type": "tabs",
+        "dimension": 64.72081218274111,
+        "children": [
+          {
+            "id": "dd4f2ba131e95f84",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -85,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Class Notes.md",
+                "file": "automata-er1.jpeg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Class Notes.md",
+                "file": "automata-er1.jpeg",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Class Notes.md"
+                "file": "automata-er1.jpeg"
               }
             }
           }
@@ -146,6 +164,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "214335016f33365c",
-  "lastOpenFiles": []
+  "active": "80dee9693326c1a8",
+  "lastOpenFiles": [
+    "Class Notes.md",
+    "WhatsApp Image 2024-03-22 at 12.36.15.jpeg",
+    "WhatsApp Image 2024-03-22 at 12.36.14 (1).jpeg",
+    "WhatsApp Image 2024-03-22 at 12.36.14.jpeg",
+    "WhatsApp Image 2024-03-22 at 12.36.13.jpeg",
+    "WhatsApp Image 2024-03-20 at 11.30.02.jpeg",
+    "WhatsApp Image 2024-03-13 at 13.48.06.jpeg"
+  ]
 }

@@ -342,4 +342,102 @@ Antes, necesitamos cumplir con _ciertas condiciones_, si no cumple, veremos que 
 
 </details>
 
-## 10. ER a Gramatica
+## 10. ER a Gramatica - POR HACER
+
+## 11. Gramáticas de Contexto Libre - *GCL*
+![[WhatsApp Image 2024-03-13 at 13.48.06.jpeg]]
+
+### 11.1. Árbol de Derivación
+*Representación gráfica del proceso de derivación de una gramática.*
+
+- **Raiz**: Nodo inicial
+- **Nodos**: Símbolos No Terminales
+- **Hojas**: Símbolos Terminales
+
+### 11.2 Gramáticas Ambiguas
+*Generan palabras por más de un árbol de derivación. No hay como detectar gramáticas ambiguas.*
+
+> Es decir, se puede generar la misma palabra de distintas formas.
+
+#### 11.2.1. Lenguajes inherentemente ambiguos
+*Todas gramáticas que generan el lenguaje son ambiguas.*
+
+#### 11.2.2. Grado de Ambigüedad
+*Cantidad de árboles de derivación que generan una palabra.*
+
+### 11.3 Limpiar Gramáticas
+![[WhatsApp Image 2024-03-20 at 11.30.02.jpeg]]
+*Consiste en quitar los símbolos inútiles e innaccesibles.*
+
+> [!NOTE] El profe y las diapositivas ponen nombres distintos a términos de este apartado.
+
+|   Diapositivas  |   Clase  |
+| --- | --- |
+|   Símbolos Inútiles |  Símbolos No Generadores   |
+| Símbolos Inaccesibles | Símbolos No Alcanzables |
+| Útil y Accesible | Útil |
+
+#### 11.3.1. Símbolos Inútiles
+*Símbolos no terminales a través de los cuales no se puede llegar a una palabra.*
+
+#### 11.3.2. Símbolos Inaccesibles
+*Símbolos que no se pueden alcanzar desde el símbolo inicial.*
+
+#### 11.3.3. Eliminación de Símbolos Inútiles - *No Generadores*
+El símbolo de la parte izquierda de una derivación directa $A \to w : w \in \sigma^*$ es útil si:
+
+- Al menos un símbolo de la parte derecha de la derivación es útiles.
+
+> [!NOTE] Mi método 
+> El profe se complica demasiado la vida calculando $C$, solo hay q ir probando para cada $A$ si se puede llegar a un terminal de alguna forma.
+
+*Repetir este proceso recursivamente.*
+
+#### 11.3.4 Eliminación de Símbolos Inaccesibles - *No Alcanzables*
+El símbolo de la parte derecha de una derivación directa $A \to w : w \in \sigma^*$ es accesible si:
+
+- El símbolo de la parte izquierda de la derivación es accesible.
+
+*Repetir este proceso recursivamente.*
+
+#### 11.3.5 GCL Reducida
+*Todos sus símbolos son:*
+- **Alcanzables**
+- **Generadores**
+
+> Es decir, son *Útiles*.
+
+### 11.4 Transformar Gramáticas de Tipo 2
+![[WhatsApp Image 2024-03-22 at 12.36.13.jpeg]]
+*Se basa en eliminar **Producciones Unitarias** y **Producciones Vacías**.*
+
+#### 11.4.1 Eliminar Producciones Vacías - *$\lambda$-prod.*
+*Se basa en actualizar las derivaciones quitando de cada Símbolo, transiciones lambda.*
+
+> [!NOTE] Mi método
+> Una forma que me sirve es escribir en una tabla el símbolo y su transición lambda y en filas las transiciones que derivan en el símbolo. Luego teniendo en cuenta que el símbolo ya no puede ser lambda, sacamos todas combinaciones posibles de las transiciones.
+
+|  Prod. $B \to \lambda$   |  Prod. $A \to \lambda$ | OK |
+| --- | --- | --- |
+|  $B \to BB$  |  $B$   | |
+| $S\to AAB$ | $AA$ | $A \| \lambda$
+| $A\to BB$ | $B \| \lambda$ |
+| $C\to aSB$ | $aS$ |
+|| $S \to aAb$ | $ab$ |
+||$A \to Ab$ | $b$
+
+> [!NOTE] Al acabar, juntamos todas descomposiciones.
+
+#### 11.4.2 Eliminar Producciones Unitarias
+*Se basa en actualizar las derivaciones, de forma que no existan transiciones unitarias - del tipo $A \to B$.*
+
+- $A \to A$ : Borramos.
+- $A \to B$ : Añadimos a $A$ las derivaciones de $B$.
+
+> *Forma guay*: $\forall A \to B : B \to \alpha_n$, pasar a: $A \to \alpha_n$
+
+### Ejemplo: $w \in L(G)$
+*Para probar que sí, tenemos que ser capaces de crear un árbol de derivación por la izquierda.*
+![[WhatsApp Image 2024-03-22 at 12.36.14.jpeg]]
+![[WhatsApp Image 2024-03-22 at 12.36.14 (1).jpeg]]
+![[WhatsApp Image 2024-03-22 at 12.36.15.jpeg]]
