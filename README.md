@@ -7,7 +7,7 @@ _Automaton's Algorithms implemented in Java._
 > 
 > **[Project Documentation](https://lcs002.github.io/Automatons/)**
 > 
-> **[Class Notes](https://github.com/Lcs002/Automatons/blob/108c104f9f2d3e4d1b542b1cb0c7ebcde546e421/resources/university/class-notes/Class%20Notes.md)**
+> **[Class Notes](https://github.com/Lcs002/Automatons/blob/master/resources/university/class-notes/Class%20Notes.md)**
 
 - **[Feature Wishlist](#feature-wishlist)**
 - **[Installation](#installation)**
