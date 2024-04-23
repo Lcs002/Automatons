@@ -500,15 +500,15 @@ Para ello tenemos que:
 > La gramática debe estar en FNC.
 
 1. Construimos una matriz triangular inferior de $n\times x$.
-2. En el eje X escribimos carácter por carácter, la palabra a probar "$w$".
+2. En el eje X escribimos carácter por carácter, la palabra a probar ($w$).
 3. Escribimos en la fila más baja el conjunto de símbolos que nos posibilita llegar directamente al carácter de abajo.
 4. Escribimos en la fila arriba de la anterior, el conjunto de símbolos que nos posibilita llegar a la palabra actual - *teniendo en cuenta todas combinaciones posibles*. Para esto tenemos en cuenta los resultados que hemos sacado anteriormente de cada conjunto de caracteres.
 
 > [!NOTE]
 > Personalmente, prefiero hacer una pirámide que un triangulo. Es decir, poner el resultado de la fila superior entre las columnas de abajo.
 
-***Ejemplo***:
-$G =$ $S \to AB \|BC$, $A \to BA\|a$, $B \to CC \| b$, $C \to AB \| a$
+***Ejemplo***: <br>
+$G =$ $S \to AB \|BC$, $A \to BA\|a$, $B \to CC \| b$, $C \to AB \| a$ <br>
 $w = baaba$
 
 ![cyk-1.jpg](cyk-1.jpg)
