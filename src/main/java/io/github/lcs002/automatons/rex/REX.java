@@ -5,7 +5,7 @@ import jakarta.annotation.Nonnull;
 import jdk.jshell.spi.ExecutionControl;
 
 /**
- * <h2>Regular Expression</>
+ * <h2>Regular Expression</h2>
  */
 public class REX {
     private final String expression;
