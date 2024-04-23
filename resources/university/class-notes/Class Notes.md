@@ -345,7 +345,7 @@ Antes, necesitamos cumplir con _ciertas condiciones_, si no cumple, veremos que 
 ## 10. ER a Gramatica - POR HACER
 
 ## 11. Gramáticas de Contexto Libre - *GCL*
-![WhatsApp Image 2024-03-13 at 13.48.06.jpeg](WhatsApp Image 2024-03-13 at 13.48.06.jpeg)
+![GCL-1.jpeg](GCL-1.jpeg)
 
 ### 11.1. Árbol de Derivación
 *Representación gráfica del proceso de derivación de una gramática.*
@@ -366,7 +366,7 @@ Antes, necesitamos cumplir con _ciertas condiciones_, si no cumple, veremos que 
 *Cantidad de árboles de derivación que generan una palabra.*
 
 ### 11.3 Limpiar Gramáticas
-![WhatsApp Image 2024-03-20 at 11.30.02.jpeg](WhatsApp Image 2024-03-20 at 11.30.02.jpeg)
+![GCL-2.jpeg](GCL-2.jpeg)
 *Consiste en quitar los símbolos inútiles e innaccesibles.*
 
 > [!NOTE] El profe y las diapositivas ponen nombres distintos a términos de este apartado.
@@ -408,7 +408,7 @@ El símbolo de la parte derecha de una derivación directa $A \to w : w \in \sig
 > Es decir, son *Útiles*.
 
 ### 11.4 Transformar Gramáticas de Tipo 2
-![WhatsApp Image 2024-03-22 at 12.36.13.jpeg](WhatsApp Image 2024-03-22 at 12.36.13.jpeg)
+![GCL-3.jpeg](GCL-3.jpeg)
 *Se basa en eliminar **Producciones Unitarias** y **Producciones Vacías**.*
 
 #### 11.4.1 Eliminar Producciones Vacías - *$\lambda$-prod.*
@@ -438,6 +438,6 @@ El símbolo de la parte derecha de una derivación directa $A \to w : w \in \sig
 
 ### Ejemplo: $w \in L(G)$
 *Para probar que sí, tenemos que ser capaces de crear un árbol de derivación por la izquierda.*
-![WhatsApp Image 2024-03-22 at 12.36.14.jpeg](WhatsApp Image 2024-03-22 at 12.36.14.jpeg)
-![WhatsApp Image 2024-03-22 at 12.36.14_.jpeg](WhatsApp Image 2024-03-22 at 12.36.14_.jpeg)
-![WhatsApp Image 2024-03-22 at 12.36.15.jpeg](WhatsApp Image 2024-03-22 at 12.36.15.jpeg)
+![GCL-4.jpeg](GCL-4.jpeg)
+![GCL-5.jpeg](GCL-5.jpeg)
+![GCL-6.jpeg](GCL-6.jpeg)

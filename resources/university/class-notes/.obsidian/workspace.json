@@ -12,9 +12,11 @@
             "id": "214335016f33365c",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "automata-er1.jpeg"
+                "file": "Class Notes.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -103,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "automata-er1.jpeg",
+                "file": "Class Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "automata-er1.jpeg",
+                "file": "Class Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "automata-er1.jpeg"
+                "file": "Class Notes.md"
               }
             }
           }
@@ -166,14 +168,18 @@
   },
   "active": "80dee9693326c1a8",
   "lastOpenFiles": [
-    "WhatsApp Image 2024-03-22 at 12.36.14_.jpeg",
+    "GCL-6.jpeg",
+    "GCL-5.jpeg",
+    "GCL-4.jpeg",
+    "GCL-3.jpeg",
+    "WhatsApp Image 2024-02-21 at 10.42.11.jpeg",
+    "GCL-2.jpeg",
+    "GCL-1.jpeg",
+    "WhatsApp Image 2024-02-21 at 10.42.10.jpeg",
+    "WhatsApp Image 2024-02-21 at 10.42.06.jpeg",
+    "automata-er1.jpeg",
     "Class Notes.md~",
     "Class Notes.md",
-    "WhatsApp Image 2024-03-22 at 12.36.15.jpeg",
-    "WhatsApp Image 2024-03-22 at 12.36.14 (1).jpeg",
-    "WhatsApp Image 2024-03-22 at 12.36.14.jpeg",
-    "WhatsApp Image 2024-03-22 at 12.36.13.jpeg",
-    "WhatsApp Image 2024-03-20 at 11.30.02.jpeg",
-    "WhatsApp Image 2024-03-13 at 13.48.06.jpeg"
+    "WhatsApp Image 2024-03-22 at 12.36.14 (1).jpeg"
   ]
 }
