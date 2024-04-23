@@ -31,10 +31,12 @@ Then, the algorithm is as follows:
 3. **Go to 2** if there are new **Partitions**.
 4. The **States** of the minimized automaton are the **Partitions**.
 
-> [!NOTE] A state is **final if X and Y are final** states. We made the task easier as we already separate the final states from 
+> [!NOTE]
+> A state is **final if X and Y are final** states. We made the task easier as we already separate the final states from 
 > non-final states.
 
-> [!NOTE] **Non-Co-Accessible** states and **Error** states are **automatically grouped** together by the algorithm.
+> [!NOTE]
+> **Non-Co-Accessible** states and **Error** states are **automatically grouped** together by the algorithm.
 
 ### 4.2. Table Method
 > _Also called **Myhill-Nerode Theorem**_
@@ -175,10 +177,12 @@ como se aplica esta produccion a esta forma sentencial?
   - **No**. Entonces no se puede aplciar
   - **Si**. Entonces el resultado es : (z1) prefijo cte, alpha -> beta, sufijo cte (z2)
     
-	> [!NOTE] Que pasa si contiene más de una aparición de alpha?
+	> [!NOTE]
+  	> Que pasa si contiene más de una aparición de alpha?
 	> Cuando aplicamos la produccion podemos elegir de manera no determinista una aparicion.
 
-  	> [!NOTE] Convenio: **Terminales** -> Minusculas, **No Terminales** -> Mayusculas
+  	> [!NOTE]
+   	>  Convenio: **Terminales** -> Minusculas, **No Terminales** -> Mayusculas
 	
 
 **Que significa una derivacion de mas pasos?**
@@ -191,7 +195,8 @@ Ej: aYYbYXa
 
 Si quiero mostrar que esta forma setencial se peude llegar a otra con derivaciones de mas pasos, se escribe directamente `aYYbYXa ->* aYababYXa`.
 
-> [!NOTE] El **lenguaje generado de una gramatica** es formado de **todas palabras w** pero solamente palabras de **terminales** tal
+> [!NOTE]
+> El **lenguaje generado de una gramatica** es formado de **todas palabras w** pero solamente palabras de **terminales** tal
 > que desde el simbolo inicial puedo con una derivacion arbitraria llegar a w.
 > Es decir: **Contiene todas pero solo terminales**.
 > 
@@ -215,7 +220,8 @@ Si quiero mostrar que esta forma setencial se peude llegar a otra con derivacion
 
 ~~Todas las cadenas con ¿? contiene la subcadena ???~~
 
-> [!NOTE] Intentamos **asignar** a cada **no terminal** un **significado**, una semantica.
+> [!NOTE]
+> Intentamos **asignar** a cada **no terminal** un **significado**, una semantica.
 
 - Por ejemplo S va a generar la primera parte x, que puede que sea cualquier palabra tal que si genero una a minuscula puedo continuar con la generacion
 cuando he generado una b voy a cambiar el no terminal, por ejemplo A. 
@@ -253,7 +259,8 @@ Si volvemos a la pregunta, **_¿L es regular?_**.
 <details>
 <summary><b>Apuntes</b></summary>
 
-> [!NOTE] Otra forma de generar el automata es por intuición.
+> [!NOTE]
+> Otra forma de generar el automata es por intuición.
 
 
 
@@ -270,7 +277,8 @@ Ahora quiero sacar la expresion regular de un automata dado.
 
 Para **cualquier tipo de Automata** pero es aconsejable reducir el automata -> menos ecuaciones.
 
-> [!NOTE] **La idea**:
+> [!NOTE]
+> **La idea**:
 > Tengo un automata y construyo un sistema de ecuaciones.
 
 
@@ -318,7 +326,7 @@ No hay ninguna expresion para una exp reg mas simple.
 
 Ahora, empezamos con un automata y sacamos la exp reg con un metodo intuitivo parecido al primer.
 
-> [!NOTE] **La idea**:
+> [!NOTE] 
 > Eliminar estados tal que finalmente me quedo con un inicial, un final y una transicion entre ellos etiquetada con la transición puesta.
 
 Antes, necesitamos cumplir con _ciertas condiciones_, si no cumple, veremos que no funciona:
@@ -369,7 +377,8 @@ Antes, necesitamos cumplir con _ciertas condiciones_, si no cumple, veremos que 
 ![GCL-2.jpeg](GCL-2.jpeg)
 *Consiste en quitar los símbolos inútiles e innaccesibles.*
 
-> [!NOTE] El profe y las diapositivas ponen nombres distintos a términos de este apartado.
+> [!NOTE]
+> El profe y las diapositivas ponen nombres distintos a términos de este apartado.
 
 |   Diapositivas  |   Clase  |
 | --- | --- |
@@ -388,7 +397,7 @@ El símbolo de la parte izquierda de una derivación directa $A \to w : w \in \s
 
 - Al menos un símbolo de la parte derecha de la derivación es útiles.
 
-> [!NOTE] Mi método 
+> [!NOTE]
 > El profe se complica demasiado la vida calculando $C$, solo hay q ir probando para cada $A$ si se puede llegar a un terminal de alguna forma.
 
 *Repetir este proceso recursivamente.*
@@ -414,7 +423,7 @@ El símbolo de la parte derecha de una derivación directa $A \to w : w \in \sig
 #### 11.4.1 Eliminar Producciones Vacías - *$\lambda$-prod.*
 *Se basa en actualizar las derivaciones quitando de cada Símbolo, transiciones lambda.*
 
-> [!NOTE] Mi método
+> [!NOTE]
 > Una forma que me sirve es escribir en una tabla el símbolo y su transición lambda y en filas las transiciones que derivan en el símbolo. Luego teniendo en cuenta que el símbolo ya no puede ser lambda, sacamos todas combinaciones posibles de las transiciones.
 
 |  Prod. $B \to \lambda$   |  Prod. $A \to \lambda$ | OK |
@@ -426,7 +435,8 @@ El símbolo de la parte derecha de una derivación directa $A \to w : w \in \sig
 || $S \to aAb$ | $ab$ |
 ||$A \to Ab$ | $b$
 
-> [!NOTE] Al acabar, juntamos todas descomposiciones.
+> [!NOTE]
+> Al acabar, juntamos todas descomposiciones.
 
 #### 11.4.2 Eliminar Producciones Unitarias
 *Se basa en actualizar las derivaciones, de forma que no existan transiciones unitarias - del tipo $A \to B$.*
