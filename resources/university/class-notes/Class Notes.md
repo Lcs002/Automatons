@@ -420,7 +420,7 @@ El símbolo de la parte derecha de una derivación directa $A \to w : w \in \sig
 ![GCL-3.jpeg](GCL-3.jpeg)
 *Se basa en eliminar **Producciones Unitarias** y **Producciones Vacías**.*
 
-#### 11.4.1 Eliminar Producciones Vacías - *$\lambda$-prod.*
+#### 11.4.1 Eliminar Producciones Vacías - $\lambda$ -prod.
 *Se basa en actualizar las derivaciones quitando de cada Símbolo, transiciones lambda.*
 
 > [!NOTE]
