@@ -494,6 +494,7 @@ Para ello tenemos que:
 > - $D \to CA$ 
 
 ### 11.6 Algoritmo CYK
+![Canto Inferior a la Izquierda](Problemas-Decision.jpeg)
 *Dado una gramática en FNC y una palabra $w$, nos dice si la palabra pertenece al lenguaje generado por la gramática.*
 
 > [!WARNING]
@@ -521,10 +522,12 @@ $w = baaba$
 > [!NOTE]
 > Podemos comprobar que $w \in L$, ya que tenemos una serie de símbolos de la gramática que juntos generan esa palabra. En este caso: $S,C,A$.
 
-### Ejemplo: $w \in L(G)$
+### 11.7 Ejemplo: $w \in L(G)$
 *Para probar que sí, tenemos que ser capaces de crear un árbol de derivación por la izquierda.*
 ![GCL-4.jpeg](GCL-4.jpeg)
 ![GCL-5.jpeg](GCL-5.jpeg)
 ![GCL-6.jpeg](GCL-6.jpeg)
 
+### 11.8 Problemas de Decisión
+![[Problemas-Decision.jpeg]]
 
