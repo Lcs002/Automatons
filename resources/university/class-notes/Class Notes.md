@@ -505,17 +505,20 @@ Para ello tenemos que:
 4. Escribimos en la fila arriba de la anterior, el conjunto de símbolos que nos posibilita llegar a la palabra actual - *teniendo en cuenta todas combinaciones posibles*. Para esto tenemos en cuenta los resultados que hemos sacado anteriormente de cada conjunto de caracteres.
 
 > [!NOTE]
-> Personalmente, prefiero hacer una pirámide que un triangulo. Es decir, poner el resultado de la fila superior entre las filas de abajo.
+> Personalmente, prefiero hacer una pirámide que un triangulo. Es decir, poner el resultado de la fila superior entre las columnas de abajo.
+
+***Ejemplo***:
+$G =$ $S \to AB \|BC$, $A \to BA\|a$, $B \to CC \| b$, $C \to AB \| a$
+$w = baaba$
+
+![cyk-1.jpg](cyk-1.jpg)
+
+1. Escribimos los caracteres.
+2. Para cada carácter, buscamos símbolos que les produzcan. *Ej. Para "a", los símbolos que le producen son: $A$ y $C$, por lo tanto lo apuntamos.*
+3. Para cada palabra, para cada posible descomposición, buscamos símbolos que les produzcan. *Ej. Para la palabra "ba", su descomposición es: "b a", por lo tanto su conjunto de símbolos implicados será la combinatoria entre los símbolos que producen "b" y de los que producen "a", es decir: $\{B\} \times \{A,C\} = \{BA, BC\}$, ahora buscamos producciones que contienen estos implicados y apuntamos los implicantes.*
+4. Repetimos el paso 3 hasta que toda file de $\emptyset$ o que lleguemos, a un valor.
 
 > [!NOTE]
-> ***Ejemplo***:
-> $G =$ $S \to AB \|BC$, $A \to BA\|a$, $B \to CC \| b$, $C \to AB \| a$
-> $w = baaba$
-> ![cyk-1.jpg](cyk-1.jpg)
-> 1. Escribimos los caracteres.
-> 2. Para cada carácter, buscamos símbolos que les produzcan. *Ej. Para "a", los símbolos que le producen son: $A$ y $C$, por lo tanto lo apuntamos.*
-> 3. Para cada palabra, para cada posible descomposición, buscamos símbolos que les produzcan. *Ej. Para la palabra "ba", su descomposición es: "b a", por lo tanto su conjunto de símbolos implicados será la combinatoria entre los símbolos que producen "b" y de los que producen "a", es decir: $\{B\} \times \{A,C\} = \{BA, BC\}$, ahora buscamos producciones que contienen estos implicados y apuntamos los implicantes.*
->
 > Podemos comprobar que $w \in L$, ya que tenemos una serie de símbolos de la gramática que juntos generan esa palabra. En este caso: $S,C,A$.
 
 ### Ejemplo: $w \in L(G)$
