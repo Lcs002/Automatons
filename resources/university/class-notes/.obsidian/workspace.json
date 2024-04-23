@@ -6,7 +6,7 @@
       {
         "id": "f363a0219d195e22",
         "type": "tabs",
-        "dimension": 35.27918781725889,
+        "dimension": 29.631979695431472,
         "children": [
           {
             "id": "214335016f33365c",
@@ -25,7 +25,7 @@
       {
         "id": "5773a8e5221407b0",
         "type": "tabs",
-        "dimension": 64.72081218274111,
+        "dimension": 70.36802030456852,
         "children": [
           {
             "id": "dd4f2ba131e95f84",
@@ -168,6 +168,8 @@
   },
   "active": "80dee9693326c1a8",
   "lastOpenFiles": [
+    "cyk-1.jpg",
+    "Class Notes.md",
     "GCL-6.jpeg",
     "GCL-5.jpeg",
     "GCL-4.jpeg",
@@ -177,9 +179,6 @@
     "GCL-1.jpeg",
     "WhatsApp Image 2024-02-21 at 10.42.10.jpeg",
     "WhatsApp Image 2024-02-21 at 10.42.06.jpeg",
-    "automata-er1.jpeg",
-    "Class Notes.md~",
-    "Class Notes.md",
-    "WhatsApp Image 2024-03-22 at 12.36.14 (1).jpeg"
+    "Class Notes.md~"
   ]
 }

@@ -426,12 +426,12 @@ El símbolo de la parte derecha de una derivación directa $A \to w : w \in \sig
 > [!NOTE]
 > Una forma que me sirve es escribir en una tabla el símbolo y su transición lambda y en filas las transiciones que derivan en el símbolo. Luego teniendo en cuenta que el símbolo ya no puede ser lambda, sacamos todas combinaciones posibles de las transiciones.
 
-|  Prod. $B \to \lambda$   |  Prod. $A \to \lambda$ | OK |
-| --- | --- | --- |
-|  $B \to BB$  |  $B$   | |
+|  Prod. $B \to \lambda$   |  Prod. $A \to \lambda$ | Prod. $S \to \lambda$ | Prod $S \to \lambda$ |
+| --- | --- | --- | --- |
+|  $B \to BB$  |  $B$   | ||
 | $S\to AAB$ | $AA$ | $A \| \lambda$
 | $A\to BB$ | $B \| \lambda$ |
-| $C\to aSB$ | $aS$ |
+| $C\to aSB$ | $aS$ | |$a$
 || $S \to aAb$ | $ab$ |
 ||$A \to Ab$ | $b$
 
@@ -446,8 +446,82 @@ El símbolo de la parte derecha de una derivación directa $A \to w : w \in \sig
 
 > *Forma guay*: $\forall A \to B : B \to \alpha_n$, pasar a: $A \to \alpha_n$
 
+### 11.5 Forma Normal de Chomsky - *FNC*
+*Cuando el LCL (Lenguaje de Contexto Libre) se genera por una gramática donde las producciones son de la forma:*
+- $A \to BC$ 
+- $A \to a$
+
+Para ello tenemos que:
+1. **Limpiar la Gramática**
+	1. **Eliminar Producciones-$\lambda$**
+	2. **Eliminar Producciones Unitárias**
+	3. **Eliminar Símbolos Inútiles**
+2. Producciones con **2 o más implicados** son siempre **no terminales**.
+3. Producciones con **3 o más implicados** divididas en producciones de **dos variables**.
+
+#### 11.5.1 Paso 2
+*Para realizar el paso 2: *
+1. Creamos una nueva producción para cada producción existente donde haya dos o más implicados donde no son todos no terminales. 
+2. Intercambiamos en producciones originales los símbolos terminales por los nuevos símbolos no terminales.
+3. Las producciones nuevas producirán los símbolos terminales.
+
+> [!NOTE]
+> ***Ejemplo***: <br>
+> - $A \to aAB \| B$
+> - $B \to b$
+> 
+> Como $A$ produce tanto no terminales como terminales, crearemos una nueva producción que produzca $a$, quedando:
+> - $A \to CAB \| B$
+> - $B \to b$
+> - $C \to a$
+
+#### 11.5.2 Paso 3
+*Para realizar el paso 3:*
+1. Creamos una nueva producción para cada producción existente donde se produzca más de 2 terminales. 
+2. Intercambiamos en las producciones originales dos implicados por la nueva producción.
+3. La producción nueva tendrá 2 de los implicados de la producción original.
+
+> [!NOTE]
+> ***Ejemplo***: <br>
+> - $A \to CAB \| B$
+> - $B \to b$
+> - $C \to a$
+> 
+> Como $CAB$ tiene tres implicados, crearemos una nueva producción que produzca 2 de ellos - *elegimos CA* - , quedando:.
+> - $A \to DB \| B$
+> - $B \to b$
+> - $C \to a$
+> - $D \to CA$ 
+
+### 11.6 Algoritmo CYK
+*Dado una gramática en FNC y una palabra $w$, nos dice si la palabra pertenece al lenguaje generado por la gramática.*
+
+> [!WARNING]
+> La gramática debe estar en FNC.
+
+1. Construimos una matriz triangular inferior de $n\times x$.
+2. En el eje X escribimos carácter por carácter, la palabra a probar "$w$".
+3. Escribimos en la fila más baja el conjunto de símbolos que nos posibilita llegar directamente al carácter de abajo.
+4. Escribimos en la fila arriba de la anterior, el conjunto de símbolos que nos posibilita llegar a la palabra actual - *teniendo en cuenta todas combinaciones posibles*. Para esto tenemos en cuenta los resultados que hemos sacado anteriormente de cada conjunto de caracteres.
+
+> [!NOTE]
+> Personalmente, prefiero hacer una pirámide que un triangulo. Es decir, poner el resultado de la fila superior entre las filas de abajo.
+
+> [!NOTE]
+> ***Ejemplo***:
+> $G =$ $S \to AB \|BC$, $A \to BA\|a$, $B \to CC \| b$, $C \to AB \| a$
+> $w = baaba$
+> ![cyk-1.jpg](cyk-1.jpg)
+> 1. Escribimos los caracteres.
+> 2. Para cada carácter, buscamos símbolos que les produzcan. *Ej. Para "a", los símbolos que le producen son: $A$ y $C$, por lo tanto lo apuntamos.*
+> 3. Para cada palabra, para cada posible descomposición, buscamos símbolos que les produzcan. *Ej. Para la palabra "ba", su descomposición es: "b a", por lo tanto su conjunto de símbolos implicados será la combinatoria entre los símbolos que producen "b" y de los que producen "a", es decir: $\{B\} \times \{A,C\} = \{BA, BC\}$, ahora buscamos producciones que contienen estos implicados y apuntamos los implicantes.*
+>
+> Podemos comprobar que $w \in L$, ya que tenemos una serie de símbolos de la gramática que juntos generan esa palabra. En este caso: $S,C,A$.
+
 ### Ejemplo: $w \in L(G)$
 *Para probar que sí, tenemos que ser capaces de crear un árbol de derivación por la izquierda.*
 ![GCL-4.jpeg](GCL-4.jpeg)
 ![GCL-5.jpeg](GCL-5.jpeg)
 ![GCL-6.jpeg](GCL-6.jpeg)
+
+
