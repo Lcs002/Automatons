@@ -494,7 +494,8 @@ Para ello tenemos que:
 > - $D \to CA$ 
 
 ### 11.6 Algoritmo CYK
-![Canto Inferior a la Izquierda](Problemas-Decision.jpeg)
+![Problemas-Decision.jpeg](Problemas-Decision.jpeg)
+
 *Dado una gramática en FNC y una palabra $w$, nos dice si la palabra pertenece al lenguaje generado por la gramática.*
 
 > [!WARNING]
