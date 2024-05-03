@@ -54,7 +54,7 @@
               "type": "markdown",
               "state": {
                 "file": "Class Notes.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               }
             }
@@ -187,20 +187,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "214335016f33365c",
+  "active": "2c64f404af3503ec",
   "lastOpenFiles": [
+    "AP-4.jpeg",
+    "Class Notes.md",
     "AP-Diagrama-3.png",
     "WHAT-2.jpeg",
     "AP-Diagrama-2.png",
-    "Class Notes.md",
     "AP-Diagrama-1.png",
     "WHAT-1.jpeg",
     "AP-8.jpeg",
     "AP-7.jpeg",
     "AP-6.jpeg",
     "AP-5.jpeg",
-    "AP-1.jpeg",
-    "AP-4.jpeg",
     "Class Notes.md~"
   ]
 }
