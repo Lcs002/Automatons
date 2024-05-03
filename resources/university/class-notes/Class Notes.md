@@ -563,6 +563,7 @@ $L(G)$ será infinito cuando exista al menos un ciclo - *Ej. $A \to AB$*.
 
 ### 11.9 Propiedades de Cerradura
 ![Prod-Cierraduras-GCL-1.jpeg](Prod-Cierraduras-GCL-1.jpeg)
+
 Sean $L_1, L_2$ **LLC**'s y $L_3$ **LR** :
 
 |  PROPIEDAD | OPERACIÓN|  RESULTADO  |
@@ -581,7 +582,7 @@ Sean $L_1, L_2$ **LLC**'s y $L_3$ **LR** :
 ![LDB-GCL-2.jpeg](LDB-GCL-2.jpeg)
 
 ### 11.10 Autómata de Pila - *AP*
-![[AP-1.jpeg]]
+![AP-1.jpeg](AP-1.jpeg)
 *Se define como:*
 $AP = (\Sigma, Q, \Gamma, \delta, q_0, \#, F)$
 - $\Sigma$ : Alfabeto de las palabras.
