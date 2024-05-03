@@ -602,7 +602,7 @@ $AP = (\Sigma, Q, \Gamma, \delta, q_0, ], F)$
 
 > [!NOTE]
 > En mis apuntes los "Centinelas" - *caracteres que delimitan un valor* - son:
-> - Centinela de **Entrada** : $\# \to ]$
+> - Centinela de **Entrada** : #$\to ]$
 > - Centinela de **Pila** : $$\to \}$ 
 
 #### 11.10.1 Representación Gráfica - *Grafos*
