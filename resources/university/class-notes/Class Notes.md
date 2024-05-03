@@ -530,7 +530,7 @@ $w = baaba$
 ![GCL-6.jpeg](GCL-6.jpeg)
 
 ### 11.8 Problemas de Decisión
-![[Problemas-Decision.jpeg]]
+![Problemas-Decision.jpeg](Problemas-Decision.jpeg)
 
 #### 11.8.1 Problema - *Pertenencia de Palabra*
 $w \in L(G)$ ?
@@ -587,12 +587,15 @@ Sean $L_1, L_2$ **LLC**'s y $L_3$ **LR** :
 
 *Para pasar de una **[[#11.2 Gramáticas Ambiguas|Gramática Ambigua]]** a una no ambigua, buscamos eliminar los **[[#11.11.1 Prefijo Común|Prefijos Comunes]]**.*
 
-*Para ello:*
+*Para prefijos comunes normales:*
 1. Sacar "**Factor Común**" del **Símbolo**.
 2. Crear nuevo **No Terminal** con los implicados del original.
 
 > [!NOTE]
 > *El paso 2 solo se realiza en producciones com más de un símbolo en cada implicado.*
+
+*Para prefijos comunes recursivos:*
+
 
 #### 11.11.1 Prefijo Común
 *Dada una producción $A \to X | Y$, esta producción es ambigua si los símbolos iniciales de $X$ e $Y$ son iguales.*
@@ -600,6 +603,7 @@ Sean $L_1, L_2$ **LLC**'s y $L_3$ **LR** :
 > [!NOTE]
 > *Ejemplo:*
 > $A \to ab | a$
+> $A \to Ab|Aa|a$ - *Recursividad!*
 
 ### 11.12 Autómata de Pila - *AP*
 ![AP-1.jpeg](AP-1.jpeg)
@@ -738,6 +742,8 @@ END
 
 ### 12.6 Actividad - Analizadores Léxico-Sintácticos Automáticos 
 
-![[AP-6.jpeg]]
-![[AP-7.jpeg]]
-![[AP-8.jpeg]]
+# [POR HACER]
+
+![AP-6.jpeg](AP-6.jpeg)
+![AP-7.jpeg](AP-7.jpeg)
+![AP-8.jpeg](AP-8.jpeg)
