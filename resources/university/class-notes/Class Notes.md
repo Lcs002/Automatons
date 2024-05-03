@@ -584,8 +584,9 @@ Sean $L_1, L_2$ **LLC**'s y $L_3$ **LR** :
 
 ### 11.10 Autómata de Pila - *AP*
 ![AP-1.jpeg](AP-1.jpeg)
+
 *Se define como:*
-$AP = (\Sigma, Q, \Gamma, \delta, q_0, \#, F)$
+$AP = (\Sigma, Q, \Gamma, \delta, q_0, ], F)$
 - $\Sigma$ : Alfabeto de las palabras.
 - $Q$ : Conjunto de todos estados.
 - $\Gamma$ : Alfabeto de la pila.
@@ -596,7 +597,7 @@ $AP = (\Sigma, Q, \Gamma, \delta, q_0, \#, F)$
 	- $q_j$ : Estado destino.
 	- $BB$ : Elementos para poner en la pila.
 - $q_0$ : Estado inicial del autómata.
-- $\#$ : Símbolo inicial de la pila.
+- $]$ : Símbolo inicial de la pila.
 - $F$ : Estados finales del autómata.
 
 > [!NOTE]
