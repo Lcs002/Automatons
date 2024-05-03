@@ -687,10 +687,10 @@ END
 - **Añadir Estado Inicial** de inicialización.
 - **Añadir Estado** para consumición.
 
-1. **Pushear** el **Centinela de Pila** con transición $(e, \}, S\})$.
-2. $\forall A \to X : X$ es un implicado cualquiera, c**reamos transición** $(\lambda, A, X)$.
-3. $\forall a \in \Sigma$, **creamos transición** $(a, a, \lambda)$.
-4. **Creamos transición** para **Vaciado de Pila** $(], \}, \lambda)$.
+1. **Pushear** el **Centinela de Pila** con transición ($\lambda$, }, $S$}).
+2. $\forall A \to X : X$ es un implicado cualquiera, **creamos transición** $(\lambda, A, X)$.
+3. $\forall a \in \Sigma$, **creamos transición** ($a$, $a$, $\lambda$).
+4. **Creamos transición** para **Vaciado de Pila** ( ], }, $\lambda$).
 
 > [!NOTE]
 > Solo con dos estados ya nos sirve, ya que definiremos todas entradas como lambda y solo se aceptará la palabra si al consumirla la pila está vacía. De esta forma construimos un AP lo suficientemente general como para aceptar cualquier gramática. 
