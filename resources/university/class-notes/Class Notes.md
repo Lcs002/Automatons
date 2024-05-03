@@ -531,3 +531,117 @@ $w = baaba$
 ### 11.8 Problemas de Decisión
 ![[Problemas-Decision.jpeg]]
 
+#### 11.8.1 Problema - *Pertenencia de Palabra*
+$w \in L(G)$ ?
+*Para resolver este problema:*
+
+1. Pasar $G$ a **FNC** $\to$ $G_1$.
+2. Realizar **CYK** para $w$ en $G_1$.
+
+#### 11.8.2 Problema - *Lenguaje Vacío*
+$L(G)$ vacío?
+*Para resolver este problema:*
+
+- Probar si $S$ es **generador**.
+
+#### 11.8.3 Problema - *Lenguaje Finito*
+$L(G)$ finito?
+*Para resolver este problema:*
+
+1. Limpiar: $G \to G_1$.
+2. Eliminar $\lambda$-prod: $G_1 \to G_2$.
+3. Eliminar prod. unitarias: $G_2 \to G_3$.
+4. Construir grafo de dependencia de $G_3$.
+
+$L(G)$ será infinito cuando exista al menos un ciclo - *Ej. $A \to AB$*.
+
+#### 11.8.4 Problemas no Decidibles
+- GCL **ambigua**?
+- LLC **inheremente amibiguo**?
+- GLC $\cap$ GLC $= \emptyset$?
+- GLC $=$ GLC?
+
+### 11.9 Propiedades de Cerradura
+![Prod-Cierraduras-GCL-1.jpeg](Prod-Cierraduras-GCL-1.jpeg)
+Sean $L_1, L_2$ **LLC**'s y $L_3$ **LR** :
+
+|  PROPIEDAD | OPERACIÓN|  RESULTADO  |
+| --- | --- | --- |
+|  Unión | $L = L_1 \cup L_2$ | **LLC** |
+|  Intersección - **LLC** | $L = L_1 \cap L_3$ | **LLC** |
+|  Intersección - **LR**| $L = L_1 \cap L_2$ | **¿?** |
+|  Concatenación | $L = L_1L_2$ | **LLC** |
+|  Kleene | $L = L_1^*$ | **LLC** |
+|  Inversión | $L = L_1^R$ | **LLC** |
+|  Complementario | $L = L_1^C$ | **¿?** |
+|  Diferencia | $L = L_1-L_2$ | **¿?** |
+
+### 11.10 Lema de Bombeo - *GCL* [POR HACER]
+![LDB-GCL-1.jpeg](LDB-GCL-1.jpeg)
+![LDB-GCL-2.jpeg](LDB-GCL-2.jpeg)
+
+### 11.10 Autómata de Pila - *AP*
+![[AP-1.jpeg]]
+*Se define como:*
+$AP = (\Sigma, Q, \Gamma, \delta, q_0, \#, F)$
+- $\Sigma$ : Alfabeto de las palabras.
+- $Q$ : Conjunto de todos estados.
+- $\Gamma$ : Alfabeto de la pila.
+- $\delta$ : Función de transición - $(q_i, a, A) \to (q_j, BB)$.
+	- $q_i$ : Estado actual.
+	- $a$ : Símbolo de entrada.
+	- $A$ : Elemento que se quita de la pila.
+	- $q_j$ : Estado destino.
+	- $BB$ : Elementos para poner en la pila.
+- $q_0$ : Estado inicial del autómata.
+- $\#$ : Símbolo inicial de la pila.
+- $F$ : Estados finales del autómata.
+
+> [!NOTE]
+> En mis apuntes los "Centinelas" - *caracteres que delimitan un valor* - son:
+> - Centinela de **Entrada** : $\# \to ]$
+> - Centinela de **Pila** : $$\to \}$ 
+
+#### 11.10.1 Representación Gráfica - *Grafos*
+*Se hace igual a que en grafos de expresiones regulares, excepto:*
+- Transiciones ($\delta$) : Flechas. Con etiquetas $a;A;BB$
+	- $a$ : Símbolo de entrada.
+	- $A$ : Elemento que se quita de la pila.
+	- $BB$ : Elementos para poner en la pila.
+
+> [!NOTE]
+> Unas formas más intuitivas - *para mí* - de entender las transiciones en los grafos son:
+
+![AP-Diagrama-3.png](AP-Diagrama-3.png)
+
+#### 11.10.2 Inicialización
+*Antes de empezar a consumir entradas, el **AP** inicializa la:*
+- **Entrada**, añadiendo al final de la palabra el **Centinela de Entrada**.
+- **Pila**, añadiendo - *pusheando* - el **Centinela de Pila**.
+
+#### 11.10.3 Consumición
+*Un **AP** funciona de la siguiente forma:*
+1. Recibe una palabra para que sea consumida y consume la primera entrada.
+2. Busca transiciones en el estado actual que esperan esa entrada.
+3. De las transiciones encontradas, prueba a consumir su símbolo definido. Si puede consumir:
+	1. Se realiza la transición.
+	2. Se elimina de la pila el símbolo definido.
+	3. Se añade a la pila el símbolo definido.
+	4. Si puede avanzar la entrada, pasa a 2.
+	5. Pasa a **Aceptación**.
+4. Pasa a **Aceptación**.
+
+#### 11.10.4 Aceptación
+*Un **Pushdown Automaton** acepta palabras - $w$ - cuando:*
+- Al consumir totalmente $w$, tiene la **pila vacía**.
+- Al consumir totalmente $w$, está en un **estado final**.
+
+
+# [POR HACER]
+![[AP-2.jpeg]]
+![[AP-3.jpeg]]
+![[AP-4.jpeg]]
+![[AP-5.jpeg]]
+![[AP-6.jpeg]]
+![[AP-7.jpeg]]
+![[AP-8.jpeg]]
