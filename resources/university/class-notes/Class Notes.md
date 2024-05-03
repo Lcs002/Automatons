@@ -570,8 +570,8 @@ Sean $L_1, L_2$ **LLC**'s y $L_3$ **LR** :
 |  PROPIEDAD | OPERACIÓN|  RESULTADO  |
 | --- | --- | --- |
 |  Unión | $L = L_1 \cup L_2$ | **LLC** |
-|  Intersección - **LLC** | $L = L_1 \cap L_3$ | **LLC** |
-|  Intersección - **LR**| $L = L_1 \cap L_2$ | **¿?** |
+|  Intersección - **LLC** | $L = L_1 \cap L_2$ | **LLC** |
+|  Intersección - **LR**| $L = L_1 \cap L_3$ | **¿?** |
 |  Concatenación | $L = L_1L_2$ | **LLC** |
 |  Kleene | $L = L_1^*$ | **LLC** |
 |  Inversión | $L = L_1^R$ | **LLC** |
@@ -582,7 +582,26 @@ Sean $L_1, L_2$ **LLC**'s y $L_3$ **LR** :
 ![LDB-GCL-1.jpeg](LDB-GCL-1.jpeg)
 ![LDB-GCL-2.jpeg](LDB-GCL-2.jpeg)
 
-### 11.10 Autómata de Pila - *AP*
+### 11.11 Eliminar Ambiguedad de GCL
+![GCL-EliminarAmbiguedad.png](GCL-EliminarAmbiguedad.png)
+
+*Para pasar de una **[[#11.2 Gramáticas Ambiguas|Gramática Ambigua]]** a una no ambigua, buscamos eliminar los **[[#11.11.1 Prefijo Común|Prefijos Comunes]]**.*
+
+*Para ello:*
+1. Sacar "**Factor Común**" del **Símbolo**.
+2. Crear nuevo **No Terminal** con los implicados del original.
+
+> [!NOTE]
+> *El paso 2 solo se realiza en producciones com más de un símbolo en cada implicado.*
+
+#### 11.11.1 Prefijo Común
+*Dada una producción $A \to X | Y$, esta producción es ambigua si los símbolos iniciales de $X$ e $Y$ son iguales.*
+
+> [!NOTE]
+> *Ejemplo:*
+> $A \to ab | a$
+
+### 11.12 Autómata de Pila - *AP*
 ![AP-1.jpeg](AP-1.jpeg)
 
 *Se define como:*
@@ -605,7 +624,7 @@ $AP = (\Sigma, Q, \Gamma, \delta, q_0, ], F)$
 > - Centinela de **Entrada** : #$\to ]$
 > - Centinela de **Pila** : $$\to \}$ 
 
-#### 11.10.1 Representación Gráfica - *Grafos*
+#### 11.12.1 Representación Gráfica - *Grafos*
 *Se hace igual a que en grafos de expresiones regulares, excepto:*
 - Transiciones ($\delta$) : Flechas. Con etiquetas $a;A;BB$
 	- $a$ : Símbolo de entrada.
@@ -617,12 +636,12 @@ $AP = (\Sigma, Q, \Gamma, \delta, q_0, ], F)$
 
 ![AP-Diagrama-3.png](AP-Diagrama-3.png)
 
-#### 11.10.2 Inicialización
+#### 11.12.2 Inicialización
 *Antes de empezar a consumir entradas, el **AP** inicializa la:*
 - **Entrada**, añadiendo al final de la palabra el **Centinela de Entrada**.
 - **Pila**, añadiendo - *pusheando* - el **Centinela de Pila**.
 
-#### 11.10.3 Consumición
+#### 11.12.3 Consumición
 *Un **AP** funciona de la siguiente forma:*
 1. Recibe una palabra para que sea consumida y consume la primera entrada.
 2. Busca transiciones en el estado actual que esperan esa entrada.
@@ -634,17 +653,91 @@ $AP = (\Sigma, Q, \Gamma, \delta, q_0, ], F)$
 	5. Pasa a **Aceptación**.
 4. Pasa a **Aceptación**.
 
-#### 11.10.4 Aceptación
+> [!NOTE]
+> O en forma de código:
+
+``` pascal
+stack;
+current_state;
+
+FUNCTION consume (entry)                                    // entry es una letra
+	transitions = current_state.transitions_with(entry)
+	FOR transition IN transitions DO
+		IF transition.stack_top_value == stack.peek() THEN  // peek devuelve top
+			stack.pop()                                     // pop quita top
+			stack.push(transition.stack_new_top_values)     // push añade a top
+			current_state = transition.next_state
+		END
+	END
+END
+```
+
+#### 11.12.4 Aceptación
 *Un **Pushdown Automaton** acepta palabras - $w$ - cuando:*
 - Al consumir totalmente $w$, tiene la **pila vacía**.
 - Al consumir totalmente $w$, está en un **estado final**.
 
+### 11.13 Ejemplos: AP
+![AP-1.jpeg](AP-1.jpeg)
+![AP-2.jpeg](AP-2.jpeg)
 
-# [POR HACER]
-![[AP-2.jpeg]]
-![[AP-3.jpeg]]
-![[AP-4.jpeg]]
-![[AP-5.jpeg]]
+### 11.14 Transformación: GCL a AP
+![AP-3.jpeg](AP-3.jpeg)
+*Pasos:*
+- **Añadir Estado Inicial** de inicialización.
+- **Añadir Estado** para consumición.
+
+1. **Pushear** el **Centinela de Pila** con transición $(e, \}, S\})$.
+2. $\forall A \to X : X$ es un implicado cualquiera, c**reamos transición** $(\lambda, A, X)$.
+3. $\forall a \in \Sigma$, **creamos transición** $(a, a, \lambda)$.
+4. **Creamos transición** para **Vaciado de Pila** $(], \}, \lambda)$.
+
+> [!NOTE]
+> Solo con dos estados ya nos sirve, ya que definiremos todas entradas como lambda y solo se aceptará la palabra si al consumirla la pila está vacía. De esta forma construimos un AP lo suficientemente general como para aceptar cualquier gramática. 
+> 
+> El inconveniente es tener varias transiciones lambda y generar un AP No Determinista.
+
+### 11.15 Ejemplos: GLC a AP
+![AP-3.jpeg](AP-3.jpeg)
+![AP-4.jpeg](AP-4.jpeg)
+![AP-5.jpeg](AP-5.jpeg)
+
+## 12. Sintaxis
+*Las características sintácticas de un **LP** se pueden especificar mediante una **GCL**.*
+
+*Esa especificación puede ser en formato **BNF** o **BNFA**.*
+
+> [!NOTE]
+> *Glosario*:
+> - **LP**: Lenguaje de Programación.
+> - **EBNF**: **BNFA**.
+> - **AS**: Analizador Sintáctico.
+
+### 12.1 Gramáticas en BNF
+*Notación*:
+- **Símbolos No Terminales ($A$)**: `<no_term>`
+- **Símbolos Terminales ($a$)**: `term`
+- **Producción ($\to$)**: `::=`
+
+### 12.2 Gramáticas en BNFA
+*Facilita el entendimiento de gramáticas BNF, sobre todo la opcionalidad y repetición de elementos.*
+
+*Notación (BNF + Nuevas):*
+- **Subpalabra Repetida**: `{subpalabra}` 
+	> *Subpalabra aparece **0** **o más** veces.*
+- **Subpalabra Opcional**: `[subpalabra]`
+	> *Subpalabra aparece **0 o 1** vez.*
+- **Subpalabra Variante**: `(subpalabra_1, subpalabra_2)`
+	> *Aparece **subpalabra_1 o subpalabra_2**, etc.*
+
+### 12.3 Analizadores Sintácticos
+
+### 12.4 Calculo de Símbolos Directores 
+
+### 12.5 Analizadores Descendentes Predictivos Recursivos
+
+### 12.6 Actividad - Analizadores Léxico-Sintácticos Automáticos 
+
 ![[AP-6.jpeg]]
 ![[AP-7.jpeg]]
 ![[AP-8.jpeg]]

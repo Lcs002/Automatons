@@ -6,7 +6,7 @@
       {
         "id": "f363a0219d195e22",
         "type": "tabs",
-        "dimension": 45.49492385786802,
+        "dimension": 47.33502538071066,
         "children": [
           {
             "id": "214335016f33365c",
@@ -35,7 +35,7 @@
       {
         "id": "5773a8e5221407b0",
         "type": "tabs",
-        "dimension": 54.50507614213198,
+        "dimension": 52.66497461928934,
         "children": [
           {
             "id": "dd4f2ba131e95f84",
@@ -54,7 +54,7 @@
               "type": "markdown",
               "state": {
                 "file": "Class Notes.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -189,17 +189,18 @@
   },
   "active": "2c64f404af3503ec",
   "lastOpenFiles": [
-    "AP-4.jpeg",
+    "GCL-EliminarAmbiguedad.png",
+    "AP-2.jpeg",
     "Class Notes.md",
+    "AP-1.jpeg",
+    "AP-Diagrama-2.png",
+    "AP-4.jpeg",
     "AP-Diagrama-3.png",
     "WHAT-2.jpeg",
-    "AP-Diagrama-2.png",
     "AP-Diagrama-1.png",
     "WHAT-1.jpeg",
     "AP-8.jpeg",
     "AP-7.jpeg",
-    "AP-6.jpeg",
-    "AP-5.jpeg",
     "Class Notes.md~"
   ]
 }
