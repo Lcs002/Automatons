@@ -832,6 +832,40 @@ La gramática es ambigua por lo tanto tenemos que **[[#11.5.1 Eliminar Ambigueda
 - $F \to (E) | a$
 
 ### 12.3 Analizadores Sintácticos
+*Pag. 24 - : Tema 6*
+
+*Tiene como fin **reconstruir** y **comprobar** si los **tokens** proporcionados por el analizados léxico **pueden ser generados por la gramática** sintáctica que define el lenguaje.*
+
+#### 12.3.1 Símbolos por Adelantado
+*Usados para **resolver** la **indeterminación** que se presente **en el proceso de reconstrucción** del árbol de derivación.*
+
+> [!NOTE]
+> Es el numero de símbolos de la entrada que leemos a la vez.
+
+#### 12.3.2 Reconocimiento Descendente - *LL*
+
+Forma de los **Analizadores Sintácticos** de reconstruir el árbol **desde la raíz a las hojas**.
+
+> [!NOTE]
+> **LL(K)** : **L**eft Reading, **L**eft Derivation, con **K** **Símbolos por Adelantado.**
+
+*Ejemplo: Pag 26 : Tema 6*
+
+![LL-Ejemplo.png](LL-Ejemplo.png)
+
+##### 12.3.2.1 Definición LL(1)
+![AP-8-DefLL1.jpeg](AP-8-DefLL1.jpeg)
+
+> [!NOTE]
+> En mis palabras: "*Una **GCL** está en **LL(1)** si puedes elegir la siguiente producción con solo leer 1 entrada*". 
+> 
+> Sobre esta idea podemos asegurar que **si GCL es No Determinista,** **no es LL(1)**. Pero no podemos asegurar que un GCL Determinista sea siempre LL(1).
+
+*Ejemplo LL(1): Pag 27 : Tema 6*
+
+![LL1-Ejemplo.png](LL1-Ejemplo.png)
+
+#### 12.3.3 Reconocimiento Ascendente - *LR*
 
 ### 12.4 Calculo de Símbolos Directores 
 
@@ -840,9 +874,17 @@ La gramática es ambigua por lo tanto tenemos que **[[#11.5.1 Eliminar Ambigueda
 ### 12.6 Actividad - Analizadores Léxico-Sintácticos Automáticos 
 
 # [POR HACER]
-![AP-7.jpeg](AP-7.jpeg)
-![AP-8.jpeg](AP-8.jpeg)
+
+![TLP-04-24-A.jpeg](TLP-04-24-A.jpeg)
+
+![TLP-04-24-B.jpeg](TLP-04-24-B.jpeg)
+
+![TLP-04-26-A.jpeg](TLP-04-26-A.jpeg)
+
+![TLP-04-26-B.jpeg](TLP-04-26-B.jpeg)
+
 
 # [DUDAS]
 ![dudas-1.png](dudas-1.png)
-	Como S ya nos lleva a aS y de S podríamos seguir por X, por transitividad se podría eliminar la producción X -> aX ?
+
+Como S ya nos lleva a aS y de S podríamos seguir por X, por transitividad se podría eliminar la producción X -> aX ?
