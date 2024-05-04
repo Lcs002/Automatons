@@ -453,13 +453,59 @@ El símbolo de la parte derecha de una derivación directa $A \to w : w \in \sig
 
 Para ello tenemos que:
 1. **Limpiar la Gramática**
+	- **Eliminar Prefijos Comunes (Eliminar Ambiguedad)**
 	1. **Eliminar Producciones-$\lambda$**
-	2. **Eliminar Producciones Unitárias**
+	2. **Eliminar Producciones Unitarias**
 	3. **Eliminar Símbolos Inútiles**
-2. Producciones con **2 o más implicados** son siempre **no terminales**.
-3. Producciones con **3 o más implicados** divididas en producciones de **dos variables**.
+3. Producciones con **2 o más implicados** son siempre **no terminales**.
+4. Producciones con **3 o más implicados** divididas en producciones de **dos variables**.
 
-#### 11.5.1 Paso 2
+#### 11.5.1 Eliminar Ambiguedad de GCL
+![GCL-EliminarAmbiguedad.png](GCL-EliminarAmbiguedad.png)
+![GCL-EliminarAmbiguedad-2.png.png](GCL-EliminarAmbiguedad-2.png.png)
+
+*Para pasar de una **[[#11.2 Gramáticas Ambiguas|Gramática Ambigua]]** a una no ambigua, buscamos eliminar los **[[#11.5.2 Prefijo Común|Prefijos Comunes]]**.*
+ 
+*Para **Prefijos Comunes Normales**:*
+1. Sacar "**Factor Común**" del **Símbolo**.
+2. Crear nuevo **No Terminal** con los implicados del original.
+
+> [!NOTE]
+> *El paso 2 solo se realiza en producciones com más de un símbolo en cada implicado.*
+
+*Para **Prefijos Comunes Recursivos Inmediatos por la Izquierda**:*
+
+***Input***: 
+- $A \to A \alpha_1 | ... | A \alpha_n | \beta_1 | ... | \beta_n$
+
+***Output***: 
+- $A \to \beta_1B | ... | \beta_nB$
+- $B \to \alpha_1B | ... | \alpha_nB | \lambda$
+
+*Donde*:
+- $A$: Símbolo No terminal.
+- $B$: Símbolo No terminal.
+- $\alpha$: Subpalabra que procede $A$.
+- $\beta$: Subpalabra que no procede $A$.
+
+> [!NOTE]
+> ***Mi razonamiento:***
+> Sabemos que en una transición $A \to p A s | a | b$, $p$ actúa como prefijos, $s$ como sufijos y que el cuerpo de $A$ podría ser o $a$ o $b$. 
+> 
+> En el caso de **Recursividad Inmediata**, los prefijos no están presentes, quedando: $A \to As|a|b$. Es decir, el cuerpo de $A$ estará compuesto por o $a$ o $b$ y luego sufijos $s$, podemos traducir esto a: $A \to aB|bB$, siendo $B$ los sufijos $s$: $B \to sB|\lambda$.
+> 
+> Ahora podemos generalizar para cualquier producción y sacar la fórmula dada. $s$ será cualquier subpalabra que proceda $A$ ($\alpha$) y las subpalabras $a$ y $b$ serán cualquier subpalabra que no proceda $A$ ($\beta$).
+
+
+#### 11.5.2 Prefijo Común
+*Dada una producción $A \to X | Y$, esta producción es ambigua si los símbolos iniciales de $X$ e $Y$ son iguales.*
+
+> [!NOTE]
+> *Ejemplo:*
+> $A \to ab | a$
+> $A \to Ab|Aa|a$ - *Recursividad Inmediata por la Izquierda!*
+
+#### 11.5.3 Paso 2
 *Para realizar el paso 2: *
 1. Creamos una nueva producción para cada producción existente donde haya dos o más implicados donde no son todos no terminales. 
 2. Intercambiamos en producciones originales los símbolos terminales por los nuevos símbolos no terminales.
@@ -467,15 +513,15 @@ Para ello tenemos que:
 
 > [!NOTE]
 > ***Ejemplo***: <br>
-> - $A \to aAB \| B$
+> - $A \to aAB | B$
 > - $B \to b$
 > 
 > Como $A$ produce tanto no terminales como terminales, crearemos una nueva producción que produzca $a$, quedando:
-> - $A \to CAB \| B$
+> - $A \to CAB | B$
 > - $B \to b$
 > - $C \to a$
 
-#### 11.5.2 Paso 3
+#### 11.5.4 Paso 3
 *Para realizar el paso 3:*
 1. Creamos una nueva producción para cada producción existente donde se produzca más de 2 terminales. 
 2. Intercambiamos en las producciones originales dos implicados por la nueva producción.
@@ -483,12 +529,12 @@ Para ello tenemos que:
 
 > [!NOTE]
 > ***Ejemplo***: <br>
-> - $A \to CAB \| B$
+> - $A \to CAB | B$
 > - $B \to b$
 > - $C \to a$
 > 
 > Como $CAB$ tiene tres implicados, crearemos una nueva producción que produzca 2 de ellos - *elegimos CA* - , quedando:.
-> - $A \to DB \| B$
+> - $A \to DB | B$
 > - $B \to b$
 > - $C \to a$
 > - $D \to CA$ 
@@ -510,7 +556,7 @@ Para ello tenemos que:
 > Personalmente, prefiero hacer una pirámide que un triangulo. Es decir, poner el resultado de la fila superior entre las columnas de abajo.
 
 ***Ejemplo***: <br>
-$G =$ $S \to AB \|BC$, $A \to BA\|a$, $B \to CC \| b$, $C \to AB \| a$ <br>
+$G =$ $S \to AB |BC$, $A \to BA|a$, $B \to CC | b$, $C \to AB | a$ <br>
 $w = baaba$
 
 ![cyk-1.jpg](cyk-1.jpg)
@@ -582,30 +628,7 @@ Sean $L_1, L_2$ **LLC**'s y $L_3$ **LR** :
 ![LDB-GCL-1.jpeg](LDB-GCL-1.jpeg)
 ![LDB-GCL-2.jpeg](LDB-GCL-2.jpeg)
 
-### 11.11 Eliminar Ambiguedad de GCL
-![GCL-EliminarAmbiguedad.png](GCL-EliminarAmbiguedad.png)
-
-*Para pasar de una **[[#11.2 Gramáticas Ambiguas|Gramática Ambigua]]** a una no ambigua, buscamos eliminar los **[[#11.11.1 Prefijo Común|Prefijos Comunes]]**.*
-
-*Para prefijos comunes normales:*
-1. Sacar "**Factor Común**" del **Símbolo**.
-2. Crear nuevo **No Terminal** con los implicados del original.
-
-> [!NOTE]
-> *El paso 2 solo se realiza en producciones com más de un símbolo en cada implicado.*
-
-*Para prefijos comunes recursivos:*
-
-
-#### 11.11.1 Prefijo Común
-*Dada una producción $A \to X | Y$, esta producción es ambigua si los símbolos iniciales de $X$ e $Y$ son iguales.*
-
-> [!NOTE]
-> *Ejemplo:*
-> $A \to ab | a$
-> $A \to Ab|Aa|a$ - *Recursividad!*
-
-### 11.12 Autómata de Pila - *AP*
+### 11.11 Autómata de Pila - *AP*
 ![AP-1.jpeg](AP-1.jpeg)
 
 *Se define como:*
@@ -628,7 +651,7 @@ $AP = (\Sigma, Q, \Gamma, \delta, q_0, ], F)$
 > - Centinela de **Entrada** : #$\to ]$
 > - Centinela de **Pila** : $$\to \}$ 
 
-#### 11.12.1 Representación Gráfica - *Grafos*
+#### 11.11.1 Representación Gráfica - *Grafos*
 *Se hace igual a que en grafos de expresiones regulares, excepto:*
 - Transiciones ($\delta$) : Flechas. Con etiquetas $a;A;BB$
 	- $a$ : Símbolo de entrada.
@@ -640,12 +663,12 @@ $AP = (\Sigma, Q, \Gamma, \delta, q_0, ], F)$
 
 ![AP-Diagrama-3.png](AP-Diagrama-3.png)
 
-#### 11.12.2 Inicialización
+#### 11.11.2 Inicialización
 *Antes de empezar a consumir entradas, el **AP** inicializa la:*
 - **Entrada**, añadiendo al final de la palabra el **Centinela de Entrada**.
 - **Pila**, añadiendo - *pusheando* - el **Centinela de Pila**.
 
-#### 11.12.3 Consumición
+#### 11.11.3 Consumición
 *Un **AP** funciona de la siguiente forma:*
 1. Recibe una palabra para que sea consumida y consume la primera entrada.
 2. Busca transiciones en el estado actual que esperan esa entrada.
@@ -676,16 +699,16 @@ FUNCTION consume (entry)                                    // entry es una letr
 END
 ```
 
-#### 11.12.4 Aceptación
+#### 11.11.4 Aceptación
 *Un **Pushdown Automaton** acepta palabras - $w$ - cuando:*
 - Al consumir totalmente $w$, tiene la **pila vacía**.
 - Al consumir totalmente $w$, está en un **estado final**.
 
-### 11.13 Ejemplos: AP
+### 11.12 Ejemplos: AP
 ![AP-1.jpeg](AP-1.jpeg)
 ![AP-2.jpeg](AP-2.jpeg)
 
-### 11.14 Transformación: GCL a AP
+### 11.13 Transformación: GCL a AP
 ![AP-3.jpeg](AP-3.jpeg)
 *Pasos:*
 - **Añadir Estado Inicial** de inicialización.
@@ -701,7 +724,7 @@ END
 > 
 > El inconveniente es tener varias transiciones lambda y generar un AP No Determinista.
 
-### 11.15 Ejemplos: GLC a AP
+### 11.14 Ejemplos: GLC a AP
 ![AP-3.jpeg](AP-3.jpeg)
 ![AP-4.jpeg](AP-4.jpeg)
 ![AP-5.jpeg](AP-5.jpeg)
@@ -733,6 +756,75 @@ END
 	> *Subpalabra aparece **0 o 1** vez.*
 - **Subpalabra Variante**: `(subpalabra_1, subpalabra_2)`
 	> *Aparece **subpalabra_1 o subpalabra_2**, etc.*
+	
+#### 12.2.1 Ejemplo: BNF
+*Gramática en notación BNF que define la sintaxis de las declaraciones de variables en C.*
+
+```
+<declaraciones> ::= <una_declaracion> <declaraciones> | e 
+<una_declaracion> ::= <tipo> <lista_id_var> ;
+<lista_id_var> ::= id <mas_id>
+<mas_id> ::= , id <mas_id> | e
+<tipo> ::= int | float
+```
+
+#### 12.2.2 Ejemplo: BNFA
+*Gramática en notación BNF que define la sintaxis de las declaraciones de variables en C.*
+
+```
+<declaraciones> ::= {<una_declaracion> ;}
+<una_declaracion> ::= <tipo> id {, id}
+<tipo> ::= int | float
+```
+
+#### 12.2.3 Expresiones Aritméticas
+![AP-7-Asociatividad.jpeg](AP-7-Asociatividad.jpeg)
+
+*Pg. 15 - 19 : Tema 6*
+
+*Partimos de una gramática en BNF:*
+
+```
+<expr> ::= <expr> + <expr> | <expr> * <expr>| (<expr>) | a 
+```
+
+*Su equivalente:*
+
+- $E \to E + E | E*E|(E)|a$
+
+*Tenemos que resolver el problema de la **Precedencia entre Operadores**, para ello:*
+- $\forall p, A_p \to O_p$
+	> Es decir, para cada nivel de precedencia, creamos un **Símbolo No Terminal** para sus operadores.
+	
+> [!WARNING]
+> **Menos Precedencia:** Más cerca al **Símbolo Inicial**.
+> **Más Precedencia**: Más cerca a los **Operandos**.
+
+*Quedamos con la siguiente gramática en BNF:*
+```
+<expr> ::= <expr> + <expr> | <term>
+<term> ::= <term> * <func> | <func>
+<func> ::= (<expr>) | a
+```
+
+> [!NOTE]
+> **Paréntesis**: Se trata como un Operando.
+> **Función** Se trata también como un Operando.
+> **Unarios (-)**: Tienen mayor precedencia. 
+
+La gramática es ambigua por lo tanto tenemos que **[[#11.5.1 Eliminar Ambiguedad de GCL|quitarle la ambiguedad]]**, quedando:
+
+```
+<expr> ::= <expr> + <term> | <term>
+<term> ::= <term> * <func> | <func>
+<func> ::= (<expr>) | a
+```
+
+*La gramática en BNF es equivalente a:*
+
+- $E \to E+T | T$
+- $T \to T * F | F$
+- $F \to (E) | a$
 
 ### 12.3 Analizadores Sintácticos
 
@@ -743,7 +835,9 @@ END
 ### 12.6 Actividad - Analizadores Léxico-Sintácticos Automáticos 
 
 # [POR HACER]
-
-![AP-6.jpeg](AP-6.jpeg)
 ![AP-7.jpeg](AP-7.jpeg)
 ![AP-8.jpeg](AP-8.jpeg)
+
+# [DUDAS]
+![dudas-1.png](dudas-1.png)
+	Como S ya nos lleva a aS y de S podríamos seguir por X, por transitividad se podría eliminar la producción X -> aX ?

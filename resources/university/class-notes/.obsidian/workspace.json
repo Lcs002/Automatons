@@ -6,7 +6,7 @@
       {
         "id": "f363a0219d195e22",
         "type": "tabs",
-        "dimension": 47.33502538071066,
+        "dimension": 37.513513513513516,
         "children": [
           {
             "id": "214335016f33365c",
@@ -35,7 +35,7 @@
       {
         "id": "5773a8e5221407b0",
         "type": "tabs",
-        "dimension": 52.66497461928934,
+        "dimension": 62.486486486486484,
         "children": [
           {
             "id": "dd4f2ba131e95f84",
@@ -187,8 +187,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c64f404af3503ec",
+  "active": "214335016f33365c",
   "lastOpenFiles": [
+    "AP-7-Asociatividad.jpeg",
+    "GCL-EliminarAmbiguedad-2.png.png",
+    "dudas-1.png",
     "GCL-EliminarAmbiguedad.png",
     "AP-2.jpeg",
     "Class Notes.md",
@@ -198,9 +201,6 @@
     "AP-Diagrama-3.png",
     "WHAT-2.jpeg",
     "AP-Diagrama-1.png",
-    "WHAT-1.jpeg",
-    "AP-8.jpeg",
-    "AP-7.jpeg",
     "Class Notes.md~"
   ]
 }
