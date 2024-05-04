@@ -6,7 +6,7 @@
       {
         "id": "f363a0219d195e22",
         "type": "tabs",
-        "dimension": 37.513513513513516,
+        "dimension": 58.842794759825324,
         "children": [
           {
             "id": "214335016f33365c",
@@ -35,7 +35,7 @@
       {
         "id": "5773a8e5221407b0",
         "type": "tabs",
-        "dimension": 62.486486486486484,
+        "dimension": 41.15720524017467,
         "children": [
           {
             "id": "dd4f2ba131e95f84",
@@ -110,7 +110,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d942ddf4fcef3b96",
@@ -187,7 +188,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c64f404af3503ec",
+  "active": "214335016f33365c",
   "lastOpenFiles": [
     "TLP-04-26-B.jpeg",
     "TLP-04-26-A.jpeg",

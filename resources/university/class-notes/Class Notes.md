@@ -611,7 +611,7 @@ $L(G)$ será infinito cuando exista al menos un ciclo - *Ej. $A \to AB$*.
 ### 11.9 Propiedades de Cerradura
 ![Prod-Cierraduras-GCL-1.jpeg](Prod-Cierraduras-GCL-1.jpeg)
 
-Sean $L_1, L_2$ **LLC**'s y $L_3$ **LR** :
+Sean $L_1, L_2$ **LLC**'s (*Lenguajes de Libre Contexto*) y $L_3$ **LR** (*Lenguaje Regular*) :
 
 |  PROPIEDAD | OPERACIÓN|  RESULTADO  |
 | --- | --- | --- |
@@ -742,13 +742,15 @@ END
 > - 
 > - **AS**: Analizador Sintáctico.
 
-### 12.1 Gramáticas en BNF
+### 12.1 Gramáticas en BNF y BNFA
+
+#### 12.1.1 BNF
 *Notación*:
 - **Símbolos No Terminales ($A$)**: `<no_term>`
 - **Símbolos Terminales ($a$)**: `term`
 - **Producción ($\to$)**: `::=`
 
-### 12.2 Gramáticas en BNFA
+#### 12.1.1 BNFA
 *Facilita el entendimiento de gramáticas BNF, sobre todo la opcionalidad y repetición de elementos.*
 
 *Notación (BNF + Nuevas):*
@@ -759,7 +761,7 @@ END
 - **Subpalabra Variante**: `(subpalabra_1, subpalabra_2)`
 	> *Aparece **subpalabra_1 o subpalabra_2**, etc.*
 	
-#### 12.2.1 Ejemplo: BNF
+#### 12.1.2 Ejemplo: BNF
 *Gramática en notación BNF que define la sintaxis de las declaraciones de variables en C.*
 
 ```
@@ -770,7 +772,7 @@ END
 <tipo> ::= int | float
 ```
 
-#### 12.2.2 Ejemplo: BNFA
+#### 12.1.3 Ejemplo: BNFA
 *Gramática en notación BNF que define la sintaxis de las declaraciones de variables en C.*
 
 ```
@@ -779,7 +781,7 @@ END
 <tipo> ::= int | float
 ```
 
-#### 12.2.3 Expresiones Aritméticas
+### 12.2 Expresiones Aritméticas
 ![AP-7-Asociatividad.jpeg](AP-7-Asociatividad.jpeg)
 
 *Pg. 15 - 19 : Tema 6*
@@ -865,13 +867,26 @@ Forma de los **Analizadores Sintácticos** de reconstruir el árbol **desde la r
 
 ![LL1-Ejemplo.png](LL1-Ejemplo.png)
 
-#### 12.3.3 Reconocimiento Ascendente - *LR*
+> [!NOTE]
+> Los pasos para saber si una **Sintaxis** definida por una **GCL**  - *o por un **Lenguaje** definido por una **GCL** * - está en **LL(1)** se explican en el apartado **[[#12.5 Sintaxis en LL(1)?]]**
 
 ### 12.4 Calculo de Símbolos Directores 
 
-### 12.5 Analizadores Descendentes Predictivos Recursivos
+#### 12.4.1 ¿Qué realmente Representan?
 
-### 12.6 Actividad - Analizadores Léxico-Sintácticos Automáticos 
+#### 12.4.2 Pasos
+
+### 12.5 Comprobar si Sintaxis está en LL(1)
+
+#### 12.5.1 ¿Qué realmente Significa estar en LL(1)?
+
+#### 12.5.2 ¿Qué tiene que ver los Símbolos Directores con LL(1)?
+
+#### 12.5.3 Pasos
+
+### 12.6 Analizadores Descendentes Predictivos Recursivos
+
+### 12.7 Actividad - Analizadores Léxico-Sintácticos Automáticos 
 
 # [POR HACER]
 
