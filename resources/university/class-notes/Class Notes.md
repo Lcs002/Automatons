@@ -737,7 +737,9 @@ END
 > [!NOTE]
 > *Glosario*:
 > - **LP**: Lenguaje de Programación.
+> - 
 > - **EBNF**: **BNFA**.
+> - 
 > - **AS**: Analizador Sintáctico.
 
 ### 12.1 Gramáticas en BNF
@@ -798,6 +800,7 @@ END
 	
 > [!WARNING]
 > **Menos Precedencia:** Más cerca al **Símbolo Inicial**.
+> 
 > **Más Precedencia**: Más cerca a los **Operandos**.
 
 *Quedamos con la siguiente gramática en BNF:*
@@ -809,7 +812,9 @@ END
 
 > [!NOTE]
 > **Paréntesis**: Se trata como un Operando.
+> 
 > **Función** Se trata también como un Operando.
+> 
 > **Unarios (-)**: Tienen mayor precedencia. 
 
 La gramática es ambigua por lo tanto tenemos que **[[#11.5.1 Eliminar Ambiguedad de GCL|quitarle la ambiguedad]]**, quedando:
