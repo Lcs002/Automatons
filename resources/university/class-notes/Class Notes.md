@@ -1,3 +1,4 @@
+# CLASS NOTES
 Contenidos de la Pizarra + Diapositivas + Apuntes.
 > [!NOTE]
 > *Apuntes bien hechos a partir del temario del segundo examen.*
@@ -36,7 +37,7 @@ Contenidos de la Pizarra + Diapositivas + Apuntes.
 - **[[#11. Gramáticas de Contexto Libre - *GCL*]]**
 - **[[#12. Sintaxis]]**
 ---
-# CLASS NOTES
+# NOTES
 ## 1. Basic Concepts
 ![basic-concepts.png](basic-concepts.png)
 ## 2. NFA to DFA
