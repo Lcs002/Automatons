@@ -1,3 +1,8 @@
+Contenidos de la Pizarra + Diapositivas + Apuntes.
+> [!NOTE]
+> *Apuntes bien hechos a partir del temario del segundo examen.*
+
+---
 # INDEX GITHUB
 - **[1.-Basic-Concepts](#1-basic-concepts)**
 - **[2. NFA to DFA](#2-nfa-to-dfa)**
@@ -11,9 +16,6 @@
 - **[10. ER a Gramatica POR HACER](#10-er-a-gramatica-por-hacer)**
 - **[11. Gramáticas de Contexto Libre - *GCL*](#11-gramáticas-de-contexto-libre---gcl)**
 - **[12. Sintaxis](#12-sintaxis)**
-
-> [!NOTE]
-> Apuntes bien hechos a partir del temario del segundo examen **[11. Gramáticas de Contexto Libre - *GCL*](#11.-Gramáticas-de-Contexto-Libre-*GCL*)**.
 
 > [!TIP]
 > *Ciertas marcaciones se verán mal o distintas fuera de Obsidian.*
