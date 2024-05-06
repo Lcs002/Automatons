@@ -1,16 +1,16 @@
-# INDEX
-- **[1.-Basic-Concepts](#1.-basic-concepts)**
-- **[2. NFA to DFA](#2.-nfa-to-dfa)**
-- **[3. Epsilon Closures, Accessibility and Co-Accessibility](#3.-epsilon-closures,-accessibility-and-co-accessibility)**
-- **[4. Minimization](#4.-minimization)**
-- **[5. Properties and Operations](#5.-properties-and-operations)**
-- **[6. Pumping](#6.-pumping)**
-- **[7. Grammar](#7.-grammar)**
-- **[8. ER a Automata](#8.-er-a-automata)**
-- **[9. Automata a ER](#9.-automata-a-er)**
-- **[10. ER a Gramatica POR HACER](#10.-er-a-gramatica-por-hacer)**
-- **[11. Gramáticas de Contexto Libre - *GCL*](#11.-gramáticas-de-contexto-libre-*gcl*)**
-- **[12. Sintaxis](#12.-sintaxis)**
+# INDEX GITHUB
+- **[1.-Basic-Concepts](#1-basic-concepts)**
+- **[2. NFA to DFA](#2-nfa-to-dfa)**
+- **[3. Epsilon Closures, Accessibility and Co-Accessibility](#3-epsilon-closures,-accessibility-and-co-accessibility)**
+- **[4. Minimization](#4-minimization)**
+- **[5. Properties and Operations](#5-properties-and-operations)**
+- **[6. Pumping](#6-pumping)**
+- **[7. Grammar](#7-grammar)**
+- **[8. ER a Automata](#8-er-a-automata)**
+- **[9. Automata a ER](#9-automata-a-er)**
+- **[10. ER a Gramatica POR HACER](#10-er-a-gramatica-por-hacer)**
+- **[11. Gramáticas de Contexto Libre - *GCL*](#11-gramáticas-de-contexto-libre-*gcl*)**
+- **[12. Sintaxis](#12-sintaxis)**
 
 > [!NOTE]
 > Apuntes bien hechos a partir del temario del segundo examen **[11. Gramáticas de Contexto Libre - *GCL*](#11.-Gramáticas-de-Contexto-Libre-*GCL*)**.
@@ -20,6 +20,19 @@
 > 
 > *Recomendable descargar **[Obsidian](https://obsidian.md/download)** y abrir este archivo haciendo un **clon** del repositorio.*
 
+# INDEX OBSIDIAN
+- **[[#1. Basic Concepts]]**
+- **[[#2. NFA to DFA]]**
+- **[[#3. Epsilon Closures, Accessibility and Co-Accessibility]]**
+- **[[#4. Minimization]]**
+- **[[#5. Properties and Operations]]**
+- **[[#6. Pumping]]**
+- **[[#7. Grammar]]**
+- **[[#8. ER a Automata]]**
+- **[[#9. Automata a ER]]**
+- **[[#10. ER a Gramatica POR HACER]]**
+- **[[#11. Gramáticas de Contexto Libre - *GCL*]]**
+- **[[#12. Sintaxis]]**
 ---
 # CLASS NOTES
 ## 1. Basic Concepts
