@@ -882,23 +882,19 @@ Forma de los **Analizadores Sintácticos** de reconstruir el árbol **desde la r
 - $B \to aC | \lambda$
 - $C \to B | BA$
 
-**Es la palabra $a$ de la producción $A \to a$ anulable?**
-*Obviamente no, ya que $a$ ya es en sí **Símbolo Terminal**.*
+> [!NOTE]
+> **Es la palabra $a$ de la producción $A \to a$ anulable?** <br> *Obviamente no, ya que $a$ ya es en sí **Símbolo Terminal**.*
+>
+> **Es la palabra $Bb$ de la producción $A \to Bb$ anulable?** <br> *No, ya que contiene un terminal - $b$.*
+>
+> **Es la palabra $aC$ de la producción $B \to aC$ anulable?** <br> *No, ya que contiene un terminal - $a$*.
+>
+> **Es la palabra $\lambda$ de la producción $B \to \lambda$ anulable?** <br> *Obviamente sí, ya que $\lambda$ es en sí la definición de nulo.*
+>
+> **Es la palabra $B$ de la producción $C \to B$ anulable?** <br> *Sí, ya que B podría ser nulo.*
+>
+> **Es la palabra $BA$ de la producción $C \to BA$ anulable?** <br> *No, ya que A no es anulable.*
 
-**Es la palabra $Bb$ de la producción $A \to Bb$ anulable?**
-*No, ya que contiene un terminal - $b$.*
-
-**Es la palabra $aC$ de la producción $B \to aC$ anulable?**
-*No, ya que contiene un terminal - $a$*.
-
-**Es la palabra $\lambda$ de la producción $B \to \lambda$ anulable?**
-*Obviamente sí, ya que $\lambda$ es en sí la definición de nulo.*
-
-**Es la palabra $B$ de la producción $C \to B$ anulable?**
-*Sí, ya que B podría ser nulo.*
-
-**Es la palabra $BA$ de la producción $C \to BA$ anulable?**
-*No, ya que A no es anulable.*
 
 ![TLP-04-24-A.jpeg](TLP-04-24-A.jpeg)
 ![TLP-04-24-B.jpeg](TLP-04-24-B.jpeg)
