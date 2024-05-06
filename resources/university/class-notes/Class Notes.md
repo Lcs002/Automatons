@@ -1,3 +1,10 @@
+> [!NOTE]
+> *Apuntes bien hechos a partir del temario del segundo examen.*
+
+> [!TIP]
+> *Ciertas marcaciones se verán mal o distintas fuera de Obsidian.*
+> 
+> *Recomendable descargar **[Obsidian](https://obsidian.md/download)** y abrir este archivo haciendo un **clon** del repositorio.*
 # Class Notes
 ## 1. Basic Concepts
 ![basic-concepts.png](basic-concepts.png)
