@@ -110,8 +110,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "d942ddf4fcef3b96",
@@ -188,13 +187,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c64f404af3503ec",
+  "active": "214335016f33365c",
   "lastOpenFiles": [
+    "6.-Pumping.md",
+    "Class Notes.md",
     "TLP-04-26-B.jpeg",
     "TLP-04-26-A.jpeg",
     "TLP-04-24-A.jpeg",
     "TLP-04-24-B.jpeg",
-    "Class Notes.md",
     "LL1-Ejemplo.png",
     "LL-Ejemplo.png",
     "Problemas-Decision.jpeg",
@@ -202,7 +202,6 @@
     "AP-8-DefLL1.jpeg",
     "Pasted image 20240504182304.png",
     "AP-7-Asociatividad.jpeg",
-    "GCL-EliminarAmbiguedad-2.png.png",
     "Class Notes.md~"
   ]
 }

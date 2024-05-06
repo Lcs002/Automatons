@@ -1,11 +1,27 @@
+# INDEX
+- **[1.-Basic-Concepts](#1.-Basic-Concepts)**
+- **[2. NFA to DFA](#2.-NFA-to-DFA)**
+- **[3. Epsilon Closures, Accessibility and Co-Accessibility](#3.-Epsilon-Closures,-Accessibility-and-Co-Accessibility)**
+- **[4. Minimization](#4.-Minimization)**
+- **[5. Properties and Operations](#5.-Properties-and-Operations)**
+- **[6. Pumping](#6.-Pumping)**
+- **[7. Grammar](#7.-Grammar)**
+- **[8. ER a Automata](#8.-ER-a-Automata)**
+- **[9. Automata a ER](#9.-Automata-a-ER)**
+- **[10. ER a Gramatica POR HACER](#10.-ER-a-Gramatica-POR-HACER)**
+- **[11. Gramáticas de Contexto Libre - *GCL*](#11.-Gramáticas-de-Contexto-Libre-*GCL*)**
+- **[12. Sintaxis](#12.-Sintaxis)**
+
 > [!NOTE]
-> *Apuntes bien hechos a partir del temario del segundo examen.*
+> Apuntes bien hechos a partir del temario del segundo examen **[11. Gramáticas de Contexto Libre - *GCL*](#11.-Gramáticas-de-Contexto-Libre-*GCL*)**.
 
 > [!TIP]
 > *Ciertas marcaciones se verán mal o distintas fuera de Obsidian.*
 > 
 > *Recomendable descargar **[Obsidian](https://obsidian.md/download)** y abrir este archivo haciendo un **clon** del repositorio.*
-# Class Notes
+
+---
+# CLASS NOTES
 ## 1. Basic Concepts
 ![basic-concepts.png](basic-concepts.png)
 ## 2. NFA to DFA
@@ -357,7 +373,7 @@ Antes, necesitamos cumplir con _ciertas condiciones_, si no cumple, veremos que 
 
 </details>
 
-## 10. ER a Gramatica - POR HACER
+## 10. ER a Gramatica POR HACER
 
 ## 11. Gramáticas de Contexto Libre - *GCL*
 ![GCL-1.jpeg](GCL-1.jpeg)
