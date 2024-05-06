@@ -701,8 +701,8 @@ END
 
 #### 11.11.4 Aceptación
 *Un **Pushdown Automaton** acepta palabras - $w$ - cuando:*
-- Al consumir totalmente $w$, tiene la **pila vacía**.
-- Al consumir totalmente $w$, está en un **estado final**.
+- Al consumir totalmente $w$, tiene la **Pila Vacía**.
+- Al consumir totalmente $w$, está en un **Estado Final**.
 
 ### 11.12 Ejemplos: AP
 ![AP-1.jpeg](AP-1.jpeg)
@@ -735,11 +735,8 @@ END
 *Esa especificación puede ser en formato **BNF** o **BNFA**.*
 
 > [!NOTE]
-> *Glosario*:
-> - **LP**: Lenguaje de Programación.
-> - 
+> - **LP**: Lenguaje de Programación. 
 > - **EBNF**: **BNFA**.
-> - 
 > - **AS**: Analizador Sintáctico.
 
 ### 12.1 Gramáticas en BNF y BNFA
@@ -874,7 +871,121 @@ Forma de los **Analizadores Sintácticos** de reconstruir el árbol **desde la r
 
 #### 12.4.1 ¿Qué realmente Representan?
 
-#### 12.4.2 Pasos
+#### 12.4.2 Palabras Anulables
+*Pueden o no tomar un valor en una producción.*
+
+> [!NOTE]
+> Será **Anulable** siempre y cuando no exista ninguna **Subpalabra** en $\alpha$ que lleve a un **Símbolo Terminal** $a$ .
+
+*Ejemplo:*
+- $A \to a|Bb$
+- $B \to aC | \lambda$
+- $C \to B | BA$
+
+**Es la palabra $a$ de la producción $A \to a$ anulable?**
+*Obviamente no, ya que $a$ ya es en sí **Símbolo Terminal**.*
+
+**Es la palabra $Bb$ de la producción $A \to Bb$ anulable?**
+*No, ya que contiene un terminal - $b$.*
+
+**Es la palabra $aC$ de la producción $B \to aC$ anulable?**
+*No, ya que contiene un terminal - $a$*.
+
+**Es la palabra $\lambda$ de la producción $B \to \lambda$ anulable?**
+*Obviamente sí, ya que $\lambda$ es en sí la definición de nulo.*
+
+**Es la palabra $B$ de la producción $C \to B$ anulable?**
+*Sí, ya que B podría ser nulo.*
+
+**Es la palabra $BA$ de la producción $C \to BA$ anulable?**
+*No, ya que A no es anulable.*
+
+![TLP-04-24-A.jpeg](TLP-04-24-A.jpeg)
+![TLP-04-24-B.jpeg](TLP-04-24-B.jpeg)
+
+#### 12.4.2 Calcular: Iniciales  
+*Representación*: ** Inic($\alpha$)**
+*En los apuntes*: ** $I(\alpha)$**
+> *$a$ : **Subpalabra**.*
+
+$$
+I(\alpha) = 
+\begin{cases} 
+a & \text{si el primer Símbolo de $\alpha$ es Terminal}\\ 
+I(\beta) \cup I(\alpha - \beta) & \text{en el caso contrario}
+\end{cases}
+$$
+
+> [!NOTE] 
+> *En código:*
+> ```pascal
+> FUNCTION init(alpha) 
+> 	x = first_symbol_of(alpha)
+> 	IF x IS TERMINAL THEN
+> 		x
+> 	ELSE
+> 		init(x) UNION init(alpha - x)
+> 	END
+> END
+> ```
+
+
+
+#### 12.4.3 Calcular: Seguidores  
+*Representación*: ** Seg($X$)**
+*En los apuntes*: ** $S(X)$**
+> *$X$ :  **No Terminal**.*
+
+$$
+S(X) = \forall \beta \text{ que procede X }
+\begin{cases} 
+I(\beta) & \text{si $\beta$ es No Anulable}\\ 
+I(\beta) \cup S(A) & \text{en el caso contrario}
+\end{cases}
+$$
+
+> [!NOTE] 
+> *En código:*
+> ```pascal
+> FUNCTION seg(X) 
+> 	FOR beta EN LA DERECHA DE X DO
+> 		IF beta IS NOT NULLABLE THEN
+> 			inic(beta)
+> 		ELSE
+> 			inic(beta) UNION seg(A)
+> 		END
+> 	END
+> END
+> ```
+
+#### 12.4.4 Calcular: Directores
+*Representación*: ** Dir($A \to \alpha$)**
+*En los apuntes*: ** $D(A \to \alpha)$**
+
+> *$A$ : **No Terminal**.*
+> *$\alpha$ : **Subpalabra**.*
+
+$$
+D(A \to \alpha) = 
+\begin{cases} 
+I(\alpha) & \text{si $\alpha$ es No Anulable}\\ 
+I(\alpha) \cup S(A) & \text{en el caso contrario}
+\end{cases}
+$$
+
+> [!NOTE] 
+> *En código:*
+> ```pascal
+> FUNCTION dir(A, alpha)
+> 	IF alpha IS NOT NULLABLE THEN
+> 		inic(alpha)
+> 	ELSE
+> 		inic(alpha) UNION seg(A)
+> 	END
+> END
+> ``` 
+
+
 
 ### 12.5 Comprobar si Sintaxis está en LL(1)
 
@@ -889,10 +1000,6 @@ Forma de los **Analizadores Sintácticos** de reconstruir el árbol **desde la r
 ### 12.7 Actividad - Analizadores Léxico-Sintácticos Automáticos 
 
 # [POR HACER]
-
-![TLP-04-24-A.jpeg](TLP-04-24-A.jpeg)
-
-![TLP-04-24-B.jpeg](TLP-04-24-B.jpeg)
 
 ![TLP-04-26-A.jpeg](TLP-04-26-A.jpeg)
 
