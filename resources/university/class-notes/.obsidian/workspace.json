@@ -21,6 +21,18 @@
             }
           },
           {
+            "id": "70a30f6abd6bcf08",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Class Notes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "5e31d49d26c08211",
             "type": "leaf",
             "state": {
@@ -30,7 +42,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "5773a8e5221407b0",
@@ -41,16 +54,6 @@
             "id": "dd4f2ba131e95f84",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "Problemas-Decision.jpeg"
-              }
-            }
-          },
-          {
-            "id": "2c64f404af3503ec",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
                 "file": "Class Notes.md",
@@ -59,8 +62,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -187,21 +189,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "214335016f33365c",
+  "active": "dd4f2ba131e95f84",
   "lastOpenFiles": [
-    "6.-Pumping.md",
-    "Class Notes.md",
-    "TLP-04-26-B.jpeg",
-    "TLP-04-26-A.jpeg",
-    "TLP-04-24-A.jpeg",
-    "TLP-04-24-B.jpeg",
-    "LL1-Ejemplo.png",
-    "LL-Ejemplo.png",
     "Problemas-Decision.jpeg",
-    "AP-8-DefLL1.jpeg.~tmp",
-    "AP-8-DefLL1.jpeg",
-    "Pasted image 20240504182304.png",
-    "AP-7-Asociatividad.jpeg",
-    "Class Notes.md~"
+    "Class Notes.md",
+    "er-automata-2.jpeg",
+    "GCL-3.jpeg",
+    "LDB-GCL-1.jpeg",
+    "minimization.png",
+    "minimization-examples.png",
+    "er-automata-1.jpeg",
+    "AP-1.jpeg.~tmp",
+    "AP-4.jpeg.~tmp",
+    "AP-5.jpeg.~tmp",
+    "AP-6.jpeg.~tmp",
+    "AP-7.jpeg.~tmp",
+    "AP-7-Asociatividad.jpeg.~tmp",
+    "WhatsApp Image 2024-04-03 at 12.46.42.jpeg.~tmp",
+    "WhatsApp Image 2024-02-21 at 10.42.11.jpeg.~tmp",
+    "WhatsApp Image 2024-02-21 at 10.42.10.jpeg.~tmp",
+    "WhatsApp Image 2024-02-21 at 10.42.06.jpeg.~tmp",
+    "operations-with-languages.png",
+    "AP-Diagrama-2.png",
+    "6.-Pumping.md",
+    "TLP-04-26-B.jpeg"
   ]
 }
