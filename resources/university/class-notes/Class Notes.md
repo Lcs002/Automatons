@@ -9,7 +9,7 @@
 - **[8. ER a Automata](#8-er-a-automata)**
 - **[9. Automata a ER](#9-automata-a-er)**
 - **[10. ER a Gramatica POR HACER](#10-er-a-gramatica-por-hacer)**
-- **[11. Gramáticas de Contexto Libre - *GCL*](#11-gramáticas-de-contexto-libre-gcl)**
+- **[11. Gramáticas de Contexto Libre - *GCL*](#11-gramáticas-de-contexto-libre---gcl)**
 - **[12. Sintaxis](#12-sintaxis)**
 
 > [!NOTE]
