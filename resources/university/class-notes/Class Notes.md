@@ -904,8 +904,9 @@ Forma de los **Analizadores Sintácticos** de reconstruir el árbol **desde la r
 ![TLP-04-24-B.jpeg](TLP-04-24-B.jpeg)
 
 #### 12.4.2 Calcular: Iniciales  
-*Representación*: ** Inic($\alpha$)**
-*En los apuntes*: ** $I(\alpha)$**
+*Representación*: **Inic($\alpha$)**
+
+*En los apuntes*: **$I(\alpha)$**
 > *$a$ : **Subpalabra**.*
 
 $$
@@ -932,8 +933,9 @@ $$
 
 
 #### 12.4.3 Calcular: Seguidores  
-*Representación*: ** Seg($X$)**
-*En los apuntes*: ** $S(X)$**
+*Representación*: **Seg($X$)**
+
+*En los apuntes*: **$S(X)$**
 > *$X$ :  **No Terminal**.*
 
 $$
@@ -959,8 +961,9 @@ $$
 > ```
 
 #### 12.4.4 Calcular: Directores
-*Representación*: ** Dir($A \to \alpha$)**
-*En los apuntes*: ** $D(A \to \alpha)$**
+*Representación*: **Dir($A \to \alpha$)**
+
+*En los apuntes*: **$D(A \to \alpha)$**
 
 > *$A$ : **No Terminal**.*
 > *$\alpha$ : **Subpalabra**.*
