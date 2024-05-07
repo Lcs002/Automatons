@@ -1,6 +1,5 @@
 # CLASS NOTES
-Contenidos de la Pizarra + Diapositivas + Apuntes.
-[**Formato pdf** (*Última Actualización*).](https://github.com/Lcs002/Automatons/blob/master/resources/university/ClassNotes.pdf?raw=true)
+Contenidos de la Pizarra + Diapositivas + Apuntes. <br> [**Formato pdf** (*Última Actualización*).](https://github.com/Lcs002/Automatons/blob/master/resources/university/ClassNotes.pdf?raw=true)
 > [!NOTE]
 > *Apuntes bien hechos a partir del temario del segundo examen.*
 > 
