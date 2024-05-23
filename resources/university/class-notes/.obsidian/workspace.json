@@ -6,7 +6,7 @@
       {
         "id": "f363a0219d195e22",
         "type": "tabs",
-        "dimension": 52.34771573604061,
+        "dimension": 26.172370088719898,
         "children": [
           {
             "id": "214335016f33365c",
@@ -30,7 +30,8 @@
                 "mode": "source",
                 "source": false
               }
-            }
+            },
+            "group": "4fd091edbf7824ff"
           },
           {
             "id": "5e31d49d26c08211",
@@ -46,9 +47,27 @@
         "currentTab": 1
       },
       {
+        "id": "7f7448b83a138762",
+        "type": "tabs",
+        "dimension": 13.624841571609632,
+        "children": [
+          {
+            "id": "0afe3ae1c3bdd415",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Class Notes.md"
+              }
+            },
+            "group": "4fd091edbf7824ff"
+          }
+        ]
+      },
+      {
         "id": "5773a8e5221407b0",
         "type": "tabs",
-        "dimension": 47.65228426395939,
+        "dimension": 36.37515842839037,
         "children": [
           {
             "id": "dd4f2ba131e95f84",
@@ -60,7 +79,26 @@
                 "mode": "preview",
                 "source": false
               }
-            }
+            },
+            "group": "4231beeb409c1f6e"
+          }
+        ]
+      },
+      {
+        "id": "54fa6aedab9968e9",
+        "type": "tabs",
+        "dimension": 23.827629911280102,
+        "children": [
+          {
+            "id": "2488302760bf4602",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Class Notes.md"
+              }
+            },
+            "group": "4231beeb409c1f6e"
           }
         ]
       }
@@ -112,7 +150,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d942ddf4fcef3b96",
@@ -172,11 +211,12 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 245.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -189,10 +229,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "70a30f6abd6bcf08",
+  "active": "80dee9693326c1a8",
   "lastOpenFiles": [
-    "Problemas-Decision.jpeg",
     "Class Notes.md",
+    "Problemas-Decision.jpeg",
     "er-automata-2.jpeg",
     "GCL-3.jpeg",
     "LDB-GCL-1.jpeg",
