@@ -502,10 +502,10 @@ Para ello tenemos que:
 
 > [!TIP]
 > ***Video Recomendado - Teoría*** <br>
-> ![](https://www.youtube.com/watch?v=lEsDll4Um7Y&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=16)
+> ![https://www.youtube.com/watch?v=lEsDll4Um7Y&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=16](https://www.youtube.com/watch?v=lEsDll4Um7Y&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=16)
 > 
 > ***Video Recomendado - Ejemplos*** <br>
-> ![](https://www.youtube.com/watch?v=eUlUzH9fmXQ&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=17&pp=iAQB)
+> ![https://www.youtube.com/watch?v=eUlUzH9fmXQ&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=17&pp=iAQB](https://www.youtube.com/watch?v=eUlUzH9fmXQ&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=17&pp=iAQB)
 
 #### 11.5.1 Eliminar Ambiguedad de GCL
 ![GCL-EliminarAmbiguedad.png](GCL-EliminarAmbiguedad.png)
@@ -618,10 +618,10 @@ $w = baaba$
 
 > [!TIP]
 > ***Video Recomendado - Teoría*** <br>
-> ![](https://www.youtube.com/watch?v=N8d4kkfxM-s&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=19&pp=iAQB)
+> ![https://www.youtube.com/watch?v=N8d4kkfxM-s&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=19&pp=iAQB](https://www.youtube.com/watch?v=N8d4kkfxM-s&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=19&pp=iAQB)
 > 
 > ***Video Recomendado - Ejemplos*** <br>
-> ![](https://www.youtube.com/watch?v=N8d4kkfxM-s&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=19&pp=iAQB)
+> ![https://www.youtube.com/watch?v=N8d4kkfxM-s&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=19&pp=iAQB](https://www.youtube.com/watch?v=N8d4kkfxM-s&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=19&pp=iAQB)
 
 ### 11.7 Ejemplo: $w \in L(G)$
 *Para probar que sí, tenemos que ser capaces de crear un árbol de derivación por la izquierda.*
@@ -644,7 +644,7 @@ $w \in L(G)$ ?
 
 > [!TIP]
 > ***Video Recomendado*** <br>
-> ![](https://www.youtube.com/watch?v=e-KF6u6-Zqw&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=32)
+> ![https://www.youtube.com/watch?v=e-KF6u6-Zqw&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=32](https://www.youtube.com/watch?v=e-KF6u6-Zqw&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=32)
 
 #### 11.8.2 Problema - *Lenguaje Vacío*
 $L(G)$ vacío?
@@ -654,7 +654,7 @@ $L(G)$ vacío?
 
 > [!TIP]
 > ***Video Recomendado*** <br>
-> ![](https://www.youtube.com/watch?v=qFZAblZiO08&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=33)
+> ![https://www.youtube.com/watch?v=qFZAblZiO08&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=33](https://www.youtube.com/watch?v=qFZAblZiO08&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=33)
 
 #### 11.8.3 Problema - *Lenguaje Finito*
 $L(G)$ finito?
@@ -675,10 +675,10 @@ $L(G)$ será infinito cuando exista al menos un ciclo - *Ej. $A \to AB$*.
 
 > [!TIP]
 > ***Video Recomendado - GCL*** **ambigua** <br>
-> ![](https://www.youtube.com/watch?v=j_BDMeZI4kk&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=36)
+> ![https://www.youtube.com/watch?v=j_BDMeZI4kk&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=36](https://www.youtube.com/watch?v=j_BDMeZI4kk&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=36)
 > 
 > ***Video Recomendado - GLC = GLC*** <br>
-> ![](https://www.youtube.com/watch?v=13f-x7hUdu0&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=35)
+> ![https://www.youtube.com/watch?v=13f-x7hUdu0&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=35](https://www.youtube.com/watch?v=13f-x7hUdu0&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=35)
 
 ### 11.9 Propiedades de Cerradura
 ![Prod-Cierraduras-GCL-1.jpeg](Prod-Cierraduras-GCL-1.jpeg)
@@ -705,11 +705,11 @@ Sean $L_1, L_2$ **LLC**'s (*Lenguajes de Libre Contexto*) y $L_3$ **LR** (*Lengu
 
 > [!TIP]
 > ***Video Recomendado - Teoría*** <br>
-> ![](https://www.youtube.com/watch?v=-UH9L2sJpPQ)
+> ![https://www.youtube.com/watch?v=-UH9L2sJpPQ](https://www.youtube.com/watch?v=-UH9L2sJpPQ)
 > 
 > ***Video Recomendado - Ejemplos*** <br>
-> ![](https://www.youtube.com/watch?v=v4ZjggNXW3Q&t=1707s)
-> ![](https://www.youtube.com/watch?v=P08mxzF9pjM)
+> ![https://www.youtube.com/watch?v=v4ZjggNXW3Q&t=1707s](https://www.youtube.com/watch?v=v4ZjggNXW3Q&t=1707s)
+> ![https://www.youtube.com/watch?v=P08mxzF9pjM](https://www.youtube.com/watch?v=P08mxzF9pjM)
 
 ### 11.11 Autómata de Pila - *AP*
 ![AP-1.jpeg](AP-1.jpeg)
@@ -813,7 +813,7 @@ END
 ![AP-5.jpeg](AP-5.jpeg)
 
 ### 11.Extra Lenguaje a GCL
-![](https://www.youtube.com/watch?v=yVL_jIypDsU)
+![https://www.youtube.com/watch?v=yVL_jIypDsU](https://www.youtube.com/watch?v=yVL_jIypDsU)
 
 ## 12. Sintaxis
 *Las características sintácticas de un **LP** se pueden especificar mediante una **GCL**.*
