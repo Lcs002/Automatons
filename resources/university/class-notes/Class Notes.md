@@ -653,7 +653,7 @@ $L(G)$ vacío?
 - Probar si $S$ es **generador**.
 
 > [!TIP]
-> ***Video Recomendado***
+> ***Video Recomendado*** <br>
 > ![](https://www.youtube.com/watch?v=qFZAblZiO08&list=PLylTVsqZiRXOlDr8PemE5hUTVMGZrLD7G&index=33)
 
 #### 11.8.3 Problema - *Lenguaje Finito*
@@ -696,7 +696,7 @@ Sean $L_1, L_2$ **LLC**'s (*Lenguajes de Libre Contexto*) y $L_3$ **LR** (*Lengu
 |  Diferencia | $L = L_1-L_2$ | **¿?** |
 
 > [!TIP]
-> ***Video Recomendado***
+> ***Video Recomendado*** <br>
 > ![https://www.youtube.com/watch?v=P_F0-kY_kKQ](https://www.youtube.com/watch?v=P_F0-kY_kKQ)
 
 ### 11.10 Lema de Bombeo - *GCL* 
