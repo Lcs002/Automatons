@@ -650,7 +650,6 @@ $L(G)$ será infinito cuando exista al menos un ciclo - *Ej. $A \to AB$*.
 
 ### 11.9 Propiedades de Cerradura
 ![Prod-Cierraduras-GCL-1.jpeg](Prod-Cierraduras-GCL-1.jpeg)
-
 Sean $L_1, L_2$ **LLC**'s (*Lenguajes de Libre Contexto*) y $L_3$ **LR** (*Lenguaje Regular*) :
 
 |  PROPIEDAD | OPERACIÓN|  RESULTADO  |
@@ -664,9 +663,19 @@ Sean $L_1, L_2$ **LLC**'s (*Lenguajes de Libre Contexto*) y $L_3$ **LR** (*Lengu
 |  Complementario | $L = L_1^C$ | **¿?** |
 |  Diferencia | $L = L_1-L_2$ | **¿?** |
 
-### 11.10 Lema de Bombeo - *GCL* [POR HACER]
+> [!TIP]
+> ***Video Recomendado***
+> ![https://www.youtube.com/watch?v=P_F0-kY_kKQ](https://www.youtube.com/watch?v=P_F0-kY_kKQ)
+
+### 11.10 Lema de Bombeo - *GCL* 
 ![LDB-GCL-1.jpeg](LDB-GCL-1.jpeg)
 ![LDB-GCL-2.jpeg](LDB-GCL-2.jpeg)
+
+> [!TIP]
+> ***Video Recomendado - Teoría***
+> ![https://www.youtube.com/watch?v=-UH9L2sJpPQ](https://www.youtube.com/watch?v=-UH9L2sJpPQ)
+> ***Video Recomendado - Ejemplos***
+> ![https://www.youtube.com/watch?v=v4ZjggNXW3Q&t=1707s](https://www.youtube.com/watch?v=v4ZjggNXW3Q&t=1707s)
 
 ### 11.11 Autómata de Pila - *AP*
 ![AP-1.jpeg](AP-1.jpeg)
@@ -1024,15 +1033,19 @@ $$
 > END
 > ``` 
 
-
-
 ### 12.5 Comprobar si Sintaxis está en LL(1)
+![TLP-04-26-A.jpeg](TLP-04-26-A.jpeg)
+
+*Seguimos estos pasos:*
+
+1. **Eliminar Ambiguedad [¹](#11.5.1-eliminar-ambiguedad-de-gcl)[[#11.5.1 Eliminar Ambiguedad de GCL|²]] **.
+2. **Eliminar Prefijos Comunes [¹](#11.5.1-eliminar-ambiguedad-de-gcl)[[#11.5.1 Eliminar Ambiguedad de GCL|²]]**.
+3. **Eliminar Recursividad por la Izquierda [¹](#11.5.1-eliminar-ambiguedad-de-gcl)[[#11.5.1 Eliminar Ambiguedad de GCL|²]]**.
+4. **Calcular Todos Directores [¹](#12.4.4-calcular-directores)[[#12.4.4 Calcular Directores|²]]**.
 
 #### 12.5.1 ¿Qué realmente Significa estar en LL(1)?
 
 #### 12.5.2 ¿Qué tiene que ver los Símbolos Directores con LL(1)?
-
-#### 12.5.3 Pasos
 
 ### 12.6 Analizadores Descendentes Predictivos Recursivos
 
@@ -1040,7 +1053,7 @@ $$
 
 # [POR HACER]
 
-![TLP-04-26-A.jpeg](TLP-04-26-A.jpeg)
+
 
 ![TLP-04-26-B.jpeg](TLP-04-26-B.jpeg)
 

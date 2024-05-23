@@ -6,7 +6,7 @@
       {
         "id": "f363a0219d195e22",
         "type": "tabs",
-        "dimension": 52.50533049040512,
+        "dimension": 52.34771573604061,
         "children": [
           {
             "id": "214335016f33365c",
@@ -48,7 +48,7 @@
       {
         "id": "5773a8e5221407b0",
         "type": "tabs",
-        "dimension": 47.494669509594885,
+        "dimension": 47.65228426395939,
         "children": [
           {
             "id": "dd4f2ba131e95f84",
@@ -189,7 +189,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dd4f2ba131e95f84",
+  "active": "70a30f6abd6bcf08",
   "lastOpenFiles": [
     "Problemas-Decision.jpeg",
     "Class Notes.md",
